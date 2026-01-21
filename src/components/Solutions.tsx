@@ -635,6 +635,7 @@ export function Solutions() {
                                     className={`relative rounded-3xl p-0 overflow-hidden bg-transparent ${card.colSpan || 'md:col-span-1'} min-h-[220px]`}
                                     color={["#A07CFE", "#FE8FB5", "#FFBE7B"]}
                                     borderWidth={2}
+                                    borderRadius={24}
                                 >
                                     {CardContent}
                                 </ShineBorder>
