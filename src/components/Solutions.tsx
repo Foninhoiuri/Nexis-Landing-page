@@ -580,6 +580,7 @@ export function Solutions() {
                                 bg-blue-500/10 text-blue-400
                                 transition-all duration-300
                                 group-hover:bg-blue-500 group-hover:text-white group-hover:shadow-[0_0_20px_rgba(59,130,246,0.6)]
+                                group-hover:-translate-y-2
                             `}>
                                         <card.icon className="w-6 h-6" />
                                     </div>
