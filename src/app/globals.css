@@ -1,0 +1,131 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    :root {
+        /* Brand Primary: #2563EB -> 37, 99, 235 */
+        --color-brand-primary: 37 99 235;
+
+        /* Brand Colors (Reflect/Linear Style) */
+        --color-brand-blue: #2563EB;
+        --color-brand-blue-hover: #1d4ed8;
+
+        --color-whatsapp: #25D366;
+        --color-whatsapp-hover: #20BD5A;
+
+        /* Background Deep: #030303 -> 3, 3, 3 */
+        --bg-depth: 3 3 3;
+
+        /* Surface: #0A0A0A -> 10, 10, 10 */
+        --bg-surface: 10 10 10;
+
+        --foreground: 255 255 255;
+    }
+
+    /* Scaling for smaller desktops (Laptop View) */
+    @media (min-width: 1024px) and (max-width: 1440px) {
+        :root {
+            font-size: 13px; /* Simulates ~80% zoom */
+        }
+    }
+
+    body {
+        background-color: rgb(var(--bg-depth));
+        color: rgb(var(--foreground));
+        font-feature-settings: "rlig" 1, "calt" 1;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+}
+
+@layer components {
+
+    /* Shared Base Button Styles */
+    .btn-blue,
+    .btn-blue-solid,
+    .btn-green,
+    .btn-green-solid {
+        @apply inline-flex items-center justify-center px-8 py-3 rounded-full font-medium cursor-pointer transition-all duration-300;
+        box-shadow: 0 10px 25px -10px rgba(0, 0, 0, 0.5);
+        /* Sombra inicial sutil para dark mode */
+    }
+
+    /* Hover Lift Effect */
+    .btn-blue:hover,
+    .btn-blue-solid:hover,
+    .btn-green:hover,
+    .btn-green-solid:hover {
+        transform: translateY(-2px);
+    }
+
+    /* --- BTN BLUE (Outline -> Solid) --- */
+    .btn-blue {
+        background-color: rgba(37, 99, 235, 0.1);
+        /* Transparent/Tinted initial */
+        border: 1px solid var(--color-brand-blue);
+        color: var(--color-brand-blue);
+    }
+
+    .btn-blue:hover {
+        background-color: var(--color-brand-blue);
+        border-color: transparent;
+        color: white;
+        box-shadow: 0 20px 25px -5px rgba(37, 99, 235, 0.4), 0 8px 10px -6px rgba(37, 99, 235, 0.4);
+    }
+
+    /* --- BTN BLUE SOLID --- */
+    .btn-blue-solid {
+        background-color: var(--color-brand-blue);
+        color: white;
+        border: 1px solid transparent;
+    }
+
+    .btn-blue-solid:hover {
+        background-color: var(--color-brand-blue-hover);
+        box-shadow: 0 20px 25px -5px rgba(37, 99, 235, 0.5), 0 8px 10px -6px rgba(37, 99, 235, 0.5);
+    }
+
+    /* --- BTN GREEN (WhatsApp Style) --- */
+    .btn-green {
+        background-color: rgba(37, 211, 102, 0.1);
+        color: var(--color-whatsapp);
+        border: 1px solid var(--color-whatsapp);
+    }
+
+    .btn-green:hover {
+        background-color: var(--color-whatsapp);
+        border-color: transparent;
+        color: white;
+        box-shadow: 0 20px 25px -5px rgba(37, 211, 102, 0.4), 0 8px 10px -6px rgba(37, 211, 102, 0.4);
+    }
+
+    /* --- BTN GREEN SOLID --- */
+    .btn-green-solid {
+        background-color: var(--color-whatsapp);
+        color: white;
+        border: 1px solid transparent;
+    }
+
+    .btn-green-solid:hover {
+        background-color: var(--color-whatsapp-hover);
+        box-shadow: 0 20px 25px -5px rgba(37, 211, 102, 0.4), 0 8px 10px -6px rgba(37, 211, 102, 0.4);
+    }
+}
+
+@layer utilities {
+    .text-balance {
+        text-wrap: balance;
+    }
+
+    /* Noise Texture */
+    .bg-noise {
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.05'/%3E%3C/svg%3E");
+        pointer-events: none;
+    }
+
+    /* Pro Glow: Soft, diffuse ambient light foundation */
+    .pro-glow {
+        box-shadow: 0 0 60px -15px rgba(var(--color-brand-primary), 0.15);
+    }
+}
