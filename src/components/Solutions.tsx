@@ -5,8 +5,8 @@ import { Bot, BarChart3, FileText, Server, Cpu, Headphones, Smartphone, BatteryC
 import ShineBorder from "@/components/ui/shine-border";
 
 // --- Config ---
-const DEFAULT_PARTICLE_COUNT = 12;
-const DEFAULT_SPOTLIGHT_RADIUS = 300;
+const DEFAULT_PARTICLE_COUNT = 0;
+const DEFAULT_SPOTLIGHT_RADIUS = 150;
 const DEFAULT_GLOW_COLOR = '56, 189, 248'; // Blue-400 (matches 'btn-blue')
 const MOBILE_BREAKPOINT = 768;
 
@@ -589,7 +589,7 @@ export function Solutions() {
                      `}
                             glowColor={glowColor}
                             disableAnimations={shouldDisableAnimations}
-                            enableTilt={!isMobile}
+                            enableTilt={false}
                             clickEffect={true}
                             enableMagnetism={!isMobile}
                             /* @ts-ignore */
@@ -602,10 +602,11 @@ export function Solutions() {
                                         {/* Icon Container with 'btn-blue' effect logic */}
                                         <div className={`
                                          w-12 h-12 rounded-xl flex items-center justify-center
-                                         bg-blue-500/10 text-blue-400
                                          transition-all duration-300
-                                         group-hover:bg-blue-500 group-hover:text-white group-hover:shadow-[0_0_20px_rgba(59,130,246,0.6)]
-                                         group-hover:-translate-y-2
+                                         ${(isMobile && /* @ts-ignore */ card.useShine)
+                                                ? 'bg-blue-500 text-white shadow-[0_0_20px_rgba(59,130,246,0.6)] -translate-y-2'
+                                                : 'bg-blue-500/10 text-blue-400 group-hover:bg-blue-500 group-hover:text-white group-hover:shadow-[0_0_20px_rgba(59,130,246,0.6)] group-hover:-translate-y-2'
+                                            }
                                      `}>
                                             <card.icon className="w-6 h-6" />
                                         </div>
