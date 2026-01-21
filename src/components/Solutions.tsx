@@ -109,7 +109,8 @@ const ParticleCard = ({
     glowColor = DEFAULT_GLOW_COLOR,
     enableTilt = true,
     clickEffect = false,
-    enableMagnetism = false
+    enableMagnetism = false,
+    useShine = false // New prop
 }: any) => {
     const cardRef = useRef<HTMLDivElement>(null);
     const particlesRef = useRef<HTMLElement[]>([]);
@@ -329,9 +330,25 @@ const ParticleCard = ({
     return (
         <div
             ref={cardRef}
-            className={`${className} relative overflow-hidden`}
+            className={`${className} relative overflow-hidden ${useShine ? '!border-transparent' : ''}`}
             style={{ ...style, position: 'relative', overflow: 'hidden' }}
         >
+            {/* Shine Effect Layer - Integrated for Tilt */}
+            {useShine && (
+                <div
+                    style={
+                        {
+                            "--border-width": `2px`,
+                            "--border-radius": `24px`,
+                            "--duration": `14s`,
+                            "--mask-linear-gradient": `linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)`,
+                            "--background-radial-gradient": `radial-gradient(transparent,transparent, #A07CFE,#FE8FB5,#FFBE7B,transparent,transparent)`,
+                        } as React.CSSProperties
+                    }
+                    className={`pointer-events-none before:bg-shine-size before:absolute before:inset-0 before:aspect-square before:size-full before:rounded-[--border-radius] before:p-[--border-width] before:will-change-[background-position] before:content-[""] before:![-webkit-mask-composite:xor] before:![mask-composite:exclude] before:[background-image:--background-radial-gradient] before:[background-size:300%_300%] before:[mask:--mask-linear-gradient] motion-safe:before:animate-shine`}
+                />
+            )}
+
             {children}
         </div>
     );
@@ -560,90 +577,70 @@ export function Solutions() {
 
             <BentoCardGrid gridRef={gridRef}>
                 <div className="grid grid-cols-1 md:grid-cols-4 gap-4 w-full">
-                    {cardData.map((card, index) => {
-                        const CardContent = (
-                            <ParticleCard
-                                key={index}
-                                className={`
+                    {cardData.map((card, index) => (
+                        <ParticleCard
+                            key={index}
+                            className={`
                          card relative bg-zinc-950/50 rounded-3xl border border-white/10 overflow-hidden group
                          ${card.colSpan || 'md:col-span-1'}
                          min-h-[220px] flex flex-col justify-between p-6
                          transition-all duration-300 hover:bg-zinc-900/80
                          card--border-glow
-                         ${card.useShine ? '!border-transparent' : ''} 
                      `}
-                                glowColor={glowColor}
-                                disableAnimations={shouldDisableAnimations}
-                                enableTilt={!isMobile}
-                                clickEffect={true}
-                                enableMagnetism={!isMobile}
-                            >
-                                {/* Inner Content matching ServiceCard logic but adapted for Bento */}
-                                <div className="relative z-20 flex flex-col h-full justify-between w-full h-full">
-                                    <div>
-                                        <div className="flex justify-between items-start mb-4">
-                                            {/* Icon Container with 'btn-blue' effect logic */}
-                                            <div className={`
+                            glowColor={glowColor}
+                            disableAnimations={shouldDisableAnimations}
+                            enableTilt={!isMobile}
+                            clickEffect={true}
+                            enableMagnetism={!isMobile}
+                            /* @ts-ignore */
+                            useShine={card.useShine}
+                        >
+                            {/* Inner Content matching ServiceCard logic but adapted for Bento */}
+                            <div className="relative z-20 flex flex-col h-full justify-between w-full h-full">
+                                <div>
+                                    <div className="flex justify-between items-start mb-4">
+                                        {/* Icon Container with 'btn-blue' effect logic */}
+                                        <div className={`
                                          w-12 h-12 rounded-xl flex items-center justify-center
                                          bg-blue-500/10 text-blue-400
                                          transition-all duration-300
                                          group-hover:bg-blue-500 group-hover:text-white group-hover:shadow-[0_0_20px_rgba(59,130,246,0.6)]
                                          group-hover:-translate-y-2
                                      `}>
-                                                <card.icon className="w-6 h-6" />
-                                            </div>
-
-                                            {/* AI Badge */}
-                                            {/* @ts-ignore */}
-                                            {card.isAI && (
-                                                <span className="px-2 py-1 rounded-full bg-blue-500/20 border border-blue-500/30 text-[10px] font-bold text-blue-300 tracking-wider uppercase backdrop-blur-sm">
-                                                    IA Integrada
-                                                </span>
-                                            )}
+                                            <card.icon className="w-6 h-6" />
                                         </div>
 
-                                        <h3 className="text-xl font-bold text-white mb-2 group-hover:text-blue-100 transition-colors">
-                                            {card.title}
-                                        </h3>
-                                        <p className="text-sm text-gray-400 leading-relaxed max-w-[90%] group-hover:text-gray-300 transition-colors">
-                                            {card.description}
-                                        </p>
+                                        {/* AI Badge */}
+                                        {/* @ts-ignore */}
+                                        {card.isAI && (
+                                            <span className="px-2 py-1 rounded-full bg-blue-500/20 border border-blue-500/30 text-[10px] font-bold text-blue-300 tracking-wider uppercase backdrop-blur-sm">
+                                                IA Integrada
+                                            </span>
+                                        )}
                                     </div>
 
-                                    <div className="mt-4 pt-4 border-t border-white/5 flex items-center justify-between">
-                                        <span className="text-xs font-medium text-blue-400/80 uppercase tracking-widest">
-                                            {card.label}
-                                        </span>
-                                        {/* Arrow or visual indicator could go here */}
-                                        <div className="w-8 h-8 rounded-full border border-white/10 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-x-[-10px] group-hover:translate-x-0">
-                                            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <path d="M2.5 6H9.5M9.5 6L6.5 3M9.5 6L6.5 9" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-                                            </svg>
-                                        </div>
+                                    <h3 className="text-xl font-bold text-white mb-2 group-hover:text-blue-100 transition-colors">
+                                        {card.title}
+                                    </h3>
+                                    <p className="text-sm text-gray-400 leading-relaxed max-w-[90%] group-hover:text-gray-300 transition-colors">
+                                        {card.description}
+                                    </p>
+                                </div>
+
+                                <div className="mt-4 pt-4 border-t border-white/5 flex items-center justify-between">
+                                    <span className="text-xs font-medium text-blue-400/80 uppercase tracking-widest">
+                                        {card.label}
+                                    </span>
+                                    {/* Arrow or visual indicator could go here */}
+                                    <div className="w-8 h-8 rounded-full border border-white/10 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-x-[-10px] group-hover:translate-x-0">
+                                        <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M2.5 6H9.5M9.5 6L6.5 3M9.5 6L6.5 9" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                                        </svg>
                                     </div>
                                 </div>
-                            </ParticleCard>
-                        );
-
-                        // If using Shine effect, wrap the card or modify it. 
-                        // Since ParticleCard has its own structure, we might need to compose them.
-                        // However, ShineBorder is a wrapper.
-                        if (/* @ts-ignore */ card.useShine) {
-                            return (
-                                <ShineBorder
-                                    key={index}
-                                    className={`relative rounded-3xl p-0 overflow-hidden bg-transparent ${card.colSpan || 'md:col-span-1'} min-h-[220px]`}
-                                    color={["#A07CFE", "#FE8FB5", "#FFBE7B"]}
-                                    borderWidth={2}
-                                    borderRadius={24}
-                                >
-                                    {CardContent}
-                                </ShineBorder>
-                            );
-                        }
-
-                        return CardContent;
-                    })}
+                            </div>
+                        </ParticleCard>
+                    ))}
                 </div>
             </BentoCardGrid>
         </section>
