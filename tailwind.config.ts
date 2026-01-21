@@ -32,8 +32,20 @@ const config: Config = {
                 "pulse-slow": "pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite",
                 orbit: "orbit calc(var(--duration)*1s) linear infinite",
                 ripple: "ripple var(--duration,2s) ease calc(var(--i, 0)*.2s) infinite",
+                shine: "shine var(--duration) infinite linear",
             },
             keyframes: {
+                shine: {
+                    "0%": {
+                        "background-position": "0% 0%",
+                    },
+                    "50%": {
+                        "background-position": "100% 100%",
+                    },
+                    to: {
+                        "background-position": "0% 0%",
+                    },
+                },
                 spotlight: {
                     "0%": {
                         opacity: "0",
