@@ -1,117 +1,76 @@
-import React, { useRef, useEffect, useState, useCallback, ReactNode } from 'react';
+import React, { useRef, useEffect, useState, useCallback } from 'react';
 import { gsap } from 'gsap';
-import { motion, useInView } from "framer-motion";
-import { Bot, BarChart3, FileText, Server, Cpu, Headphones, Smartphone, BatteryCharging, Cloud, HardDrive, Database, RefreshCw, Camera, Calendar, Briefcase, Zap } from "lucide-react";
-import ShineBorder from "@/components/ui/shine-border";
+import { Bot, Server, Cpu, Headphones, Database, Zap, ArrowUpRight, ShieldCheck, CloudFog, LineChart } from "lucide-react";
+import { RainbowButton } from "@/components/ui/BlueRainbowButton";
+import GradualBlur from "@/components/ui/GradualBlur";
+import { DotPattern } from "@/components/ui/dot-pattern";
+import { cn } from "@/lib/utils";
 
-// --- Config ---
+// --- Config (Mantendo azul para contraste: Vermelho = Problema / Azul = Solução) ---
 const DEFAULT_PARTICLE_COUNT = 0;
-const DEFAULT_SPOTLIGHT_RADIUS = 150;
-const DEFAULT_GLOW_COLOR = '56, 189, 248'; // Blue-400 (matches 'btn-blue')
+const DEFAULT_SPOTLIGHT_RADIUS = 300;
+const DEFAULT_GLOW_COLOR = '56, 189, 248'; // Blue-400
 const MOBILE_BREAKPOINT = 768;
 
-// --- Data ---
+// --- Data (Mesmos dados) ---
 const cardData = [
-    // 1. AI Agents
     {
         icon: Bot,
         title: 'Agente SDR',
-        description: 'Atendente virtual inteligente que se integra ao Google Calendar e Sistemas de Pedidos para qualificação e agendamento.',
+        description: 'Atendente virtual inteligente que qualifica leads e agenda reuniões automaticamente 24/7.',
         label: 'Prospecção Automática',
-        colSpan: 'md:col-span-2',
-        isAI: true
+        isAI: true,
+        useShine: true,
+        compatibleApps: ['Meta', 'Google', 'Telegram', 'CRM']
     },
     {
         icon: Database,
         title: 'Automação CRM & ERP',
-        description: 'Agentes que automatizam a entrada de dados, atualização de etapas e sincronização entre sistemas de gestão.',
+        description: 'Agentes que sincronizam dados e atualizam etapas entre sistemas de gestão sem intervenção humana.',
         label: 'Gestão Inteligente',
-        colSpan: 'md:col-span-1',
-        isAI: true
+        isAI: false,
+        compatibleApps: ['Bling', 'Olist', 'Clickup']
     },
     {
         icon: Zap,
         title: 'Agente de Vendas BPA',
-        description: 'Agente Autônomo completo: do atendimento inicial à triagem, burocracia, emissão de NFs e logística de envio.',
-        label: 'Automação Full-Service',
-        colSpan: 'md:col-span-1',
+        description: 'Automação full-service: do atendimento inicial à emissão de NFs e logística de envio.',
+        label: 'Automação Autônoma',
         isAI: true,
-        useShine: true // Special effect trigger
+
+        compatibleApps: ['Stripe', 'Shopify', 'Meta']
     },
-    // 2. Infrastructure
     {
         icon: Server,
         title: 'Infraestrutura High-End',
-        description: 'Workstations de alta performance, armazenamento NAS seguro e redes Wi-Fi empresariais robustas.',
+        description: 'Workstations de alta performance e redes empresariais robustas para operações exigentes.',
         label: 'Hardware & Redes',
-        colSpan: 'md:col-span-2',
-    },
-    // 3. Automation
-    {
-        icon: Cpu,
-        title: 'Automação & IoT',
-        description: 'Controle inteligente de ambientes, assistentes de voz locais e sensores para monitoramento 24/7.',
-        label: 'Automação',
-        colSpan: 'md:col-span-1',
-    },
-    {
-        icon: Headphones,
-        title: 'Suporte Especializado',
-        description: 'Consultoria técnica dedicada e suporte remoto ágil para manter sua operação sempre ativa.',
-        label: 'Suporte',
-        colSpan: 'md:col-span-1',
+        compatibleApps: ['Unifi', 'Dell', 'Lenovo']
     }
 ];
 
-// --- Helpers ---
+// --- Helpers e Componentes Internos (ParticleCard, Spotlight) ---
+// ... (Mantenha createParticleElement, calculateSpotlightValues, updateCardGlowProperties, GlobalSpotlight iguais ao anterior) ...
 const createParticleElement = (x: number, y: number, color = DEFAULT_GLOW_COLOR) => {
     const el = document.createElement('div');
     el.className = 'particle';
-    el.style.cssText = `
-    position: absolute;
-    width: 4px;
-    height: 4px;
-    border-radius: 50%;
-    background: rgba(${color}, 1);
-    box-shadow: 0 0 6px rgba(${color}, 0.6);
-    pointer-events: none;
-    z-index: 100;
-    left: ${x}px;
-    top: ${y}px;
-  `;
+    el.style.cssText = `position: absolute; width: 4px; height: 4px; border-radius: 50%; background: rgba(${color}, 1); box-shadow: 0 0 6px rgba(${color}, 0.6); pointer-events: none; z-index: 100; left: ${x}px; top: ${y}px;`;
     return el;
 };
 
-const calculateSpotlightValues = (radius: number) => ({
-    proximity: radius * 0.5,
-    fadeDistance: radius * 0.75
-});
+const calculateSpotlightValues = (radius: number) => ({ proximity: radius * 0.5, fadeDistance: radius * 0.75 });
 
 const updateCardGlowProperties = (card: HTMLElement, mouseX: number, mouseY: number, glow: number, radius: number) => {
     const rect = card.getBoundingClientRect();
     const relativeX = ((mouseX - rect.left) / rect.width) * 100;
     const relativeY = ((mouseY - rect.top) / rect.height) * 100;
-
     card.style.setProperty('--glow-x', `${relativeX}%`);
     card.style.setProperty('--glow-y', `${relativeY}%`);
     card.style.setProperty('--glow-intensity', glow.toString());
     card.style.setProperty('--glow-radius', `${radius}px`);
 };
 
-// --- Components ---
-
-const ParticleCard = ({
-    children,
-    className = '',
-    disableAnimations = false,
-    style,
-    particleCount = DEFAULT_PARTICLE_COUNT,
-    glowColor = DEFAULT_GLOW_COLOR,
-    enableTilt = true,
-    clickEffect = false,
-    enableMagnetism = false,
-    useShine = false // New prop
-}: any) => {
+const ParticleCard = ({ children, className = '', disableAnimations = false, style, particleCount = DEFAULT_PARTICLE_COUNT, glowColor = DEFAULT_GLOW_COLOR, enableTilt = true, clickEffect = false, enableMagnetism = false, useShine = false }: any) => {
     const cardRef = useRef<HTMLDivElement>(null);
     const particlesRef = useRef<HTMLElement[]>([]);
     const timeoutsRef = useRef<NodeJS.Timeout[]>([]);
@@ -122,11 +81,8 @@ const ParticleCard = ({
 
     const initializeParticles = useCallback(() => {
         if (particlesInitialized.current || !cardRef.current) return;
-
         const { width, height } = cardRef.current.getBoundingClientRect();
-        memoizedParticles.current = Array.from({ length: particleCount }, () =>
-            createParticleElement(Math.random() * width, Math.random() * height, glowColor)
-        );
+        memoizedParticles.current = Array.from({ length: particleCount }, () => createParticleElement(Math.random() * width, Math.random() * height, glowColor));
         particlesInitialized.current = true;
     }, [particleCount, glowColor]);
 
@@ -134,189 +90,76 @@ const ParticleCard = ({
         timeoutsRef.current.forEach(clearTimeout);
         timeoutsRef.current = [];
         magnetismAnimationRef.current?.kill();
-
         particlesRef.current.forEach(particle => {
-            gsap.to(particle, {
-                scale: 0,
-                opacity: 0,
-                duration: 0.3,
-                ease: 'back.in(1.7)',
-                onComplete: () => {
-                    particle.parentNode?.removeChild(particle);
-                }
-            });
+            gsap.to(particle, { scale: 0, opacity: 0, duration: 0.3, ease: 'back.in(1.7)', onComplete: () => { particle.parentNode?.removeChild(particle); } });
         });
         particlesRef.current = [];
     }, []);
 
     const animateParticles = useCallback(() => {
         if (!cardRef.current || !isHoveredRef.current) return;
-
-        if (!particlesInitialized.current) {
-            initializeParticles();
-        }
-
+        if (!particlesInitialized.current) { initializeParticles(); }
         memoizedParticles.current.forEach((particle, index) => {
             const timeoutId = setTimeout(() => {
                 if (!isHoveredRef.current || !cardRef.current) return;
-
                 const clone = particle.cloneNode(true) as HTMLElement;
                 cardRef.current.appendChild(clone);
                 particlesRef.current.push(clone);
-
                 gsap.fromTo(clone, { scale: 0, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.3, ease: 'back.out(1.7)' });
-
-                gsap.to(clone, {
-                    x: (Math.random() - 0.5) * 100,
-                    y: (Math.random() - 0.5) * 100,
-                    rotation: Math.random() * 360,
-                    duration: 2 + Math.random() * 2,
-                    ease: 'none',
-                    repeat: -1,
-                    yoyo: true
-                });
-
-                gsap.to(clone, {
-                    opacity: 0.3,
-                    duration: 1.5,
-                    ease: 'power2.inOut',
-                    repeat: -1,
-                    yoyo: true
-                });
+                gsap.to(clone, { x: (Math.random() - 0.5) * 100, y: (Math.random() - 0.5) * 100, rotation: Math.random() * 360, duration: 2 + Math.random() * 2, ease: 'none', repeat: -1, yoyo: true });
+                gsap.to(clone, { opacity: 0.3, duration: 1.5, ease: 'power2.inOut', repeat: -1, yoyo: true });
             }, index * 100);
-
             timeoutsRef.current.push(timeoutId);
         });
     }, [initializeParticles]);
 
     useEffect(() => {
         if (disableAnimations || !cardRef.current) return;
-
         const element = cardRef.current;
-
         const handleMouseEnter = () => {
             isHoveredRef.current = true;
             animateParticles();
-
-            if (enableTilt) {
-                gsap.to(element, {
-                    rotateX: 5,
-                    rotateY: 5,
-                    duration: 0.3,
-                    ease: 'power2.out',
-                    transformPerspective: 1000
-                });
-            }
+            if (enableTilt) { gsap.to(element, { rotateX: 5, rotateY: 5, duration: 0.3, ease: 'power2.out', transformPerspective: 1000 }); }
         };
-
         const handleMouseLeave = () => {
             isHoveredRef.current = false;
             clearAllParticles();
-
-            if (enableTilt) {
-                gsap.to(element, {
-                    rotateX: 0,
-                    rotateY: 0,
-                    duration: 0.3,
-                    ease: 'power2.out'
-                });
-            }
-
-            if (enableMagnetism) {
-                gsap.to(element, {
-                    x: 0,
-                    y: 0,
-                    duration: 0.3,
-                    ease: 'power2.out'
-                });
-            }
+            if (enableTilt) { gsap.to(element, { rotateX: 0, rotateY: 0, duration: 0.3, ease: 'power2.out' }); }
+            if (enableMagnetism) { gsap.to(element, { x: 0, y: 0, duration: 0.3, ease: 'power2.out' }); }
         };
-
         const handleMouseMove = (e: MouseEvent) => {
             if (!enableTilt && !enableMagnetism) return;
-
             const rect = element.getBoundingClientRect();
             const x = e.clientX - rect.left;
             const y = e.clientY - rect.top;
             const centerX = rect.width / 2;
             const centerY = rect.height / 2;
-
             if (enableTilt) {
                 const rotateX = ((y - centerY) / centerY) * -10;
                 const rotateY = ((x - centerX) / centerX) * 10;
-
-                gsap.to(element, {
-                    rotateX,
-                    rotateY,
-                    duration: 0.1,
-                    ease: 'power2.out',
-                    transformPerspective: 1000
-                });
+                gsap.to(element, { rotateX, rotateY, duration: 0.1, ease: 'power2.out', transformPerspective: 1000 });
             }
-
             if (enableMagnetism) {
                 const magnetX = (x - centerX) * 0.05;
                 const magnetY = (y - centerY) * 0.05;
-
-                magnetismAnimationRef.current = gsap.to(element, {
-                    x: magnetX,
-                    y: magnetY,
-                    duration: 0.3,
-                    ease: 'power2.out'
-                });
+                magnetismAnimationRef.current = gsap.to(element, { x: magnetX, y: magnetY, duration: 0.3, ease: 'power2.out' });
             }
         };
-
         const handleClick = (e: MouseEvent) => {
             if (!clickEffect) return;
-
             const rect = element.getBoundingClientRect();
             const x = e.clientX - rect.left;
             const y = e.clientY - rect.top;
-
-            const maxDistance = Math.max(
-                Math.hypot(x, y),
-                Math.hypot(x - rect.width, y),
-                Math.hypot(x, y - rect.height),
-                Math.hypot(x - rect.width, y - rect.height)
-            );
-
+            const maxDistance = Math.max(Math.hypot(x, y), Math.hypot(x - rect.width, y), Math.hypot(x, y - rect.height), Math.hypot(x - rect.width, y - rect.height));
             const ripple = document.createElement('div');
-            ripple.style.cssText = `
-          position: absolute;
-          width: ${maxDistance * 2}px;
-          height: ${maxDistance * 2}px;
-          border-radius: 50%;
-          background: radial-gradient(circle, rgba(${glowColor}, 0.4) 0%, rgba(${glowColor}, 0.2) 30%, transparent 70%);
-          left: ${x - maxDistance}px;
-          top: ${y - maxDistance}px;
-          pointer-events: none;
-          z-index: 1000;
-        `;
-
+            ripple.style.cssText = `position: absolute; width: ${maxDistance * 2}px; height: ${maxDistance * 2}px; border-radius: 50%; background: radial-gradient(circle, rgba(${glowColor}, 0.4) 0%, rgba(${glowColor}, 0.2) 30%, transparent 70%); left: ${x - maxDistance}px; top: ${y - maxDistance}px; pointer-events: none; z-index: 1000;`;
             element.appendChild(ripple);
-
-            gsap.fromTo(
-                ripple,
-                {
-                    scale: 0,
-                    opacity: 1
-                },
-                {
-                    scale: 1,
-                    opacity: 0,
-                    duration: 0.8,
-                    ease: 'power2.out',
-                    onComplete: () => ripple.remove()
-                }
-            );
+            gsap.fromTo(ripple, { scale: 0, opacity: 1 }, { scale: 1, opacity: 0, duration: 0.8, ease: 'power2.out', onComplete: () => ripple.remove() });
         };
-
         element.addEventListener('mouseenter', handleMouseEnter);
         element.addEventListener('mouseleave', handleMouseLeave);
         element.addEventListener('mousemove', handleMouseMove);
         element.addEventListener('click', handleClick);
-
         return () => {
             isHoveredRef.current = false;
             element.removeEventListener('mouseenter', handleMouseEnter);
@@ -328,150 +171,68 @@ const ParticleCard = ({
     }, [animateParticles, clearAllParticles, disableAnimations, enableTilt, enableMagnetism, clickEffect, glowColor]);
 
     return (
-        <div
-            ref={cardRef}
-            className={`${className} relative overflow-hidden ${useShine ? '!border-transparent' : ''}`}
-            style={{ ...style, position: 'relative', overflow: 'hidden' }}
-        >
-            {/* Shine Effect Layer - Integrated for Tilt */}
+        <div ref={cardRef} className={`${className} relative overflow-hidden ${useShine ? '!border-transparent' : ''}`} style={{ ...style, position: 'relative', overflow: 'hidden' }}>
             {useShine && (
-                <div
-                    style={
-                        {
-                            "--border-width": `2px`,
-                            "--border-radius": `24px`,
-                            "--duration": `14s`,
-                            "--mask-linear-gradient": `linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)`,
-                            "--background-radial-gradient": `radial-gradient(transparent,transparent, #A07CFE,#FE8FB5,#FFBE7B,transparent,transparent)`,
-                        } as React.CSSProperties
-                    }
-                    className={`pointer-events-none before:bg-shine-size before:absolute before:inset-0 before:aspect-square before:size-full before:rounded-[--border-radius] before:p-[--border-width] before:will-change-[background-position] before:content-[""] before:![-webkit-mask-composite:xor] before:![mask-composite:exclude] before:[background-image:--background-radial-gradient] before:[background-size:300%_300%] before:[mask:--mask-linear-gradient] motion-safe:before:animate-shine`}
-                />
+                <div style={{ "--border-width": `2px`, "--border-radius": `32px`, "--duration": `14s`, "--mask-linear-gradient": `linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)`, "--background-radial-gradient": `radial-gradient(transparent, transparent, #3B82F6, #2563EB, #1D4ED8, transparent, transparent)`, } as React.CSSProperties} className={`pointer-events-none before:bg-shine-size before:absolute before:inset-0 before:aspect-square before:size-full before:rounded-[--border-radius] before:p-[--border-width] before:will-change-[background-position] before:content-[""] before:![-webkit-mask-composite:xor] before:![mask-composite:exclude] before:[background-image:--background-radial-gradient] before:[background-size:300%_300%] before:[mask:--mask-linear-gradient] motion-safe:before:animate-shine`} />
             )}
-
             {children}
         </div>
     );
 };
 
-const GlobalSpotlight = ({
-    gridRef,
-    disableAnimations = false,
-    enabled = true,
-    spotlightRadius = DEFAULT_SPOTLIGHT_RADIUS,
-    glowColor = DEFAULT_GLOW_COLOR
-}: any) => {
+const GlobalSpotlight = ({ gridRef, disableAnimations = false, enabled = true, spotlightRadius = DEFAULT_SPOTLIGHT_RADIUS, glowColor = DEFAULT_GLOW_COLOR }: any) => {
     const spotlightRef = useRef<HTMLDivElement | null>(null);
-    const isInsideSection = useRef(false);
-
     useEffect(() => {
         if (disableAnimations || !gridRef?.current || !enabled) return;
-
         const spotlight = document.createElement('div');
         spotlight.className = 'global-spotlight';
-        spotlight.style.cssText = `
-        position: fixed;
-        width: 800px;
-        height: 800px;
-        border-radius: 50%;
-        pointer-events: none;
-        background: radial-gradient(circle,
-          rgba(${glowColor}, 0.15) 0%,
-          rgba(${glowColor}, 0.08) 15%,
-          rgba(${glowColor}, 0.04) 25%,
-          rgba(${glowColor}, 0.02) 40%,
-          rgba(${glowColor}, 0.01) 65%,
-          transparent 70%
-        );
-        z-index: 200;
-        opacity: 0;
-        transform: translate(-50%, -50%);
-        mix-blend-mode: screen;
-      `;
+        spotlight.style.cssText = `position: fixed; width: 800px; height: 800px; border-radius: 50%; pointer-events: none; background: radial-gradient(circle, rgba(${glowColor}, 0.12) 0%, rgba(${glowColor}, 0.06) 20%, rgba(${glowColor}, 0.02) 45%, transparent 70%); z-index: 200; opacity: 0; transform: translate(-50%, -50%); mix-blend-mode: screen;`;
         document.body.appendChild(spotlight);
         spotlightRef.current = spotlight;
+
+        let animationFrameId: number;
+
+        // Cache cards to avoid repeated querySelectorAll
+        const cards = Array.from(gridRef.current.querySelectorAll('.card')) as HTMLElement[];
 
         const handleMouseMove = (e: MouseEvent) => {
             if (!spotlightRef.current || !gridRef.current) return;
 
-            const section = gridRef.current.closest('.bento-section');
-            const rect = section?.getBoundingClientRect();
-            const mouseInside =
-                rect && e.clientX >= rect.left && e.clientX <= rect.right && e.clientY >= rect.top && e.clientY <= rect.bottom;
+            cancelAnimationFrame(animationFrameId);
+            animationFrameId = requestAnimationFrame(() => {
+                const section = gridRef.current.closest('.bento-section');
+                const rect = section?.getBoundingClientRect();
 
-            isInsideSection.current = mouseInside || false;
-            const cards = gridRef.current.querySelectorAll('.card');
-
-            if (!mouseInside) {
-                gsap.to(spotlightRef.current, {
-                    opacity: 0,
-                    duration: 0.3,
-                    ease: 'power2.out'
-                });
-                cards.forEach((card: any) => {
-                    card.style.setProperty('--glow-intensity', '0');
-                });
-                return;
-            }
-
-            const { proximity, fadeDistance } = calculateSpotlightValues(spotlightRadius);
-            let minDistance = Infinity;
-
-            cards.forEach((card: any) => {
-                const cardElement = card as HTMLElement;
-                const cardRect = cardElement.getBoundingClientRect();
-                const centerX = cardRect.left + cardRect.width / 2;
-                const centerY = cardRect.top + cardRect.height / 2;
-                const distance =
-                    Math.hypot(e.clientX - centerX, e.clientY - centerY) - Math.max(cardRect.width, cardRect.height) / 2;
-                const effectiveDistance = Math.max(0, distance);
-
-                minDistance = Math.min(minDistance, effectiveDistance);
-
-                let glowIntensity = 0;
-                if (effectiveDistance <= proximity) {
-                    glowIntensity = 1;
-                } else if (effectiveDistance <= fadeDistance) {
-                    glowIntensity = (fadeDistance - effectiveDistance) / (fadeDistance - proximity);
+                if (!rect || !(e.clientX >= rect.left && e.clientX <= rect.right && e.clientY >= rect.top && e.clientY <= rect.bottom)) {
+                    gsap.to(spotlightRef.current, { opacity: 0, duration: 0.3, ease: 'power2.out' });
+                    cards.forEach((card) => card.style.setProperty('--glow-intensity', '0'));
+                    return;
                 }
 
-                updateCardGlowProperties(cardElement, e.clientX, e.clientY, glowIntensity, spotlightRadius);
-            });
+                const { proximity, fadeDistance } = calculateSpotlightValues(spotlightRadius);
+                let minDistance = Infinity;
 
-            gsap.to(spotlightRef.current, {
-                left: e.clientX,
-                top: e.clientY,
-                duration: 0.1,
-                ease: 'power2.out'
-            });
+                cards.forEach((cardElement) => {
+                    const cardRect = cardElement.getBoundingClientRect();
+                    const distance = Math.hypot(e.clientX - (cardRect.left + cardRect.width / 2), e.clientY - (cardRect.top + cardRect.height / 2)) - Math.max(cardRect.width, cardRect.height) / 2;
+                    const effectiveDistance = Math.max(0, distance);
+                    minDistance = Math.min(minDistance, effectiveDistance);
 
-            const targetOpacity =
-                minDistance <= proximity
-                    ? 0.8
-                    : minDistance <= fadeDistance
-                        ? ((fadeDistance - minDistance) / (fadeDistance - proximity)) * 0.8
-                        : 0;
+                    let glowIntensity = 0;
+                    if (effectiveDistance <= proximity) { glowIntensity = 1; }
+                    else if (effectiveDistance <= fadeDistance) { glowIntensity = (fadeDistance - effectiveDistance) / (fadeDistance - proximity); }
 
-            gsap.to(spotlightRef.current, {
-                opacity: targetOpacity,
-                duration: targetOpacity > 0 ? 0.2 : 0.5,
-                ease: 'power2.out'
-            });
-        };
-
-        const handleMouseLeave = () => {
-            isInsideSection.current = false;
-            gridRef.current?.querySelectorAll('.card').forEach((card: any) => {
-                card.style.setProperty('--glow-intensity', '0');
-            });
-            if (spotlightRef.current) {
-                gsap.to(spotlightRef.current, {
-                    opacity: 0,
-                    duration: 0.3,
-                    ease: 'power2.out'
+                    updateCardGlowProperties(cardElement, e.clientX, e.clientY, glowIntensity, spotlightRadius);
                 });
-            }
+
+                gsap.to(spotlightRef.current, { left: e.clientX, top: e.clientY, duration: 0.1, ease: 'power2.out' });
+
+                const targetOpacity = minDistance <= proximity ? 0.8 : minDistance <= fadeDistance ? ((fadeDistance - minDistance) / (fadeDistance - proximity)) * 0.8 : 0;
+                gsap.to(spotlightRef.current, { opacity: targetOpacity, duration: targetOpacity > 0 ? 0.2 : 0.5, ease: 'power2.out' });
+            });
         };
+
+        const handleMouseLeave = () => { if (spotlightRef.current) gsap.to(spotlightRef.current, { opacity: 0, duration: 0.3, ease: 'power2.out' }); };
 
         document.addEventListener('mousemove', handleMouseMove);
         document.addEventListener('mouseleave', handleMouseLeave);
@@ -480,33 +241,25 @@ const GlobalSpotlight = ({
             document.removeEventListener('mousemove', handleMouseMove);
             document.removeEventListener('mouseleave', handleMouseLeave);
             spotlightRef.current?.parentNode?.removeChild(spotlightRef.current);
+            cancelAnimationFrame(animationFrameId);
         };
     }, [gridRef, disableAnimations, enabled, spotlightRadius, glowColor]);
-
     return null;
 };
 
 const BentoCardGrid = ({ children, gridRef }: any) => (
-    <div
-        className="bento-section grid gap-4 p-4 mx-auto max-w-7xl relative"
-        ref={gridRef}
-    >
+    <div className="bento-section grid gap-4 p-4 mx-auto max-w-7xl relative" ref={gridRef}>
         {children}
     </div>
 );
 
 const useMobileDetection = () => {
     const [isMobile, setIsMobile] = useState(false);
-
     useEffect(() => {
         const checkMobile = () => setIsMobile(window.innerWidth <= MOBILE_BREAKPOINT);
-
-        checkMobile();
-        window.addEventListener('resize', checkMobile);
-
+        checkMobile(); window.addEventListener('resize', checkMobile);
         return () => window.removeEventListener('resize', checkMobile);
     }, []);
-
     return isMobile;
 };
 
@@ -514,56 +267,92 @@ export function Solutions() {
     const gridRef = useRef(null);
     const isMobile = useMobileDetection();
     const shouldDisableAnimations = isMobile;
-    const glowColor = DEFAULT_GLOW_COLOR; // Blue
+    const glowColor = DEFAULT_GLOW_COLOR;
+    const [activeIndex, setActiveIndex] = useState(-1);
+
+    useEffect(() => {
+        if (!isMobile) return;
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    const index = Number(entry.target.getAttribute('data-index'));
+                    setActiveIndex(index);
+                }
+            });
+        }, {
+            root: null,
+            rootMargin: '-45% 0px -45% 0px', // Detects the element in the exact center
+            threshold: 0
+        });
+
+        const cards = document.querySelectorAll('.card-item');
+        cards.forEach((card) => observer.observe(card));
+
+        return () => observer.disconnect();
+    }, [isMobile]);
 
     return (
-        <section className="py-24 bg-black relative overflow-hidden">
-            {/* Style injection for GSAP variables */}
+        // MUDANÇA 1: Adicionei min-h-screen e flex para centralizar se quiser, 
+        // mas o principal é o gradiente de background para não ficar um preto chapado.
+        <section className="relative py-12 md:py-24 overflow-hidden bg-black selection:bg-blue-500/30">
+            <DotPattern
+                width={40}
+                height={40}
+                cx={1}
+                cy={1}
+                cr={1}
+                glow={!isMobile} // Desativa glow no mobile para performance
+                className={cn(
+                    "text-white/10", // Aumentado para 10% para ser visível
+                    "[mask-image:radial-gradient(900px_circle_at_center,white,transparent)]" // Aumentado area visivel
+                )}
+            />
+
             <style>
                 {`
             .bento-section {
               --glow-x: 50%;
               --glow-y: 50%;
               --glow-intensity: 0;
-              --glow-radius: 200px;
+              --glow-radius: 300px; /* Aumentei o raio para espalhar mais a luz */
               --glow-color: ${glowColor};
             }
-            .card--border-glow::after {
-              content: '';
-              position: absolute;
-              inset: 0;
-              padding: 2px;
-              background: radial-gradient(var(--glow-radius) circle at var(--glow-x) var(--glow-y),
-                  rgb(${glowColor}) 0%,
-                  rgba(${glowColor}, 0.5) 30%,
-                  transparent 60%);
-              border-radius: inherit;
-              -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-              -webkit-mask-composite: xor;
-              mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-              mask-composite: exclude;
-              pointer-events: none;
-              opacity: var(--glow-intensity);
-              transition: opacity 0.1s;
-              z-index: 10;
+            /* ... (mantenha os outros estilos CSS iguais) ... */
+            
+            /* Ajuste na Tag de IA para ficar mais legível */
+            .animate-spin-slow {
+                animation: spin-slow 4s linear infinite; /* Restoration: Faster spin for visibility */
             }
-            .particle::before {
-              content: '';
-              position: absolute;
-              inset: -2px;
-              background: rgba(${glowColor}, 0.3);
-              border-radius: 50%;
-              z-index: -1;
+            @keyframes spin-slow {
+                from {
+                    transform: rotate(0deg);
+                }
+                to {
+                    transform: rotate(360deg);
+                }
             }
           `}
             </style>
 
-            <div className="container mx-auto px-4 mb-16 text-center">
-                <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-                    Soluções <span className="text-blue-400">Nexis</span>
+            <div className="container relative z-10 mx-auto px-4 mb-12 md:mb-20 text-center">
+                {/* Badge Superior "Nossas Soluções" - Ajuda na hierarquia */}
+                {/* Badge Superior "Nossas Soluções" - Ajuda na hierarquia */}
+                <RainbowButton className="mb-6 h-9 rounded-full px-5">
+                    <span className="inline-flex items-center gap-2 text-xs font-semibold tracking-widest uppercase bg-gradient-to-r from-blue-200 to-white bg-clip-text text-transparent">
+                        <span className="w-1.5 h-1.5 rounded-full bg-blue-300 animate-pulse shadow-[0_0_10px_rgba(147,197,253,0.8)]" />
+                        A Nova Era da Eficiência
+                    </span>
+                </RainbowButton>
+
+                <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold text-white mb-6 tracking-tight">
+                    Tecnologia que <br className="hidden md:block" />
+                    <span className="text-transparent bg-clip-text bg-gradient-to-b from-brand to-cyan-400 drop-shadow-[0_0_30px_rgba(37,99,235,0.5)]">
+                        Impulsiona o Futuro
+                    </span>
                 </h2>
-                <p className="text-gray-400 max-w-2xl mx-auto text-lg">
-                    Infraestrutura robusta e IA avançada integradas para acelerar o seu negócio.
+                <p className="text-zinc-400 max-w-2xl mx-auto text-base md:text-lg leading-relaxed font-light">
+                    Substituímos processos manuais e lentos por uma infraestrutura autônoma que trabalha 24/7
                 </p>
             </div>
 
@@ -571,72 +360,95 @@ export function Solutions() {
                 gridRef={gridRef}
                 disableAnimations={shouldDisableAnimations}
                 enabled={true}
-                spotlightRadius={DEFAULT_SPOTLIGHT_RADIUS}
+                spotlightRadius={300} // Spotlight maior para ser menos "foco de lanterna"
                 glowColor={glowColor}
             />
-
             <BentoCardGrid gridRef={gridRef}>
-                <div className="grid grid-cols-1 md:grid-cols-4 gap-4 w-full">
+                <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6 w-full relative z-10">
                     {cardData.map((card, index) => (
                         <ParticleCard
                             key={index}
+                            data-index={index}
                             className={`
-                         card relative bg-zinc-950/50 rounded-3xl border border-white/10 overflow-hidden group
-                         ${card.colSpan || 'md:col-span-1'}
-                         min-h-[220px] flex flex-col justify-between p-6
-                         transition-all duration-300 hover:bg-zinc-900/80
-                         card--border-glow
-                     `}
+                          card card-item relative 
+                          /* --- MUDANÇA 3: Consistência de Material --- */
+                          /* Usando white/5 para igualar a textura dos cards de Problema */
+                          bg-white/5 backdrop-blur-md
+                          /* Aumentei o arredondamento para 32px (2rem) para aproximar do design anterior */
+                          rounded-[2rem] border border-white/5 
+                          overflow-hidden group
+                          min-h-[260px] md:min-h-[280px] flex flex-col justify-between p-6 md:p-8
+                          transition-all duration-500 
+                          hover:bg-zinc-900/80 hover:border-white/10
+                          hover:shadow-2xl hover:shadow-blue-900/10
+                          [&.is-active]:bg-zinc-900/80 [&.is-active]:border-white/10
+                          [&.is-active]:shadow-2xl [&.is-active]:shadow-blue-900/10
+                          card--border-glow
+                          ${(isMobile && index === activeIndex) ? 'is-active' : ''}
+                      `}
                             glowColor={glowColor}
                             disableAnimations={shouldDisableAnimations}
                             enableTilt={false}
                             clickEffect={true}
-                            enableMagnetism={!isMobile}
+                            enableMagnetism={false}
                             /* @ts-ignore */
                             useShine={card.useShine}
                         >
-                            {/* Inner Content matching ServiceCard logic but adapted for Bento */}
+                            <div className="absolute -bottom-8 -right-8 opacity-[0.02] transform rotate-[-15deg] group-hover:scale-110 group-hover:opacity-[0.06] group-[.is-active]:scale-110 group-[.is-active]:opacity-[0.06] transition-all duration-700 ease-out pointer-events-none">
+                                <card.icon strokeWidth={1} className="w-32 h-32 md:w-48 md:h-48 text-white" />
+                            </div>
+
+                            <GradualBlur
+                                className="absolute bottom-0 left-0 w-full h-32 pointer-events-none z-0"
+                                preset="bottom"
+                                strength={0.4}
+                                opacity={0.5}
+                            />
+
                             <div className="relative z-20 flex flex-col h-full justify-between w-full h-full">
                                 <div>
-                                    <div className="flex justify-between items-start mb-4">
+                                    <div className="flex justify-between items-start mb-6">
                                         {/* Icon Container with 'btn-blue' effect logic */}
                                         <div className={`
                                          w-12 h-12 rounded-xl flex items-center justify-center
                                          transition-all duration-300
-                                         ${(isMobile && /* @ts-ignore */ card.useShine)
+                                         ${(isMobile && index === activeIndex) /* Use activeIndex for mobile check */
                                                 ? 'bg-blue-500 text-white shadow-[0_0_20px_rgba(59,130,246,0.6)] -translate-y-2'
-                                                : 'bg-blue-500/10 text-blue-400 group-hover:bg-blue-500 group-hover:text-white group-hover:shadow-[0_0_20px_rgba(59,130,246,0.6)] group-hover:-translate-y-2'
+                                                : 'bg-blue-500/10 text-blue-400 group-hover:bg-blue-500 group-hover:text-white group-hover:shadow-[0_0_20px_rgba(59,130,246,0.6)] group-hover:-translate-y-2 group-[.is-active]:bg-blue-500 group-[.is-active]:text-white group-[.is-active]:shadow-[0_0_20px_rgba(59,130,246,0.6)] group-[.is-active]:-translate-y-2' /* Add group-[.is-active] variants */
                                             }
                                      `}>
-                                            <card.icon className="w-6 h-6" />
+                                            <card.icon className="w-7 h-7" strokeWidth={1.5} />
                                         </div>
 
-                                        {/* AI Badge */}
                                         {/* @ts-ignore */}
                                         {card.isAI && (
-                                            <span className="px-2 py-1 rounded-full bg-blue-500/20 border border-blue-500/30 text-[10px] font-bold text-blue-300 tracking-wider uppercase backdrop-blur-sm">
-                                                IA Integrada
-                                            </span>
+                                            <RainbowButton className="mb-6 h-7 w-12 rounded-full px-5 opacity-80">
+                                                <span className="inline-flex items-center text-xs font-semibold tracking-widest uppercase bg-gradient-to-r from-blue-200 to-white bg-clip-text text-transparent">
+                                                    IA
+                                                </span>
+                                            </RainbowButton>
                                         )}
                                     </div>
 
-                                    <h3 className="text-xl font-bold text-white mb-2 group-hover:text-blue-100 transition-colors">
+                                    <h3 className="text-xl font-medium text-zinc-100 mb-3 group-hover:text-white group-[.is-active]:text-white transition-colors tracking-tight">
                                         {card.title}
                                     </h3>
-                                    <p className="text-sm text-gray-400 leading-relaxed max-w-[90%] group-hover:text-gray-300 transition-colors">
+                                    <p className="text-sm text-zinc-400 leading-7 group-hover:text-zinc-300 group-[.is-active]:text-zinc-300 transition-colors line-clamp-3">
                                         {card.description}
                                     </p>
                                 </div>
 
-                                <div className="mt-4 pt-4 border-t border-white/5 flex items-center justify-between">
-                                    <span className="text-xs font-medium text-blue-400/80 uppercase tracking-widest">
+                                <div className="mt-8 pt-6 border-t border-white/5 flex items-center justify-between group/footer">
+                                    <span className="text-xs font-semibold text-zinc-500 group-hover:text-blue-400/80 group-[.is-active]:text-blue-400/80 uppercase tracking-widest transition-colors relative z-10">
                                         {card.label}
                                     </span>
-                                    {/* Arrow or visual indicator could go here */}
-                                    <div className="w-8 h-8 rounded-full border border-white/10 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-x-[-10px] group-hover:translate-x-0">
-                                        <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M2.5 6H9.5M9.5 6L6.5 3M9.5 6L6.5 9" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-                                        </svg>
+                                    {/* @ts-ignore */}
+                                    <div className="flex items-center gap-3 opacity-0 group-hover:opacity-100 group-[.is-active]:opacity-100 transition-all duration-500 translate-y-2 group-hover:translate-y-0 group-[.is-active]:translate-y-0 relative z-10">
+                                        {card.compatibleApps?.map((app: string, i: number) => (
+                                            <span key={i} className="text-[10px] font-medium text-zinc-500 grayscale hover:grayscale-0 hover:text-zinc-300 transition-all cursor-default">
+                                                {app}
+                                            </span>
+                                        ))}
                                     </div>
                                 </div>
                             </div>

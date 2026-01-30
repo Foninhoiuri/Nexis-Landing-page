@@ -4,7 +4,7 @@ import React from "react";
 import { Navbar } from "@/components/Navbar";
 import { Hero } from "@/components/Hero";
 import { Problems } from "@/components/Problems";
-import { AboutMe } from "@/components/AboutMe";
+
 import { ChatDemo } from "@/components/ChatDemo";
 import { Features } from "@/components/Features";
 import { Solutions } from "@/components/Solutions";
@@ -27,7 +27,7 @@ export default function Home() {
 
             <Solutions />
 
-            <AboutMe />
+
 
             <ChatDemo />
 

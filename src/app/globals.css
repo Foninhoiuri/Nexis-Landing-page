@@ -21,6 +21,7 @@
         --bg-surface: 10 10 10;
 
         --foreground: 255 255 255;
+        --color-red: #ef4444;
     }
 
     /* Scaling for smaller desktops (Laptop View) */
