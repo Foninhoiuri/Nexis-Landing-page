@@ -71,7 +71,7 @@ export function Hero() {
                 </div>
 
                 {/* Coluna 2: Órbitas (Mobile: Acima, Desktop: Direita) */}
-                <div className="relative flex items-center justify-center h-full xl:h-full order-1 xl:order-2 blur-[0px] md:blur-[2px] xl:blur-0">
+                <div className="relative flex items-center justify-center h-full xl:h-full order-1 xl:order-2 blur-[2px] md:blur-[2px] xl:blur-0">
                     <HeroOrbitingBackground />
                 </div>
             </div>
