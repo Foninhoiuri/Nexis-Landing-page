@@ -282,8 +282,8 @@ export function Solutions() {
             });
         }, {
             root: null,
-            rootMargin: '-45% 0px -45% 0px', // Detects the element in the exact center
-            threshold: 0
+            rootMargin: '-20% 0px -20% 0px', // Much larger active zone (60% of screen) to catch the last card
+            threshold: 0.1
         });
 
         const cards = document.querySelectorAll('.card-item');
@@ -295,17 +295,17 @@ export function Solutions() {
     return (
         // MUDANÇA 1: Adicionei min-h-screen e flex para centralizar se quiser, 
         // mas o principal é o gradiente de background para não ficar um preto chapado.
-        <section className="relative py-12 md:py-24 overflow-hidden bg-black selection:bg-blue-500/30">
+        <section id="solutions" className="relative py-12 md:py-24 overflow-hidden bg-black selection:bg-blue-500/30">
             <DotPattern
-                width={40}
-                height={40}
+                width={30}
+                height={30}
                 cx={1}
                 cy={1}
-                cr={1}
+                cr={1.5}
                 glow={!isMobile} // Desativa glow no mobile para performance
                 className={cn(
-                    "text-white/10", // Aumentado para 10% para ser visível
-                    "[mask-image:radial-gradient(900px_circle_at_center,white,transparent)]" // Aumentado area visivel
+                    "text-white/20", // Aumentado para 20% para ser visível
+                    "[mask-image:radial-gradient(700px_circle_at_center,white,transparent)]" // Aumentado area visivel
                 )}
             />
 
@@ -371,17 +371,16 @@ export function Solutions() {
                             data-index={index}
                             className={`
                           card card-item relative 
-                          /* --- MUDANÇA 3: Consistência de Material --- */
-                          /* Usando white/5 para igualar a textura dos cards de Problema */
-                          bg-white/5 backdrop-blur-md
-                          /* Aumentei o arredondamento para 32px (2rem) para aproximar do design anterior */
-                          rounded-[2rem] border border-white/5 
+                          bg-zinc-950/40 backdrop-blur-[1.5px]
+                          rounded-[1.5rem] md:rounded-[2rem] border border-white/0 
                           overflow-hidden group
-                          min-h-[260px] md:min-h-[280px] flex flex-col justify-between p-6 md:p-8
+                          mx-4 md:mx-0 /* Add margin on mobile to prevent full-width square look */
+                          min-h-[240px] md:min-h-[280px] flex flex-col justify-between 
+                          pt-10 px-8 pb-8 md:p-8 /* Increased top padding mainly for mobile gap */
                           transition-all duration-500 
-                          hover:bg-zinc-900/80 hover:border-white/10
+                          hover:bg-zinc-900/60 hover:border-white/5
                           hover:shadow-2xl hover:shadow-blue-900/10
-                          [&.is-active]:bg-zinc-900/80 [&.is-active]:border-white/10
+                          [&.is-active]:bg-zinc-900/60 [&.is-active]:border-white/5
                           [&.is-active]:shadow-2xl [&.is-active]:shadow-blue-900/10
                           card--border-glow
                           ${(isMobile && index === activeIndex) ? 'is-active' : ''}
@@ -438,7 +437,7 @@ export function Solutions() {
                                     </p>
                                 </div>
 
-                                <div className="mt-8 pt-6 border-t border-white/5 flex items-center justify-between group/footer">
+                                <div className="mt-8 pt-6 border-t border-white/0 flex items-center justify-between group/footer">
                                     <span className="text-xs font-semibold text-zinc-500 group-hover:text-blue-400/80 group-[.is-active]:text-blue-400/80 uppercase tracking-widest transition-colors relative z-10">
                                         {card.label}
                                     </span>

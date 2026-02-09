@@ -5,12 +5,13 @@ import { Navbar } from "@/components/Navbar";
 import { Hero } from "@/components/Hero";
 import { Problems } from "@/components/Problems";
 
-import { ChatDemo } from "@/components/ChatDemo";
+import { Dashboard } from "@/components/Dashboard";
 import { Features } from "@/components/Features";
 import { Solutions } from "@/components/Solutions";
-import { Authority } from "@/components/Authority";
 import { Methodology } from "@/components/Methodology";
-import { UseCases } from "@/components/UseCases";
+import { Reviews } from "@/components/Reviews";
+
+import { FAQ } from "@/components/FAQ";
 import { Footer } from "@/components/Footer";
 
 export default function Home() {
@@ -29,15 +30,15 @@ export default function Home() {
 
 
 
-            <ChatDemo />
+            <Dashboard />
 
             <Features />
 
-            <Authority />
-
             <Methodology />
 
-            <UseCases />
+            <Reviews />
+
+            <FAQ />
 
             <Footer />
         </main>

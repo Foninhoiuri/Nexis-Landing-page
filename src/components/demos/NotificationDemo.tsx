@@ -1,8 +1,7 @@
-
 import React from "react";
 import { cn } from "@/lib/utils";
 import { AnimatedList } from "@/components/ui/AnimatedList";
-import { WhatsAppIcon } from "@/components/ui/Icons";
+import { SocialIcons } from "@/components/ui/Icons";
 
 interface Item {
     name: string
@@ -17,35 +16,35 @@ let notifications = [
         name: "Cliente 01",
         description: "Péssimo atendimento, ninguém responde🙄",
         time: "15m atrás",
-        icon: <WhatsAppIcon className="w-6 h-6 text-white" />,
+        icon: <SocialIcons.whatsapp className="w-6 h-6 text-white" />,
         color: "#25D366",
     },
     {
         name: "Cliente 02",
         description: "Alguém ai?? Estou esperando...",
         time: "10m atrás",
-        icon: <WhatsAppIcon className="w-6 h-6 text-white" />,
+        icon: <SocialIcons.whatsapp className="w-6 h-6 text-white" />,
         color: "#25D366",
     },
     {
         name: "Cliente 03",
         description: "Já fechei com outro, demoraram demais!",
         time: "5m atrás",
-        icon: <WhatsAppIcon className="w-6 h-6 text-white" />,
+        icon: <SocialIcons.whatsapp className="w-6 h-6 text-white" />,
         color: "#25D366",
     },
     {
         name: "Cliente 04",
         description: "Vou cancelar meu pedido 🤬",
         time: "2m atrás",
-        icon: <WhatsAppIcon className="w-6 h-6 text-white" />,
+        icon: <SocialIcons.whatsapp className="w-6 h-6 text-white" />,
         color: "#25D366",
     },
     {
         name: "Cliente 05",
         description: "Oi? Você viu minha mensagem?",
         time: "agora",
-        icon: <WhatsAppIcon className="w-6 h-6 text-white" />,
+        icon: <SocialIcons.whatsapp className="w-6 h-6 text-white" />,
         color: "#25D366",
     },
 ];

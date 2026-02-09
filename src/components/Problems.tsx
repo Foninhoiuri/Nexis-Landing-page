@@ -2,13 +2,9 @@
 
 import React from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Server, Zap, AlertCircle, User, Flame, Snowflake, Clock, Copy, Check, X, FileSpreadsheet, MessageCircle, ServerCrash, CheckCircle2, ArrowUpRight } from "lucide-react";
 import { cn } from "@/lib/utils";
 import GradualBlur from "@/components/ui/GradualBlur";
 import { TypingAnimation } from "@/components/ui/TypingAnimation";
-import { AnimatedList } from "@/components/ui/AnimatedList";
-import { WhatsAppIcon } from "@/components/ui/Icons";
-
 import { ManualProcessDemo } from "@/components/demos/ManualProcessDemo";
 import { AnimatedListDemo } from "@/components/demos/NotificationDemo";
 import { UnfollowedLeadsDemo } from "@/components/demos/UnfollowedLeadsDemo";
@@ -41,7 +37,7 @@ const PROBLEMS = [
 
 export function Problems() {
     return (
-        <section className="py-24 relative bg-background overflow-hidden">
+        <section id="problems" className="py-24 relative bg-background overflow-hidden">
             {/* Background Texture/Gradient */}
             <div className="absolute inset-0 bg-gradient-to-b from-transparent via-red-900/5 to-transparent pointer-events-none" />
 
@@ -100,7 +96,7 @@ function ProblemCard({ title, description, index, component }: { title: string, 
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: index * 0.1 }}
             className={cn(
-                "group relative h-[500px] bg-white/5 transition-all duration-500 rounded-[3rem] border border-white/5 hover:scale-[1.02] bg-gradient-to-tr from-brand/5 via-transparent to-transparent",
+                "group relative h-[500px] bg-white/5 transition-all duration-500 rounded-[3rem] hover:scale-[1.02] bg-gradient-to-tr from-brand/5 via-transparent to-transparent",
                 "overflow-hidden z-20"
             )}
         >
