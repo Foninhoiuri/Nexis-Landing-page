@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect, useRef } from "react";
 import { useDevice } from "@/hooks/useDevice";
 import Link from "next/link";
+import { WhatsAppHoverButton } from "@/components/ui/whatsapp-hover-button";
 
 // --- ASSETS ---
 const ASSETS = {
@@ -178,15 +179,12 @@ export function Navbar() {
                         </nav>
                     )}
 
-                    {/* 3. BOTÃO COMEÇAR */}
-                    <div className="flex items-center ml-8">
-                        <Link 
-                            href="/login" 
-                            className="px-6 py-2.5 rounded-full bg-blue-600 text-white font-bold text-sm shadow-lg hover:shadow-blue-500/40 hover:scale-105 active:scale-95 transition-all"
-                        >
-                            Começar
-                        </Link>
-                    </div>
+                    {/* 3. BOTÃO COMEÇAR (SUBSTITUÍDO) */}
+                    <div className="flex items-center ml-8 hover:cursor-pointer">
+                        <WhatsAppHoverButton
+                            className="min-w-[140px]" 
+                        />
+                    </div>  
                 </motion.div>
             </div>
 

@@ -22,7 +22,23 @@ export const metadata: Metadata = {
     "Atendimento Automatizado",
     "Chatbot IA",
     "Suporte Inteligente"
-    ]
+    ],
+    openGraph: {
+    title: "Nexis - Automação Inteligente",
+    description: "Gerencie sua infraestrutura com o Nexis.",
+    url: "https://igoriurialves.com.br",
+    siteName: "Nexis",
+    images: [
+      {
+        url: "https://www.igoriurialves.com.br/macbook%20com%20tela.png", // Link da imagem
+        width: 1200,
+        height: 630,
+        alt: "Logo do Nexis",
+      },
+    ],
+    locale: "pt_BR",
+    type: "website",
+    }
 };
 
 export default function RootLayout({
