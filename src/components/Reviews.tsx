@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from "react";
-import { motion, useAnimationFrame, useMotionValue } from "framer-motion";
+import React, { useEffect, useState, useRef } from "react";
+import { motion, useAnimationFrame, useMotionValue, useInView } from "framer-motion";
 import { User, Check, Plus, CheckCircle2, Star, StarHalf } from "lucide-react";
 import GradualBlur from "@/components/ui/gradual-blur";
 import { RainbowButton } from "@/components/ui/BlueRainbowButton";
@@ -11,7 +11,7 @@ const CARD_HEIGHT = 540;
 const CARD_GAP = 40;
 
 const REVIEWS_DATA = [
-    
+
     {
         nome: "Teacher Bruno",
         company: "Professor & Consultor",
@@ -67,6 +67,8 @@ const renderStars = (score: number) => {
 
 export function Reviews() {
     const [isMobile, setIsMobile] = useState(false);
+    const sectionRef = useRef(null);
+    const isInView = useInView(sectionRef, { amount: 0.3, once: false });
 
     useEffect(() => {
         const checkMobile = () => setIsMobile(window.innerWidth < 768);
@@ -76,7 +78,7 @@ export function Reviews() {
     }, []);
 
     return (
-        <section id="reviews" className={`relative py-24 bg-black overflow-hidden font-['Poppins']`}>
+        <section id="reviews" ref={sectionRef} className={`relative py-24 bg-black overflow-hidden font-['Poppins']`}>
             <style jsx>{`
                 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
             `}</style>
@@ -101,29 +103,30 @@ export function Reviews() {
             </div>
 
             <div className="relative w-full overflow-hidden">
-                <MarqueeRow items={REVIEWS_DATA} cardWidth={isMobile ? 280 : CARD_WIDTH} />
+                <MarqueeRow items={REVIEWS_DATA} cardWidth={isMobile ? 280 : CARD_WIDTH} isMobile={isMobile} isInView={isInView} />
             </div>
         </section>
     );
 }
 
 // ---------------- CARD DARK MODE + PROGRESSIVE BLUR ----------------
-// ---------------- CARD DARK MODE + PROGRESSIVE BLUR ----------------
-const ReviewCard = ({ item, cardWidth }: any) => {
+const ReviewCard = ({ item, cardWidth, isActive, onCustomHover, isMobile }: any) => {
     return (
         <motion.div
             style={{ width: cardWidth, height: CARD_HEIGHT }}
-            className="group relative 
+            className={`group relative 
             rounded-[3.5rem] 
             bg-neutral-900 
             overflow-hidden shrink-0 cursor-pointer 
             transition-colors duration-500 
-            
-            hover:bg-neutral-900/80"
+            hover:bg-neutral-900/80
+            ${(isMobile && isActive) ? "bg-neutral-900/80" : ""}`}
 
             initial="rest"
-            whileHover="hover"
-            animate="rest"
+            animate={isMobile ? (isActive ? "hover" : "rest") : undefined}
+            whileHover={!isMobile ? "hover" : undefined}
+            onMouseEnter={isMobile ? undefined : onCustomHover}
+            onClick={isMobile ? onCustomHover : undefined}
         >
             {/* 1. CONTAINER DA IMAGEM E MÁSCARA */}
             <motion.div
@@ -234,12 +237,24 @@ const ReviewCard = ({ item, cardWidth }: any) => {
     );
 };
 
-// ---------------- MARQUEE (Mantido) ----------------
-function MarqueeRow({ items, cardWidth }: any) {
+// ---------------- MARQUEE (Mantido + Auto Rotation) ----------------
+function MarqueeRow({ items, cardWidth, isMobile, isInView }: any) {
     const x = useMotionValue(0);
     const [paused, setPaused] = useState(false);
+    const [activeIndex, setActiveIndex] = useState(0); // Start with first active
     const duplicated = [...items, ...items, ...items];
     const contentWidth = items.length * (cardWidth + CARD_GAP);
+
+    // Auto-cycle active card every 3 seconds if not paused AND isMobile AND isInView
+    useEffect(() => {
+        if (paused || !isMobile || !isInView) return;
+
+        const interval = setInterval(() => {
+            setActiveIndex((prev) => (prev + 1) % items.length);
+        }, 3000);
+
+        return () => clearInterval(interval);
+    }, [paused, items.length, isMobile, isInView]);
 
     useAnimationFrame(() => {
         if (paused) return;
@@ -257,7 +272,14 @@ function MarqueeRow({ items, cardWidth }: any) {
             dragConstraints={{ left: -contentWidth, right: 0 }}
         >
             {duplicated.map((item, i) => (
-                <ReviewCard key={i} item={item} cardWidth={cardWidth} />
+                <ReviewCard
+                    key={i}
+                    item={item}
+                    cardWidth={cardWidth}
+                    isActive={i % items.length === activeIndex}
+                    onCustomHover={() => setActiveIndex(i % items.length)}
+                    isMobile={isMobile}
+                />
             ))}
         </motion.div>
     );

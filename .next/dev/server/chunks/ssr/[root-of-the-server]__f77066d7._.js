@@ -7668,6 +7668,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/framer-motion/dist/es/render/components/motion/proxy.mjs [app-ssr] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$utils$2f$use$2d$animation$2d$frame$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/framer-motion/dist/es/utils/use-animation-frame.mjs [app-ssr] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$value$2f$use$2d$motion$2d$value$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/framer-motion/dist/es/value/use-motion-value.mjs [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$utils$2f$use$2d$in$2d$view$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/framer-motion/dist/es/utils/use-in-view.mjs [app-ssr] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$circle$2d$check$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__CheckCircle2$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/circle-check.js [app-ssr] (ecmascript) <export default as CheckCircle2>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$star$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Star$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/star.js [app-ssr] (ecmascript) <export default as Star>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$star$2d$half$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__StarHalf$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/star-half.js [app-ssr] (ecmascript) <export default as StarHalf>");
@@ -7767,6 +7768,11 @@ const renderStars = (score)=>{
 };
 function Reviews() {
     const [isMobile, setIsMobile] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(false);
+    const sectionRef = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useRef"])(null);
+    const isInView = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$utils$2f$use$2d$in$2d$view$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useInView"])(sectionRef, {
+        amount: 0.3,
+        once: false
+    });
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useEffect"])(()=>{
         const checkMobile = ()=>setIsMobile(window.innerWidth < 768);
         checkMobile();
@@ -7775,6 +7781,7 @@ function Reviews() {
     }, []);
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
         id: "reviews",
+        ref: sectionRef,
         className: "jsx-7a7665c2182e835b" + " " + `relative py-24 bg-black overflow-hidden font-['Poppins']`,
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$styled$2d$jsx$2f$style$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
@@ -7793,19 +7800,19 @@ function Reviews() {
                                     className: "jsx-7a7665c2182e835b" + " " + "w-1.5 h-1.5 rounded-full bg-blue-300 animate-pulse shadow-[0_0_10px_rgba(147,197,253,0.8)]"
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/Reviews.tsx",
-                                    lineNumber: 87,
+                                    lineNumber: 89,
                                     columnNumber: 25
                                 }, this),
                                 "Resultados Comprovados"
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/components/Reviews.tsx",
-                            lineNumber: 86,
+                            lineNumber: 88,
                             columnNumber: 21
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/src/components/Reviews.tsx",
-                        lineNumber: 85,
+                        lineNumber: 87,
                         columnNumber: 17
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
@@ -7816,7 +7823,7 @@ function Reviews() {
                                 className: "jsx-7a7665c2182e835b" + " " + "hidden md:block"
                             }, void 0, false, {
                                 fileName: "[project]/src/components/Reviews.tsx",
-                                lineNumber: 93,
+                                lineNumber: 95,
                                 columnNumber: 33
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -7824,13 +7831,13 @@ function Reviews() {
                                 children: "Confiam em Nós"
                             }, void 0, false, {
                                 fileName: "[project]/src/components/Reviews.tsx",
-                                lineNumber: 94,
+                                lineNumber: 96,
                                 columnNumber: 21
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/Reviews.tsx",
-                        lineNumber: 92,
+                        lineNumber: 94,
                         columnNumber: 17
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -7838,49 +7845,58 @@ function Reviews() {
                         children: "Histórias reais de quem transformou suas operações com nossa tecnologia."
                     }, void 0, false, {
                         fileName: "[project]/src/components/Reviews.tsx",
-                        lineNumber: 98,
+                        lineNumber: 100,
                         columnNumber: 17
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/components/Reviews.tsx",
-                lineNumber: 84,
+                lineNumber: 86,
                 columnNumber: 13
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                 className: "jsx-7a7665c2182e835b" + " " + "relative w-full overflow-hidden",
                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(MarqueeRow, {
                     items: REVIEWS_DATA,
-                    cardWidth: isMobile ? 280 : CARD_WIDTH
+                    cardWidth: isMobile ? 280 : CARD_WIDTH,
+                    isMobile: isMobile,
+                    isInView: isInView
                 }, void 0, false, {
                     fileName: "[project]/src/components/Reviews.tsx",
-                    lineNumber: 104,
+                    lineNumber: 106,
                     columnNumber: 17
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/src/components/Reviews.tsx",
-                lineNumber: 103,
+                lineNumber: 105,
                 columnNumber: 13
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/src/components/Reviews.tsx",
-        lineNumber: 79,
+        lineNumber: 81,
         columnNumber: 9
     }, this);
 }
 // ---------------- CARD DARK MODE + PROGRESSIVE BLUR ----------------
-// ---------------- CARD DARK MODE + PROGRESSIVE BLUR ----------------
-const ReviewCard = ({ item, cardWidth })=>{
+const ReviewCard = ({ item, cardWidth, isActive, onCustomHover, isMobile })=>{
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].div, {
         style: {
             width: cardWidth,
             height: CARD_HEIGHT
         },
-        className: "group relative    rounded-[3.5rem]    bg-neutral-900    overflow-hidden shrink-0 cursor-pointer    transition-colors duration-500       hover:bg-neutral-900/80",
+        className: `group relative 
+            rounded-[3.5rem] 
+            bg-neutral-900 
+            overflow-hidden shrink-0 cursor-pointer 
+            transition-colors duration-500 
+            hover:bg-neutral-900/80
+            ${isMobile && isActive ? "bg-neutral-900/80" : ""}`,
         initial: "rest",
-        whileHover: "hover",
-        animate: "rest",
+        animate: isMobile ? isActive ? "hover" : "rest" : undefined,
+        whileHover: !isMobile ? "hover" : undefined,
+        onMouseEnter: isMobile ? undefined : onCustomHover,
+        onClick: isMobile ? onCustomHover : undefined,
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].div, {
                 className: "relative z-0 overflow-hidden",
@@ -7938,7 +7954,7 @@ const ReviewCard = ({ item, cardWidth })=>{
                         }
                     }, void 0, false, {
                         fileName: "[project]/src/components/Reviews.tsx",
-                        lineNumber: 150,
+                        lineNumber: 153,
                         columnNumber: 17
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].div, {
@@ -7962,12 +7978,12 @@ const ReviewCard = ({ item, cardWidth })=>{
                             divCount: 8
                         }, void 0, false, {
                             fileName: "[project]/src/components/Reviews.tsx",
-                            lineNumber: 172,
+                            lineNumber: 175,
                             columnNumber: 21
                         }, ("TURBOPACK compile-time value", void 0))
                     }, void 0, false, {
                         fileName: "[project]/src/components/Reviews.tsx",
-                        lineNumber: 164,
+                        lineNumber: 167,
                         columnNumber: 17
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].div, {
@@ -7982,13 +7998,13 @@ const ReviewCard = ({ item, cardWidth })=>{
                         }
                     }, void 0, false, {
                         fileName: "[project]/src/components/Reviews.tsx",
-                        lineNumber: 182,
+                        lineNumber: 185,
                         columnNumber: 17
                     }, ("TURBOPACK compile-time value", void 0))
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/components/Reviews.tsx",
-                lineNumber: 129,
+                lineNumber: 132,
                 columnNumber: 13
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -8021,20 +8037,20 @@ const ReviewCard = ({ item, cardWidth })=>{
                                     children: item.nome
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/Reviews.tsx",
-                                    lineNumber: 204,
+                                    lineNumber: 207,
                                     columnNumber: 25
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$circle$2d$check$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__CheckCircle2$3e$__["CheckCircle2"], {
                                     className: "w-5 h-5 text-emerald-500 fill-emerald-500/20"
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/Reviews.tsx",
-                                    lineNumber: 207,
+                                    lineNumber: 210,
                                     columnNumber: 25
                                 }, ("TURBOPACK compile-time value", void 0))
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/components/Reviews.tsx",
-                            lineNumber: 203,
+                            lineNumber: 206,
                             columnNumber: 21
                         }, ("TURBOPACK compile-time value", void 0)),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -8042,7 +8058,7 @@ const ReviewCard = ({ item, cardWidth })=>{
                             children: item.company
                         }, void 0, false, {
                             fileName: "[project]/src/components/Reviews.tsx",
-                            lineNumber: 210,
+                            lineNumber: 213,
                             columnNumber: 21
                         }, ("TURBOPACK compile-time value", void 0)),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -8050,7 +8066,7 @@ const ReviewCard = ({ item, cardWidth })=>{
                             children: renderStars(item.stars)
                         }, void 0, false, {
                             fileName: "[project]/src/components/Reviews.tsx",
-                            lineNumber: 215,
+                            lineNumber: 218,
                             columnNumber: 21
                         }, ("TURBOPACK compile-time value", void 0)),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].div, {
@@ -8076,42 +8092,56 @@ const ReviewCard = ({ item, cardWidth })=>{
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/Reviews.tsx",
-                                lineNumber: 227,
+                                lineNumber: 230,
                                 columnNumber: 25
                             }, ("TURBOPACK compile-time value", void 0))
                         }, void 0, false, {
                             fileName: "[project]/src/components/Reviews.tsx",
-                            lineNumber: 220,
+                            lineNumber: 223,
                             columnNumber: 21
                         }, ("TURBOPACK compile-time value", void 0))
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/components/Reviews.tsx",
-                    lineNumber: 195,
+                    lineNumber: 198,
                     columnNumber: 17
                 }, ("TURBOPACK compile-time value", void 0))
             }, void 0, false, {
                 fileName: "[project]/src/components/Reviews.tsx",
-                lineNumber: 192,
+                lineNumber: 195,
                 columnNumber: 13
             }, ("TURBOPACK compile-time value", void 0))
         ]
     }, void 0, true, {
         fileName: "[project]/src/components/Reviews.tsx",
-        lineNumber: 114,
+        lineNumber: 115,
         columnNumber: 9
     }, ("TURBOPACK compile-time value", void 0));
 };
-// ---------------- MARQUEE (Mantido) ----------------
-function MarqueeRow({ items, cardWidth }) {
+// ---------------- MARQUEE (Mantido + Auto Rotation) ----------------
+function MarqueeRow({ items, cardWidth, isMobile, isInView }) {
     const x = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$value$2f$use$2d$motion$2d$value$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useMotionValue"])(0);
     const [paused, setPaused] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(false);
+    const [activeIndex, setActiveIndex] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(0); // Start with first active
     const duplicated = [
         ...items,
         ...items,
         ...items
     ];
     const contentWidth = items.length * (cardWidth + CARD_GAP);
+    // Auto-cycle active card every 3 seconds if not paused AND isMobile AND isInView
+    (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useEffect"])(()=>{
+        if (paused || !isMobile || !isInView) return;
+        const interval = setInterval(()=>{
+            setActiveIndex((prev)=>(prev + 1) % items.length);
+        }, 3000);
+        return ()=>clearInterval(interval);
+    }, [
+        paused,
+        items.length,
+        isMobile,
+        isInView
+    ]);
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$utils$2f$use$2d$animation$2d$frame$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useAnimationFrame"])(()=>{
         if (paused) return;
         const current = x.get();
@@ -8132,15 +8162,18 @@ function MarqueeRow({ items, cardWidth }) {
         },
         children: duplicated.map((item, i)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(ReviewCard, {
                 item: item,
-                cardWidth: cardWidth
+                cardWidth: cardWidth,
+                isActive: i % items.length === activeIndex,
+                onCustomHover: ()=>setActiveIndex(i % items.length),
+                isMobile: isMobile
             }, i, false, {
                 fileName: "[project]/src/components/Reviews.tsx",
-                lineNumber: 260,
+                lineNumber: 275,
                 columnNumber: 17
             }, this))
     }, void 0, false, {
         fileName: "[project]/src/components/Reviews.tsx",
-        lineNumber: 251,
+        lineNumber: 266,
         columnNumber: 9
     }, this);
 }
