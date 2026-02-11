@@ -347,7 +347,7 @@ export function Solutions() {
 
                 <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold text-white mb-6 tracking-tight">
                     Tecnologia que <br className="hidden md:block" />
-                    <span className="text-transparent bg-clip-text bg-gradient-to-b from-brand to-cyan-400 drop-shadow-[0_0_30px_rgba(37,99,235,0.5)]">
+                    <span className="text-gradient-hero drop-shadow-[0_0_30px_rgba(37,99,235,0.5)]">
                         Impulsiona o Futuro
                     </span>
                 </h2>

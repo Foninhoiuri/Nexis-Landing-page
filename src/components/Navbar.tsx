@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect, useRef } from "react";
 import { useDevice } from "@/hooks/useDevice";
 import Link from "next/link";
+import { SocialIcons as Icons } from "@/components/ui/Icons";
 import { WhatsAppHoverButton } from "@/components/ui/whatsapp-hover-button";
 import { SOCIAL } from "@/config/social";
 
@@ -38,7 +39,7 @@ const NAVBAR_HEIGHTS = {
 export function Navbar() {
     const logoRef = useRef<HTMLAnchorElement>(null);
     const { isMobile, isTablet, isDesktop } = useDevice();
-    const [activeTab, setActiveTab] = useState("Soluções");
+    const [activeTab, setActiveTab] = useState("");
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
     const [scrolled, setScrolled] = useState(false);
     const [navbarHeight, setNavbarHeight] = useState(NAVBAR_HEIGHTS.desktop);
@@ -100,7 +101,7 @@ export function Navbar() {
     const transparentStyle = `bg-transparent border-transparent shadow-none rounded-0 `;
 
     const glassStyleMobile = `
-        backdrop-blur-[20px]
+        backdrop-blur-md
         bg-black/80
         rounded-full
         border border-white/10
@@ -110,7 +111,7 @@ export function Navbar() {
     return (
         <>
             {/* DESKTOP / TABLET NAV (ESCONDIDO NO MOBILE) */}
-            <div className="hidden md:flex fixed top-4 left-0 w-full z-50 justify-center pointer-events-none">
+            <div className="z-[100] hidden md:flex fixed top-4 left-0 w-full z-50 justify-center pointer-events-none">
                 <motion.div
                     initial={false}
                     animate={{ opacity: 1 }}
@@ -204,7 +205,7 @@ export function Navbar() {
             </div>
 
             {/* MOBILE: SPEED DIAL (SÓ APARECE NO MOBILE) */}
-            <div className="md:hidden fixed bottom-6 right-6 z-50 flex flex-col-reverse items-center gap-3 pointer-events-auto">
+            <div className="md:hidden fixed bottom-6 right-6 z-[100] flex flex-col-reverse items-end gap-3 pointer-events-auto">
 
                 {/* Botão de Toggle (FAB) */}
                 <motion.button
@@ -229,15 +230,24 @@ export function Navbar() {
                 {/* Itens do Menu Mobile */}
                 <AnimatePresence>
                     {isMobileMenuOpen && (
-                        // Alterado: items-end -> items-center para centralizar na "coluna" do botão
-                        <div className="flex flex-col items-center gap-3 mb-2">
+                        // Alterado: items-center -> items-end para alinhar à direita (junto ao botão)
+                        // Use motion.div to ensure AnimatePresence works correctly
+                        <motion.div
+                            initial={{ opacity: 0, scale: 0.9 }}
+                            animate={{ opacity: 1, scale: 1 }}
+                            exit={{ opacity: 0, scale: 0.9 }}
+                            transition={{ duration: 0.2 }}
+                            className="flex flex-col items-end gap-3 mb-2"
+                        >
+
+
                             {LINKS.slice().reverse().map((link, i) => (
                                 <motion.button
                                     key={link.label}
                                     initial={{ opacity: 0, y: 20, scale: 0.8 }}
                                     animate={{ opacity: 1, y: 0, scale: 1 }}
                                     exit={{ opacity: 0, y: 10, scale: 0.8 }}
-                                    transition={{ delay: (i + 1) * 0.05 }}
+                                    transition={{ delay: (i + 1) * 0.03 }} // Faster stagger
                                     onClick={() => {
                                         const el = document.getElementById(link.id);
                                         if (el) {
@@ -255,7 +265,26 @@ export function Navbar() {
                                 </motion.button>
                             ))}
 
-                            {/* Botão Começar Mobile */}
+                            {/* Botão Início (Voltar ao Topo) */}
+                            <motion.button
+                                initial={{ opacity: 0, y: 20, scale: 0.8 }}
+                                animate={{ opacity: 1, y: 0, scale: 1 }}
+                                exit={{ opacity: 0, y: 10, scale: 0.8 }}
+                                transition={{ delay: 0.2 }} // Display last (visually top)
+                                onClick={() => {
+                                    window.scrollTo({ top: 0, behavior: "smooth" });
+                                    setActiveTab("");
+                                    setIsMobileMenuOpen(false);
+                                }}
+                                className={`
+                                    px-6 py-3 rounded-full font-medium text-white shadow-lg min-w-[140px] items-end
+                                    ${glassStyleMobile}
+                                `}
+                            >
+                                Início
+                            </motion.button>
+
+                            {/* Botão Começar Mobile - Estilo WhatsApp */}
                             {SOCIAL.whatsapp.active && (
                                 <motion.button
                                     initial={{ opacity: 0, y: 20, scale: 0.8 }}
@@ -263,12 +292,13 @@ export function Navbar() {
                                     exit={{ opacity: 0, y: 10, scale: 0.8 }}
                                     transition={{ delay: 0.05 }}
                                     onClick={() => window.open(SOCIAL.whatsapp.url, "_blank")}
-                                    className=" btn-blue bg-[var(--color-brand-blue)] px-6 py-3 rounded-full text-white font-bold shadow-lg min-w-[140px] text-center items-center"
+                                    className="px-6 py-3 rounded-full text-white font-bold shadow-lg min-w-[140px] flex items-center justify-center gap-2 bg-[#25D366] hover:bg-[#20bd5a] transition-colors"
                                 >
+                                    <Icons.whatsapp className="w-5 h-5" />
                                     Começar
                                 </motion.button>
                             )}
-                        </div>
+                        </motion.div>
                     )}
                 </AnimatePresence>
             </div>

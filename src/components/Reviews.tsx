@@ -83,7 +83,7 @@ export function Reviews() {
                 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
             `}</style>
 
-            <div className="container relative z-10 mx-auto px-4 mb-12 md:mb-20 text-center">
+            <div className="max-w-7xl relative z-10 mx-auto px-4 mb-12 md:mb-20 text-center">
                 <RainbowButton className="mb-6 h-9 rounded-full px-5">
                     <span className="inline-flex items-center gap-2 text-xs font-semibold tracking-widest uppercase bg-gradient-to-r from-blue-200 to-white bg-clip-text text-transparent">
                         <span className="w-1.5 h-1.5 rounded-full bg-blue-300 animate-pulse shadow-[0_0_10px_rgba(147,197,253,0.8)]" />
@@ -93,7 +93,7 @@ export function Reviews() {
 
                 <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold text-white mb-6 tracking-tight">
                     Líderes que <br className="hidden md:block" />
-                    <span className="text-transparent bg-clip-text bg-gradient-to-b from-blue-500 to-cyan-400 drop-shadow-[0_0_30px_rgba(37,99,235,0.5)]">
+                    <span className="text-gradient-hero drop-shadow-[0_0_30px_rgba(37,99,235,0.5)]">
                         Confiam em Nós
                     </span>
                 </h2>
@@ -110,7 +110,7 @@ export function Reviews() {
 }
 
 // ---------------- CARD DARK MODE + PROGRESSIVE BLUR ----------------
-const ReviewCard = ({ item, cardWidth, isActive, onCustomHover, isMobile }: any) => {
+const ReviewCard = React.memo(({ item, cardWidth, isActive, onHover, isMobile, index }: any) => {
     return (
         <motion.div
             style={{ width: cardWidth, height: CARD_HEIGHT }}
@@ -125,8 +125,8 @@ const ReviewCard = ({ item, cardWidth, isActive, onCustomHover, isMobile }: any)
             initial="rest"
             animate={isMobile ? (isActive ? "hover" : "rest") : undefined}
             whileHover={!isMobile ? "hover" : undefined}
-            onMouseEnter={isMobile ? undefined : onCustomHover}
-            onClick={isMobile ? onCustomHover : undefined}
+            onMouseEnter={isMobile ? undefined : () => onHover(index)}
+            onClick={isMobile ? () => onHover(index) : undefined}
         >
             {/* 1. CONTAINER DA IMAGEM E MÁSCARA */}
             <motion.div
@@ -235,7 +235,7 @@ const ReviewCard = ({ item, cardWidth, isActive, onCustomHover, isMobile }: any)
             </div>
         </motion.div>
     );
-};
+});
 
 // ---------------- MARQUEE (Mantido + Auto Rotation) ----------------
 function MarqueeRow({ items, cardWidth, isMobile, isInView }: any) {
@@ -245,16 +245,43 @@ function MarqueeRow({ items, cardWidth, isMobile, isInView }: any) {
     const duplicated = [...items, ...items, ...items];
     const contentWidth = items.length * (cardWidth + CARD_GAP);
 
-    // Auto-cycle active card every 3 seconds if not paused AND isMobile AND isInView
+    // Stable hover handler
+    const handleHover = React.useCallback((index: number) => {
+        setActiveIndex(index);
+    }, []);
+
+    // Spatial detection for Mobile: Activate card closest to center
     useEffect(() => {
-        if (paused || !isMobile || !isInView) return;
+        if (!isMobile) return;
 
-        const interval = setInterval(() => {
-            setActiveIndex((prev) => (prev + 1) % items.length);
-        }, 3000);
+        const updateActiveCard = (latestX: number) => {
+            const viewportCenter = window.innerWidth / 2;
+            const cardFullWidth = cardWidth + CARD_GAP;
+            const paddingLeft = 40; // px-10 = 40px
+            const cardHalfWidth = cardWidth / 2;
 
-        return () => clearInterval(interval);
-    }, [paused, items.length, isMobile, isInView]);
+            // Calculate which item index is currently centered
+            // Equation: itemCenter = latestX + paddingLeft + (index * cardFullWidth) + cardHalfWidth
+            // We want itemCenter ≈ viewportCenter
+            // => index = (viewportCenter - latestX - paddingLeft - cardHalfWidth) / cardFullWidth
+
+            const rawIndex = (viewportCenter - latestX - paddingLeft - cardHalfWidth) / cardFullWidth;
+            const roundedIndex = Math.round(rawIndex);
+
+            // Map to original items length (since we have duplicated items)
+            const safeIndex = ((roundedIndex % items.length) + items.length) % items.length;
+
+            setActiveIndex((prev) => (prev !== safeIndex ? safeIndex : prev));
+        };
+
+        // Subscribe to x changes
+        const unsubscribe = x.on("change", updateActiveCard);
+
+        // Initial check
+        updateActiveCard(x.get());
+
+        return () => unsubscribe();
+    }, [isMobile, cardWidth, items.length, x]);
 
     useAnimationFrame(() => {
         if (paused) return;
@@ -277,7 +304,8 @@ function MarqueeRow({ items, cardWidth, isMobile, isInView }: any) {
                     item={item}
                     cardWidth={cardWidth}
                     isActive={i % items.length === activeIndex}
-                    onCustomHover={() => setActiveIndex(i % items.length)}
+                    index={i % items.length}
+                    onHover={handleHover}
                     isMobile={isMobile}
                 />
             ))}

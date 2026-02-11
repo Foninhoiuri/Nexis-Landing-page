@@ -45,12 +45,12 @@ const STEPS = [
 ];
 
 // --- DADOS FEATURES ---
-type Category = 'vendas' | 'operacional' | 'infra';
+type Category = 'vendas' | 'operacional' | 'gestao';
 
 const TABS: { id: Category; label: string }[] = [
     { id: 'vendas', label: "Comercial & Vendas" },
     { id: 'operacional', label: "Operacional & RH" },
-    { id: 'infra', label: "Infraestrutura & TI" },
+    { id: 'gestao', label: "Gestão Estratégica" },
 ];
 
 const METRICS = [
@@ -79,10 +79,18 @@ const METRICS = [
         desc: "Disponibilidade total sem custo de hora extra.",
         badge: "Satisfação Total"
     },
+    {
+        id: "04",
+        category: "vendas",
+        label: "TICKET MÉDIO",
+        stat: "+20%",
+        desc: "Aumento no valor médio por venda realizada.",
+        badge: "Melhor Margem"
+    },
 
     // OPERACIONAL
     {
-        id: "04",
+        id: "05",
         category: "operacional",
         label: "PRODUTIVIDADE",
         stat: "+40h",
@@ -90,7 +98,7 @@ const METRICS = [
         badge: "Tempo Ganho"
     },
     {
-        id: "05",
+        id: "06",
         category: "operacional",
         label: "FINANCEIRO",
         stat: "-90%",
@@ -98,38 +106,54 @@ const METRICS = [
         badge: "Zero Erros"
     },
     {
-        id: "06",
+        id: "07",
         category: "operacional",
         label: "RECRUTAMENTO",
         stat: "-70%",
         desc: "Tempo economizado na triagem de candidatos.",
         badge: "Contratação Ágil"
     },
-
-    // INFRA
-    {
-        id: "07",
-        category: "infra",
-        label: "UPTIME",
-        stat: "99.9%",
-        desc: "Garantia de disponibilidade de rede e sistemas.",
-        badge: "Sempre Online"
-    },
     {
         id: "08",
-        category: "infra",
-        label: "SEGURANÇA",
+        category: "operacional",
+        label: "PROCESSOS",
         stat: "100%",
-        desc: "Monitoramento ativo contra ameaças externas.",
-        badge: "Dados Protegidos"
+        desc: "Padronização total de fluxos de trabalho.",
+        badge: "Organização"
     },
+
+    // GESTÃO
     {
         id: "09",
-        category: "infra",
-        label: "LATÊNCIA",
-        stat: "1ms",
-        desc: "Resposta instantânea em redes locais otimizadas.",
-        badge: "Ultra Rápido"
+        category: "gestao",
+        label: "DASHBOARDS",
+        stat: "100%",
+        desc: "Visibilidade total da operação em tempo real.",
+        badge: "Controle Total"
+    },
+    {
+        id: "10",
+        category: "gestao",
+        label: "CUSTOS",
+        stat: "-30%",
+        desc: "Redução de custos operacionais fixos e variáveis.",
+        badge: "Economia Real"
+    },
+    {
+        id: "11",
+        category: "gestao",
+        label: "PREVISIBILIDADE",
+        stat: "90%",
+        desc: "Assertividade em projeções de crescimento e caixa.",
+        badge: "Planejamento"
+    },
+    {
+        id: "12",
+        category: "gestao",
+        label: "ESCALABILIDADE",
+        stat: "∞",
+        desc: "Estrutura pronta para crescer sem travas operacionais.",
+        badge: "Expansão"
     },
 ];
 
@@ -159,23 +183,23 @@ const INTEGRATIONS = [
 
 const TECH_SPECS = [
     {
-        title: "SLA Garantido",
-        desc: "Contrato com garantia de 99.9% de uptime.",
-        icon: Server
+        title: "Implantação Ágil",
+        desc: "MVPs funcionais em até 2 semanas.",
+        icon: Rocket
     },
     {
-        title: "Criptografia E2E",
-        desc: "Seus dados blindados de ponta a ponta.",
-        icon: Lock
-    },
-    {
-        title: "Compliance LGPD",
-        desc: "Infraestrutura 100% adequada à lei.",
+        title: "Segurança Bancária",
+        desc: "Criptografia de ponta e compliance total.",
         icon: ShieldCheck
     },
     {
-        title: "Suporte Premium",
-        desc: "Engenheiros dedicados ao seu negócio.",
+        title: "Escalabilidade",
+        desc: "Arquitetura pronta para crescer 10x.",
+        icon: Server
+    },
+    {
+        title: "Suporte Especializado",
+        desc: "Time sênior monitorando sua operação.",
         icon: Users
     }
 ];
@@ -209,7 +233,7 @@ export function Methodology() {
                         transition={{ duration: 0.5 }}
                     >
                         <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold tracking-tighter text-white mb-6">
-                            NOSSO <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400">MÉTODO</span>
+                            NOSSO <span className="text-gradient-brand">MÉTODO</span>
                         </h2>
                         <p className="text-neutral-400 text-lg max-w-2xl mx-auto font-light leading-relaxed">
                             Transformamos problemas complexos em resultados mensuráveis através de um processo validado.
@@ -230,22 +254,20 @@ export function Methodology() {
                         >
                             <div className="absolute inset-0 z-10 p-6 flex flex-col justify-between bg-neutral-950/90 backdrop-blur-md group-hover:bg-neutral-950/80 transition-all duration-500 overflow-hidden">
 
-                                {/* Background / Image Area adaptation for Number */}
+                                {/* Background / Image Area adaptation for Icon */}
                                 <div className={cn("absolute inset-0 z-0 overflow-hidden")}>
                                     <div className="w-full h-full opacity-100 transition-opacity duration-500">
-                                        <div className="absolute -right-4 -top-8 opacity-[0.03] transform scale-150 pointer-events-none">
-                                            <span className="text-[12rem] font-bold text-white tracking-tighter leading-none">
-                                                {step.id}
-                                            </span>
+                                        <div className="absolute -right-10 -top-10 opacity-[0.04] transform rotate-6 pointer-events-none group-hover:scale-110 transition-transform duration-700">
+                                            <step.icon size={280} className="text-white" />
                                         </div>
                                         <div className="w-full h-full bg-gradient-to-br from-white/5 to-transparent opacity-50 transition-transform duration-700" />
                                     </div>
                                 </div>
 
                                 <div className="flex justify-between items-start relative z-10">
-                                    <div className="w-12 h-12 rounded-full bg-blue-500/10 flex items-center justify-center border border-blue-500/20 text-blue-400">
-                                        <step.icon size={24} />
-                                    </div>
+                                    <span className="text-5xl md:text-6xl font-bold text-blue-500 tracking-tighter drop-shadow-[0_0_15px_rgba(59,130,246,0.3)]">
+                                        {step.id}
+                                    </span>
                                 </div>
 
                                 <div className="relative z-10">
@@ -262,13 +284,12 @@ export function Methodology() {
                         </PixelCard>
                     ))}
 
-                    {/* Visual Connector Line to Next Section */}
-                    <div className="absolute -bottom-16 left-1/2 w-px h-16 bg-gradient-to-b from-blue-500/50 to-transparent hidden lg:block" />
+
                 </div>
 
 
                 {/* --- 2. APPLIED METRICS (FEATURES) --- */}
-                <div className="mb-24 relative">
+                <div className="mb-12 relative">
                     <div className="text-center mb-12">
                         <h3 className="text-2xl md:text-4xl font-bold text-white mb-4">
                             Aplicado à <span className="text-blue-400">Realidade</span>
@@ -276,26 +297,6 @@ export function Methodology() {
                         <p className="text-neutral-500 max-w-xl mx-auto">
                             Veja como nossa metodologia impacta diretamente os indicadores do seu negócio.
                         </p>
-                    </div>
-
-                    {/* TABS */}
-                    <div className="flex justify-center mb-12">
-                        <div className="flex flex-wrap justify-center gap-2 p-1.5 bg-neutral-900/50 backdrop-blur-sm border border-white/5 rounded-full">
-                            {TABS.map((tab) => (
-                                <button
-                                    key={tab.id}
-                                    onClick={() => setActiveTab(tab.id)}
-                                    className={cn(
-                                        "relative px-6 py-2.5 rounded-full text-sm font-medium transition-all duration-300",
-                                        activeTab === tab.id
-                                            ? "text-white bg-blue-600 shadow-lg shadow-blue-500/20"
-                                            : "text-neutral-400 hover:text-white hover:bg-white/5"
-                                    )}
-                                >
-                                    {tab.label}
-                                </button>
-                            ))}
-                        </div>
                     </div>
 
                     {/* METRICS GRID */}
@@ -307,10 +308,10 @@ export function Methodology() {
                                 animate={{ opacity: 1, scale: 1 }}
                                 exit={{ opacity: 0, scale: 0.95 }}
                                 transition={{ duration: 0.2 }}
-                                className="grid grid-cols-1 md:grid-cols-3 gap-6"
+                                className="grid grid-cols-1 md:grid-cols-4 gap-6"
                             >
                                 {filteredMetrics.map((m) => (
-                                    <div key={m.id} className="group relative p-6 rounded-2xl bg-white/5 border border-white/5 hover:border-blue-500/30 transition-all duration-300 hover:bg-white/[0.07]">
+                                    <div key={m.id} className="glass-card group p-6 hover:bg-blue-500/10">
                                         <div className="flex justify-between items-start mb-4">
                                             <span className="text-xs font-medium text-neutral-500">{m.label}</span>
                                             <div className="px-2 py-1 rounded-full bg-green-500/10 border border-green-500/20 flex items-center gap-1">
@@ -328,6 +329,26 @@ export function Methodology() {
                                 ))}
                             </motion.div>
                         </AnimatePresence>
+                    </div>
+
+                    {/* TABS (Moved Below) */}
+                    <div className="flex justify-center">
+                        <div className="flex flex-wrap justify-center gap-2 p-2 bg-neutral-900/50 backdrop-blur-sm border border-white/5 rounded-full">
+                            {TABS.map((tab) => (
+                                <button
+                                    key={tab.id}
+                                    onClick={() => setActiveTab(tab.id)}
+                                    className={cn(
+                                        "relative px-6 py-2.5 rounded-full text-sm font-medium transition-all duration-300",
+                                        activeTab === tab.id
+                                            ? "text-white bg-blue-600 shadow-lg shadow-blue-500/20"
+                                            : "text-neutral-400 hover:text-white hover:bg-white/5"
+                                    )}
+                                >
+                                    {tab.label}
+                                </button>
+                            ))}
+                        </div>
                     </div>
                 </div>
 
@@ -366,7 +387,7 @@ export function Methodology() {
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                         {TECH_SPECS.map((spec, i) => (
                             <div key={i} className="flex items-start gap-4 p-4 rounded-xl hover:bg-white/5 transition-colors group">
-                                <div className="w-10 h-10 rounded-full bg-blue-500/10 flex items-center justify-center shrink-0 text-blue-400 group-hover:bg-blue-500 group-hover:text-white transition-all">
+                                <div className="icon-box shrink-0 group-hover:translate-y-1">
                                     <spec.icon size={20} />
                                 </div>
                                 <div>
@@ -376,8 +397,8 @@ export function Methodology() {
                             </div>
                         ))}
                     </div>
-                </div>
 
+                </div>
             </div>
         </section>
     );

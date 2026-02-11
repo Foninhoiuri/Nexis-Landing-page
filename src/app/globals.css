@@ -27,7 +27,8 @@
     /* Scaling for smaller desktops (Laptop View) */
     @media (min-width: 1024px) and (max-width: 1440px) {
         :root {
-            font-size: 13px; /* Simulates ~80% zoom */
+            font-size: 13px;
+            /* Simulates ~80% zoom */
         }
     }
 
@@ -49,7 +50,6 @@
     .btn-green-solid {
         @apply inline-flex items-center justify-center px-8 py-3 rounded-full font-medium cursor-pointer transition-all duration-300;
         box-shadow: 0 10px 25px -10px rgba(0, 0, 0, 0.5);
-        /* Sombra inicial sutil para dark mode */
     }
 
     /* Hover Lift Effect */
@@ -57,6 +57,52 @@
     .btn-blue-solid:hover,
     .btn-green:hover,
     .btn-green-solid:hover {
+        transform: translateY(-2px);
+    }
+
+    /* --- SHARED COMPONENT UTILS --- */
+
+    /* Glass Cards (Used in Methodology, Reviews, etc) */
+    .glass-card {
+        @apply relative rounded-2xl border transition-all duration-300;
+        background-color: rgba(255, 255, 255, 0.05);
+        /* --glass-surface */
+        border-color: rgba(255, 255, 255, 0.05);
+        /* --glass-border */
+        backdrop-filter: blur(4px);
+    }
+
+    .glass-card:hover {
+        background-color: rgba(37, 99, 235, 0.08);
+        /* Blue tint on hover */
+        border-color: rgba(37, 99, 235, 0.3);
+        /* Brand Blue Trace */
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Gradient Texts */
+    .text-gradient-brand {
+        @apply text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400;
+    }
+
+    .text-gradient-hero {
+        @apply text-transparent bg-clip-text bg-gradient-to-b from-brand to-cyan-400;
+    }
+
+    /* Icon Boxes (Used in Grids) */
+    .icon-box {
+        @apply w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300;
+        background-color: rgba(37, 99, 235, 0.1);
+        border: 1px solid rgba(37, 99, 235, 0.2);
+        color: #60A5FA;
+        /* blue-400 */
+    }
+
+    .group:hover .icon-box {
+        background-color: #2563EB;
+        /* brand-blue */
+        color: white;
+        box-shadow: 0 0 20px rgba(37, 99, 235, 0.6);
         transform: translateY(-2px);
     }
 

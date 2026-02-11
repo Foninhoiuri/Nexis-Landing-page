@@ -8,11 +8,11 @@ import { cn } from "@/lib/utils";
 const FAQ_ITEMS = [
     {
         question: "Quanto tempo leva a implementação?",
-        answer: "O MVP (Produto Mínimo Viável) para automações de atendimento e triagem pode estar rodando em 5 a 10 dias úteis. Projetos completos de infraestrutura e dashboards personalizados variam de 3 a 6 semanas."
+        answer: "O MVP (Produto Mínimo Viável) para automações de atendimento e triagem pode estar rodando em 5 a 10 dias úteis. MVPs de projetos completos e dashboards personalizados variam de 3 a 6 semanas."
     },
     {
         question: "Preciso trocar meus sistemas atuais (ERP/CRM)?",
-        answer: "Não. A arquitetura Nexis é agnóstica. Nós criamos 'pontes' (APIs/Webhooks) que conectam seu sistema legado às novas automações, sem necessidade de migração traumática."
+        answer: "Não. A arquitetura Nexis é agnóstica. Nós criamos 'pontes' que conectam seu sistema legado às novas automações, sem necessidade de migração traumática."
     },
     {
         question: "A IA substitui minha equipe de atendimento?",
@@ -20,7 +20,7 @@ const FAQ_ITEMS = [
     },
     {
         question: "E se a automação parar de funcionar?",
-        answer: "Nossos contratos incluem monitoramento ativo. Se um fluxo falha, nossa equipe é notificada antes mesmo de você perceber. Além disso, entregamos documentação completa para sua equipe de TI."
+        answer: "Nossos contratos incluem monitoramento ativo. Se um fluxo falha, nossa equipe é notificada antes mesmo de você perceber, parando o agente na hora e resolvemos em até 24h."
     },
     {
         question: "Como funciona a segurança dos dados?",
@@ -91,10 +91,8 @@ function FAQItem({ item, isOpen, onClick }: { item: typeof FAQ_ITEMS[0], isOpen:
             initial={false}
             onClick={onClick}
             className={cn(
-                "group cursor-pointer rounded-[2rem] border p-6 transition-all duration-300",
-                isOpen
-                    ? "bg-neutral-900 border-brand/50 shadow-[0_0_30px_-10px_rgba(59,130,246,0.2)]"
-                    : "bg-black border-white/10 hover:border-white/20 hover:bg-neutral-900/40"
+                "glass-card cursor-pointer p-6 transition-all duration-300",
+                isOpen && "border-blue-500/30 bg-blue-500/[0.08]"
             )}
         >
             <div className="flex items-center justify-between gap-4">

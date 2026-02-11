@@ -363,7 +363,7 @@ function Navbar() {
     _s();
     const logoRef = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRef"])(null);
     const { isMobile, isTablet, isDesktop } = (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$hooks$2f$useDevice$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useDevice"])();
-    const [activeTab, setActiveTab] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])("Soluções");
+    const [activeTab, setActiveTab] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])("");
     const [isMobileMenuOpen, setIsMobileMenuOpen] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false);
     const [scrolled, setScrolled] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false);
     const [navbarHeight, setNavbarHeight] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(NAVBAR_HEIGHTS.desktop);
@@ -442,7 +442,7 @@ function Navbar() {
     `;
     const transparentStyle = `bg-transparent border-transparent shadow-none rounded-0 `;
     const glassStyleMobile = `
-        backdrop-blur-[20px]
+        backdrop-blur-md
         bg-black/80
         rounded-full
         border border-white/10
@@ -451,7 +451,7 @@ function Navbar() {
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Fragment"], {
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: "hidden md:flex fixed top-4 left-0 w-full z-50 justify-center pointer-events-none",
+                className: "z-[100] hidden md:flex fixed top-4 left-0 w-full z-50 justify-center pointer-events-none",
                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].div, {
                     initial: false,
                     animate: {
@@ -499,12 +499,12 @@ function Navbar() {
                                 }
                             }, void 0, false, {
                                 fileName: "[project]/src/components/Navbar.tsx",
-                                lineNumber: 148,
+                                lineNumber: 149,
                                 columnNumber: 25
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/src/components/Navbar.tsx",
-                            lineNumber: 133,
+                            lineNumber: 134,
                             columnNumber: 21
                         }, this),
                         (!isTablet || scrolled) && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("nav", {
@@ -530,13 +530,13 @@ function Navbar() {
                                     children: link.label
                                 }, link.id, false, {
                                     fileName: "[project]/src/components/Navbar.tsx",
-                                    lineNumber: 167,
+                                    lineNumber: 168,
                                     columnNumber: 37
                                 }, this);
                             })
                         }, void 0, false, {
                             fileName: "[project]/src/components/Navbar.tsx",
-                            lineNumber: 158,
+                            lineNumber: 159,
                             columnNumber: 25
                         }, this),
                         __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$config$2f$social$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["SOCIAL"].whatsapp.active && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -546,27 +546,27 @@ function Navbar() {
                                 onClick: ()=>window.open(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$config$2f$social$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["SOCIAL"].whatsapp.url, "_blank")
                             }, void 0, false, {
                                 fileName: "[project]/src/components/Navbar.tsx",
-                                lineNumber: 197,
+                                lineNumber: 198,
                                 columnNumber: 29
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/src/components/Navbar.tsx",
-                            lineNumber: 196,
+                            lineNumber: 197,
                             columnNumber: 25
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/components/Navbar.tsx",
-                    lineNumber: 114,
+                    lineNumber: 115,
                     columnNumber: 17
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/src/components/Navbar.tsx",
-                lineNumber: 113,
+                lineNumber: 114,
                 columnNumber: 13
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: "md:hidden fixed bottom-6 right-6 z-50 flex flex-col-reverse items-center gap-3 pointer-events-auto",
+                className: "md:hidden fixed bottom-6 right-6 z-[100] flex flex-col-reverse items-end gap-3 pointer-events-auto",
                 children: [
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].button, {
                         whileTap: {
@@ -595,7 +595,7 @@ function Navbar() {
                                     y2: "18"
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/Navbar.tsx",
-                                    lineNumber: 223,
+                                    lineNumber: 224,
                                     columnNumber: 170
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("line", {
@@ -605,13 +605,13 @@ function Navbar() {
                                     y2: "18"
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/Navbar.tsx",
-                                    lineNumber: 223,
+                                    lineNumber: 224,
                                     columnNumber: 208
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/components/Navbar.tsx",
-                            lineNumber: 223,
+                            lineNumber: 224,
                             columnNumber: 25
                         }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
                             width: "24",
@@ -630,7 +630,7 @@ function Navbar() {
                                     y2: "12"
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/Navbar.tsx",
-                                    lineNumber: 225,
+                                    lineNumber: 226,
                                     columnNumber: 170
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("line", {
@@ -640,7 +640,7 @@ function Navbar() {
                                     y2: "6"
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/Navbar.tsx",
-                                    lineNumber: 225,
+                                    lineNumber: 226,
                                     columnNumber: 209
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("line", {
@@ -650,24 +650,40 @@ function Navbar() {
                                     y2: "18"
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/Navbar.tsx",
-                                    lineNumber: 225,
+                                    lineNumber: 226,
                                     columnNumber: 246
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/components/Navbar.tsx",
-                            lineNumber: 225,
+                            lineNumber: 226,
                             columnNumber: 25
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/src/components/Navbar.tsx",
-                        lineNumber: 210,
+                        lineNumber: 211,
                         columnNumber: 17
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$components$2f$AnimatePresence$2f$index$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["AnimatePresence"], {
-                        children: isMobileMenuOpen && // Alterado: items-end -> items-center para centralizar na "coluna" do botão
-                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                            className: "flex flex-col items-center gap-3 mb-2",
+                        children: isMobileMenuOpen && // Alterado: items-center -> items-end para alinhar à direita (junto ao botão)
+                        // Use motion.div to ensure AnimatePresence works correctly
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].div, {
+                            initial: {
+                                opacity: 0,
+                                scale: 0.9
+                            },
+                            animate: {
+                                opacity: 1,
+                                scale: 1
+                            },
+                            exit: {
+                                opacity: 0,
+                                scale: 0.9
+                            },
+                            transition: {
+                                duration: 0.2
+                            },
+                            className: "flex flex-col items-end gap-3 mb-2",
                             children: [
                                 LINKS.slice().reverse().map((link, i)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].button, {
                                         initial: {
@@ -686,7 +702,7 @@ function Navbar() {
                                             scale: 0.8
                                         },
                                         transition: {
-                                            delay: (i + 1) * 0.05
+                                            delay: (i + 1) * 0.03
                                         },
                                         onClick: ()=>{
                                             const el = document.getElementById(link.id);
@@ -705,9 +721,46 @@ function Navbar() {
                                         children: link.label
                                     }, link.label, false, {
                                         fileName: "[project]/src/components/Navbar.tsx",
-                                        lineNumber: 235,
+                                        lineNumber: 245,
                                         columnNumber: 33
                                     }, this)),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].button, {
+                                    initial: {
+                                        opacity: 0,
+                                        y: 20,
+                                        scale: 0.8
+                                    },
+                                    animate: {
+                                        opacity: 1,
+                                        y: 0,
+                                        scale: 1
+                                    },
+                                    exit: {
+                                        opacity: 0,
+                                        y: 10,
+                                        scale: 0.8
+                                    },
+                                    transition: {
+                                        delay: 0.2
+                                    },
+                                    onClick: ()=>{
+                                        window.scrollTo({
+                                            top: 0,
+                                            behavior: "smooth"
+                                        });
+                                        setActiveTab("");
+                                        setIsMobileMenuOpen(false);
+                                    },
+                                    className: `
+                                    px-6 py-3 rounded-full font-medium text-white shadow-lg min-w-[140px] items-end
+                                    ${glassStyleMobile}
+                                `,
+                                    children: "Início"
+                                }, void 0, false, {
+                                    fileName: "[project]/src/components/Navbar.tsx",
+                                    lineNumber: 269,
+                                    columnNumber: 29
+                                }, this),
                                 __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$config$2f$social$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["SOCIAL"].whatsapp.active && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].button, {
                                     initial: {
                                         opacity: 0,
@@ -728,34 +781,43 @@ function Navbar() {
                                         delay: 0.05
                                     },
                                     onClick: ()=>window.open(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$config$2f$social$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["SOCIAL"].whatsapp.url, "_blank"),
-                                    className: " btn-blue bg-[var(--color-brand-blue)] px-6 py-3 rounded-full text-white font-bold shadow-lg min-w-[140px] text-center items-center",
-                                    children: "Começar"
-                                }, void 0, false, {
+                                    className: "px-6 py-3 rounded-full text-white font-bold shadow-lg min-w-[140px] flex items-center justify-center gap-2 bg-[#25D366] hover:bg-[#20bd5a] transition-colors",
+                                    children: [
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(SocialIcons.whatsapp, {
+                                            className: "w-5 h-5"
+                                        }, void 0, false, {
+                                            fileName: "[project]/src/components/Navbar.tsx",
+                                            lineNumber: 297,
+                                            columnNumber: 37
+                                        }, this),
+                                        "Começar"
+                                    ]
+                                }, void 0, true, {
                                     fileName: "[project]/src/components/Navbar.tsx",
-                                    lineNumber: 260,
+                                    lineNumber: 289,
                                     columnNumber: 33
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/components/Navbar.tsx",
-                            lineNumber: 233,
+                            lineNumber: 235,
                             columnNumber: 25
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/src/components/Navbar.tsx",
-                        lineNumber: 230,
+                        lineNumber: 231,
                         columnNumber: 17
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/components/Navbar.tsx",
-                lineNumber: 207,
+                lineNumber: 208,
                 columnNumber: 13
             }, this)
         ]
     }, void 0, true);
 }
-_s(Navbar, "J+C6hWzm0juXA0VUOP7j3jZtYt4=", false, function() {
+_s(Navbar, "niMsiqe8DF3AJyVzQ/V9WXfHeIQ=", false, function() {
     return [
         __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$hooks$2f$useDevice$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useDevice"]
     ];
@@ -1818,10 +1880,10 @@ function Hero() {
         className: "relative min-h-screen flex flex-col items-center pt-4 md:pt-2 lg:pt-3 pb-20 xl:pb-16 overflow-visible xl:overflow-hidden bg-background",
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: "container mx-auto relative px-4 grid grid-cols-1 xl:grid-cols-[58%_42%] gap-12 items-center min-h-[calc(100vh-100px)]",
+                className: "w-full max-w-[1600px] mx-auto relative px-6 md:px-12 grid grid-cols-1 lg:grid-cols-[50%_50%] gap-20 lg:gap-20 xl:gap-60 items-center min-h-[calc(100vh-100px)]",
                 children: [
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: "flex flex-col items-start text-left pt-10 xl:pt-0 order-2 xl:order-1 relative z-50",
+                        className: "flex flex-col items-start text-left pt-10 lg:pt-0 order-2 lg:order-1 relative z-50",
                         children: [
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].div, {
                                 initial: {
@@ -1890,7 +1952,7 @@ function Hero() {
                                             "topo do mercado!",
                                             "Futuro!"
                                         ],
-                                        className: "text-transparent bg-clip-text bg-gradient-to-b from-brand to-cyan-400 drop-shadow-[0_0_30px_rgba(37,99,235,0.5)] pb-1"
+                                        className: "text-gradient-hero drop-shadow-[0_0_30px_rgba(37,99,235,0.5)] pb-1"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/Hero.tsx",
                                         lineNumber: 37,
@@ -1975,13 +2037,16 @@ function Hero() {
                                         columnNumber: 29
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                        onClick: ()=>document.getElementById("solutions")?.scrollIntoView({
+                                                behavior: "smooth"
+                                            }),
                                         className: "btn-blue bg-surface border border-white/10 flex items-center gap-2 w-full sm:w-auto justify-center",
                                         children: [
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$zap$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Zap$3e$__["Zap"], {
                                                 className: "w-4 h-4 text-brand-white"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/Hero.tsx",
-                                                lineNumber: 76,
+                                                lineNumber: 79,
                                                 columnNumber: 29
                                             }, this),
                                             "Automações"
@@ -2004,24 +2069,24 @@ function Hero() {
                         columnNumber: 17
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: "relative flex items-center justify-center h-full xl:h-full order-1 xl:order-2",
+                        className: "relative flex items-center justify-center h-full xl:h-full order-1 lg:order-2",
                         children: [
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: "relative w-full h-full flex items-center justify-center scale-75 md:scale-90 lg:scale-100 lg:translate-y-40 lg:-translate-x-20 blur-[3px] md:blur-[2px] xl:blur-0 z-10",
+                                className: "relative w-full h-full flex items-center justify-center scale-75 md:scale-90 lg:scale-100 lg:translate-y-20 xl:translate-y-40 lg:-translate-x-24 xl:-translate-x-52 blur-[3px] md:blur-[2px] xl:blur-0 z-10",
                                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$HeroOrbitingBackground$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["HeroOrbitingBackground"], {}, void 0, false, {
                                     fileName: "[project]/src/components/Hero.tsx",
-                                    lineNumber: 87,
+                                    lineNumber: 90,
                                     columnNumber: 25
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/src/components/Hero.tsx",
-                                lineNumber: 86,
+                                lineNumber: 89,
                                 columnNumber: 21
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                 className: "absolute inset-0 flex items-center justify-center pointer-events-none z-50",
                                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                    className: "flex items-center justify-center scale-75 md:scale-90 lg:scale-100 lg:translate-y-40 lg:-translate-x-20",
+                                    className: "flex items-center justify-center scale-75 md:scale-90 lg:scale-125 xl:scale-150 lg:translate-y-20 xl:translate-y-40 lg:-translate-x-24 xl:-translate-x-52",
                                     children: [
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("img", {
                                             src: "/nexis_logo.png",
@@ -2029,7 +2094,7 @@ function Hero() {
                                             className: "md:hidden h-16 w-auto object-contain brightness-125 drop-shadow-[0_0_25px_rgba(62,207,142,0.4)]"
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/Hero.tsx",
-                                            lineNumber: 94,
+                                            lineNumber: 97,
                                             columnNumber: 29
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("img", {
@@ -2038,24 +2103,24 @@ function Hero() {
                                             className: "hidden md:block h-24 w-24 lg:h-24 lg:w-24 object-contain brightness-125 drop-shadow-[0_0_25px_rgba(62,207,142,0.4)]"
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/Hero.tsx",
-                                            lineNumber: 100,
+                                            lineNumber: 103,
                                             columnNumber: 29
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/components/Hero.tsx",
-                                    lineNumber: 92,
+                                    lineNumber: 95,
                                     columnNumber: 25
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/src/components/Hero.tsx",
-                                lineNumber: 91,
+                                lineNumber: 94,
                                 columnNumber: 21
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/Hero.tsx",
-                        lineNumber: 83,
+                        lineNumber: 86,
                         columnNumber: 17
                     }, this)
                 ]
@@ -2074,14 +2139,14 @@ function Hero() {
                 className: "pointer-events-none opacity-90"
             }, void 0, false, {
                 fileName: "[project]/src/components/Hero.tsx",
-                lineNumber: 113,
+                lineNumber: 116,
                 columnNumber: 13
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                 className: "absolute bottom-0 inset-x-0 h-64 bg-gradient-to-t from-black via-black/90 to-transparent z-30 pointer-events-none"
             }, void 0, false, {
                 fileName: "[project]/src/components/Hero.tsx",
-                lineNumber: 124,
+                lineNumber: 127,
                 columnNumber: 13
             }, this)
         ]
@@ -6874,7 +6939,7 @@ function Solutions() {
                                 columnNumber: 36
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                className: "text-transparent bg-clip-text bg-gradient-to-b from-brand to-cyan-400 drop-shadow-[0_0_30px_rgba(37,99,235,0.5)]",
+                                className: "text-gradient-hero drop-shadow-[0_0_30px_rgba(37,99,235,0.5)]",
                                 children: "Impulsiona o Futuro"
                             }, void 0, false, {
                                 fileName: "[project]/src/components/Solutions.tsx",
@@ -7458,7 +7523,6 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$re
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$chart$2d$line$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__LineChart$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/chart-line.js [app-client] (ecmascript) <export default as LineChart>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$arrow$2d$up$2d$right$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__ArrowUpRight$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/arrow-up-right.js [app-client] (ecmascript) <export default as ArrowUpRight>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$shield$2d$check$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__ShieldCheck$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/shield-check.js [app-client] (ecmascript) <export default as ShieldCheck>");
-var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$lock$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Lock$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/lock.js [app-client] (ecmascript) <export default as Lock>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$server$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Server$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/server.js [app-client] (ecmascript) <export default as Server>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$users$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Users$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/users.js [app-client] (ecmascript) <export default as Users>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/framer-motion/dist/es/render/components/motion/proxy.mjs [app-client] (ecmascript)");
@@ -7518,8 +7582,8 @@ const TABS = [
         label: "Operacional & RH"
     },
     {
-        id: 'infra',
-        label: "Infraestrutura & TI"
+        id: 'gestao',
+        label: "Gestão Estratégica"
     }
 ];
 const METRICS = [
@@ -7548,9 +7612,17 @@ const METRICS = [
         desc: "Disponibilidade total sem custo de hora extra.",
         badge: "Satisfação Total"
     },
-    // OPERACIONAL
     {
         id: "04",
+        category: "vendas",
+        label: "TICKET MÉDIO",
+        stat: "+20%",
+        desc: "Aumento no valor médio por venda realizada.",
+        badge: "Melhor Margem"
+    },
+    // OPERACIONAL
+    {
+        id: "05",
         category: "operacional",
         label: "PRODUTIVIDADE",
         stat: "+40h",
@@ -7558,7 +7630,7 @@ const METRICS = [
         badge: "Tempo Ganho"
     },
     {
-        id: "05",
+        id: "06",
         category: "operacional",
         label: "FINANCEIRO",
         stat: "-90%",
@@ -7566,37 +7638,53 @@ const METRICS = [
         badge: "Zero Erros"
     },
     {
-        id: "06",
+        id: "07",
         category: "operacional",
         label: "RECRUTAMENTO",
         stat: "-70%",
         desc: "Tempo economizado na triagem de candidatos.",
         badge: "Contratação Ágil"
     },
-    // INFRA
-    {
-        id: "07",
-        category: "infra",
-        label: "UPTIME",
-        stat: "99.9%",
-        desc: "Garantia de disponibilidade de rede e sistemas.",
-        badge: "Sempre Online"
-    },
     {
         id: "08",
-        category: "infra",
-        label: "SEGURANÇA",
+        category: "operacional",
+        label: "PROCESSOS",
         stat: "100%",
-        desc: "Monitoramento ativo contra ameaças externas.",
-        badge: "Dados Protegidos"
+        desc: "Padronização total de fluxos de trabalho.",
+        badge: "Organização"
     },
+    // GESTÃO
     {
         id: "09",
-        category: "infra",
-        label: "LATÊNCIA",
-        stat: "1ms",
-        desc: "Resposta instantânea em redes locais otimizadas.",
-        badge: "Ultra Rápido"
+        category: "gestao",
+        label: "DASHBOARDS",
+        stat: "100%",
+        desc: "Visibilidade total da operação em tempo real.",
+        badge: "Controle Total"
+    },
+    {
+        id: "10",
+        category: "gestao",
+        label: "CUSTOS",
+        stat: "-30%",
+        desc: "Redução de custos operacionais fixos e variáveis.",
+        badge: "Economia Real"
+    },
+    {
+        id: "11",
+        category: "gestao",
+        label: "PREVISIBILIDADE",
+        stat: "90%",
+        desc: "Assertividade em projeções de crescimento e caixa.",
+        badge: "Planejamento"
+    },
+    {
+        id: "12",
+        category: "gestao",
+        label: "ESCALABILIDADE",
+        stat: "∞",
+        desc: "Estrutura pronta para crescer sem travas operacionais.",
+        badge: "Expansão"
     }
 ];
 const INTEGRATIONS = [
@@ -7687,23 +7775,23 @@ const INTEGRATIONS = [
 ];
 const TECH_SPECS = [
     {
-        title: "SLA Garantido",
-        desc: "Contrato com garantia de 99.9% de uptime.",
-        icon: __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$server$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Server$3e$__["Server"]
+        title: "Implantação Ágil",
+        desc: "MVPs funcionais em até 2 semanas.",
+        icon: __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$rocket$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Rocket$3e$__["Rocket"]
     },
     {
-        title: "Criptografia E2E",
-        desc: "Seus dados blindados de ponta a ponta.",
-        icon: __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$lock$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Lock$3e$__["Lock"]
-    },
-    {
-        title: "Compliance LGPD",
-        desc: "Infraestrutura 100% adequada à lei.",
+        title: "Segurança Bancária",
+        desc: "Criptografia de ponta e compliance total.",
         icon: __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$shield$2d$check$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__ShieldCheck$3e$__["ShieldCheck"]
     },
     {
-        title: "Suporte Premium",
-        desc: "Engenheiros dedicados ao seu negócio.",
+        title: "Escalabilidade",
+        desc: "Arquitetura pronta para crescer 10x.",
+        icon: __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$server$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Server$3e$__["Server"]
+    },
+    {
+        title: "Suporte Especializado",
+        desc: "Time sênior monitorando sua operação.",
         icon: __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$users$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Users$3e$__["Users"]
     }
 ];
@@ -7724,7 +7812,7 @@ function Methodology() {
                 className: (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$utils$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["cn"])("text-neutral-800 opacity-80", "[mask-image:radial-gradient(2000px_circle_at_center,white,transparent)]")
             }, void 0, false, {
                 fileName: "[project]/src/components/Methodology.tsx",
-                lineNumber: 189,
+                lineNumber: 213,
                 columnNumber: 13
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -7753,17 +7841,17 @@ function Methodology() {
                                     children: [
                                         "NOSSO ",
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                            className: "text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400",
+                                            className: "text-gradient-brand",
                                             children: "MÉTODO"
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/Methodology.tsx",
-                                            lineNumber: 212,
+                                            lineNumber: 236,
                                             columnNumber: 35
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/components/Methodology.tsx",
-                                    lineNumber: 211,
+                                    lineNumber: 235,
                                     columnNumber: 25
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -7771,149 +7859,134 @@ function Methodology() {
                                     children: "Transformamos problemas complexos em resultados mensuráveis através de um processo validado."
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/Methodology.tsx",
-                                    lineNumber: 214,
+                                    lineNumber: 238,
                                     columnNumber: 25
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/components/Methodology.tsx",
-                            lineNumber: 205,
+                            lineNumber: 229,
                             columnNumber: 21
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/src/components/Methodology.tsx",
-                        lineNumber: 204,
+                        lineNumber: 228,
                         columnNumber: 17
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                         className: "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-32 relative",
-                        children: [
-                            STEPS.map((step, idx)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$PixelCard$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
-                                    variant: "blue",
-                                    gap: 4,
-                                    speed: 20,
-                                    colors: "#2563EB,#3B82F6,#60A5FA",
-                                    className: "h-[320px] w-full rounded-2xl border-white/5",
-                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                        className: "absolute inset-0 z-10 p-6 flex flex-col justify-between bg-neutral-950/90 backdrop-blur-md group-hover:bg-neutral-950/80 transition-all duration-500 overflow-hidden",
-                                        children: [
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                className: (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$utils$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["cn"])("absolute inset-0 z-0 overflow-hidden"),
-                                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                    className: "w-full h-full opacity-100 transition-opacity duration-500",
-                                                    children: [
-                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                            className: "absolute -right-4 -top-8 opacity-[0.03] transform scale-150 pointer-events-none",
-                                                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                                className: "text-[12rem] font-bold text-white tracking-tighter leading-none",
-                                                                children: step.id
-                                                            }, void 0, false, {
-                                                                fileName: "[project]/src/components/Methodology.tsx",
-                                                                lineNumber: 237,
-                                                                columnNumber: 45
-                                                            }, this)
-                                                        }, void 0, false, {
-                                                            fileName: "[project]/src/components/Methodology.tsx",
-                                                            lineNumber: 236,
-                                                            columnNumber: 41
-                                                        }, this),
-                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                            className: "w-full h-full bg-gradient-to-br from-white/5 to-transparent opacity-50 transition-transform duration-700"
-                                                        }, void 0, false, {
-                                                            fileName: "[project]/src/components/Methodology.tsx",
-                                                            lineNumber: 241,
-                                                            columnNumber: 41
-                                                        }, this)
-                                                    ]
-                                                }, void 0, true, {
-                                                    fileName: "[project]/src/components/Methodology.tsx",
-                                                    lineNumber: 235,
-                                                    columnNumber: 37
-                                                }, this)
-                                            }, void 0, false, {
-                                                fileName: "[project]/src/components/Methodology.tsx",
-                                                lineNumber: 234,
-                                                columnNumber: 33
-                                            }, this),
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                className: "flex justify-between items-start relative z-10",
-                                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                    className: "w-12 h-12 rounded-full bg-blue-500/10 flex items-center justify-center border border-blue-500/20 text-blue-400",
-                                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(step.icon, {
-                                                        size: 24
-                                                    }, void 0, false, {
-                                                        fileName: "[project]/src/components/Methodology.tsx",
-                                                        lineNumber: 247,
-                                                        columnNumber: 41
-                                                    }, this)
-                                                }, void 0, false, {
-                                                    fileName: "[project]/src/components/Methodology.tsx",
-                                                    lineNumber: 246,
-                                                    columnNumber: 37
-                                                }, this)
-                                            }, void 0, false, {
-                                                fileName: "[project]/src/components/Methodology.tsx",
-                                                lineNumber: 245,
-                                                columnNumber: 33
-                                            }, this),
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                className: "relative z-10",
+                        children: STEPS.map((step, idx)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$PixelCard$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
+                                variant: "blue",
+                                gap: 4,
+                                speed: 20,
+                                colors: "#2563EB,#3B82F6,#60A5FA",
+                                className: "h-[320px] w-full rounded-2xl border-white/5",
+                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                    className: "absolute inset-0 z-10 p-6 flex flex-col justify-between bg-neutral-950/90 backdrop-blur-md group-hover:bg-neutral-950/80 transition-all duration-500 overflow-hidden",
+                                    children: [
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                            className: (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$utils$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["cn"])("absolute inset-0 z-0 overflow-hidden"),
+                                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                className: "w-full h-full opacity-100 transition-opacity duration-500",
                                                 children: [
-                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
-                                                        className: "text-xl font-bold text-white mb-2 tracking-tight",
-                                                        children: step.title
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                        className: "absolute -right-10 -top-10 opacity-[0.04] transform rotate-6 pointer-events-none group-hover:scale-110 transition-transform duration-700",
+                                                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(step.icon, {
+                                                            size: 280,
+                                                            className: "text-white"
+                                                        }, void 0, false, {
+                                                            fileName: "[project]/src/components/Methodology.tsx",
+                                                            lineNumber: 261,
+                                                            columnNumber: 45
+                                                        }, this)
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/Methodology.tsx",
-                                                        lineNumber: 252,
-                                                        columnNumber: 37
+                                                        lineNumber: 260,
+                                                        columnNumber: 41
                                                     }, this),
-                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                        className: "text-sm text-neutral-400 leading-relaxed",
-                                                        children: step.desc
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                        className: "w-full h-full bg-gradient-to-br from-white/5 to-transparent opacity-50 transition-transform duration-700"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/Methodology.tsx",
-                                                        lineNumber: 255,
-                                                        columnNumber: 37
+                                                        lineNumber: 263,
+                                                        columnNumber: 41
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/components/Methodology.tsx",
-                                                lineNumber: 251,
-                                                columnNumber: 33
-                                            }, this),
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                className: "w-full h-px bg-gradient-to-r from-blue-500/50 to-transparent relative z-10"
+                                                lineNumber: 259,
+                                                columnNumber: 37
+                                            }, this)
+                                        }, void 0, false, {
+                                            fileName: "[project]/src/components/Methodology.tsx",
+                                            lineNumber: 258,
+                                            columnNumber: 33
+                                        }, this),
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                            className: "flex justify-between items-start relative z-10",
+                                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                className: "text-5xl md:text-6xl font-bold text-blue-500 tracking-tighter drop-shadow-[0_0_15px_rgba(59,130,246,0.3)]",
+                                                children: step.id
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/Methodology.tsx",
-                                                lineNumber: 260,
-                                                columnNumber: 33
+                                                lineNumber: 268,
+                                                columnNumber: 37
                                             }, this)
-                                        ]
-                                    }, void 0, true, {
-                                        fileName: "[project]/src/components/Methodology.tsx",
-                                        lineNumber: 231,
-                                        columnNumber: 29
-                                    }, this)
-                                }, step.id, false, {
+                                        }, void 0, false, {
+                                            fileName: "[project]/src/components/Methodology.tsx",
+                                            lineNumber: 267,
+                                            columnNumber: 33
+                                        }, this),
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                            className: "relative z-10",
+                                            children: [
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
+                                                    className: "text-xl font-bold text-white mb-2 tracking-tight",
+                                                    children: step.title
+                                                }, void 0, false, {
+                                                    fileName: "[project]/src/components/Methodology.tsx",
+                                                    lineNumber: 274,
+                                                    columnNumber: 37
+                                                }, this),
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                                    className: "text-sm text-neutral-400 leading-relaxed",
+                                                    children: step.desc
+                                                }, void 0, false, {
+                                                    fileName: "[project]/src/components/Methodology.tsx",
+                                                    lineNumber: 277,
+                                                    columnNumber: 37
+                                                }, this)
+                                            ]
+                                        }, void 0, true, {
+                                            fileName: "[project]/src/components/Methodology.tsx",
+                                            lineNumber: 273,
+                                            columnNumber: 33
+                                        }, this),
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                            className: "w-full h-px bg-gradient-to-r from-blue-500/50 to-transparent relative z-10"
+                                        }, void 0, false, {
+                                            fileName: "[project]/src/components/Methodology.tsx",
+                                            lineNumber: 282,
+                                            columnNumber: 33
+                                        }, this)
+                                    ]
+                                }, void 0, true, {
                                     fileName: "[project]/src/components/Methodology.tsx",
-                                    lineNumber: 223,
-                                    columnNumber: 25
-                                }, this)),
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: "absolute -bottom-16 left-1/2 w-px h-16 bg-gradient-to-b from-blue-500/50 to-transparent hidden lg:block"
-                            }, void 0, false, {
+                                    lineNumber: 255,
+                                    columnNumber: 29
+                                }, this)
+                            }, step.id, false, {
                                 fileName: "[project]/src/components/Methodology.tsx",
-                                lineNumber: 266,
-                                columnNumber: 21
-                            }, this)
-                        ]
-                    }, void 0, true, {
+                                lineNumber: 247,
+                                columnNumber: 25
+                            }, this))
+                    }, void 0, false, {
                         fileName: "[project]/src/components/Methodology.tsx",
-                        lineNumber: 221,
+                        lineNumber: 245,
                         columnNumber: 17
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: "mb-24 relative",
+                        className: "mb-12 relative",
                         children: [
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                 className: "text-center mb-12",
@@ -7927,13 +8000,13 @@ function Methodology() {
                                                 children: "Realidade"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/Methodology.tsx",
-                                                lineNumber: 274,
+                                                lineNumber: 295,
                                                 columnNumber: 40
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/Methodology.tsx",
-                                        lineNumber: 273,
+                                        lineNumber: 294,
                                         columnNumber: 25
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -7941,36 +8014,13 @@ function Methodology() {
                                         children: "Veja como nossa metodologia impacta diretamente os indicadores do seu negócio."
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/Methodology.tsx",
-                                        lineNumber: 276,
+                                        lineNumber: 297,
                                         columnNumber: 25
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/Methodology.tsx",
-                                lineNumber: 272,
-                                columnNumber: 21
-                            }, this),
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: "flex justify-center mb-12",
-                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                    className: "flex flex-wrap justify-center gap-2 p-1.5 bg-neutral-900/50 backdrop-blur-sm border border-white/5 rounded-full",
-                                    children: TABS.map((tab)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                                            onClick: ()=>setActiveTab(tab.id),
-                                            className: (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$utils$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["cn"])("relative px-6 py-2.5 rounded-full text-sm font-medium transition-all duration-300", activeTab === tab.id ? "text-white bg-blue-600 shadow-lg shadow-blue-500/20" : "text-neutral-400 hover:text-white hover:bg-white/5"),
-                                            children: tab.label
-                                        }, tab.id, false, {
-                                            fileName: "[project]/src/components/Methodology.tsx",
-                                            lineNumber: 285,
-                                            columnNumber: 33
-                                        }, this))
-                                }, void 0, false, {
-                                    fileName: "[project]/src/components/Methodology.tsx",
-                                    lineNumber: 283,
-                                    columnNumber: 25
-                                }, this)
-                            }, void 0, false, {
-                                fileName: "[project]/src/components/Methodology.tsx",
-                                lineNumber: 282,
+                                lineNumber: 293,
                                 columnNumber: 21
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -7993,9 +8043,9 @@ function Methodology() {
                                         transition: {
                                             duration: 0.2
                                         },
-                                        className: "grid grid-cols-1 md:grid-cols-3 gap-6",
+                                        className: "grid grid-cols-1 md:grid-cols-4 gap-6",
                                         children: filteredMetrics.map((m)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                className: "group relative p-6 rounded-2xl bg-white/5 border border-white/5 hover:border-blue-500/30 transition-all duration-300 hover:bg-white/[0.07]",
+                                                className: "glass-card group p-6 hover:bg-blue-500/10",
                                                 children: [
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                         className: "flex justify-between items-start mb-4",
@@ -8005,7 +8055,7 @@ function Methodology() {
                                                                 children: m.label
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/Methodology.tsx",
-                                                                lineNumber: 315,
+                                                                lineNumber: 316,
                                                                 columnNumber: 45
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -8016,7 +8066,7 @@ function Methodology() {
                                                                         className: "text-green-400"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/src/components/Methodology.tsx",
-                                                                        lineNumber: 317,
+                                                                        lineNumber: 318,
                                                                         columnNumber: 49
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -8024,19 +8074,19 @@ function Methodology() {
                                                                         children: m.badge
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/src/components/Methodology.tsx",
-                                                                        lineNumber: 318,
+                                                                        lineNumber: 319,
                                                                         columnNumber: 49
                                                                     }, this)
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/src/components/Methodology.tsx",
-                                                                lineNumber: 316,
+                                                                lineNumber: 317,
                                                                 columnNumber: 45
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/components/Methodology.tsx",
-                                                        lineNumber: 314,
+                                                        lineNumber: 315,
                                                         columnNumber: 41
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -8046,12 +8096,12 @@ function Methodology() {
                                                             children: m.stat
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/Methodology.tsx",
-                                                            lineNumber: 322,
+                                                            lineNumber: 323,
                                                             columnNumber: 45
                                                         }, this)
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/Methodology.tsx",
-                                                        lineNumber: 321,
+                                                        lineNumber: 322,
                                                         columnNumber: 41
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -8059,34 +8109,57 @@ function Methodology() {
                                                         children: m.desc
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/Methodology.tsx",
-                                                        lineNumber: 324,
+                                                        lineNumber: 325,
                                                         columnNumber: 41
                                                     }, this)
                                                 ]
                                             }, m.id, true, {
                                                 fileName: "[project]/src/components/Methodology.tsx",
-                                                lineNumber: 313,
+                                                lineNumber: 314,
                                                 columnNumber: 37
                                             }, this))
                                     }, activeTab, false, {
                                         fileName: "[project]/src/components/Methodology.tsx",
-                                        lineNumber: 304,
+                                        lineNumber: 305,
                                         columnNumber: 29
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/Methodology.tsx",
-                                    lineNumber: 303,
+                                    lineNumber: 304,
                                     columnNumber: 25
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/src/components/Methodology.tsx",
-                                lineNumber: 302,
+                                lineNumber: 303,
+                                columnNumber: 21
+                            }, this),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                className: "flex justify-center",
+                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                    className: "flex flex-wrap justify-center gap-2 p-2 bg-neutral-900/50 backdrop-blur-sm border border-white/5 rounded-full",
+                                    children: TABS.map((tab)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                            onClick: ()=>setActiveTab(tab.id),
+                                            className: (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$utils$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["cn"])("relative px-6 py-2.5 rounded-full text-sm font-medium transition-all duration-300", activeTab === tab.id ? "text-white bg-blue-600 shadow-lg shadow-blue-500/20" : "text-neutral-400 hover:text-white hover:bg-white/5"),
+                                            children: tab.label
+                                        }, tab.id, false, {
+                                            fileName: "[project]/src/components/Methodology.tsx",
+                                            lineNumber: 338,
+                                            columnNumber: 33
+                                        }, this))
+                                }, void 0, false, {
+                                    fileName: "[project]/src/components/Methodology.tsx",
+                                    lineNumber: 336,
+                                    columnNumber: 25
+                                }, this)
+                            }, void 0, false, {
+                                fileName: "[project]/src/components/Methodology.tsx",
+                                lineNumber: 335,
                                 columnNumber: 21
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/Methodology.tsx",
-                        lineNumber: 271,
+                        lineNumber: 292,
                         columnNumber: 17
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -8099,12 +8172,12 @@ function Methodology() {
                                     children: "Ecossistema Integrado"
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/Methodology.tsx",
-                                    lineNumber: 337,
+                                    lineNumber: 358,
                                     columnNumber: 25
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/src/components/Methodology.tsx",
-                                lineNumber: 336,
+                                lineNumber: 357,
                                 columnNumber: 21
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -8128,12 +8201,12 @@ function Methodology() {
                                                             }
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/Methodology.tsx",
-                                                            lineNumber: 345,
+                                                            lineNumber: 366,
                                                             columnNumber: 41
                                                         }, this)
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/Methodology.tsx",
-                                                        lineNumber: 344,
+                                                        lineNumber: 365,
                                                         columnNumber: 37
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -8141,38 +8214,38 @@ function Methodology() {
                                                         children: tool.name
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/Methodology.tsx",
-                                                        lineNumber: 355,
+                                                        lineNumber: 376,
                                                         columnNumber: 37
                                                     }, this)
                                                 ]
                                             }, i, true, {
                                                 fileName: "[project]/src/components/Methodology.tsx",
-                                                lineNumber: 343,
+                                                lineNumber: 364,
                                                 columnNumber: 33
                                             }, this))
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/Methodology.tsx",
-                                        lineNumber: 341,
+                                        lineNumber: 362,
                                         columnNumber: 25
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                         className: "pointer-events-none absolute inset-y-0 left-0 w-1/3 bg-gradient-to-r from-black via-black/80 to-transparent"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/Methodology.tsx",
-                                        lineNumber: 361,
+                                        lineNumber: 382,
                                         columnNumber: 25
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                         className: "pointer-events-none absolute inset-y-0 right-0 w-1/3 bg-gradient-to-l from-black via-black/80 to-transparent"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/Methodology.tsx",
-                                        lineNumber: 362,
+                                        lineNumber: 383,
                                         columnNumber: 25
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/Methodology.tsx",
-                                lineNumber: 340,
+                                lineNumber: 361,
                                 columnNumber: 21
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -8181,17 +8254,17 @@ function Methodology() {
                                         className: "flex items-start gap-4 p-4 rounded-xl hover:bg-white/5 transition-colors group",
                                         children: [
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                className: "w-10 h-10 rounded-full bg-blue-500/10 flex items-center justify-center shrink-0 text-blue-400 group-hover:bg-blue-500 group-hover:text-white transition-all",
+                                                className: "icon-box shrink-0 group-hover:translate-y-1",
                                                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(spec.icon, {
                                                     size: 20
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/Methodology.tsx",
-                                                    lineNumber: 370,
+                                                    lineNumber: 391,
                                                     columnNumber: 37
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/Methodology.tsx",
-                                                lineNumber: 369,
+                                                lineNumber: 390,
                                                 columnNumber: 33
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -8201,7 +8274,7 @@ function Methodology() {
                                                         children: spec.title
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/Methodology.tsx",
-                                                        lineNumber: 373,
+                                                        lineNumber: 394,
                                                         columnNumber: 37
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -8209,42 +8282,42 @@ function Methodology() {
                                                         children: spec.desc
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/Methodology.tsx",
-                                                        lineNumber: 374,
+                                                        lineNumber: 395,
                                                         columnNumber: 37
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/components/Methodology.tsx",
-                                                lineNumber: 372,
+                                                lineNumber: 393,
                                                 columnNumber: 33
                                             }, this)
                                         ]
                                     }, i, true, {
                                         fileName: "[project]/src/components/Methodology.tsx",
-                                        lineNumber: 368,
+                                        lineNumber: 389,
                                         columnNumber: 29
                                     }, this))
                             }, void 0, false, {
                                 fileName: "[project]/src/components/Methodology.tsx",
-                                lineNumber: 366,
+                                lineNumber: 387,
                                 columnNumber: 21
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/Methodology.tsx",
-                        lineNumber: 335,
+                        lineNumber: 356,
                         columnNumber: 17
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/components/Methodology.tsx",
-                lineNumber: 201,
+                lineNumber: 225,
                 columnNumber: 13
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/src/components/Methodology.tsx",
-        lineNumber: 188,
+        lineNumber: 212,
         columnNumber: 9
     }, this);
 }
@@ -8398,7 +8471,7 @@ function Reviews() {
                 children: '@import "https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap";'
             }, void 0, false, void 0, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: "jsx-7a7665c2182e835b" + " " + "container relative z-10 mx-auto px-4 mb-12 md:mb-20 text-center",
+                className: "jsx-7a7665c2182e835b" + " " + "max-w-7xl relative z-10 mx-auto px-4 mb-12 md:mb-20 text-center",
                 children: [
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$BlueRainbowButton$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["RainbowButton"], {
                         className: "mb-6 h-9 rounded-full px-5",
@@ -8436,7 +8509,7 @@ function Reviews() {
                                 columnNumber: 33
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                className: "jsx-7a7665c2182e835b" + " " + "text-transparent bg-clip-text bg-gradient-to-b from-blue-500 to-cyan-400 drop-shadow-[0_0_30px_rgba(37,99,235,0.5)]",
+                                className: "jsx-7a7665c2182e835b" + " " + "text-gradient-hero drop-shadow-[0_0_30px_rgba(37,99,235,0.5)]",
                                 children: "Confiam em Nós"
                             }, void 0, false, {
                                 fileName: "[project]/src/components/Reviews.tsx",
@@ -8494,7 +8567,7 @@ _s(Reviews, "TrKUP+r2hkxnj4DEJMW38bUEKt8=", false, function() {
 });
 _c = Reviews;
 // ---------------- CARD DARK MODE + PROGRESSIVE BLUR ----------------
-const ReviewCard = ({ item, cardWidth, isActive, onCustomHover, isMobile })=>{
+const ReviewCard = /*#__PURE__*/ __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"].memo(({ item, cardWidth, isActive, onHover, isMobile, index })=>{
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].div, {
         style: {
             width: cardWidth,
@@ -8510,8 +8583,8 @@ const ReviewCard = ({ item, cardWidth, isActive, onCustomHover, isMobile })=>{
         initial: "rest",
         animate: isMobile ? isActive ? "hover" : "rest" : undefined,
         whileHover: !isMobile ? "hover" : undefined,
-        onMouseEnter: isMobile ? undefined : onCustomHover,
-        onClick: isMobile ? onCustomHover : undefined,
+        onMouseEnter: isMobile ? undefined : ()=>onHover(index),
+        onClick: isMobile ? ()=>onHover(index) : undefined,
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].div, {
                 className: "relative z-0 overflow-hidden",
@@ -8732,7 +8805,7 @@ const ReviewCard = ({ item, cardWidth, isActive, onCustomHover, isMobile })=>{
         lineNumber: 115,
         columnNumber: 9
     }, ("TURBOPACK compile-time value", void 0));
-};
+});
 _c1 = ReviewCard;
 // ---------------- MARQUEE (Mantido + Auto Rotation) ----------------
 function MarqueeRow({ items, cardWidth, isMobile, isInView }) {
@@ -8746,26 +8819,48 @@ function MarqueeRow({ items, cardWidth, isMobile, isInView }) {
         ...items
     ];
     const contentWidth = items.length * (cardWidth + CARD_GAP);
-    // Auto-cycle active card every 3 seconds if not paused AND isMobile AND isInView
+    // Stable hover handler
+    const handleHover = __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"].useCallback({
+        "MarqueeRow.useCallback[handleHover]": (index)=>{
+            setActiveIndex(index);
+        }
+    }["MarqueeRow.useCallback[handleHover]"], []);
+    // Spatial detection for Mobile: Activate card closest to center
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
         "MarqueeRow.useEffect": ()=>{
-            if (paused || !isMobile || !isInView) return;
-            const interval = setInterval({
-                "MarqueeRow.useEffect.interval": ()=>{
+            if (!isMobile) return;
+            const updateActiveCard = {
+                "MarqueeRow.useEffect.updateActiveCard": (latestX)=>{
+                    const viewportCenter = window.innerWidth / 2;
+                    const cardFullWidth = cardWidth + CARD_GAP;
+                    const paddingLeft = 40; // px-10 = 40px
+                    const cardHalfWidth = cardWidth / 2;
+                    // Calculate which item index is currently centered
+                    // Equation: itemCenter = latestX + paddingLeft + (index * cardFullWidth) + cardHalfWidth
+                    // We want itemCenter ≈ viewportCenter
+                    // => index = (viewportCenter - latestX - paddingLeft - cardHalfWidth) / cardFullWidth
+                    const rawIndex = (viewportCenter - latestX - paddingLeft - cardHalfWidth) / cardFullWidth;
+                    const roundedIndex = Math.round(rawIndex);
+                    // Map to original items length (since we have duplicated items)
+                    const safeIndex = (roundedIndex % items.length + items.length) % items.length;
                     setActiveIndex({
-                        "MarqueeRow.useEffect.interval": (prev)=>(prev + 1) % items.length
-                    }["MarqueeRow.useEffect.interval"]);
+                        "MarqueeRow.useEffect.updateActiveCard": (prev)=>prev !== safeIndex ? safeIndex : prev
+                    }["MarqueeRow.useEffect.updateActiveCard"]);
                 }
-            }["MarqueeRow.useEffect.interval"], 3000);
+            }["MarqueeRow.useEffect.updateActiveCard"];
+            // Subscribe to x changes
+            const unsubscribe = x.on("change", updateActiveCard);
+            // Initial check
+            updateActiveCard(x.get());
             return ({
-                "MarqueeRow.useEffect": ()=>clearInterval(interval)
+                "MarqueeRow.useEffect": ()=>unsubscribe()
             })["MarqueeRow.useEffect"];
         }
     }["MarqueeRow.useEffect"], [
-        paused,
-        items.length,
         isMobile,
-        isInView
+        cardWidth,
+        items.length,
+        x
     ]);
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$utils$2f$use$2d$animation$2d$frame$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useAnimationFrame"])({
         "MarqueeRow.useAnimationFrame": ()=>{
@@ -8791,20 +8886,21 @@ function MarqueeRow({ items, cardWidth, isMobile, isInView }) {
                 item: item,
                 cardWidth: cardWidth,
                 isActive: i % items.length === activeIndex,
-                onCustomHover: ()=>setActiveIndex(i % items.length),
+                index: i % items.length,
+                onHover: handleHover,
                 isMobile: isMobile
             }, i, false, {
                 fileName: "[project]/src/components/Reviews.tsx",
-                lineNumber: 275,
+                lineNumber: 302,
                 columnNumber: 17
             }, this))
     }, void 0, false, {
         fileName: "[project]/src/components/Reviews.tsx",
-        lineNumber: 266,
+        lineNumber: 293,
         columnNumber: 9
     }, this);
 }
-_s1(MarqueeRow, "/2HgIZBa1zBPCtcuGDNXIjNuktw=", false, function() {
+_s1(MarqueeRow, "vXOUNt94Q6X3QT/x6sKdH2MNNxw=", false, function() {
     return [
         __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$value$2f$use$2d$motion$2d$value$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useMotionValue"],
         __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$utils$2f$use$2d$animation$2d$frame$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useAnimationFrame"]
@@ -8843,11 +8939,11 @@ var _s = __turbopack_context__.k.signature();
 const FAQ_ITEMS = [
     {
         question: "Quanto tempo leva a implementação?",
-        answer: "O MVP (Produto Mínimo Viável) para automações de atendimento e triagem pode estar rodando em 5 a 10 dias úteis. Projetos completos de infraestrutura e dashboards personalizados variam de 3 a 6 semanas."
+        answer: "O MVP (Produto Mínimo Viável) para automações de atendimento e triagem pode estar rodando em 5 a 10 dias úteis. MVPs de projetos completos e dashboards personalizados variam de 3 a 6 semanas."
     },
     {
         question: "Preciso trocar meus sistemas atuais (ERP/CRM)?",
-        answer: "Não. A arquitetura Nexis é agnóstica. Nós criamos 'pontes' (APIs/Webhooks) que conectam seu sistema legado às novas automações, sem necessidade de migração traumática."
+        answer: "Não. A arquitetura Nexis é agnóstica. Nós criamos 'pontes' que conectam seu sistema legado às novas automações, sem necessidade de migração traumática."
     },
     {
         question: "A IA substitui minha equipe de atendimento?",
@@ -8855,7 +8951,7 @@ const FAQ_ITEMS = [
     },
     {
         question: "E se a automação parar de funcionar?",
-        answer: "Nossos contratos incluem monitoramento ativo. Se um fluxo falha, nossa equipe é notificada antes mesmo de você perceber. Além disso, entregamos documentação completa para sua equipe de TI."
+        answer: "Nossos contratos incluem monitoramento ativo. Se um fluxo falha, nossa equipe é notificada antes mesmo de você perceber, parando o agente na hora e resolvemos em até 24h."
     },
     {
         question: "Como funciona a segurança dos dados?",
@@ -8989,7 +9085,7 @@ function FAQItem({ item, isOpen, onClick }) {
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].div, {
         initial: false,
         onClick: onClick,
-        className: (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$utils$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["cn"])("group cursor-pointer rounded-[2rem] border p-6 transition-all duration-300", isOpen ? "bg-neutral-900 border-brand/50 shadow-[0_0_30px_-10px_rgba(59,130,246,0.2)]" : "bg-black border-white/10 hover:border-white/20 hover:bg-neutral-900/40"),
+        className: (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$utils$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["cn"])("glass-card cursor-pointer p-6 transition-all duration-300", isOpen && "border-blue-500/30 bg-blue-500/[0.08]"),
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                 className: "flex items-center justify-between gap-4",
@@ -8999,7 +9095,7 @@ function FAQItem({ item, isOpen, onClick }) {
                         children: item.question
                     }, void 0, false, {
                         fileName: "[project]/src/components/FAQ.tsx",
-                        lineNumber: 101,
+                        lineNumber: 99,
                         columnNumber: 17
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -9008,24 +9104,24 @@ function FAQItem({ item, isOpen, onClick }) {
                             size: 18
                         }, void 0, false, {
                             fileName: "[project]/src/components/FAQ.tsx",
-                            lineNumber: 111,
+                            lineNumber: 109,
                             columnNumber: 31
                         }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$plus$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Plus$3e$__["Plus"], {
                             size: 18
                         }, void 0, false, {
                             fileName: "[project]/src/components/FAQ.tsx",
-                            lineNumber: 111,
+                            lineNumber: 109,
                             columnNumber: 53
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/src/components/FAQ.tsx",
-                        lineNumber: 107,
+                        lineNumber: 105,
                         columnNumber: 17
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/components/FAQ.tsx",
-                lineNumber: 100,
+                lineNumber: 98,
                 columnNumber: 13
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$components$2f$AnimatePresence$2f$index$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["AnimatePresence"], {
@@ -9055,17 +9151,17 @@ function FAQItem({ item, isOpen, onClick }) {
                         children: item.answer
                     }, void 0, false, {
                         fileName: "[project]/src/components/FAQ.tsx",
-                        lineNumber: 124,
+                        lineNumber: 122,
                         columnNumber: 25
                     }, this)
                 }, void 0, false, {
                     fileName: "[project]/src/components/FAQ.tsx",
-                    lineNumber: 117,
+                    lineNumber: 115,
                     columnNumber: 21
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/src/components/FAQ.tsx",
-                lineNumber: 115,
+                lineNumber: 113,
                 columnNumber: 13
             }, this)
         ]

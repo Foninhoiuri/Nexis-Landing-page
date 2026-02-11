@@ -13,9 +13,9 @@ export function Hero() {
         <section id="hero" className="relative min-h-screen flex flex-col items-center pt-4 md:pt-2 lg:pt-3 pb-20 xl:pb-16 overflow-visible xl:overflow-hidden bg-background">
 
             {/* Conteúdo de Texto (Esquerda) */}
-            <div className="container mx-auto relative px-4 grid grid-cols-1 xl:grid-cols-[58%_42%] gap-12 items-center min-h-[calc(100vh-100px)]">
+            <div className="w-full max-w-[1600px] mx-auto relative px-6 md:px-12 grid grid-cols-1 lg:grid-cols-[50%_50%] gap-20 lg:gap-20 xl:gap-60 items-center min-h-[calc(100vh-100px)]">
                 {/* Coluna 1: Texto (Mobile: Abaixo, Desktop: Esquerda) */}
-                <div className="flex flex-col items-start text-left pt-10 xl:pt-0 order-2 xl:order-1 relative z-50">
+                <div className="flex flex-col items-start text-left pt-10 lg:pt-0 order-2 lg:order-1 relative z-50">
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
@@ -42,7 +42,7 @@ export function Hero() {
                                 "topo do mercado!",
                                 "Futuro!",
                             ]}
-                            className="text-transparent bg-clip-text bg-gradient-to-b from-brand to-cyan-400 drop-shadow-[0_0_30px_rgba(37,99,235,0.5)] pb-1"
+                            className="text-gradient-hero drop-shadow-[0_0_30px_rgba(37,99,235,0.5)] pb-1"
                         />
                     </motion.h1>
 
@@ -72,7 +72,10 @@ export function Hero() {
                                 Comece agora <ArrowRight className="w-4 h-4" />
                             </a>
                         )}
-                        <button className="btn-blue bg-surface border border-white/10 flex items-center gap-2 w-full sm:w-auto justify-center">
+                        <button
+                            onClick={() => document.getElementById("solutions")?.scrollIntoView({ behavior: "smooth" })}
+                            className="btn-blue bg-surface border border-white/10 flex items-center gap-2 w-full sm:w-auto justify-center"
+                        >
                             <Zap className="w-4 h-4 text-brand-white" />
                             Automações
                         </button>
@@ -80,16 +83,16 @@ export function Hero() {
                 </div>
 
                 {/* Coluna 2: Órbitas (Mobile: Acima, Desktop: Direita) */}
-                <div className="relative flex items-center justify-center h-full xl:h-full order-1 xl:order-2">
+                <div className="relative flex items-center justify-center h-full xl:h-full order-1 lg:order-2">
 
                     {/* Layer 1: Background Orbits (Blurred & Behind) */}
-                    <div className="relative w-full h-full flex items-center justify-center scale-75 md:scale-90 lg:scale-100 lg:translate-y-40 lg:-translate-x-20 blur-[3px] md:blur-[2px] xl:blur-0 z-10">
+                    <div className="relative w-full h-full flex items-center justify-center scale-75 md:scale-90 lg:scale-100 lg:translate-y-20 xl:translate-y-40 lg:-translate-x-24 xl:-translate-x-52 blur-[3px] md:blur-[2px] xl:blur-0 z-10">
                         <HeroOrbitingBackground />
                     </div>
 
                     {/* Layer 2: Central Logo (Sharp & On Top) */}
                     <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-50">
-                        <div className="flex items-center justify-center scale-75 md:scale-90 lg:scale-100 lg:translate-y-40 lg:-translate-x-20">
+                        <div className="flex items-center justify-center scale-75 md:scale-90 lg:scale-125 xl:scale-150 lg:translate-y-20 xl:translate-y-40 lg:-translate-x-24 xl:-translate-x-52">
                             {/* Mobile Logo (Navbar Logo) */}
                             <img
                                 src="/nexis_logo.png"
