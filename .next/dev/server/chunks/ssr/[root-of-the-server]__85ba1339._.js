@@ -74,6 +74,11 @@ const metadata = {
         ],
         locale: "pt_BR",
         type: "website"
+    },
+    icons: {
+        icon: "/favicon.ico",
+        shortcut: "/nexis_icon.png",
+        apple: "/icone_app.png"
     }
 };
 function RootLayout({ children }) {
@@ -85,12 +90,12 @@ function RootLayout({ children }) {
             children: children
         }, void 0, false, {
             fileName: "[project]/src/app/layout.tsx",
-            lineNumber: 51,
+            lineNumber: 56,
             columnNumber: 13
         }, this)
     }, void 0, false, {
         fileName: "[project]/src/app/layout.tsx",
-        lineNumber: 50,
+        lineNumber: 55,
         columnNumber: 9
     }, this);
 }

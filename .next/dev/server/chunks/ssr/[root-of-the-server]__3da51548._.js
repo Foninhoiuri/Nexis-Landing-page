@@ -7764,31 +7764,31 @@ const CARD_GAP = 40;
 const REVIEWS_DATA = [
     {
         nome: "Teacher Bruno",
-        company: "Professor & Consultor",
+        company: "Educação & Consultoria",
         foto: "/pessoas/bruno_fernandes.png",
-        stars: 4.5,
-        testimonial: "Resultados tangíveis em tempo recorde. A equipe entendeu nossa dor desde o primeiro dia."
+        stars: 5,
+        testimonial: "A Nexis transformou nossa gestão de alunos. O que antes levava dias de planilhas, agora é resolvido em cliques com o novo dashboard."
     },
     {
-        nome: "Tarciso",
-        company: "Consultor Financeiro",
+        nome: "Tarciso F Lima",
+        company: "Gestão Financeira",
         foto: "/pessoas/tarciso.png",
         stars: 5,
-        testimonial: "A velocidade de implementação e a qualidade do código são inigualáveis no mercado atual."
+        testimonial: "Automatizamos 90% da nossa conciliação bancária. A precisão dos dados melhorou e meu time ganhou horas para focar em estratégia."
     },
     {
         nome: "Flavia Nogueira",
-        company: "Administradora",
+        company: "Administração",
         foto: "/pessoas/flavia_nogueira.png",
         stars: 5,
-        testimonial: "aaaaa"
+        testimonial: "A implementação da IA no nosso atendimento reduziu o tempo de resposta drasticamente. Nossos clientes nunca estiveram tão satisfeitos."
     },
     {
         nome: "Maya Ross",
-        company: "Doutora",
-        foto: "/pessoas/generico1.png",
+        company: "Saúde & Bem-estar",
+        foto: "/pessoas/maya_ross.png",
         stars: 4.5,
-        testimonial: "Resultados tangíveis em tempo recorde. A equipe entendeu nossa dor desde o primeiro dia."
+        testimonial: "O sistema de agendamento integrado eliminou conflitos de horário e reduziu o no-show em 40%. Eficiência pura para minha clínica."
     }
 ];
 // Helper for stars
@@ -7982,7 +7982,7 @@ const ReviewCard = /*#__PURE__*/ __TURBOPACK__imported__module__$5b$project$5d2f
                         margin: "0px"
                     },
                     hover: {
-                        height: "280px",
+                        height: "260px",
                         borderRadius: "2.5rem",
                         margin: "16px"
                     }
