@@ -4,29 +4,28 @@ import React from "react";
 import { MapPin, Phone, Mail } from "lucide-react";
 import { SocialIcons } from "@/components/ui/Icons";
 
-// --- CONFIGURAÇÃO REDES SOCIAIS ---
+import { SOCIAL, CONTACT_INFO } from "@/config/social";
+
 const SOCIAL_CONFIG = {
     iconSize: "w-5 h-5",
     hoverColor: "var(--color-brand-blue)", // Brand Blue
 };
 
-// Missing Google, LinkedIn, GitHub compared to OfficeMac reference
-// Creating placeholder links/icons for now or reusing existing ones if we want to match structure
-
-const SOCIAL_LINKS = [
+// Define social items with their config key to check 'active' status
+const SOCIAL_MEDIA_ITEMS = [
     {
         name: "Instagram",
-        url: "#",
+        config: SOCIAL.instagram,
         icon: <SocialIcons.instagram className="w-full h-full" />
     },
     {
         name: "Facebook",
-        url: "#",
+        config: SOCIAL.facebook,
         icon: <SocialIcons.facebook className="w-full h-full" />
     },
     {
         name: "WhatsApp",
-        url: "https://wa.me/5519999999999",
+        config: SOCIAL.whatsapp,
         icon: <SocialIcons.whatsapp className="w-full h-full" />
     }
 ];
@@ -35,7 +34,6 @@ const NAV_LINKS = [
     { label: "Dores", id: "problems" },
     { label: "Soluções", id: "solutions" },
     { label: "Dashboard", id: "dashboard" },
-    { label: "Métricas", id: "features" },
     { label: "Metodologia", id: "methodology" },
     { label: "Depoimentos", id: "reviews" },
     { label: "FAQ", id: "faq" },
@@ -60,7 +58,19 @@ export function Footer() {
 
                     {/* Brand Column */}
                     <div className="lg:col-span-5 space-y-6">
-                        <a href="/" className="flex items-center gap-2 group mb-4">
+                        <a
+                            href="/"
+                            onClick={(e) => {
+                                e.preventDefault();
+                                const hero = document.getElementById("hero");
+                                if (hero) {
+                                    hero.scrollIntoView({ behavior: "smooth" });
+                                } else {
+                                    window.scrollTo({ top: 0, behavior: "smooth" });
+                                }
+                            }}
+                            className="flex items-center gap-2 group mb-4 w-fit"
+                        >
                             <img
                                 src="/nexis_logo.png"
                                 alt="Nexis Logo"
@@ -68,21 +78,23 @@ export function Footer() {
                             />
                         </a>
 
-                        {/* Social Media - positioned here as per reference branding column */}
+                        {/* Social Media - Only render if active */}
                         <div className="flex">
-                            {SOCIAL_LINKS.map((social) => (
-                                <a
-                                    key={social.name}
-                                    href={social.url}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className={`flex items-center justify-center w-10 h-10 text-neutral-400 transition-all hover:text-brand hover:drop-shadow-[0_0_8px_rgba(59,130,246,0.5)]`}
-                                    aria-label={social.name}
-                                >
-                                    <div className="w-5 h-5 ">
-                                        {social.icon}
-                                    </div>
-                                </a>
+                            {SOCIAL_MEDIA_ITEMS.map((social) => (
+                                social.config.active && (
+                                    <a
+                                        key={social.name}
+                                        href={social.config.url}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className={`flex items-center justify-center w-10 h-10 text-neutral-400 transition-all hover:text-brand hover:drop-shadow-[0_0_8px_rgba(59,130,246,0.5)]`}
+                                        aria-label={social.name}
+                                    >
+                                        <div className="w-5 h-5 ">
+                                            {social.icon}
+                                        </div>
+                                    </a>
+                                )
                             ))}
                         </div>
 
@@ -113,33 +125,39 @@ export function Footer() {
                             <div className="space-y-4">
                                 <h4 className="text-lg font-semibold mb-4 text-white">Contato</h4>
                                 <ul className="space-y-4">
-                                    <li>
-                                        <a href="https://wa.me/5519999999999" className="flex items-center gap-3 text-white/80 hover:text-white transition-colors group">
-                                            <div className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center group-hover:bg-white/10 transition-colors">
-                                                <SocialIcons.whatsapp className="w-5 h-5" />
-                                            </div>
-                                            <span>+55 19 99999-9999</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="mailto:contato@nexis.com" className="flex items-center gap-3 text-white/80 hover:text-white transition-colors group">
-                                            <div className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center group-hover:bg-white/10 transition-colors">
-                                                <Mail className="w-5 h-5" />
-                                            </div>
-                                            <span>contato@nexis.com</span>
-                                        </a>
-                                    </li>
+                                    {SOCIAL.whatsapp.active && (
+                                        <li>
+                                            <a href={SOCIAL.whatsapp.url} target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-white/80 hover:text-white transition-colors group">
+                                                <div className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center group-hover:bg-white/10 transition-colors">
+                                                    <SocialIcons.whatsapp className="w-5 h-5" />
+                                                </div>
+                                                <span>{SOCIAL.whatsapp.label}</span>
+                                            </a>
+                                        </li>
+                                    )}
+                                    {SOCIAL.email.active && (
+                                        <li>
+                                            <a href={SOCIAL.email.url} className="flex items-center gap-3 text-white/80 hover:text-white transition-colors group">
+                                                <div className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center group-hover:bg-white/10 transition-colors">
+                                                    <Mail className="w-5 h-5" />
+                                                </div>
+                                                <span>{SOCIAL.email.label}</span>
+                                            </a>
+                                        </li>
+                                    )}
                                 </ul>
                             </div>
 
                             <div className="space-y-4">
                                 <h4 className="text-lg font-semibold mb-4 text-white">Endereço</h4>
-                                <div className="flex items-start gap-3 text-white/80 hover:text-white transition-colors group">
-                                    <div className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center shrink-0 group-hover:bg-white/10 transition-colors">
-                                        <MapPin className="w-5 h-5" />
-                                    </div>
-                                    <span>Americana<br />São Paulo, SP</span>
-                                </div>
+                                {CONTACT_INFO.address.active && (
+                                    <a href={SOCIAL.maps.url} target="_blank" rel="noopener noreferrer" className="flex items-start gap-3 text-white/80 hover:text-white transition-colors group">
+                                        <div className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center shrink-0 group-hover:bg-white/10 transition-colors">
+                                            <MapPin className="w-5 h-5" />
+                                        </div>
+                                        <span>{CONTACT_INFO.address.label[0]}<br />{CONTACT_INFO.address.label[1]}</span>
+                                    </a>
+                                )}
                             </div>
                         </div>
 
@@ -152,7 +170,7 @@ export function Footer() {
                         <p>© 2026 Nexis Inc. Todos os direitos reservados.</p>
                     </div>
                     <div className="flex gap-6">
-                        <span className="text-white/40">Desenvolvido por <span className="font-semibold text-white">Nexis</span></span>
+                        <span className="text-bold text-white cursor-default">Nexis</span>
                     </div>
                 </div>
             </div>

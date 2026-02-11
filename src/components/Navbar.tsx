@@ -5,6 +5,7 @@ import { useState, useEffect, useRef } from "react";
 import { useDevice } from "@/hooks/useDevice";
 import Link from "next/link";
 import { WhatsAppHoverButton } from "@/components/ui/whatsapp-hover-button";
+import { SOCIAL } from "@/config/social";
 
 // --- ASSETS ---
 const ASSETS = {
@@ -16,7 +17,6 @@ const LINKS = [
     { label: "Dores", id: "problems" },
     { label: "Soluções", id: "solutions" },
     { label: "Dashboard", id: "dashboard" },
-    { label: "Métricas", id: "features" },
     { label: "Metodologia", id: "methodology" },
     { label: "Depoimentos", id: "reviews" },
     { label: "FAQ", id: "faq" },
@@ -24,13 +24,13 @@ const LINKS = [
 
 // --- CONFIGURAÇÃO DE ALTURAS ---
 const LOGO_ICON_SIZES = {
-    desktop: 30, 
+    desktop: 30,
     tablet: 30,
     mobile: 32,
 };
 
 const NAVBAR_HEIGHTS = {
-    desktop: 72, 
+    desktop: 72,
     tablet: 72,
     mobile: 80,
 };
@@ -70,7 +70,7 @@ export function Navbar() {
                     }
                 });
             },
-            { rootMargin: "-40% 0px -50% 0px" } 
+            { rootMargin: "-40% 0px -50% 0px" }
         );
 
         LINKS.forEach(l => {
@@ -96,7 +96,7 @@ export function Navbar() {
         border border-white/5
         shadow-[0_8px_32px_rgba(0,0,0,0.2)]
     `;
-    
+
     const transparentStyle = `bg-transparent border-transparent shadow-none rounded-0 `;
 
     const glassStyleMobile = `
@@ -123,15 +123,26 @@ export function Navbar() {
                     `}
                     style={{
                         height: `${navbarHeight}px`,
-                        width: "auto", 
-                        minWidth: "700px", 
+                        width: "auto",
+                        minWidth: "700px",
                         maxWidth: "1500px",
                     }}
                 >
                     {/* 1. LOGO (SOLTA e SEM FUNDO) */}
+                    {/* 1. LOGO (SOLTA e SEM FUNDO) */}
                     <Link
                         href="/"
                         ref={logoRef}
+                        onClick={(e) => {
+                            e.preventDefault();
+                            const hero = document.getElementById("hero");
+                            if (hero) {
+                                hero.scrollIntoView({ behavior: "smooth" });
+                            } else {
+                                window.scrollTo({ top: 0, behavior: "smooth" });
+                            }
+                            setActiveTab("");
+                        }}
                         className="flex justify-start px-4 transition-opacity hover:cursor-pointer hover:transition-transform hover:scale-[1.1]"
                     >
                         <img
@@ -166,8 +177,8 @@ export function Navbar() {
                                         }}
                                         className={`
                                             relative px-5 py-2 text-sm font-medium rounded-full transition-all duration-300
-                                            ${isActive 
-                                                ? "bg-blue-600 text-white shadow-lg shadow-blue-500/25" 
+                                            ${isActive
+                                                ? "bg-blue-600 text-white shadow-lg shadow-blue-500/25"
                                                 : "text-zinc-400 hover:text-white hover:bg-white/5"
                                             }
                                         `}
@@ -179,18 +190,22 @@ export function Navbar() {
                         </nav>
                     )}
 
+
                     {/* 3. BOTÃO COMEÇAR (SUBSTITUÍDO) */}
-                    <div className="flex items-center ml-8 hover:cursor-pointer">
-                        <WhatsAppHoverButton
-                            className="min-w-[140px]" 
-                        />
-                    </div>  
+                    {SOCIAL.whatsapp.active && (
+                        <div className="flex items-center ml-8 hover:cursor-pointer">
+                            <WhatsAppHoverButton
+                                className="min-w-[140px]"
+                                onClick={() => window.open(SOCIAL.whatsapp.url, "_blank")}
+                            />
+                        </div>
+                    )}
                 </motion.div>
             </div>
 
             {/* MOBILE: SPEED DIAL (SÓ APARECE NO MOBILE) */}
             <div className="md:hidden fixed bottom-6 right-6 z-50 flex flex-col-reverse items-center gap-3 pointer-events-auto">
-                
+
                 {/* Botão de Toggle (FAB) */}
                 <motion.button
                     whileTap={{ scale: 0.9 }}
@@ -239,18 +254,20 @@ export function Navbar() {
                                     {link.label}
                                 </motion.button>
                             ))}
-                            
+
                             {/* Botão Começar Mobile */}
-                            <motion.button
-                                initial={{ opacity: 0, y: 20, scale: 0.8 }}
-                                animate={{ opacity: 1, y: 0, scale: 1 }}
-                                exit={{ opacity: 0, y: 10, scale: 0.8 }}
-                                transition={{ delay: 0.05 }}
-                                onClick={() => window.location.href = '/login'}
-                                className=" btn-blue bg-[var(--color-brand-blue)] px-6 py-3 rounded-full text-white font-bold shadow-lg min-w-[140px] text-center items-center"
-                            >
-                                Começar
-                            </motion.button>
+                            {SOCIAL.whatsapp.active && (
+                                <motion.button
+                                    initial={{ opacity: 0, y: 20, scale: 0.8 }}
+                                    animate={{ opacity: 1, y: 0, scale: 1 }}
+                                    exit={{ opacity: 0, y: 10, scale: 0.8 }}
+                                    transition={{ delay: 0.05 }}
+                                    onClick={() => window.open(SOCIAL.whatsapp.url, "_blank")}
+                                    className=" btn-blue bg-[var(--color-brand-blue)] px-6 py-3 rounded-full text-white font-bold shadow-lg min-w-[140px] text-center items-center"
+                                >
+                                    Começar
+                                </motion.button>
+                            )}
                         </div>
                     )}
                 </AnimatePresence>

@@ -6,7 +6,7 @@ import { Hero } from "@/components/Hero";
 import { Problems } from "@/components/Problems";
 
 import { Dashboard } from "@/components/Dashboard";
-import { Features } from "@/components/Features";
+
 import { Solutions } from "@/components/Solutions";
 import { Methodology } from "@/components/Methodology";
 import { Reviews } from "@/components/Reviews";
@@ -28,13 +28,11 @@ export default function Home() {
 
             <Solutions />
 
-
-
             <Dashboard />
 
-            <Features />
-
             <Methodology />
+
+        
 
             <Reviews />
 

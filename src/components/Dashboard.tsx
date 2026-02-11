@@ -21,11 +21,9 @@ function ListItem({ icon, title, description }: { icon: React.ReactNode, title: 
 export function Dashboard() {
     return (
         <section id="dashboard" className="pt-24 pb-0 relative overflow-hidden">
-            {/* Ambient background glow */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[500px] bg-brand/5 blur-[100px] rounded-full pointer-events-none" />
-
+            
             <div className="container mx-auto px-4">
-                <div className="grid lg:grid-cols-2 gap-16 items-center">
+                <div className="grid lg:grid-cols-2 gap-1 items-center">
                     <div>
                         <h2 className="text-3xl md:text-4xl font-bold mb-6 text-white tracking-tight leading-tight">
                             Fale com sua <br />
@@ -60,6 +58,8 @@ export function Dashboard() {
                     </div>
 
                     {/* Macbook Mockup */}
+                    {/* Ambient background glow  <div className="absolute top-1/2 translate-x- -translate-y-1/2 w-[800px] h-[500px] bg-brand/30 blur-[100px] rounded-full pointer-events-none" />*/}
+
                     <div className="relative lg:self-end flex justify-center lg:justify-end mt-0">
                         <img
                             src="/macbook com tela.png"

@@ -1,92 +1,1306 @@
-[00:00:02.042] Server  LOG     ✓ Ready in 1356ms
-[00:00:02.044] Server  WARN    ⚠ Cross origin request detected from 26.101.145.216 to /_next/* resource. In a future major version of Next.js, you will need to explicitly configure "allowedDevOrigins" in next.config to allow this.
+[00:00:03.486] Server  LOG     ✓ Ready in 2.5s
+[00:00:42.855] Server  WARN    ⚠ Cross origin request detected from 26.101.145.216 to /_next/* resource. In a future major version of Next.js, you will need to explicitly configure "allowedDevOrigins" in next.config to allow this.
 Read more: https://nextjs.org/docs/app/api-reference/config/next-config-js/allowedDevOrigins
-[00:00:05.183] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:00:05.187] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:00:47.774] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
-[00:00:47.927] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
-[00:00:55.907] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
-[00:01:00.301] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
-[00:01:07.436] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
-[00:03:38.130] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
-[00:03:38.152] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
-[00:03:42.932] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
-[00:03:45.458] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
-[00:03:53.467] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
-[00:03:55.986] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
-[00:04:04.015] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
-[00:04:06.756] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
-[00:04:14.597] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
-[00:04:17.153] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
-[00:05:57.067] Server  LOG     ✓ Compiled in 1735ms
-[00:05:57.271] Browser ERROR   ./src/app/layout.tsx:25:5
+[00:00:42.991] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:44.216] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:00:59.211] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:01:01.831] Server  LOG     ✓ Compiled in 2.7s
+[00:01:07.791] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:01:26.116] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:02:03.082] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:02:44.039] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:02:58.407] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:03:11.856] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:03:13.870] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:03:14.785] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:03:59.591] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:03:59.729] Server  LOG     ✓ Compiled in 423ms
+[00:04:03.690] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:04:04.489] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:04:35.475] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:05:06.015] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:05:16.809] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:05:25.429] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:05:37.260] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:05:45.223] Server  LOG     ✓ Compiled in 116ms
+[00:05:49.433] Server  LOG     ✓ Compiled in 79ms
+[00:05:50.219] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:05:53.721] Server  LOG     ✓ Compiled in 68ms
+[00:05:56.421] Server  LOG     ✓ Compiled in 72ms
+[00:05:59.733] Server  LOG     ✓ Compiled in 83ms
+[00:06:01.741] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:06:04.167] Server  LOG     ✓ Compiled in 57ms
+[00:06:07.073] Server  LOG     ✓ Compiled in 71ms
+[00:06:10.551] Server  LOG     ✓ Compiled in 67ms
+[00:06:15.637] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:06:16.154] Server  LOG     ✓ Compiled in 75ms
+[00:06:19.798] Server  LOG     ✓ Compiled in 60ms
+[00:06:22.146] Server  LOG     ✓ Compiled in 60ms
+[00:06:25.386] Server  LOG     ✓ Compiled in 53ms
+[00:06:27.119] Server  LOG     ✓ Compiled in 54ms
+[00:06:28.935] Server  LOG     ✓ Compiled in 148ms
+[00:06:29.251] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:06:37.683] Server  LOG     ✓ Compiled in 71ms
+[00:06:42.929] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:06:43.149] Server  LOG     ✓ Compiled in 85ms
+[00:06:47.592] Server  LOG     ✓ Compiled in 71ms
+[00:06:51.854] Server  LOG     ✓ Compiled in 63ms
+[00:06:56.370] Server  LOG     ✓ Compiled in 55ms
+[00:06:57.143] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:06:57.439] Server  LOG     ✓ Compiled in 57ms
+[00:07:02.241] Server  LOG     ✓ Compiled in 105ms
+[00:07:08.235] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:07:08.282] Server  LOG     ✓ Compiled in 82ms
+[00:07:17.595] Server  LOG     ✓ Compiled in 64ms
+[00:07:22.456] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:07:22.962] Server  LOG     ✓ Compiled in 80ms
+[00:07:32.300] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:07:37.098] Server  LOG     ✓ Compiled in 70ms
+[00:07:45.780] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:07:51.002] Server  LOG     ✓ Compiled in 47ms
+[00:07:54.168] Server  LOG     ✓ Compiled in 217ms
+[00:07:59.357] Server  LOG     ✓ Compiled in 171ms
+[00:07:59.429] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:08:06.502] Server  LOG     ✓ Compiled in 133ms
+[00:08:06.623] Browser ERROR   ./src/components/ui/orbiting-circles.tsx:38:74
 Parsing ecmascript source code failed
-  23 |     "Chatbot IA",
-  24 |     "Suporte Inteligente"
-> 25 |     openGraph: {
-     |     ^^^^^^^^^
-  26 |     title: "Nexis - Automação Inteligente",
-  27 |     description: "Gerencie sua infraestrutura com o Nexis.",
-  28 |     url: "https://seusite.com.br",
+  36 |           <defs>
+  37 |             {/* 1. Gradiente Radial (Efeito Vidro no Centro) */}
+> 38 |             <radialGradient id={fillGradientId} cx="50%" cy="50%" r="60%"">
+     |                                                                          ^^
+  39 |               <stop offset="0%" stopColor="black" stopOpacity="0" />
+  40 |               <stop offset="100%" stopColor="white" stopOpacity="0.02" />
+  41 |             </radialGradient>
 
-Expected ',', got 'ident'
-[00:05:57.293] Browser ERROR   ./src/app/layout.tsx:25:5
+Unterminated string constant
+
+Import traces:
+  Client Component Browser:
+    ./src/components/ui/orbiting-circles.tsx [Client Component Browser]
+    ./src/components/ui/HeroOrbitingBackground.tsx [Client Component Browser]
+    ./src/components/Hero.tsx [Client Component Browser]
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/components/ui/orbiting-circles.tsx [Client Component SSR]
+    ./src/components/ui/HeroOrbitingBackground.tsx [Client Component SSR]
+    ./src/components/Hero.tsx [Client Component SSR]
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+[00:08:16.063] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:08:16.542] Server  LOG     ✓ Compiled in 143ms
+[00:08:19.706] Server  LOG     ✓ Compiled in 79ms
+[00:08:22.335] Server  LOG     ✓ Compiled in 62ms
+[00:08:23.756] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:08:25.449] Server  LOG     ✓ Compiled in 59ms
+[00:08:33.102] Server  LOG     ✓ Compiled in 77ms
+[00:08:35.585] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:08:41.845] Server  LOG     ✓ Compiled in 46ms
+[00:08:55.059] Server  LOG     ✓ Compiled in 49ms
+[00:09:01.479] Server  LOG     ✓ Compiled in 77ms
+[00:09:06.241] Server  LOG     ✓ Compiled in 74ms
+[00:09:08.161] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:09:11.282] Server  LOG     ✓ Compiled in 54ms
+[00:09:18.713] Server  LOG     ✓ Compiled in 97ms
+[00:09:18.758] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:09:27.800] Server  LOG     ✓ Compiled in 132ms
+[00:09:28.236] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:09:34.757] Server  LOG     ✓ Compiled in 59ms
+[00:09:37.676] Server  LOG     ✓ Compiled in 55ms
+[00:09:41.586] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:09:41.602] Server  LOG     ✓ Compiled in 68ms
+[00:09:45.180] Server  LOG     ✓ Compiled in 50ms
+[00:09:48.294] Server  LOG     ✓ Compiled in 65ms
+[00:09:48.608] Browser ERROR   ./src/components/ui/orbiting-circles.tsx:38:69
 Parsing ecmascript source code failed
-  23 |     "Chatbot IA",
-  24 |     "Suporte Inteligente"
-> 25 |     openGraph: {
-     |     ^^^^^^^^^
-  26 |     title: "Nexis - Automação Inteligente",
-  27 |     description: "Gerencie sua infraestrutura com o Nexis.",
-  28 |     url: "https://seusite.com.br",
+  36 |           <defs>
+  37 |             {/* 1. Gradiente Radial (Efeito Vidro no Centro) */}
+> 38 |             <radialGradient id={fillGradientId} cx="50%" cy="50%" r='{radius} fx="50%" fy="50%">
+     |                                                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 39 |               <stop offset="0%" stopColor="black" stopOpacity="0" />
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 40 |               <stop offset="100%" stopColor="white" stopOpacity="0.02" />
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 41 |             </radialGradient>
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 42 |
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 43 |             {/* 2. Gradiente Linear (O Traço da órbita) */}
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 44 |             <linearGradient id={strokeGradientId} x1="0%" y1="0%" x2="0%" y2="100%">
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 45 |               <stop offset="0%" stopColor="white" stopOpacity="0.01" />
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 46 |               <stop offset="100%" stopColor="white" stopOpacity="0.01" />
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 47 |             </linearGradient>
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 48 |           </defs>
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 49 |
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 50 |           {/* Círculo Principal */}
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 51 |           <circle
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 52 |             className="stroke-1 dark:stroke-white/5"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 53 |             cx="50%"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 54 |             cy="50%"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 55 |             r={radius}
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 56 |             fill={`url(#${fillGradientId})`}
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 57 |             stroke={`url(#${strokeGradientId})`}
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 58 |           />
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 59 |         </svg>
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 60 |       )}
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 61 |
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 62 |       {/* Container dos Ícones */}
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 63 |       <div
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 64 |         style={
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 65 |           {
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 66 |             "--duration": duration,
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 67 |             "--radius": radius,
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 68 |             "--delay": -delay,
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 69 |           } as React.CSSProperties
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 70 |         }
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 71 |         className={cn(
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 72 |           "absolute flex size-full transform-gpu animate-orbit items-center justify-center rounded-full border-none [animation-delay:calc(var(--delay)*1000ms)] z-30",
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 73 |           { "[animation-direction:reverse]": reverse },
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 74 |           className
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 75 |         )}
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 76 |       >
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 77 |         {children}
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 78 |       </div>
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 79 |     </>
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 80 |   );
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 81 | }
+     | ^^
 
-Expected ',', got 'ident'
-[00:06:01.271] Browser ERROR   ./src/app/layout.tsx:41:5
+Unterminated string constant
+
+Import traces:
+  Client Component Browser:
+    ./src/components/ui/orbiting-circles.tsx [Client Component Browser]
+    ./src/components/ui/HeroOrbitingBackground.tsx [Client Component Browser]
+    ./src/components/Hero.tsx [Client Component Browser]
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/components/ui/orbiting-circles.tsx [Client Component SSR]
+    ./src/components/ui/HeroOrbitingBackground.tsx [Client Component SSR]
+    ./src/components/Hero.tsx [Client Component SSR]
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+[00:10:02.523] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:10:03.223] Server  LOG     ✓ Compiled in 72ms
+[00:10:05.702] Server  LOG     ✓ Compiled in 48ms
+[00:10:10.448] Server  LOG     ✓ Compiled in 50ms
+[00:10:10.602] Browser ERROR   ./src/components/ui/orbiting-circles.tsx:38:72
 Parsing ecmascript source code failed
-  39 |     locale: "pt_BR",
-  40 |     type: "website",
-> 41 |     ]
-     |     ^
-  42 | };
-  43 |
-  44 | export default function RootLayout({
+  36 |           <defs>
+  37 |             {/* 1. Gradiente Radial (Efeito Vidro no Centro) */}
+> 38 |             <radialGradient id={fillGradientId} cx="50%" cy="50%" r=""{radius}"" fx="50%" fy="50%">
+     |                                                                        ^^^^^^
+  39 |               <stop offset="0%" stopColor="black" stopOpacity="0" />
+  40 |               <stop offset="100%" stopColor="white" stopOpacity="0.02" />
+  41 |             </radialGradient>
 
-Unexpected token `]`. Expected identifier, string literal, numeric literal or [ for the computed key
-[00:06:01.271] Browser ERROR   ./src/app/layout.tsx:41:5
+Expected '</', got 'ident'
+
+Import traces:
+  Client Component Browser:
+    ./src/components/ui/orbiting-circles.tsx [Client Component Browser]
+    ./src/components/ui/HeroOrbitingBackground.tsx [Client Component Browser]
+    ./src/components/Hero.tsx [Client Component Browser]
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/components/ui/orbiting-circles.tsx [Client Component SSR]
+    ./src/components/ui/HeroOrbitingBackground.tsx [Client Component SSR]
+    ./src/components/Hero.tsx [Client Component SSR]
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+[00:10:13.606] Browser ERROR   ./src/components/ui/orbiting-circles.tsx:38:72
 Parsing ecmascript source code failed
-  39 |     locale: "pt_BR",
-  40 |     type: "website",
-> 41 |     ]
-     |     ^
-  42 | };
-  43 |
-  44 | export default function RootLayout({
+  36 |           <defs>
+  37 |             {/* 1. Gradiente Radial (Efeito Vidro no Centro) */}
+> 38 |             <radialGradient id={fillGradientId} cx="50%" cy="50%" r=""{radius}" fx="50%" fy="50%">
+     |                                                                        ^^^^^^
+  39 |               <stop offset="0%" stopColor="black" stopOpacity="0" />
+  40 |               <stop offset="100%" stopColor="white" stopOpacity="0.02" />
+  41 |             </radialGradient>
 
-Unexpected token `]`. Expected identifier, string literal, numeric literal or [ for the computed key
-[00:06:46.693] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
-[00:06:55.753] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:06:55.943] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:07:29.074] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
-[00:07:29.074] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
-[00:07:46.108] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
-[00:07:47.259] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
-[00:07:57.274] Server  LOG     ○ Compiling / ...
-[00:08:00.132] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
-[00:08:02.619] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
-[00:08:02.619] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
-[00:08:09.212] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
-[00:08:16.276] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
-[00:08:26.695] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
-[00:12:55.701] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
-[00:12:55.703] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
-[00:12:55.704] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
-[00:12:55.704] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
-[00:13:39.678] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
-[00:13:39.679] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
-[00:13:40.312] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
-[00:13:51.773] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
-[00:13:51.773] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
-[00:13:51.774] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
-[00:14:09.186] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
-[00:14:09.186] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
-[00:14:50.946] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+Expected '</', got 'ident'
+
+Import traces:
+  Client Component Browser:
+    ./src/components/ui/orbiting-circles.tsx [Client Component Browser]
+    ./src/components/ui/HeroOrbitingBackground.tsx [Client Component Browser]
+    ./src/components/Hero.tsx [Client Component Browser]
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/components/ui/orbiting-circles.tsx [Client Component SSR]
+    ./src/components/ui/HeroOrbitingBackground.tsx [Client Component SSR]
+    ./src/components/Hero.tsx [Client Component SSR]
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+[00:10:14.630] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:10:22.088] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:10:22.456] Server  LOG     ✓ Compiled in 89ms
+[00:10:26.356] Server  LOG     ✓ Compiled in 83ms
+[00:10:29.625] Server  LOG     ✓ Compiled in 69ms
+[00:10:35.756] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:10:36.559] Server  LOG     ✓ Compiled in 69ms
+[00:10:41.046] Server  LOG     ✓ Compiled in 62ms
+[00:10:53.332] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:10:53.922] Server  LOG     ✓ Compiled in 113ms
+[00:10:58.245] Server  LOG     ✓ Compiled in 62ms
+[00:10:59.336] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:11:01.635] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:11:02.135] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:11:04.607] Server  LOG     ✓ Compiled in 45ms
+[00:11:13.967] Server  LOG     ✓ Compiled in 75ms
+[00:11:15.092] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:11:16.781] Server  LOG     ✓ Compiled in 50ms
+[00:11:47.846] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:11:48.419] Server  LOG     ✓ Compiled in 62ms
+[00:11:50.816] Server  LOG     ✓ Compiled in 48ms
+[00:11:53.079] Server  LOG     ✓ Compiled in 71ms
+[00:11:53.922] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:11:55.654] Server  LOG     ✓ Compiled in 80ms
+[00:11:58.064] Server  LOG     ✓ Compiled in 145ms
+[00:12:03.956] Server  LOG     ✓ Compiled in 57ms
+[00:12:09.652] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:12:10.183] Server  LOG     ✓ Compiled in 105ms
+[00:12:13.746] Server  LOG     ✓ Compiled in 53ms
+[00:12:20.271] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:12:20.887] Server  LOG     ✓ Compiled in 70ms
+[00:12:25.405] Server  LOG     ✓ Compiled in 50ms
+[00:12:28.548] Server  LOG     ✓ Compiled in 97ms
+[00:12:31.020] Server  LOG     ✓ Compiled in 48ms
+[00:12:34.305] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:12:34.882] Server  LOG     ✓ Compiled in 62ms
+[00:12:37.803] Server  LOG     ✓ Compiled in 46ms
+[00:12:40.908] Server  LOG     ✓ Compiled in 85ms
+[00:12:43.597] Server  LOG     ✓ Compiled in 44ms
+[00:12:46.687] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:12:46.781] Server  LOG     ✓ Compiled in 78ms
+[00:12:49.609] Server  LOG     ✓ Compiled in 54ms
+[00:12:51.831] Server  LOG     ✓ Compiled in 103ms
+[00:12:56.264] Server  LOG     ✓ Compiled in 43ms
+[00:13:03.337] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:13:03.934] Server  LOG     ✓ Compiled in 57ms
+[00:13:07.089] Server  LOG     ✓ Compiled in 50ms
+[00:13:10.010] Server  LOG     ✓ Compiled in 64ms
+[00:13:12.758] Server  LOG     ✓ Compiled in 43ms
+[00:13:19.194] Server  LOG     ✓ Compiled in 48ms
+[00:13:22.078] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:13:22.542] Server  LOG     ✓ Compiled in 81ms
+[00:13:24.695] Server  LOG     ✓ Compiled in 47ms
+[00:13:32.303] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:13:39.179] Server  LOG     ✓ Compiled in 53ms
+[00:13:42.357] Server  LOG     ✓ Compiled in 42ms
+[00:13:44.625] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:13:45.141] Server  LOG     ✓ Compiled in 69ms
+[00:13:48.578] Server  LOG     ✓ Compiled in 52ms
+[00:13:58.122] Server  LOG     ✓ Compiled in 48ms
+[00:14:02.882] Server  LOG     ✓ Compiled in 73ms
+[00:14:04.735] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:14:10.698] Server  LOG     ✓ Compiled in 43ms
+[00:14:17.458] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:14:17.467] Server  LOG     ✓ Compiled in 149ms
+[00:14:21.967] Server  LOG     ✓ Compiled in 62ms
+[00:14:24.825] Server  LOG     ✓ Compiled in 55ms
+[00:14:29.218] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:14:59.508] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:15:00.054] Server  LOG     ✓ Compiled in 126ms
+[00:15:00.163] Browser ERROR   uncaughtError: ReferenceError: useId is not defined
+[00:15:08.907] Server  WARN    ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:15:09.549] Server  LOG     ✓ Compiled in 93ms
+[00:15:09.550] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:15:09.550] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:15:10.565] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:16:27.748] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:16:42.067] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:18:47.917] Server  LOG     ✓ Compiled in 78ms
+[00:18:48.297] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:18:56.349] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:20:48.231] Server  LOG     ✓ Compiled in 83ms
+[00:20:48.705] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:21:00.265] Server  LOG     ✓ Compiled in 60ms
+[00:21:01.965] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:21:05.586] Server  LOG     ✓ Compiled in 59ms
+[00:21:15.218] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:21:24.230] Server  LOG     ✓ Compiled in 65ms
+[00:21:28.772] Server  LOG     ✓ Compiled in 51ms
+[00:21:30.828] Server  LOG     ✓ Compiled in 75ms
+[00:21:32.414] Server  LOG     ✓ Compiled in 52ms
+[00:21:33.739] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:22:26.741] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:22:41.423] Server  LOG     ✓ Compiled in 57ms
+[00:22:50.746] Server  LOG     ✓ Compiled in 133ms
+[00:22:53.740] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:24:01.591] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:24:38.006] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:24:38.125] Server  LOG     ✓ Compiled in 118ms
+[00:24:40.957] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:25:11.259] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:25:21.281] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:25:37.114] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:25:37.201] Server  LOG     ✓ Compiled in 137ms
+[00:27:29.586] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:27:41.299] Server  LOG     ✓ Compiled in 79ms
+[00:27:43.310] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:27:54.220] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:29:08.066] Server  LOG     ✓ Compiled in 91ms
+[00:29:08.735] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:29:13.781] Server  LOG     ✓ Compiled in 76ms
+[00:29:17.235] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:29:20.465] Server  LOG     ✓ Compiled in 77ms
+[00:29:27.272] Server  LOG     ✓ Compiled in 56ms
+[00:29:30.251] Server  LOG     ✓ Compiled in 102ms
+[00:29:30.586] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:29:39.167] Server  LOG     ✓ Compiled in 58ms
+[00:29:43.829] Server  LOG     ✓ Compiled in 159ms
+[00:29:44.219] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:29:52.916] Server  LOG     ✓ Compiled in 165ms
+[00:29:55.768] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:30:00.341] Server  LOG     ✓ Compiled in 68ms
+[00:30:05.202] Server  LOG     ✓ Compiled in 65ms
+[00:30:12.384] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:30:13.119] Server  LOG     ✓ Compiled in 69ms
+[00:30:15.264] Server  LOG     ✓ Compiled in 50ms
+[00:30:16.841] Server  LOG     ✓ Compiled in 116ms
+[00:30:19.050] Server  LOG     ✓ Compiled in 53ms
+[00:30:22.082] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:30:22.688] Server  LOG     ✓ Compiled in 115ms
+[00:30:27.926] Server  LOG     ✓ Compiled in 103ms
+[00:30:32.799] Server  LOG     ✓ Compiled in 60ms
+[00:30:35.484] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:30:36.144] Server  LOG     ✓ Compiled in 70ms
+[00:30:39.181] Server  LOG     ✓ Compiled in 97ms
+[00:30:43.608] Server  LOG     ✓ Compiled in 126ms
+[00:30:47.318] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:30:47.555] Server  LOG     ✓ Compiled in 69ms
+[00:30:59.142] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:31:09.405] Server  LOG     ✓ Compiled in 59ms
+[00:31:12.704] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:31:12.964] Server  LOG     ✓ Compiled in 92ms
+[00:31:15.681] Server  LOG     ✓ Compiled in 76ms
+[00:31:21.906] Server  LOG     ✓ Compiled in 72ms
+[00:31:26.378] Server  LOG     ✓ Compiled in 68ms
+[00:31:33.006] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:31:33.279] Server  LOG     ✓ Compiled in 82ms
+[00:31:36.483] Server  LOG     ✓ Compiled in 80ms
+[00:31:37.351] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:31:43.417] Server  LOG     ✓ Compiled in 68ms
+[00:31:51.089] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:31:51.833] Server  LOG     ✓ Compiled in 59ms
+[00:31:55.059] Server  LOG     ✓ Compiled in 53ms
+[00:31:57.500] Server  LOG     ✓ Compiled in 70ms
+[00:32:04.234] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:32:04.515] Server  LOG     ✓ Compiled in 70ms
+[00:32:09.695] Server  LOG     ✓ Compiled in 62ms
+[00:32:12.119] Server  LOG     ✓ Compiled in 62ms
+[00:32:16.145] Server  LOG     ✓ Compiled in 81ms
+[00:32:17.284] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:32:19.983] Server  LOG     ✓ Compiled in 63ms
+[00:32:25.194] Server  LOG     ✓ Compiled in 88ms
+[00:32:28.573] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:32:36.898] Server  LOG     ✓ Compiled in 72ms
+[00:32:39.590] Server  LOG     ✓ Compiled in 115ms
+[00:32:40.317] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:32:46.223] Server  LOG     ✓ Compiled in 51ms
+[00:32:52.220] Server  LOG     ✓ Compiled in 65ms
+[00:32:54.100] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:32:56.395] Server  LOG     ✓ Compiled in 85ms
+[00:33:11.389] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:33:31.848] Server  LOG     ✓ Compiled in 123ms
+[00:33:35.095] Server  LOG     ✓ Compiled in 97ms
+[00:33:38.991] Server  LOG     ✓ Compiled in 237ms
+[00:33:43.989] Server  LOG     ✓ Compiled in 133ms
+[00:33:46.588] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:33:49.431] Server  LOG     ✓ Compiled in 124ms
+[00:33:55.952] Server  LOG     ✓ Compiled in 146ms
+[00:33:57.919] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:34:07.933] Server  LOG     ✓ Compiled in 55ms
+[00:34:11.457] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:35:03.649] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:35:07.220] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:35:19.934] Server  LOG     ✓ Compiled in 77ms
+[00:35:21.151] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:35:31.324] Server  LOG     ✓ Compiled in 67ms
+[00:35:35.011] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:35:35.797] Server  LOG     ✓ Compiled in 81ms
+[00:36:00.817] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:36:11.768] Server  LOG     ✓ Compiled in 74ms
+[00:36:12.215] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:36:15.662] Server  LOG     ✓ Compiled in 78ms
+[00:36:19.429] Server  LOG     ✓ Compiled in 73ms
+[00:36:23.376] Server  LOG     ✓ Compiled in 53ms
+[00:36:27.101] Server  LOG     ✓ Compiled in 47ms
+[00:36:27.865] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:36:28.570] Server  LOG     ✓ Compiled in 58ms
+[00:36:33.432] Server  LOG     ✓ Compiled in 81ms
+[00:36:36.829] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:36:41.756] Server  LOG     ✓ Compiled in 57ms
+[00:36:47.653] Server  LOG     ✓ Compiled in 87ms
+[00:36:49.590] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:36:51.233] Server  LOG     ✓ Compiled in 118ms
+[00:36:54.917] Server  LOG     ✓ Compiled in 73ms
+[00:36:59.995] Server  LOG     ✓ Compiled in 64ms
+[00:37:00.918] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:37:03.298] Server  LOG     ✓ Compiled in 100ms
+[00:37:06.407] Server  LOG     ✓ Compiled in 83ms
+[00:37:18.641] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:37:19.245] Server  LOG     ✓ Compiled in 70ms
+[00:37:23.200] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:37:23.733] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:37:25.796] Server  LOG     ✓ Compiled in 46ms
+[00:37:36.049] Server  LOG     ✓ Compiled in 62ms
+[00:37:36.971] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:37:40.060] Server  LOG     ✓ Compiled in 58ms
+[00:37:43.046] Server  LOG     ✓ Compiled in 61ms
+[00:37:46.359] Server  LOG     ✓ Compiled in 56ms
+[00:37:47.539] Server  LOG     ✓ Compiled in 73ms
+[00:37:52.775] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:37:53.430] Server  LOG     ✓ Compiled in 65ms
+[00:37:58.292] Server  LOG     ✓ Compiled in 66ms
+[00:38:05.548] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:38:06.253] Server  LOG     ✓ Compiled in 79ms
+[00:38:11.387] Server  LOG     ✓ Compiled in 105ms
+[00:38:17.537] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:38:18.230] Server  LOG     ✓ Compiled in 73ms
+[00:38:25.657] Server  LOG     ✓ Compiled in 63ms
+[00:38:28.232] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:38:28.527] Server  LOG     ✓ Compiled in 68ms
+[00:39:03.912] Server  LOG     ✓ Compiled in 65ms
+[00:39:07.105] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:39:07.797] Server  LOG     ✓ Compiled in 89ms
+[00:39:11.296] Server  LOG     ✓ Compiled in 52ms
+[00:39:13.103] Server  LOG     ✓ Compiled in 89ms
+[00:39:16.937] Server  LOG     ✓ Compiled in 61ms
+[00:39:18.751] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:39:22.349] Server  LOG     ✓ Compiled in 74ms
+[00:39:29.173] Server  LOG     ✓ Compiled in 85ms
+[00:39:30.300] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:39:33.503] Server  LOG     ✓ Compiled in 83ms
+[00:39:38.802] Server  LOG     ✓ Compiled in 69ms
+[00:39:40.671] Server  LOG     ✓ Compiled in 91ms
+[00:39:43.245] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:39:43.556] Server  LOG     ✓ Compiled in 173ms
+[00:39:47.717] Server  LOG     ✓ Compiled in 67ms
+[00:39:50.060] Server  LOG     ✓ Compiled in 79ms
+[00:40:05.631] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:40:13.449] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:40:13.875] Server  LOG     ✓ Compiled in 99ms
+[00:40:17.242] Server  LOG     ✓ Compiled in 67ms
+[00:40:21.483] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:40:32.475] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:40:43.301] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:41:00.601] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:41:28.011] Server  LOG     ✓ Compiled in 58ms
+[00:41:29.319] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:41:30.249] Server  LOG     ✓ Compiled in 76ms
+[00:41:36.008] Server  LOG     ✓ Compiled in 52ms
+[00:41:37.255] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:41:37.538] Server  LOG     ✓ Compiled in 76ms
+[00:41:41.540] Server  LOG     ✓ Compiled in 54ms
+[00:41:43.347] Server  LOG     ✓ Compiled in 51ms
+[00:41:48.084] Server  LOG     ✓ Compiled in 62ms
+[00:41:51.595] Server  LOG     ✓ Compiled in 47ms
+[00:42:03.898] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:42:04.586] Server  LOG     ✓ Compiled in 60ms
+[00:42:12.135] Server  LOG     ✓ Compiled in 68ms
+[00:42:15.925] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:42:17.056] Server  LOG     ✓ Compiled in 58ms
+[00:42:21.688] Server  LOG     ✓ Compiled in 52ms
+[00:42:29.350] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:42:34.568] Server  LOG     ✓ Compiled in 72ms
+[00:42:41.355] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:42:51.285] Server  LOG     ✓ Compiled in 116ms
+[00:42:52.650] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:43:08.610] Server  LOG     ✓ Compiled in 53ms
+[00:43:09.092] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:43:09.751] Server  LOG     ✓ Compiled in 89ms
+[00:43:13.181] Server  LOG     ✓ Compiled in 56ms
+[00:43:14.363] Server  LOG     ✓ Compiled in 63ms
+[00:43:19.266] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:43:27.519] Server  LOG     ✓ Compiled in 48ms
+[00:43:29.619] Server  LOG     ✓ Compiled in 87ms
+[00:43:31.881] Server  LOG     ✓ Compiled in 82ms
+[00:43:33.448] Server  LOG     ✓ Compiled in 50ms
+[00:43:35.549] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:43:35.762] Server  LOG     ✓ Compiled in 92ms
+[00:43:43.702] Server  LOG     ✓ Compiled in 115ms
+[00:43:44.733] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:43:46.869] Server  LOG     ✓ Compiled in 52ms
+[00:43:48.324] Server  LOG     ✓ Compiled in 133ms
+[00:43:51.361] Server  LOG     ✓ Compiled in 48ms
+[00:44:01.853] Server  LOG     ✓ Compiled in 48ms
+[00:44:03.712] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:44:04.169] Server  LOG     ✓ Compiled in 77ms
+[00:44:20.282] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:44:20.975] Server  LOG     ✓ Compiled in 70ms
+[00:44:24.234] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:44:24.479] Server  LOG     ✓ Compiled in 82ms
+[00:44:28.706] Server  LOG     ✓ Compiled in 73ms
+[00:44:32.661] Server  LOG     ✓ Compiled in 79ms
+[00:44:36.718] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:44:49.718] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:45:13.236] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:46:13.577] Server  LOG     ✓ Compiled in 84ms
+[00:46:14.594] Browser ERROR   uncaughtError: ReferenceError: GradualBlur is not defined
+[00:46:17.917] Server  WARN    ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:46:18.242] Server  ERROR   ⨯ ReferenceError: GradualBlur is not defined
+[00:46:18.266] Server  LOG     ✓ Compiled in 90ms
+[00:46:19.147] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:46:19.605] Browser ERROR   uncaughtError: ReferenceError: GradualBlur is not defined
+[00:46:23.384] Server  WARN    ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:46:23.574] Server  ERROR   ⨯ ReferenceError: GradualBlur is not defined
+[00:46:23.590] Server  LOG     ✓ Compiled in 77ms
+[00:46:24.021] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:46:24.600] Browser ERROR   uncaughtError: ReferenceError: GradualBlur is not defined
+[00:46:25.025] Server  LOG     ✓ Compiled in 94ms
+[00:46:25.595] Browser ERROR   ./src/components/Hero.tsx:9:1
+Export GradualBlur doesn't exist in target module
+   7 | import { RotatingBlurText } from "@/components/ui/RotatingBlurText";
+   8 | import { SOCIAL } from "@/config/social";
+>  9 | import { GradualBlur } from "@/components/ui/gradual-blur";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  10 |
+  11 | export function Hero() {
+  12 |     return (
+
+The export GradualBlur was not found in module [project]/src/components/ui/gradual-blur.tsx [app-client] (ecmascript).
+Did you mean to import default?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./src/components/Hero.tsx [Client Component Browser]
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/components/Hero.tsx [Client Component SSR]
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+[00:46:25.595] Browser ERROR   ./src/components/Hero.tsx:9:1
+Export GradualBlur doesn't exist in target module
+   7 | import { RotatingBlurText } from "@/components/ui/RotatingBlurText";
+   8 | import { SOCIAL } from "@/config/social";
+>  9 | import { GradualBlur } from "@/components/ui/gradual-blur";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  10 |
+  11 | export function Hero() {
+  12 |     return (
+
+The export GradualBlur was not found in module [project]/src/components/ui/gradual-blur.tsx [app-ssr] (ecmascript).
+Did you mean to import default?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./src/components/Hero.tsx [Client Component Browser]
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/components/Hero.tsx [Client Component SSR]
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+[00:47:26.954] Server  WARN    ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:47:27.791] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:47:31.181] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:47:40.206] Server  LOG     ✓ Compiled in 50ms
+[00:47:40.643] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:48:00.152] Server  LOG     ✓ Compiled in 48ms
+[00:48:06.996] Server  LOG     ✓ Compiled in 57ms
+[00:48:08.777] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:48:18.139] Server  LOG     ✓ Compiled in 147ms
+[00:48:20.423] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:48:20.885] Server  LOG     ✓ Compiled in 139ms
+[00:48:27.791] Server  LOG     ✓ Compiled in 164ms
+[00:48:38.097] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:49:46.820] Server  LOG     ✓ Compiled in 72ms
+[00:49:49.054] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:49:53.267] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:50:41.305] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:50:41.305] Browser ERROR   uncaughtError: ReferenceError: HeroOrbitingBackground is not defined
+[00:50:43.869] Server  WARN    ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:50:45.147] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:50:47.019] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:51:01.256] Server  LOG     ✓ Compiled in 63ms
+[00:51:02.964] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:51:07.920] Server  LOG     ✓ Compiled in 72ms
+[00:51:20.138] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:52:35.650] Server  LOG     ✓ Compiled in 185ms
+[00:52:35.920] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:52:50.098] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:52:56.801] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:53:31.144] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:53:33.563] Server  LOG     ✓ Compiled in 100ms
+[00:53:45.441] Server  LOG     ✓ Compiled in 61ms
+[00:53:49.260] Server  LOG     ✓ Compiled in 69ms
+[00:53:50.806] Server  LOG     ✓ Compiled in 52ms
+[00:53:52.330] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:53:53.410] Server  LOG     ✓ Compiled in 321ms
+[00:54:01.978] Server  LOG     ✓ Compiled in 137ms
+[00:54:04.254] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:54:16.833] Server  LOG     ✓ Compiled in 163ms
+[00:54:17.245] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:54:22.797] Server  LOG     ✓ Compiled in 200ms
+[00:54:43.548] Server  LOG     ✓ Compiled in 139ms
+[00:54:44.300] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:54:52.370] Server  LOG     ✓ Compiled in 194ms
+[00:54:53.921] Server  LOG     ✓ Compiled in 179ms
+[00:54:56.023] Server  LOG     ✓ Compiled in 143ms
+[00:54:56.982] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:55:03.897] Server  LOG     ✓ Compiled in 254ms
+[00:55:10.026] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:55:10.536] Server  LOG     ✓ Compiled in 311ms
+[00:55:17.685] Server  LOG     ✓ Compiled in 92ms
+[00:55:19.767] Server  LOG     ✓ Compiled in 61ms
+[00:55:21.828] Server  LOG     ✓ Compiled in 54ms
+[00:55:23.974] Server  LOG     ✓ Compiled in 53ms
+[00:55:25.905] Server  LOG     ✓ Compiled in 56ms
+[00:55:27.669] Server  LOG     ✓ Compiled in 47ms
+[00:55:28.457] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:55:29.322] Server  LOG     ✓ Compiled in 280ms
+[00:55:34.517] Server  LOG     ✓ Compiled in 129ms
+[00:55:36.558] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:56:10.399] Server  LOG     ✓ Compiled in 64ms
+[00:56:10.931] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:56:33.550] Server  LOG     ✓ Compiled in 96ms
+[00:56:33.772] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:56:39.223] Server  LOG     ✓ Compiled in 153ms
+[00:56:43.999] Server  LOG     ✓ Compiled in 120ms
+[00:56:45.792] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:56:58.722] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:57:00.979] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:57:01.870] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:57:24.803] Server  LOG     ✓ Compiled in 56ms
+[00:57:30.068] Server  LOG     ✓ Compiled in 63ms
+[00:57:30.218] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:57:40.470] Server  LOG     ✓ Compiled in 60ms
+[00:57:41.911] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:57:42.072] Server  LOG     ✓ Compiled in 191ms
+[00:57:45.554] Server  LOG     ✓ Compiled in 172ms
+[00:57:49.224] Server  LOG     ✓ Compiled in 142ms
+[00:57:51.347] Server  LOG     ✓ Compiled in 162ms
+[00:57:54.993] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:57:55.661] Server  LOG     ✓ Compiled in 141ms
+[00:58:01.001] Server  LOG     ✓ Compiled in 197ms
+[00:58:03.553] Server  LOG     ✓ Compiled in 133ms
+[00:58:06.321] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:58:06.647] Server  LOG     ✓ Compiled in 254ms
+[00:58:11.799] Server  LOG     ✓ Compiled in 139ms
+[00:58:20.421] Server  LOG     ✓ Compiled in 53ms
+[00:58:21.301] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:58:25.647] Server  LOG     ✓ Compiled in 153ms
+[00:58:32.142] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:58:33.134] Server  LOG     ✓ Compiled in 240ms
+[00:58:39.420] Server  LOG     ✓ Compiled in 130ms
+[00:58:41.672] Server  LOG     ✓ Compiled in 201ms
+[00:58:42.817] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:58:57.374] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:58:58.090] Server  LOG     ✓ Compiled in 114ms
+[00:59:01.312] Server  LOG     ✓ Compiled in 54ms
+[00:59:02.768] Server  LOG     ✓ Compiled in 52ms
+[00:59:04.718] Server  LOG     ✓ Compiled in 185ms
+[00:59:07.123] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:59:25.451] Server  LOG     ✓ Compiled in 55ms
+[00:59:30.365] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:59:30.856] Server  LOG     ✓ Compiled in 119ms
+[00:59:33.483] Server  LOG     ✓ Compiled in 52ms
+[00:59:36.796] Server  LOG     ✓ Compiled in 61ms
+[00:59:41.290] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:59:55.269] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[01:00:03.283] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[01:00:03.604] Server  LOG     ✓ Compiled in 319ms
+[01:00:06.546] Server  LOG     ✓ Compiled in 209ms
+[01:00:10.129] Server  LOG     ✓ Compiled in 156ms
+[01:00:14.346] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[01:00:14.384] Server  LOG     ✓ Compiled in 227ms
+[01:00:32.426] Server  LOG     ✓ Compiled in 63ms
+[01:00:33.168] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[01:00:46.538] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[01:00:47.133] Server  LOG     ✓ Compiled in 132ms
+[01:00:51.393] Server  LOG     ✓ Compiled in 382ms
+[01:00:54.338] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[01:00:55.198] Server  LOG     ✓ Compiled in 95ms
+[01:01:00.555] Server  LOG     ✓ Compiled in 291ms
+[01:01:04.953] Server  LOG     ✓ Compiled in 199ms
+[01:01:08.455] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[01:01:09.211] Server  LOG     ✓ Compiled in 223ms
+[01:01:11.489] Server  LOG     ✓ Compiled in 62ms
+[01:01:12.639] Server  LOG     ✓ Compiled in 151ms
+[01:01:17.403] Server  LOG     ✓ Compiled in 49ms
+[01:01:19.276] Server  LOG     ✓ Compiled in 63ms
+[01:01:20.224] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[01:01:20.557] Server  LOG     ✓ Compiled in 222ms
+[01:01:35.760] Server  LOG     ✓ Compiled in 77ms
+[01:01:35.997] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[01:01:52.403] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[01:02:24.207] Server  LOG     ✓ Compiled in 53ms
+[01:02:27.719] Server  LOG     ✓ Compiled in 47ms
+[01:02:39.043] Server  LOG     ✓ Compiled in 52ms
+[01:02:47.126] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[01:02:47.336] Server  LOG     ✓ Compiled in 155ms
+[01:02:52.700] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[01:02:58.627] Server  LOG     ✓ Compiled in 65ms
+[01:03:02.805] Server  LOG     ✓ Compiled in 107ms
+[01:03:22.615] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[01:03:31.252] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[01:04:47.960] Server  LOG     ✓ Compiled in 63ms
+[01:04:50.736] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[01:05:32.585] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[01:05:44.815] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[01:05:45.397] Server  LOG     ✓ Compiled in 205ms
+[01:05:53.986] Server  LOG     ✓ Compiled in 139ms
+[01:05:54.255] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[01:05:59.515] Server  LOG     ✓ Compiled in 119ms
+[01:06:06.859] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[01:06:14.757] Server  LOG     ✓ Compiled in 173ms
+[01:06:18.266] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[01:06:29.128] Server  LOG     ✓ Compiled in 85ms
+[01:06:31.470] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[01:06:40.154] Server  LOG     ✓ Compiled in 91ms
+[01:06:47.349] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[01:07:13.695] Server  LOG     ✓ Compiled in 164ms
+[01:07:14.600] Browser ERROR   uncaughtError: ReferenceError: ProgressiveBlur is not defined
+[01:07:17.616] Server  WARN    ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[01:07:17.833] Server  ERROR   ⨯ ReferenceError: ProgressiveBlur is not defined
+[01:07:17.853] Server  LOG     ✓ Compiled in 79ms
+[01:07:18.512] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:07:19.599] Browser ERROR   uncaughtError: ReferenceError: ProgressiveBlur is not defined
+[01:07:23.044] Server  WARN    ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[01:07:23.045] Server  WARN    ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[01:07:23.519] Server  ERROR   ⨯ ReferenceError: impo is not defined
+[01:07:23.534] Server  LOG     ✓ Compiled in 64ms
+[01:07:23.872] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:07:24.598] Browser ERROR   uncaughtError: ReferenceError: impo is not defined
+[01:07:25.240] Server  LOG     ✓ Compiled in 85ms
+[01:07:25.596] Browser ERROR   ./src/components/Hero.tsx:11:1
+Parsing ecmascript source code failed
+   9 | import 
+  10 |
+> 11 | export function Hero() {
+     | ^^^^^^
+  12 |     return (
+  13 |         <section id="hero" className="relative min-h-screen flex flex-col items-center pt-4 md:pt-2 lg:pt-3 pb-20 xl:pb-16 overflow-visible xl:overflow-hidden bg-background">
+  14 |
+
+Expected 'from', got 'export'
+
+Import traces:
+  Client Component Browser:
+    ./src/components/Hero.tsx [Client Component Browser]
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/components/Hero.tsx [Client Component SSR]
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+[01:07:27.523] Server  LOG     ✓ Compiled in 68ms
+[01:07:28.598] Browser ERROR   ./src/components/Hero.tsx:11:1
+Parsing ecmascript source code failed
+   9 | import gradual
+  10 |
+> 11 | export function Hero() {
+     | ^^^^^^
+  12 |     return (
+  13 |         <section id="hero" className="relative min-h-screen flex flex-col items-center pt-4 md:pt-2 lg:pt-3 pb-20 xl:pb-16 overflow-visible xl:overflow-hidden bg-background">
+  14 |
+
+Expected ',', got 'export'
+
+Import traces:
+  Client Component Browser:
+    ./src/components/Hero.tsx [Client Component Browser]
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/components/Hero.tsx [Client Component SSR]
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+[01:07:31.597] Browser ERROR   ./src/components/Hero.tsx:11:1
+Parsing ecmascript source code failed
+   9 | import gradualblur
+  10 |
+> 11 | export function Hero() {
+     | ^^^^^^
+  12 |     return (
+  13 |         <section id="hero" className="relative min-h-screen flex flex-col items-center pt-4 md:pt-2 lg:pt-3 pb-20 xl:pb-16 overflow-visible xl:overflow-hidden bg-background">
+  14 |
+
+Expected ',', got 'export'
+
+Import traces:
+  Client Component Browser:
+    ./src/components/Hero.tsx [Client Component Browser]
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/components/Hero.tsx [Client Component SSR]
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+[01:07:34.603] Browser ERROR   ./src/components/Hero.tsx:11:1
+Parsing ecmascript source code failed
+   9 | import Gradualblur
+  10 |
+> 11 | export function Hero() {
+     | ^^^^^^
+  12 |     return (
+  13 |         <section id="hero" className="relative min-h-screen flex flex-col items-center pt-4 md:pt-2 lg:pt-3 pb-20 xl:pb-16 overflow-visible xl:overflow-hidden bg-background">
+  14 |
+
+Expected ',', got 'export'
+
+Import traces:
+  Client Component Browser:
+    ./src/components/Hero.tsx [Client Component Browser]
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/components/Hero.tsx [Client Component SSR]
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+[01:07:38.601] Browser ERROR   ./src/components/Hero.tsx:11:1
+Parsing ecmascript source code failed
+   9 | import GradualBlur
+  10 |
+> 11 | export function Hero() {
+     | ^^^^^^
+  12 |     return (
+  13 |         <section id="hero" className="relative min-h-screen flex flex-col items-center pt-4 md:pt-2 lg:pt-3 pb-20 xl:pb-16 overflow-visible xl:overflow-hidden bg-background">
+  14 |
+
+Expected ',', got 'export'
+
+Import traces:
+  Client Component Browser:
+    ./src/components/Hero.tsx [Client Component Browser]
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/components/Hero.tsx [Client Component SSR]
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+[01:07:41.195] Server  LOG     ✓ Compiled in 64ms
+[01:07:41.595] Browser ERROR   ./src/components/Hero.tsx:11:1
+Parsing ecmascript source code failed
+   9 | import GradualBlur from
+  10 |
+> 11 | export function Hero() {
+     | ^^^^^^
+  12 |     return (
+  13 |         <section id="hero" className="relative min-h-screen flex flex-col items-center pt-4 md:pt-2 lg:pt-3 pb-20 xl:pb-16 overflow-visible xl:overflow-hidden bg-background">
+  14 |
+
+Unexpected token `export`. Expected a string literal
+
+Import traces:
+  Client Component Browser:
+    ./src/components/Hero.tsx [Client Component Browser]
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/components/Hero.tsx [Client Component SSR]
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+[01:07:42.819] Server  WARN    ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[01:07:42.823] Server  WARN    ⚠ Fast Refresh had to perform a full reload when ./src/components/Hero.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[01:07:42.823] Server  WARN    ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[01:07:42.850] Server  LOG     ✓ Compiled in 136ms
+[01:07:43.039] Server  ERROR   ⨯ ReferenceError: ProgressiveBlur is not defined
+[01:07:43.480] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:07:44.600] Browser ERROR   uncaughtError: ReferenceError: ProgressiveBlur is not defined
+[01:07:53.149] Server  WARN    ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[01:07:53.351] Server  ERROR   React does not recognize the `blurLevels` prop on a DOM element. If you intentionally want it to appear in the DOM as a custom attribute, spell it as lowercase `blurlevels` instead. If you accidentally passed it from a parent component, remove it from the DOM element.
+[01:07:53.351] Server  ERROR   <graBlur /> is using incorrect casing. Use PascalCase for React components, or lowercase for HTML elements.
+[01:07:53.500] Server  LOG     ✓ Compiled in 95ms
+[01:07:54.135] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:07:54.687] Browser ERROR   React does not recognize the `%s` prop on a DOM element. If you intentionally want it to appear in the DOM as a custom attribute, spell it as lowercase `%s` instead. If you accidentally passed it from a parent component, remove it from the DOM element. blurLevels blurlevels
+[01:07:57.363] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[01:08:31.591] Server  LOG     ✓ Compiled in 59ms
+[01:08:32.600] Browser ERROR   ./src/components/Hero.tsx:111:10
+Parsing ecmascript source code failed
+  109 |         </section>
+  110 |
+> 111 |         </section>
+      |          ^^^^^^^^^
+  112 |     );
+  113 | }
+
+Unterminated regexp literal
+
+Import traces:
+  Client Component Browser:
+    ./src/components/Hero.tsx [Client Component Browser]
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/components/Hero.tsx [Client Component SSR]
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+[01:08:36.788] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[01:09:09.170] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[01:09:16.602] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[01:10:06.750] Server  LOG     ✓ Compiled in 116ms
+[01:10:07.605] Browser ERROR   ./src/components/Hero.tsx:110:10
+Parsing ecmascript source code failed
+  108 |
+  109 |         </section>
+> 110 |         </section>
+      |          ^^^^^^^^^
+  111 |     );
+  112 | }
+
+Unterminated regexp literal
+
+Import traces:
+  Client Component Browser:
+    ./src/components/Hero.tsx [Client Component Browser]
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/components/Hero.tsx [Client Component SSR]
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+[01:10:11.251] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[01:10:15.613] Server  LOG     ✓ Compiled in 101ms
+[01:10:23.473] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[01:10:33.997] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[01:10:44.555] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[01:11:22.793] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[01:11:37.688] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[01:11:38.364] Server  LOG     ✓ Compiled in 152ms
+[01:11:53.232] Server  LOG     ✓ Compiled in 63ms
+[01:11:53.612] Browser ERROR   ./src/components/Hero.tsx:108:2
+Parsing ecmascript source code failed
+  106 |         </section>
+  107 |     );
+> 108 | }
+      |  ^
+
+Unterminated block comment
+
+Import traces:
+  Client Component Browser:
+    ./src/components/Hero.tsx [Client Component Browser]
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/components/Hero.tsx [Client Component SSR]
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+[01:11:59.981] Server  LOG     ✓ Compiled in 193ms
+[01:12:02.193] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[01:12:12.762] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[01:12:34.604] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[01:12:43.852] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[01:12:58.970] Server  LOG     ✓ Compiled in 98ms
+[01:13:01.428] Server  LOG     ✓ Compiled in 115ms
+[01:13:03.659] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[01:13:06.778] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[01:14:05.332] Server  LOG     ✓ Compiled in 65ms
+[01:14:05.943] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[01:14:14.529] Server  LOG     ✓ Compiled in 79ms
+[01:14:15.071] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[01:14:48.388] Server  LOG     ✓ Compiled in 114ms
+[01:14:48.808] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[01:14:51.922] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[01:14:58.968] Server  LOG     ✓ Compiled in 72ms
+[01:15:08.560] Server  LOG     ✓ Compiled in 65ms
+[01:15:09.984] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[01:15:16.276] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[01:15:44.418] Server  LOG     ✓ Compiled in 62ms
+[01:15:46.037] Server  LOG     ✓ Compiled in 127ms
+[01:15:46.450] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[01:15:53.194] Server  LOG     ✓ Compiled in 122ms
+[01:16:00.315] Server  LOG     ✓ Compiled in 75ms
+[01:16:01.995] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[01:16:09.170] Server  LOG     ✓ Compiled in 133ms
+[01:16:10.267] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[01:17:14.013] Server  LOG     ✓ Compiled in 129ms
+[01:17:18.760] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[01:17:21.988] Server  LOG     ✓ Compiled in 66ms
+[01:17:24.873] Server  LOG     ✓ Compiled in 72ms
+[01:17:30.323] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[01:17:35.580] Server  LOG     ✓ Compiled in 188ms
+[01:17:41.990] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[01:17:52.556] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[01:18:04.399] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[01:18:04.473] Server  LOG     ✓ Compiled in 126ms
+[01:18:15.146] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[01:19:05.664] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[01:19:11.336] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[01:19:21.913] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[01:19:42.022] Server  LOG     ✓ Compiled in 114ms
+[01:19:50.049] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[01:20:35.563] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[01:21:10.686] Server  LOG     ✓ Compiled in 149ms
+[01:21:38.641] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[01:21:48.340] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[01:22:52.875] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[01:22:55.883] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[01:23:06.521] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[01:23:17.088] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[01:23:28.583] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[01:23:39.138] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[01:23:49.672] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[01:24:03.338] Server  LOG     ✓ Compiled in 198ms
+[01:24:08.609] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[01:24:15.155] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[01:24:25.768] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[01:24:36.363] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[01:24:58.807] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[01:25:09.438] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[01:25:19.972] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[01:31:57.727] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[01:39:11.065] Server  LOG     ✓ Compiled in 658ms
+[01:39:12.703] Server  LOG     ✓ Compiled in 143ms
+[01:39:14.533] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[01:39:24.911] Server  LOG     ✓ Compiled in 68ms
+[01:39:28.460] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[01:39:29.075] Server  LOG     ✓ Compiled in 190ms
+[01:39:40.280] Server  LOG     ✓ Compiled in 79ms
+[01:39:47.556] Server  LOG     ✓ Compiled in 67ms
+[01:39:53.739] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[01:39:54.382] Server  LOG     ✓ Compiled in 87ms
+[01:40:00.830] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[01:40:28.933] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[01:40:39.299] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[01:40:49.865] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[01:40:58.260] Server  LOG     ✓ Compiled in 84ms
+[01:41:00.822] Server  LOG     ✓ Compiled in 62ms
+[01:41:04.561] Server  LOG     ✓ Compiled in 78ms
+[01:41:05.147] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[01:41:15.314] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[01:41:25.897] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[01:41:40.053] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[01:42:00.911] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[01:42:08.421] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[01:42:13.058] Server  LOG     ✓ Compiled in 101ms
+[01:42:15.148] Server  LOG     ✓ Compiled in 150ms
+[01:42:18.643] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[01:42:30.777] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[01:42:42.771] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[01:42:52.404] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[01:43:03.089] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[01:43:13.623] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[01:45:01.817] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[01:45:02.099] Server  LOG     ✓ Compiled in 366ms
+[01:45:13.491] Server  WARN    ⚠ Cross origin request detected from 192.168.15.13 to /_next/* resource. In a future major version of Next.js, you will need to explicitly configure "allowedDevOrigins" in next.config to allow this.
+Read more: https://nextjs.org/docs/app/api-reference/config/next-config-js/allowedDevOrigins
+[01:45:16.689] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[01:45:19.279] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:45:20.106] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[01:45:45.920] Server  LOG     ✓ Compiled in 82ms
+[01:45:51.508] Server  LOG     ✓ Compiled in 77ms
+[01:45:53.354] Server  LOG     ✓ Compiled in 67ms
+[01:45:55.624] Server  LOG     ✓ Compiled in 101ms
+[01:46:04.923] Server  LOG     ✓ Compiled in 102ms
+[01:46:15.242] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[01:46:25.532] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:46:26.637] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[01:46:38.191] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[01:46:48.268] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[01:46:48.268] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[01:46:48.268] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[01:46:48.268] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[01:46:48.750] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[01:46:59.297] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[01:47:09.832] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[01:47:20.384] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[01:47:30.932] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[01:47:41.481] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[01:47:52.102] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[01:48:02.599] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[01:48:13.131] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[01:48:23.683] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[01:48:34.231] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[01:48:44.781] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[01:48:55.331] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[01:49:05.899] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[01:49:16.450] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[01:49:26.999] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[01:49:37.549] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[01:49:48.115] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[01:49:58.681] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[01:50:09.251] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[01:50:19.785] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[01:50:30.332] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[01:50:40.881] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[01:50:51.440] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[01:51:01.966] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[01:51:12.498] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[01:51:23.050] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[01:51:33.616] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[01:51:44.220] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[01:51:54.791] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[01:52:05.365] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[01:52:15.899] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[01:52:26.434] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[01:52:36.998] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[01:52:47.531] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[01:52:58.082] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[01:53:08.651] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[01:53:19.235] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[01:53:29.731] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[01:53:40.314] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[01:53:50.867] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[01:54:01.416] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[01:54:11.950] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[01:54:22.501] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[01:54:33.049] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[01:54:43.601] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[01:54:54.114] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[01:55:04.649] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[01:55:15.214] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[01:55:25.738] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[01:55:36.264] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[01:55:46.798] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[01:55:57.331] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[01:56:07.898] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[01:56:18.432] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[01:56:28.980] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[01:56:39.515] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[01:56:50.049] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[01:57:00.597] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[01:57:11.131] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[01:57:21.683] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[01:57:32.232] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[01:57:42.782] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[01:57:53.334] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[01:58:03.882] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[01:58:14.419] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[01:58:24.965] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[01:58:35.514] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[01:58:46.056] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[01:58:56.599] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[01:59:07.148] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[01:59:17.684] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[01:59:28.218] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[01:59:38.748] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[01:59:49.298] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[01:59:59.830] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[02:00:10.348] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[02:00:20.915] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[02:00:31.464] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[02:00:41.998] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[02:00:52.549] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[02:01:03.083] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[02:01:13.631] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[02:01:24.164] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[02:01:34.699] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[02:01:45.248] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[02:01:55.831] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[02:02:06.403] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[02:02:16.931] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[02:02:27.482] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[02:02:38.049] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[02:02:48.597] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[02:02:59.148] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[02:03:09.681] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[02:03:20.214] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[02:03:30.764] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[02:03:41.298] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[02:03:51.833] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[02:04:02.381] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[02:04:12.920] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[02:04:23.450] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[02:04:34.014] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[02:04:44.554] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[02:04:55.102] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[02:05:05.637] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[02:05:16.214] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[02:05:26.750] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[02:05:37.315] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[02:05:47.866] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[02:05:58.398] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[02:06:08.931] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[02:06:19.481] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[02:06:30.032] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[02:06:40.581] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[02:06:51.131] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[02:07:01.697] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[02:07:12.233] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[02:07:22.783] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[02:07:33.314] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[02:07:43.848] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[02:07:54.364] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[02:08:04.898] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[02:08:15.447] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[02:08:25.997] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[02:08:36.549] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[02:08:47.098] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[02:08:57.649] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[02:09:08.201] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[02:09:18.730] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[02:09:29.298] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[02:09:39.848] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[02:09:50.415] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[02:10:00.965] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[02:10:11.514] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[02:10:22.066] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[02:10:32.630] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[02:10:43.163] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[02:10:53.715] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[02:11:04.248] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[02:11:14.815] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[02:11:25.367] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[02:11:35.931] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[02:11:46.468] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[03:10:33.072] Server  WARN    Error: Failed to find Server Action "x". This request might be from an older or newer deployment.
+Read more: https://nextjs.org/docs/messages/failed-to-find-server-action
+[03:29:54.025] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[03:30:04.590] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[03:30:15.301] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[03:31:43.578] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[03:31:51.965] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[03:32:29.531] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable

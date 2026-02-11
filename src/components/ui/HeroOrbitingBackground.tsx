@@ -3,18 +3,17 @@
 import React from "react";
 import OrbitingCircles from "@/components/ui/orbiting-circles";
 
-// ... (Mantenha o RenderLogo igual) ...
 const RenderLogo = ({ src, alt, color }: { src: string; alt: string; color: string }) => {
     return (
         <div className="relative flex h-24 w-24 items-center justify-center">
             <div
-                className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-8 h-8 rounded-full blur-[15px] opacity-90 pointer-events-none"
+                className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-8 h-8 rounded-full blur-[15px] opacity-50 pointer-events-none"
                 style={{ backgroundColor: color }}
             />
             <img
                 src={src}
                 alt={alt}
-                className="w-16 h-16 object-contain relative drop-shadow-sm"
+                className="w-14 h-14 object-contain relative drop-shadow-sm"
             />
         </div>
     );
@@ -23,71 +22,69 @@ const RenderLogo = ({ src, alt, color }: { src: string; alt: string; color: stri
 export function HeroOrbitingBackground() {
     return (
         <div className="relative w-full h-full flex items-center justify-center pointer-events-none">
-            <div className="relative flex h-full w-full flex-col items-center justify-center scale-75 md:scale-90 lg:scale-100 lg:translate-y-40 lg:-translate-x-20">
+            <div className="relative flex h-full w-full flex-col items-center justify-center">
 
-                {/* Logo Central */}
-                <div className="z-20 absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
-                    <img src="/nexis_icon.png" alt="Nexis" className="h-20 w-20 lg:h-24 lg:w-24 object-contain brightness-125 drop-shadow-[0_0_25px_rgba(62,207,142,0.4)]" />
-                </div>
-
-                {/* --- ÓRBITA INTERNA (4 Ícones | Duração 20s | Passo 5s) --- */}
-                {/* 0s */}
-                <OrbitingCircles className="size-[60px] border-none bg-transparent" duration={20} delay={0} radius={190}>
+                {/* --- ÓRBITA INTERNA (Raio 190) --- */}
+                <OrbitingCircles path={true} radius={190} duration={20} delay={0}>
                     <RenderLogo src="/logos/instagram.png" alt="Instagram" color="#d62976" />
                 </OrbitingCircles>
-                {/* 5s */}
-                <OrbitingCircles className="size-[60px] border-none bg-transparent" duration={20} delay={5} radius={190}>
+                <OrbitingCircles path={false} radius={190} duration={20} delay={5}>
                     <RenderLogo src="/logos/whatsapp.png" alt="WhatsApp" color="#25D366" />
                 </OrbitingCircles>
-                {/* 10s */}
-                <OrbitingCircles className="size-[60px] border-none bg-transparent" duration={20} delay={10} radius={190}>
+                <OrbitingCircles path={false} radius={190} duration={20} delay={10}>
                     <RenderLogo src="/logos/gemini.png" alt="Gemini" color="#ffffff" />
                 </OrbitingCircles>
-                {/* 15s (Antes estava 20, o que causava a colisão com o 0) */}
-                <OrbitingCircles className="size-[60px] border-none bg-transparent" duration={20} delay={15} radius={190}>
+                <OrbitingCircles path={false} radius={190} duration={20} delay={15}>
                     <RenderLogo src="/logos/chatgpt.png" alt="OpenAI" color="#ffffffff" />
                 </OrbitingCircles>
 
-
-                {/* --- ÓRBITA DO MEIO (5 Ícones | Duração 30s | Passo 6s) --- */}
-                {/* 0s */}
-                <OrbitingCircles className="size-[60px] border-none bg-transparent" radius={300} duration={30} delay={0} reverse>
+                {/* --- ÓRBITA DO MEIO (Raio 300 | Reverse) --- */}
+                <OrbitingCircles path={true} radius={300} duration={30} delay={0} reverse>
                     <RenderLogo src="/logos/docs.png" alt="Docs" color="#4285F4" />
                 </OrbitingCircles>
-                {/* 6s */}
-                <OrbitingCircles className="size-[60px] border-none bg-transparent" radius={300} duration={30} delay={6} reverse>
+                <OrbitingCircles path={false} radius={300} duration={30} delay={5} reverse>
                     <RenderLogo src="/logos/trello.png" alt="Trello" color="#0079BF" />
                 </OrbitingCircles>
-                {/* 12s */}
-                <OrbitingCircles className="size-[60px] border-none bg-transparent" radius={300} duration={30} delay={12} reverse>
+                <OrbitingCircles path={false} radius={300} duration={30} delay={10} reverse>
                     <RenderLogo src="/logos/calendar.png" alt="Calendar" color="#f4e242ff" />
                 </OrbitingCircles>
-                {/* 18s */}
-                <OrbitingCircles className="size-[60px] border-none bg-transparent" radius={300} duration={30} delay={18} reverse>
+                <OrbitingCircles path={false} radius={300} duration={30} delay={15} reverse>
                     <RenderLogo src="/logos/drive.png" alt="Drive" color="#FFC107" />
                 </OrbitingCircles>
-                {/* 24s */}
-                <OrbitingCircles className="size-[60px] border-none bg-transparent" radius={300} duration={30} delay={24} reverse>
+                <OrbitingCircles path={false} radius={300} duration={30} delay={20} reverse>
                     <RenderLogo src="/logos/excel.png" alt="Excel" color="#217346" />
                 </OrbitingCircles>
-
-
-                {/* --- ÓRBITA EXTERNA (4 Ícones | Duração 40s | Passo 10s) --- */}
-                {/* 0s */}
-                <OrbitingCircles className="size-[60px] border-none bg-transparent" radius={450} duration={40} delay={0}>
-                    <RenderLogo src="/logos/mercadopago.png" alt="Mercado Pago" color="#009ee3" />
-                </OrbitingCircles>
-                {/* 10s */}
-                <OrbitingCircles className="size-[60px] border-none bg-transparent" radius={450} duration={40} delay={10}>
+                <OrbitingCircles path={false} radius={300} duration={30} delay={25} reverse>
                     <RenderLogo src="/logos/shopify.png" alt="Shopify" color="#96bf48" />
                 </OrbitingCircles>
-                {/* 20s */}
-                <OrbitingCircles className="size-[60px] border-none bg-transparent" radius={450} duration={40} delay={20}>
-                    <RenderLogo src="/logos/bling.png" alt="Bling" color="#10a37f" />
+
+                {/* --- ÓRBITA EXTERNA (Raio 450) --- */}
+                <OrbitingCircles path={true} radius={450} duration={60} delay={0}>
+                    <RenderLogo src="/logos/mercadopago.png" alt="Mercado Pago" color="#009ee3" />
                 </OrbitingCircles>
-                {/* 30s */}
-                <OrbitingCircles className="size-[60px] border-none bg-transparent" radius={450} duration={40} delay={30}>
+                <OrbitingCircles path={false} radius={450} duration={60} delay={6.7}>
+                    <RenderLogo src="/logos/bling.png" alt="Bling" color="#333333" />
+                </OrbitingCircles>
+                <OrbitingCircles path={false} radius={450} duration={60} delay={13.3}>
                     <RenderLogo src="/logos/supabase.png" alt="Supabase" color="#3ECF8E" />
+                </OrbitingCircles>
+                <OrbitingCircles path={false} radius={450} duration={60} delay={20}>
+                    <RenderLogo src="/logos/facebook.webp" alt="Facebook" color="#1877F2" />
+                </OrbitingCircles>
+                <OrbitingCircles path={false} radius={450} duration={60} delay={26.7}>
+                    <RenderLogo src="/logos/gmail.png" alt="Gmail" color="#EA4335" />
+                </OrbitingCircles>
+                <OrbitingCircles path={false} radius={450} duration={60} delay={33.3}>
+                    <RenderLogo src="/logos/googleads.png" alt="Google Ads" color="#4285F4" />
+                </OrbitingCircles>
+                <OrbitingCircles path={false} radius={450} duration={60} delay={40}>
+                    <RenderLogo src="/logos/notion.png" alt="Notion" color="#ffffff" />
+                </OrbitingCircles>
+                <OrbitingCircles path={false} radius={450} duration={60} delay={46.7}>
+                    <RenderLogo src="/logos/stripe.png" alt="Stripe" color="#635BFF" />
+                </OrbitingCircles>
+                <OrbitingCircles path={false} radius={450} duration={60} delay={53.3}>
+                    <RenderLogo src="/logos/teams.png" alt="Teams" color="#6264A7" />
                 </OrbitingCircles>
 
             </div>

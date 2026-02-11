@@ -39,7 +39,7 @@ export function Problems() {
     return (
         <section id="problems" className="py-24 relative bg-background overflow-hidden">
             {/* Background Texture/Gradient */}
-            <div className="absolute inset-0 bg-gradient-to-b from-transparent via-red-900/5 to-transparent pointer-events-none" />
+            <div className="absolute inset-0 bg-black pointer-events-none" />
 
             <div className="container mx-auto px-4 relative z-10">
                 {/* Header */}
@@ -96,7 +96,7 @@ function ProblemCard({ title, description, index, component }: { title: string, 
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: index * 0.1 }}
             className={cn(
-                "group relative h-[500px] bg-white/5 transition-all duration-500 rounded-[3rem] hover:scale-[1.02] bg-gradient-to-tr from-brand/5 via-transparent to-transparent",
+                "group relative h-[500px] bg-white/5 transition-all duration-500 rounded-[3rem] hover:scale-[1.02] bg-gradient-to-tr from-brand/5 via-zinc-950 to-transparent",
                 "overflow-hidden z-20"
             )}
         >

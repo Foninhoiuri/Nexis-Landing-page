@@ -35,21 +35,21 @@ export default function OrbitingCircles({
         >
           <defs>
             {/* 1. Gradiente Radial (Efeito Vidro no Centro) */}
-            <radialGradient id={fillGradientId} cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
-              <stop offset="0%" stopColor="white" stopOpacity="0" />
-              <stop offset="100%" stopColor="white" stopOpacity="0.02" />
+            <radialGradient id={fillGradientId} cx="50%" cy="50%" r="70%" fx="50%" fy="50%">
+              <stop offset="0%" stopColor="black" stopOpacity="0" />
+              <stop offset="80%" stopColor="gray" stopOpacity="0.2" />
             </radialGradient>
 
             {/* 2. Gradiente Linear (O Traço da órbita) */}
             <linearGradient id={strokeGradientId} x1="0%" y1="0%" x2="0%" y2="100%">
               <stop offset="0%" stopColor="white" stopOpacity="0.01" />
-              <stop offset="100%" stopColor="white" stopOpacity="0.01" />
+              <stop offset="0%" stopColor="white" stopOpacity="0.01" />
             </linearGradient>
           </defs>
 
           {/* Círculo Principal */}
           <circle
-            className="stroke-1 dark:stroke-white/5"
+            className="stroke-2 dark:stroke-white/10"
             cx="50%"
             cy="50%"
             r={radius}
@@ -69,7 +69,7 @@ export default function OrbitingCircles({
           } as React.CSSProperties
         }
         className={cn(
-          "absolute flex size-full transform-gpu animate-orbit items-center justify-center rounded-full border-none [animation-delay:calc(var(--delay)*1000ms)] z-30",
+          "absolute flex size-full transform-gpu animate-orbit items-center justify-center rounded-full border-none [animation-delay:calc(var(--delay)*1000ms)] z-20",
           { "[animation-direction:reverse]": reverse },
           className
         )}
