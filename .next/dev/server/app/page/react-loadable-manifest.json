@@ -1,1 +1,46 @@
-{}
+{
+  "[project]/src/components/Problems.tsx [app-client] (ecmascript, next/dynamic entry)": {
+    "id": "[project]/src/components/Problems.tsx [app-client] (ecmascript, next/dynamic entry)",
+    "files": [
+      "static/chunks/src_components_62000dd6._.js",
+      "static/chunks/node_modules_11341c32._.js",
+      "static/chunks/src_components_Problems_tsx_85443a5a._.js"
+    ]
+  },
+  "[project]/src/components/Solutions.tsx [app-client] (ecmascript, next/dynamic entry)": {
+    "id": "[project]/src/components/Solutions.tsx [app-client] (ecmascript, next/dynamic entry)",
+    "files": [
+      "static/chunks/node_modules_5a131e19._.js",
+      "static/chunks/src_components_7a5346be._.js",
+      "static/chunks/src_components_Solutions_tsx_85443a5a._.js"
+    ]
+  },
+  "[project]/src/components/Methodology.tsx [app-client] (ecmascript, next/dynamic entry)": {
+    "id": "[project]/src/components/Methodology.tsx [app-client] (ecmascript, next/dynamic entry)",
+    "files": [
+      "static/chunks/_e647f5e8._.js",
+      "static/chunks/src_components_Methodology_tsx_85443a5a._.js"
+    ]
+  },
+  "[project]/src/components/Reviews.tsx [app-client] (ecmascript, next/dynamic entry)": {
+    "id": "[project]/src/components/Reviews.tsx [app-client] (ecmascript, next/dynamic entry)",
+    "files": [
+      "static/chunks/_a78336f2._.js",
+      "static/chunks/src_components_Reviews_tsx_85443a5a._.js"
+    ]
+  },
+  "[project]/src/components/FAQ.tsx [app-client] (ecmascript, next/dynamic entry)": {
+    "id": "[project]/src/components/FAQ.tsx [app-client] (ecmascript, next/dynamic entry)",
+    "files": [
+      "static/chunks/_09e058bd._.js",
+      "static/chunks/src_components_FAQ_tsx_85443a5a._.js"
+    ]
+  },
+  "[project]/src/components/Footer.tsx [app-client] (ecmascript, next/dynamic entry)": {
+    "id": "[project]/src/components/Footer.tsx [app-client] (ecmascript, next/dynamic entry)",
+    "files": [
+      "static/chunks/_a8710ade._.js",
+      "static/chunks/src_components_Footer_tsx_85443a5a._.js"
+    ]
+  }
+}

@@ -1,9 +1,11 @@
 "use client";
 
 import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { m as motion, AnimatePresence } from "framer-motion";
 import { Plus, Minus } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { AssetLoader } from "@/components/ui/AssetLoader";
+import { FAQSkeleton } from "@/components/PageSkeletons";
 
 const FAQ_ITEMS = [
     {
@@ -37,50 +39,56 @@ export function FAQ() {
 
     return (
         <section id="faq" className="py-24 bg-black relative overflow-hidden border-t border-white/5">
-            {/* Background Glow */}
-            <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-brand/5 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/2 pointer-events-none" />
+            <AssetLoader
+                urls={[]}
+                minDisplayTime={1000}
+                skeleton={<FAQSkeleton />}
+            >
+                {/* Background Glow */}
+                <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-brand/5 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/2 pointer-events-none" />
 
-            <div className="container mx-auto px-4 relative z-10">
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-start">
+                <div className="container mx-auto px-4 relative z-10">
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-start">
 
-                    {/* Coluna Esquerda: Título e Intro */}
-                    <div className="lg:sticky lg:top-24">
-                        <motion.h2
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            className="text-4xl lg:text-5xl font-bold tracking-tight mb-6 text-white"
-                        >
-                            Dúvidas <br />
-                            <span className="text-neutral-500">Frequentes</span>
-                        </motion.h2>
+                        {/* Coluna Esquerda: Título e Intro */}
+                        <div className="lg:sticky lg:top-24">
+                            <motion.h2
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                className="text-4xl lg:text-5xl font-bold tracking-tight mb-6 text-white"
+                            >
+                                Dúvidas <br />
+                                <span className="text-neutral-500">Frequentes</span>
+                            </motion.h2>
 
-                        <motion.p
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ delay: 0.1 }}
-                            className="text-lg text-neutral-400 max-w-md"
-                        >
-                            Entenda como a Nexis se integra à sua operação.
-                            Se tiver dúvidas técnicas específicas, fale com nossos engenheiros.
-                        </motion.p>
+                            <motion.p
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ delay: 0.1 }}
+                                className="text-lg text-neutral-400 max-w-md"
+                            >
+                                Entenda como a Nexis se integra à sua operação.
+                                Se tiver dúvidas técnicas específicas, fale com nossos engenheiros.
+                            </motion.p>
+                        </div>
+
+                        {/* Coluna Direita: Cards / Accordion */}
+                        <div className="flex flex-col gap-4">
+                            {FAQ_ITEMS.map((item, index) => (
+                                <FAQItem
+                                    key={index}
+                                    item={item}
+                                    isOpen={openIndex === index}
+                                    onClick={() => toggleItem(index)}
+                                />
+                            ))}
+                        </div>
+
                     </div>
-
-                    {/* Coluna Direita: Cards / Accordion */}
-                    <div className="flex flex-col gap-4">
-                        {FAQ_ITEMS.map((item, index) => (
-                            <FAQItem
-                                key={index}
-                                item={item}
-                                isOpen={openIndex === index}
-                                onClick={() => toggleItem(index)}
-                            />
-                        ))}
-                    </div>
-
                 </div>
-            </div>
+            </AssetLoader>
         </section>
     );
 }

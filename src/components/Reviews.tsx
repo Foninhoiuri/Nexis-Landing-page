@@ -1,8 +1,10 @@
 import React, { useEffect, useState, useRef } from "react";
-import { motion, useAnimationFrame, useMotionValue, useInView } from "framer-motion";
+import { m as motion, useAnimationFrame, useMotionValue, useInView } from "framer-motion";
 import { User, Check, Plus, CheckCircle2, Star, StarHalf } from "lucide-react";
 import GradualBlur from "@/components/ui/gradual-blur";
 import { RainbowButton } from "@/components/ui/BlueRainbowButton";
+import { AssetLoader } from "@/components/ui/AssetLoader";
+import { ReviewsSkeleton } from "@/components/PageSkeletons";
 
 // ---------------- CONFIGURAÇÕES ----------------
 const SCROLL_SPEED = 0.4;
@@ -50,16 +52,16 @@ const renderStars = (score: number) => {
 
     for (let i = 0; i < 5; i++) {
         if (i < full) {
-            stars.push(<Star key={`star-${i}`} className="w-4 h-4 fill-[#3B82F6] text-[#3B82F6]" />);
+            stars.push(<Star key={`star - ${i} `} className="w-4 h-4 fill-[#3B82F6] text-[#3B82F6]" />);
         } else if (i === full && half) {
             stars.push(
-                <div key={`star-half-${i}`} className="relative w-4 h-4">
+                <div key={`star - half - ${i} `} className="relative w-4 h-4">
                     <Star className="w-4 h-4 text-neutral-800 absolute" />
                     <StarHalf className="w-4 h-4 fill-[#3B82F6] text-[#3B82F6] absolute" />
                 </div>
             );
         } else {
-            stars.push(<Star key={`star-empty-${i}`} className="w-4 h-4 text-neutral-800" />);
+            stars.push(<Star key={`star - empty - ${i} `} className="w-4 h-4 text-neutral-800" />);
         }
     }
     return stars;
@@ -78,33 +80,46 @@ export function Reviews() {
     }, []);
 
     return (
-        <section id="reviews" ref={sectionRef} className={`relative py-24 bg-black overflow-hidden font-['Poppins']`}>
-            <style jsx>{`
-                @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
-            `}</style>
+        <section id="reviews" ref={sectionRef} className={`relative py - 24 bg - black overflow - hidden font - ['Poppins']`}>
+            <AssetLoader
+                urls={[
+                    "/pessoas/bruno_fernandes.png",
+                    "/pessoas/tarciso.png",
+                    "/pessoas/flavia_nogueira.png",
+                    "/pessoas/maya_ross.png"
+                ]}
+                minDisplayTime={1000}
+                skeleton={<ReviewsSkeleton />}
+            >
+                <div>
+                    <style jsx>{`
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+`}</style>
 
-            <div className="max-w-7xl relative z-10 mx-auto px-4 mb-12 md:mb-20 text-center">
-                <RainbowButton className="mb-6 h-9 rounded-full px-5">
-                    <span className="inline-flex items-center gap-2 text-xs font-semibold tracking-widest uppercase bg-gradient-to-r from-blue-200 to-white bg-clip-text text-transparent">
-                        <span className="w-1.5 h-1.5 rounded-full bg-blue-300 animate-pulse shadow-[0_0_10px_rgba(147,197,253,0.8)]" />
-                        Resultados Comprovados
-                    </span>
-                </RainbowButton>
+                    <div className="max-w-7xl relative z-10 mx-auto px-4 mb-12 md:mb-20 text-center">
+                        <RainbowButton className="mb-6 h-9 rounded-full px-5">
+                            <span className="inline-flex items-center gap-2 text-xs font-semibold tracking-widest uppercase bg-gradient-to-r from-blue-200 to-white bg-clip-text text-transparent">
+                                <span className="w-1.5 h-1.5 rounded-full bg-blue-300 animate-pulse shadow-[0_0_10px_rgba(147,197,253,0.8)]" />
+                                Resultados Comprovados
+                            </span>
+                        </RainbowButton>
 
-                <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold text-white mb-6 tracking-tight">
-                    Líderes que <br className="hidden md:block" />
-                    <span className="text-gradient-hero drop-shadow-[0_0_30px_rgba(37,99,235,0.5)]">
-                        Confiam em Nós
-                    </span>
-                </h2>
-                <p className="text-zinc-400 max-w-2xl mx-auto text-base md:text-lg leading-relaxed font-light">
-                    Histórias reais de quem transformou suas operações com nossa tecnologia.
-                </p>
-            </div>
+                        <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold text-white mb-6 tracking-tight">
+                            Líderes que <br className="hidden md:block" />
+                            <span className="text-gradient-hero drop-shadow-[0_0_30px_rgba(37,99,235,0.5)]">
+                                Confiam em Nós
+                            </span>
+                        </h2>
+                        <p className="text-zinc-400 max-w-2xl mx-auto text-base md:text-lg leading-relaxed font-light">
+                            Histórias reais de quem transformou suas operações com nossa tecnologia.
+                        </p>
+                    </div>
 
-            <div className="relative w-full overflow-hidden">
-                <MarqueeRow items={REVIEWS_DATA} cardWidth={isMobile ? 280 : CARD_WIDTH} isMobile={isMobile} isInView={isInView} />
-            </div>
+                    <div className="relative w-full overflow-hidden">
+                        <MarqueeRow items={REVIEWS_DATA} cardWidth={isMobile ? 280 : CARD_WIDTH} isMobile={isMobile} isInView={isInView} />
+                    </div>
+                </div>
+            </AssetLoader>
         </section>
     );
 }
@@ -114,13 +129,13 @@ const ReviewCard = React.memo(({ item, cardWidth, isActive, onHover, isMobile, i
     return (
         <motion.div
             style={{ width: cardWidth, height: CARD_HEIGHT }}
-            className={`group relative 
-            rounded-[3.5rem] 
-            bg-neutral-900 
-            overflow-hidden shrink-0 cursor-pointer 
-            transition-colors duration-500 
-            hover:bg-neutral-900/80
-            ${(isMobile && isActive) ? "bg-neutral-900/80" : ""}`}
+            className={`group relative
+rounded - [3.5rem]
+bg - neutral - 900
+overflow - hidden shrink - 0 cursor - pointer
+transition - colors duration - 500
+hover: bg - neutral - 900 / 80
+            ${(isMobile && isActive) ? "bg-neutral-900/80" : ""} `}
 
             initial="rest"
             animate={isMobile ? (isActive ? "hover" : "rest") : undefined}

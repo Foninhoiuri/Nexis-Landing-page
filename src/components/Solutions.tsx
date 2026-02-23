@@ -5,6 +5,8 @@ import { RainbowButton } from "@/components/ui/BlueRainbowButton";
 import GradualBlur from "@/components/ui/GradualBlur";
 import { DotPattern } from "@/components/ui/dot-pattern";
 import { cn } from "@/lib/utils";
+import { AssetLoader } from "@/components/ui/AssetLoader";
+import { SolutionsSkeleton } from "@/components/PageSkeletons";
 
 // --- Config (Mantendo azul para contraste: Vermelho = Problema / Azul = Solução) ---
 const DEFAULT_PARTICLE_COUNT = 0;
@@ -296,165 +298,173 @@ export function Solutions() {
         // MUDANÇA 1: Adicionei min-h-screen e flex para centralizar se quiser, 
         // mas o principal é o gradiente de background para não ficar um preto chapado.
         <section id="solutions" className="relative py-12 md:py-24 overflow-hidden bg-black selection:bg-blue-500/30">
-            <DotPattern
-                width={30}
-                height={30}
-                cx={1}
-                cy={1}
-                cr={1.5}
-                glow={!isMobile} // Desativa glow no mobile para performance
-                className={cn(
-                    "text-white/20", // Aumentado para 20% para ser visível
-                    "[mask-image:radial-gradient(700px_circle_at_center,white,transparent)]" // Aumentado area visivel
-                )}
-            />
+            <AssetLoader
+                urls={[]} // No critical external images to block on, but we use the timer
+                minDisplayTime={1000} // Force 1s skeleton for effect
+                skeleton={<SolutionsSkeleton />}
+            >
+                <div className="relative w-full h-full">
+                    <DotPattern
+                        width={30}
+                        height={30}
+                        cx={1}
+                        cy={1}
+                        cr={1.5}
+                        glow={!isMobile} // Desativa glow no mobile para performance
+                        className={cn(
+                            "text-white/20", // Aumentado para 20% para ser visível
+                            "[mask-image:radial-gradient(700px_circle_at_center,white,transparent)]" // Aumentado area visivel
+                        )}
+                    />
 
-            <style>
-                {`
-            .bento-section {
-              --glow-x: 50%;
-              --glow-y: 50%;
-              --glow-intensity: 0;
-              --glow-radius: 300px; /* Aumentei o raio para espalhar mais a luz */
-              --glow-color: ${glowColor};
-            }
-            /* ... (mantenha os outros estilos CSS iguais) ... */
-            
-            /* Ajuste na Tag de IA para ficar mais legível */
-            .animate-spin-slow {
-                animation: spin-slow 4s linear infinite; /* Restoration: Faster spin for visibility */
-            }
-            @keyframes spin-slow {
-                from {
-                    transform: rotate(0deg);
-                }
-                to {
-                    transform: rotate(360deg);
-                }
-            }
-          `}
-            </style>
+                    <style>
+                        {`
+                    .bento-section {
+                    --glow-x: 50%;
+                    --glow-y: 50%;
+                    --glow-intensity: 0;
+                    --glow-radius: 300px; /* Aumentei o raio para espalhar mais a luz */
+                    --glow-color: ${glowColor};
+                    }
+                    /* ... (mantenha os outros estilos CSS iguais) ... */
+                    
+                    /* Ajuste na Tag de IA para ficar mais legível */
+                    .animate-spin-slow {
+                        animation: spin-slow 4s linear infinite; /* Restoration: Faster spin for visibility */
+                    }
+                    @keyframes spin-slow {
+                        from {
+                            transform: rotate(0deg);
+                        }
+                        to {
+                            transform: rotate(360deg);
+                        }
+                    }
+                `}
+                    </style>
 
-            <div className="container relative z-10 mx-auto px-4 mb-12 md:mb-20 text-center">
-                {/* Badge Superior "Nossas Soluções" - Ajuda na hierarquia */}
-                {/* Badge Superior "Nossas Soluções" - Ajuda na hierarquia */}
-                <RainbowButton className="mb-6 h-9 rounded-full px-5">
-                    <span className="inline-flex items-center gap-2 text-xs font-semibold tracking-widest uppercase bg-gradient-to-r from-blue-200 to-white bg-clip-text text-transparent">
-                        <span className="w-1.5 h-1.5 rounded-full bg-blue-300 animate-pulse shadow-[0_0_10px_rgba(147,197,253,0.8)]" />
-                        A Nova Era da Eficiência
-                    </span>
-                </RainbowButton>
+                    <div className="container relative z-10 mx-auto px-4 mb-12 md:mb-20 text-center">
+                        {/* Badge Superior "Nossas Soluções" - Ajuda na hierarquia */}
+                        {/* Badge Superior "Nossas Soluções" - Ajuda na hierarquia */}
+                        <RainbowButton className="mb-6 h-9 rounded-full px-5">
+                            <span className="inline-flex items-center gap-2 text-xs font-semibold tracking-widest uppercase bg-gradient-to-r from-blue-200 to-white bg-clip-text text-transparent">
+                                <span className="w-1.5 h-1.5 rounded-full bg-blue-300 animate-pulse shadow-[0_0_10px_rgba(147,197,253,0.8)]" />
+                                A Nova Era da Eficiência
+                            </span>
+                        </RainbowButton>
 
-                <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold text-white mb-6 tracking-tight">
-                    Tecnologia que <br className="hidden md:block" />
-                    <span className="text-gradient-hero drop-shadow-[0_0_30px_rgba(37,99,235,0.5)]">
-                        Impulsiona o Futuro
-                    </span>
-                </h2>
-                <p className="text-zinc-400 max-w-2xl mx-auto text-base md:text-lg leading-relaxed font-light">
-                    Substituímos processos manuais e lentos por uma infraestrutura autônoma que trabalha 24/7
-                </p>
-            </div>
+                        <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold text-white mb-6 tracking-tight">
+                            Tecnologia que <br className="hidden md:block" />
+                            <span className="text-gradient-hero drop-shadow-[0_0_30px_rgba(37,99,235,0.5)]">
+                                Impulsiona o Futuro
+                            </span>
+                        </h2>
+                        <p className="text-zinc-400 max-w-2xl mx-auto text-base md:text-lg leading-relaxed font-light">
+                            Substituímos processos manuais e lentos por uma infraestrutura autônoma que trabalha 24/7
+                        </p>
+                    </div>
 
-            <GlobalSpotlight
-                gridRef={gridRef}
-                disableAnimations={shouldDisableAnimations}
-                enabled={true}
-                spotlightRadius={300} // Spotlight maior para ser menos "foco de lanterna"
-                glowColor={glowColor}
-            />
-            <BentoCardGrid gridRef={gridRef}>
-                <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6 w-full relative z-10">
-                    {cardData.map((card, index) => (
-                        <ParticleCard
-                            key={index}
-                            data-index={index}
-                            className={`
-                          card card-item relative 
-                          bg-zinc-950/40 backdrop-blur-[1.5px]
-                          rounded-[1.5rem] md:rounded-[2rem] border border-white/0 
-                          overflow-hidden group
-                          mx-4 md:mx-0 /* Add margin on mobile to prevent full-width square look */
-                          min-h-[240px] md:min-h-[280px] flex flex-col justify-between 
-                          pt-10 px-8 pb-8 md:p-8 /* Increased top padding mainly for mobile gap */
-                          transition-all duration-500 
-                          hover:bg-zinc-900/60 hover:border-white/5
-                          hover:shadow-2xl hover:shadow-blue-900/10
-                          [&.is-active]:bg-zinc-900/60 [&.is-active]:border-white/5
-                          [&.is-active]:shadow-2xl [&.is-active]:shadow-blue-900/10
-                          card--border-glow
-                          ${(isMobile && index === activeIndex) ? 'is-active' : ''}
-                      `}
-                            glowColor={glowColor}
-                            disableAnimations={shouldDisableAnimations}
-                            enableTilt={false}
-                            clickEffect={true}
-                            enableMagnetism={false}
-                            /* @ts-ignore */
-                            useShine={card.useShine}
-                        >
-                            <div className="absolute -bottom-8 -right-8 opacity-[0.02] transform rotate-[-15deg] group-hover:scale-110 group-hover:opacity-[0.06] group-[.is-active]:scale-110 group-[.is-active]:opacity-[0.06] transition-all duration-700 ease-out pointer-events-none">
-                                <card.icon strokeWidth={1} className="w-32 h-32 md:w-48 md:h-48 text-white" />
-                            </div>
+                    <GlobalSpotlight
+                        gridRef={gridRef}
+                        disableAnimations={shouldDisableAnimations}
+                        enabled={true}
+                        spotlightRadius={300} // Spotlight maior para ser menos "foco de lanterna"
+                        glowColor={glowColor}
+                    />
+                    <BentoCardGrid gridRef={gridRef}>
+                        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6 w-full relative z-10">
+                            {cardData.map((card, index) => (
+                                <ParticleCard
+                                    key={index}
+                                    data-index={index}
+                                    className={`
+                                card card-item relative 
+                                bg-zinc-950/40 backdrop-blur-[1.5px]
+                                rounded-[1.5rem] md:rounded-[2rem] border border-white/0 
+                                overflow-hidden group
+                                mx-4 md:mx-0 /* Add margin on mobile to prevent full-width square look */
+                                min-h-[240px] md:min-h-[280px] flex flex-col justify-between 
+                                pt-10 px-8 pb-8 md:p-8 /* Increased top padding mainly for mobile gap */
+                                transition-all duration-500 
+                                hover:bg-zinc-900/60 hover:border-white/5
+                                hover:shadow-2xl hover:shadow-blue-900/10
+                                [&.is-active]:bg-zinc-900/60 [&.is-active]:border-white/5
+                                [&.is-active]:shadow-2xl [&.is-active]:shadow-blue-900/10
+                                card--border-glow
+                                ${(isMobile && index === activeIndex) ? 'is-active' : ''}
+                            `}
+                                    glowColor={glowColor}
+                                    disableAnimations={shouldDisableAnimations}
+                                    enableTilt={false}
+                                    clickEffect={true}
+                                    enableMagnetism={false}
+                                    /* @ts-ignore */
+                                    useShine={card.useShine}
+                                >
+                                    <div className="absolute -bottom-8 -right-8 opacity-[0.02] transform rotate-[-15deg] group-hover:scale-110 group-hover:opacity-[0.06] group-[.is-active]:scale-110 group-[.is-active]:opacity-[0.06] transition-all duration-700 ease-out pointer-events-none">
+                                        <card.icon strokeWidth={1} className="w-32 h-32 md:w-48 md:h-48 text-white" />
+                                    </div>
 
-                            <GradualBlur
-                                className="absolute bottom-0 left-0 w-full h-32 pointer-events-none z-0"
-                                preset="bottom"
-                                strength={0.4}
-                                opacity={0.5}
-                            />
+                                    <GradualBlur
+                                        className="absolute bottom-0 left-0 w-full h-32 pointer-events-none z-0"
+                                        preset="bottom"
+                                        strength={0.4}
+                                        opacity={0.5}
+                                    />
 
-                            <div className="relative z-20 flex flex-col h-full justify-between w-full h-full">
-                                <div>
-                                    <div className="flex justify-between items-start mb-6">
-                                        {/* Icon Container with 'btn-blue' effect logic */}
-                                        <div className={`
-                                         w-12 h-12 rounded-xl flex items-center justify-center
-                                         transition-all duration-300
-                                         ${(isMobile && index === activeIndex) /* Use activeIndex for mobile check */
-                                                ? 'bg-blue-500 text-white shadow-[0_0_20px_rgba(59,130,246,0.6)] -translate-y-2'
-                                                : 'bg-blue-500/10 text-blue-400 group-hover:bg-blue-500 group-hover:text-white group-hover:shadow-[0_0_20px_rgba(59,130,246,0.6)] group-hover:-translate-y-2 group-[.is-active]:bg-blue-500 group-[.is-active]:text-white group-[.is-active]:shadow-[0_0_20px_rgba(59,130,246,0.6)] group-[.is-active]:-translate-y-2' /* Add group-[.is-active] variants */
-                                            }
-                                     `}>
-                                            <card.icon className="w-7 h-7" strokeWidth={1.5} />
+                                    <div className="relative z-20 flex flex-col h-full justify-between w-full h-full">
+                                        <div>
+                                            <div className="flex justify-between items-start mb-6">
+                                                {/* Icon Container with 'btn-blue' effect logic */}
+                                                <div className={`
+                                                w-12 h-12 rounded-xl flex items-center justify-center
+                                                transition-all duration-300
+                                                ${(isMobile && index === activeIndex) /* Use activeIndex for mobile check */
+                                                        ? 'bg-blue-500 text-white shadow-[0_0_20px_rgba(59,130,246,0.6)] -translate-y-2'
+                                                        : 'bg-blue-500/10 text-blue-400 group-hover:bg-blue-500 group-hover:text-white group-hover:shadow-[0_0_20px_rgba(59,130,246,0.6)] group-hover:-translate-y-2 group-[.is-active]:bg-blue-500 group-[.is-active]:text-white group-[.is-active]:shadow-[0_0_20px_rgba(59,130,246,0.6)] group-[.is-active]:-translate-y-2' /* Add group-[.is-active] variants */
+                                                    }
+                                            `}>
+                                                    <card.icon className="w-7 h-7" strokeWidth={1.5} />
+                                                </div>
+
+                                                {/* @ts-ignore */}
+                                                {card.isAI && (
+                                                    <RainbowButton className="mb-6 h-7 w-12 rounded-full px-5 opacity-80">
+                                                        <span className="inline-flex items-center text-xs font-semibold tracking-widest uppercase bg-gradient-to-r from-blue-200 to-white bg-clip-text text-transparent">
+                                                            IA
+                                                        </span>
+                                                    </RainbowButton>
+                                                )}
+                                            </div>
+
+                                            <h3 className="text-xl font-medium text-zinc-100 mb-3 group-hover:text-white group-[.is-active]:text-white transition-colors tracking-tight">
+                                                {card.title}
+                                            </h3>
+                                            <p className="text-sm text-zinc-400 leading-7 group-hover:text-zinc-300 group-[.is-active]:text-zinc-300 transition-colors line-clamp-3">
+                                                {card.description}
+                                            </p>
                                         </div>
 
-                                        {/* @ts-ignore */}
-                                        {card.isAI && (
-                                            <RainbowButton className="mb-6 h-7 w-12 rounded-full px-5 opacity-80">
-                                                <span className="inline-flex items-center text-xs font-semibold tracking-widest uppercase bg-gradient-to-r from-blue-200 to-white bg-clip-text text-transparent">
-                                                    IA
-                                                </span>
-                                            </RainbowButton>
-                                        )}
-                                    </div>
-
-                                    <h3 className="text-xl font-medium text-zinc-100 mb-3 group-hover:text-white group-[.is-active]:text-white transition-colors tracking-tight">
-                                        {card.title}
-                                    </h3>
-                                    <p className="text-sm text-zinc-400 leading-7 group-hover:text-zinc-300 group-[.is-active]:text-zinc-300 transition-colors line-clamp-3">
-                                        {card.description}
-                                    </p>
-                                </div>
-
-                                <div className="mt-8 pt-6 border-t border-white/0 flex items-center justify-between group/footer">
-                                    <span className="text-xs font-semibold text-zinc-500 group-hover:text-blue-400/80 group-[.is-active]:text-blue-400/80 uppercase tracking-widest transition-colors relative z-10">
-                                        {card.label}
-                                    </span>
-                                    {/* @ts-ignore */}
-                                    <div className="flex items-center gap-3 opacity-0 group-hover:opacity-100 group-[.is-active]:opacity-100 transition-all duration-500 translate-y-2 group-hover:translate-y-0 group-[.is-active]:translate-y-0 relative z-10">
-                                        {card.compatibleApps?.map((app: string, i: number) => (
-                                            <span key={i} className="text-[10px] font-medium text-zinc-500 grayscale hover:grayscale-0 hover:text-zinc-300 transition-all cursor-default">
-                                                {app}
+                                        <div className="mt-8 pt-6 border-t border-white/0 flex items-center justify-between group/footer">
+                                            <span className="text-xs font-semibold text-zinc-500 group-hover:text-blue-400/80 group-[.is-active]:text-blue-400/80 uppercase tracking-widest transition-colors relative z-10">
+                                                {card.label}
                                             </span>
-                                        ))}
+                                            {/* @ts-ignore */}
+                                            <div className="flex items-center gap-3 opacity-0 group-hover:opacity-100 group-[.is-active]:opacity-100 transition-all duration-500 translate-y-2 group-hover:translate-y-0 group-[.is-active]:translate-y-0 relative z-10">
+                                                {card.compatibleApps?.map((app: string, i: number) => (
+                                                    <span key={i} className="text-[10px] font-medium text-zinc-500 grayscale hover:grayscale-0 hover:text-zinc-300 transition-all cursor-default">
+                                                        {app}
+                                                    </span>
+                                                ))}
+                                            </div>
+                                        </div>
                                     </div>
-                                </div>
-                            </div>
-                        </ParticleCard>
-                    ))}
+                                </ParticleCard>
+                            ))}
+                        </div>
+                    </BentoCardGrid>
                 </div>
-            </BentoCardGrid>
+            </AssetLoader>
         </section>
     );
 }

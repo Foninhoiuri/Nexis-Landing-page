@@ -1,18 +1,51 @@
 "use client";
 
-import React from "react";
+import React, { Suspense } from "react";
 import { Navbar } from "@/components/Navbar";
 import { Hero } from "@/components/Hero";
-import { Problems } from "@/components/Problems";
+import {
+    ProblemsSkeleton,
+    SolutionsSkeleton,
+    MethodologySkeleton,
+    ReviewsSkeleton,
+    FAQSkeleton,
+    FooterSkeleton
+} from "@/components/PageSkeletons";
 
-import { Dashboard } from "@/components/Dashboard";
+// Lazy load below-the-fold components
+import dynamic from "next/dynamic";
 
-import { Solutions } from "@/components/Solutions";
-import { Methodology } from "@/components/Methodology";
-import { Reviews } from "@/components/Reviews";
+// Otimização: Carregamento dinâmico com next/dynamic e SSR false para componentes abaixo da dobra
+const Problems = dynamic(() => import("@/components/Problems").then((mod) => mod.Problems), {
+    loading: () => <ProblemsSkeleton />,
+    ssr: true, // Keep SSR for SEO content
+});
 
-import { FAQ } from "@/components/FAQ";
-import { Footer } from "@/components/Footer";
+const Solutions = dynamic(() => import("@/components/Solutions").then((mod) => mod.Solutions), {
+    loading: () => <SolutionsSkeleton />,
+    ssr: true,
+});
+
+
+const Methodology = dynamic(() => import("@/components/Methodology").then((mod) => mod.Methodology), {
+    loading: () => <MethodologySkeleton />,
+    ssr: true,
+});
+
+const Reviews = dynamic(() => import("@/components/Reviews").then((mod) => mod.Reviews), {
+    loading: () => <ReviewsSkeleton />,
+    ssr: true,
+});
+
+const FAQ = dynamic(() => import("@/components/FAQ").then((mod) => mod.FAQ), {
+    loading: () => <FAQSkeleton />,
+    ssr: true,
+});
+
+const Footer = dynamic(() => import("@/components/Footer").then((mod) => mod.Footer), {
+    loading: () => <FooterSkeleton />,
+    ssr: true,
+});
 
 export default function Home() {
     return (
@@ -24,19 +57,25 @@ export default function Home() {
 
             <Hero />
 
-            <Problems />
+            <div id="problems">
+                <Problems />
+            </div>
 
-            <Solutions />
+            <div id="solutions">
+                <Solutions />
+            </div>
 
-            <Dashboard />
+            <div id="methodology">
+                <Methodology />
+            </div>
 
-            <Methodology />
+            <div id="reviews">
+                <Reviews />
+            </div>
 
-        
-
-            <Reviews />
-
-            <FAQ />
+            <div id="faq">
+                <FAQ />
+            </div>
 
             <Footer />
         </main>

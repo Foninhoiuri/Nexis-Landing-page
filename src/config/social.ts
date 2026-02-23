@@ -1,7 +1,7 @@
 export const SOCIAL = {
     whatsapp: {
-        url: "https://wa.me/5519996599430",
-        label: "+55 19 99659-9430",
+        url: "https://wa.me/5519996976519",
+        label: "+55 19 99697-6519",
         active: true, // Defina como false para ocultar
     },
     facebook: {

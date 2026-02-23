@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { motion, AnimatePresence, useAnimation } from "framer-motion";
+import { m as motion, AnimatePresence, useAnimation } from "framer-motion";
 import { cn } from "@/lib/utils";
 import { User, Flame, Snowflake, Clock } from "lucide-react";
 

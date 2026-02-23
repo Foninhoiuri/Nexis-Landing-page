@@ -1,8 +1,7 @@
 "use client";
 
-import { motion, AnimatePresence } from "framer-motion";
+import { m as motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect, useRef } from "react";
-import { useDevice } from "@/hooks/useDevice";
 import Link from "next/link";
 import { SocialIcons as Icons } from "@/components/ui/Icons";
 import { WhatsAppHoverButton } from "@/components/ui/whatsapp-hover-button";
@@ -17,47 +16,17 @@ const ASSETS = {
 const LINKS = [
     { label: "Dores", id: "problems" },
     { label: "Soluções", id: "solutions" },
-    { label: "Dashboard", id: "dashboard" },
+    { label: "Páginas", id: "paginas", href: "/paginas" },
     { label: "Metodologia", id: "methodology" },
     { label: "Depoimentos", id: "reviews" },
     { label: "FAQ", id: "faq" },
 ];
 
-// --- CONFIGURAÇÃO DE ALTURAS ---
-const LOGO_ICON_SIZES = {
-    desktop: 30,
-    tablet: 30,
-    mobile: 32,
-};
-
-const NAVBAR_HEIGHTS = {
-    desktop: 72,
-    tablet: 72,
-    mobile: 80,
-};
-
 export function Navbar() {
     const logoRef = useRef<HTMLAnchorElement>(null);
-    const { isMobile, isTablet, isDesktop } = useDevice();
     const [activeTab, setActiveTab] = useState("");
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
     const [scrolled, setScrolled] = useState(false);
-    const [navbarHeight, setNavbarHeight] = useState(NAVBAR_HEIGHTS.desktop);
-    const [iconHeight, setIconHeight] = useState(LOGO_ICON_SIZES.desktop);
-
-    // --- UPDATE DIMENSIONS ---
-    useEffect(() => {
-        if (isDesktop) {
-            setNavbarHeight(NAVBAR_HEIGHTS.desktop);
-            setIconHeight(LOGO_ICON_SIZES.desktop);
-        } else if (isTablet) {
-            setNavbarHeight(NAVBAR_HEIGHTS.tablet);
-            setIconHeight(LOGO_ICON_SIZES.tablet);
-        } else {
-            setNavbarHeight(NAVBAR_HEIGHTS.mobile);
-            setIconHeight(LOGO_ICON_SIZES.mobile);
-        }
-    }, [isDesktop, isTablet, isMobile]);
 
     // -- SECTION DETECTOR --
     useEffect(() => {
@@ -123,7 +92,7 @@ export function Navbar() {
                         ${scrolled ? containerStyle : transparentStyle}
                     `}
                     style={{
-                        height: `${navbarHeight}px`,
+                        height: "72px",
                         width: "auto",
                         minWidth: "700px",
                         maxWidth: "1500px",
@@ -136,6 +105,10 @@ export function Navbar() {
                         ref={logoRef}
                         onClick={(e) => {
                             e.preventDefault();
+                            if (window.location.pathname !== "/") {
+                                window.location.href = "/";
+                                return;
+                            }
                             const hero = document.getElementById("hero");
                             if (hero) {
                                 hero.scrollIntoView({ behavior: "smooth" });
@@ -149,47 +122,48 @@ export function Navbar() {
                         <img
                             src={ASSETS.icon}
                             alt="Nexis Logo"
-                            className="object-contain"
-                            style={{ height: `${iconHeight}px` }}
+                            className="object-contain h-[30px]"
                         />
                     </Link>
 
                     {/* 2. NAVEGAÇÃO CENTRAL */}
-                    {(!isTablet || scrolled) && (
-                        <nav className="flex items-center 
-                        backdrop-blur-[100px]
-                        gap-1 bg-white/5 p-1.5 
-                        rounded-full 
-                        border border-white/5 
-                        mx-auto">
-                            {LINKS.map((link) => {
-                                const isActive = activeTab === link.label;
-                                return (
-                                    <button
-                                        key={link.id}
-                                        onClick={() => {
-                                            const el = document.getElementById(link.id);
-                                            if (el) {
-                                                el.scrollIntoView({ behavior: "smooth" });
-                                                setActiveTab(link.label);
-                                            } else {
-                                                console.warn(`Elemento com id '${link.id}' não encontrado!`);
-                                            }
-                                        }}
-                                        className={`
-                                            relative px-5 py-2 text-sm font-medium rounded-full transition-all duration-300
-                                            ${isActive
-                                                ? "bg-blue-600 text-white shadow-lg shadow-blue-500/25"
-                                                : "text-zinc-400 hover:text-white hover:bg-white/5"
-                                            }
-                                        `}
-                                    >
-                                        {link.label}
-                                    </button>
-                                );
-                            })}
-                        </nav>
-                    )}
+                    <nav className="flex items-center 
+                    backdrop-blur-sm
+                    gap-1 bg-white/5 p-1.5 
+                    rounded-full 
+                    border border-white/5 
+                    mx-auto">
+                        {LINKS.map((link) => {
+                            const isActive = activeTab === link.label;
+                            return (
+                                <button
+                                    key={link.id}
+                                    onClick={() => {
+                                        if (link.href) {
+                                            window.location.href = link.href;
+                                            return;
+                                        }
+                                        const el = document.getElementById(link.id);
+                                        if (el) {
+                                            el.scrollIntoView({ behavior: "smooth" });
+                                            setActiveTab(link.label);
+                                        } else {
+                                            window.location.href = `/#${link.id}`;
+                                        }
+                                    }}
+                                    className={`
+                                        relative px-5 py-2 text-sm font-medium rounded-full transition-all duration-300
+                                        ${isActive
+                                            ? "bg-blue-600 text-white shadow-lg shadow-blue-500/25"
+                                            : "text-zinc-400 hover:text-white hover:bg-white/5"
+                                        }
+                                    `}
+                                >
+                                    {link.label}
+                                </button>
+                            );
+                        })}
+                    </nav>
 
 
                     {/* 3. BOTÃO COMEÇAR (SUBSTITUÍDO) */}
@@ -249,10 +223,16 @@ export function Navbar() {
                                     exit={{ opacity: 0, y: 10, scale: 0.8 }}
                                     transition={{ delay: (i + 1) * 0.03 }} // Faster stagger
                                     onClick={() => {
+                                        if (link.href) {
+                                            window.location.href = link.href;
+                                            return;
+                                        }
                                         const el = document.getElementById(link.id);
                                         if (el) {
                                             el.scrollIntoView({ behavior: "smooth" });
                                             setActiveTab(link.label);
+                                        } else {
+                                            window.location.href = `/#${link.id}`;
                                         }
                                         setIsMobileMenuOpen(false);
                                     }}
@@ -272,9 +252,18 @@ export function Navbar() {
                                 exit={{ opacity: 0, y: 10, scale: 0.8 }}
                                 transition={{ delay: 0.2 }} // Display last (visually top)
                                 onClick={() => {
-                                    window.scrollTo({ top: 0, behavior: "smooth" });
                                     setActiveTab("");
                                     setIsMobileMenuOpen(false);
+                                    if (window.location.pathname !== "/") {
+                                        window.location.href = "/";
+                                    } else {
+                                        const hero = document.getElementById("hero");
+                                        if (hero) {
+                                            hero.scrollIntoView({ behavior: "smooth" });
+                                        } else {
+                                            window.scrollTo({ top: 0, behavior: "smooth" });
+                                        }
+                                    }
                                 }}
                                 className={`
                                     px-6 py-3 rounded-full font-medium text-white shadow-lg min-w-[140px] items-end

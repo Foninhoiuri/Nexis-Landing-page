@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { m as motion, AnimatePresence } from "framer-motion";
 import { cn } from "@/lib/utils";
 import GradualBlur from "@/components/ui/GradualBlur";
 import { TypingAnimation } from "@/components/ui/TypingAnimation";
@@ -9,6 +9,8 @@ import { ManualProcessDemo } from "@/components/demos/ManualProcessDemo";
 import { AnimatedListDemo } from "@/components/demos/NotificationDemo";
 import { UnfollowedLeadsDemo } from "@/components/demos/UnfollowedLeadsDemo";
 import { RocketFallDemo } from "@/components/demos/RocketFallDemo";
+import { AssetLoader } from "@/components/ui/AssetLoader";
+import { ProblemsSkeleton } from "@/components/PageSkeletons";
 
 
 
@@ -38,52 +40,58 @@ const PROBLEMS = [
 export function Problems() {
     return (
         <section id="problems" className="py-24 relative bg-background overflow-hidden">
-            {/* Background Texture/Gradient */}
-            <div className="absolute inset-0 bg-black pointer-events-none" />
+            <AssetLoader
+                urls={[]}
+                minDisplayTime={1000}
+                skeleton={<ProblemsSkeleton />}
+            >
+                {/* Background Texture/Gradient */}
+                <div className="absolute inset-0 bg-black pointer-events-none" />
 
-            <div className="container mx-auto px-4 relative z-10">
-                {/* Header */}
-                <div className="text-center max-w-2xl mx-auto mb-16">
-                    <motion.h2
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.5 }}
-                        className="text-3xl md:text-5xl font-bold mb-6 text-white tracking-tight flex flex-col items-center gap-2 md:gap-4"
-                    >
-                        <span>Onde sua empresa está perdendo</span>
-                        <span className="flex flex-wrap justify-center items-center gap-2 md:gap-3">
-                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-orange-500 inline-block">
-                                <TypingAnimation
-                                    words={['dinheiro', 'tempo', 'clientes', 'oportunidades']}
-                                    loop
-                                    typingSpeed={150}
-                                    deletingSpeed={220}
-                                    pauseTime={2500}
-                                    className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-orange-500"
-                                />
+                <div className="container mx-auto px-4 relative z-10">
+                    {/* Header */}
+                    <div className="text-center max-w-2xl mx-auto mb-16">
+                        <motion.h2
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.5 }}
+                            className="text-3xl md:text-5xl font-bold mb-6 text-white tracking-tight flex flex-col items-center gap-2 md:gap-4"
+                        >
+                            <span>Onde sua empresa está perdendo</span>
+                            <span className="flex flex-wrap justify-center items-center gap-2 md:gap-3">
+                                <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-orange-500 inline-block">
+                                    <TypingAnimation
+                                        words={['dinheiro', 'tempo', 'clientes', 'oportunidades']}
+                                        loop
+                                        typingSpeed={150}
+                                        deletingSpeed={220}
+                                        pauseTime={2500}
+                                        className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-orange-500"
+                                    />
+                                </span>
+                                <span>hoje?</span>
                             </span>
-                            <span>hoje?</span>
-                        </span>
-                    </motion.h2>
-                    <motion.p
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.5, delay: 0.1 }}
-                        className="text-neutral-400 text-lg leading-relaxed"
-                    >
-                        Quando tudo é manual, o preço aparece em tempo perdido, clientes frustrados e vendas que não acontecem
-                    </motion.p>
-                </div>
+                        </motion.h2>
+                        <motion.p
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.5, delay: 0.1 }}
+                            className="text-neutral-400 text-lg leading-relaxed"
+                        >
+                            Quando tudo é manual, o preço aparece em tempo perdido, clientes frustrados e vendas que não acontecem
+                        </motion.p>
+                    </div>
 
-                {/* Cards Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
-                    {PROBLEMS.map((problem, index) => (
-                        <ProblemCard key={index} {...problem} index={index} />
-                    ))}
+                    {/* Cards Grid */}
+                    <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
+                        {PROBLEMS.map((problem, index) => (
+                            <ProblemCard key={index} {...problem} index={index} />
+                        ))}
+                    </div>
                 </div>
-            </div>
+            </AssetLoader>
         </section>
     );
 }

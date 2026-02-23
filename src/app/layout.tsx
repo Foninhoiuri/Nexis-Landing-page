@@ -46,6 +46,8 @@ export const metadata: Metadata = {
     },
 };
 
+import { FramerMotionProvider } from "@/components/providers/FramerMotionProvider";
+
 export default function RootLayout({
     children,
 }: Readonly<{
@@ -53,7 +55,11 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="en" suppressHydrationWarning>
-            <body className={inter.className}>{children}</body>
+            <body className={inter.className}>
+                <FramerMotionProvider>
+                    {children}
+                </FramerMotionProvider>
+            </body>
         </html>
     );
 }

@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 4, "column": 0}, "map": {"version":3,"sources":["file:///C:/Users/Igori/Desktop/Sites%20Nodejs/Nexis/src/components/providers/FramerMotionProvider.tsx"],"sourcesContent":["\"use client\";\r\n\r\nimport { LazyMotion, domMax } from \"framer-motion\";\r\n\r\nexport function FramerMotionProvider({ children }: { children: React.ReactNode }) {\r\n    return (\r\n        <LazyMotion features={domMax} strict>\r\n            {children}\r\n        </LazyMotion>\r\n    );\r\n}\r\n"],"names":[],"mappings":";;;;;AAEA;AAAA;AAFA;;;AAIO,SAAS,qBAAqB,EAAE,QAAQ,EAAiC;IAC5E,qBACI,6LAAC,qMAAU;QAAC,UAAU,gMAAM;QAAE,MAAM;kBAC/B;;;;;;AAGb;KANgB"}}]
+}

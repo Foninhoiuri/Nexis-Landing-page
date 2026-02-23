@@ -1,0 +1,1 @@
+(globalThis.TURBOPACK||(globalThis.TURBOPACK=[])).push(["object"==typeof document?document.currentScript:void 0,49652,e=>{"use strict";function r(e,r,t){if(e instanceof EventTarget)return[e];if("string"==typeof e){let n=document;r&&(n=r.current);let o=t?.[e]??n.querySelectorAll(e);return o?Array.from(o):[]}return Array.from(e)}e.s(["resolveElements",()=>r])}]);
