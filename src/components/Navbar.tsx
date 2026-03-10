@@ -18,7 +18,6 @@ const LINKS = [
     { label: "Soluções", id: "solutions" },
     { label: "Páginas", id: "paginas", href: "/paginas" },
     { label: "Metodologia", id: "methodology" },
-    { label: "Depoimentos", id: "reviews" },
     { label: "FAQ", id: "faq" },
 ];
 

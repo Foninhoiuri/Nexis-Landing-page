@@ -1,6 +1,6 @@
-[00:00:03.453] Server  LOG     ✓ Ready in 2.6s
-[00:00:07.833] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:00:09.101] Browser ERROR   A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+[00:00:03.226] Server  LOG     ✓ Ready in 2.4s
+[00:00:46.354] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:47.388] Browser ERROR   A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
 
 - A server/client branch `if (typeof window !== 'undefined')`.
 - Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
@@ -52,7 +52,7 @@ It can also happen if the client has a browser extension installed which messes 
                           ...
       ...
 
-[00:00:09.101] Browser ERROR   A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+[00:00:47.388] Browser ERROR   A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
 
 - A server/client branch `if (typeof window !== 'undefined')`.
 - Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
@@ -105,11 +105,146 @@ It can also happen if the client has a browser extension installed which messes 
                           ...
         ...
 
-[00:00:12.104] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:00:57.095] Server  LOG     ✓ Compiled in 2.6s
-[00:01:02.937] Server  LOG     ✓ Compiled in 126ms
-[00:01:08.331] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
-[00:01:38.573] Server  LOG     ✓ Compiled in 143ms
-[00:06:00.114] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
-[00:06:04.562] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:06:06.456] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:47.764] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:01:00.132] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:01:30.460] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:01:37.413] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:01:52.599] Server  LOG     ✓ Compiled in 2.6s
+[00:01:53.468] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:02:02.624] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:02:13.134] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:02:23.696] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:02:34.232] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:02:45.513] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:02:56.500] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:03:40.120] Server  LOG     ✓ Compiled in 272ms
+[00:04:10.915] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:04:15.005] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:04:31.176] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:04:40.084] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:04:58.872] Server  LOG     ✓ Compiled in 105ms
+[00:05:05.252] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:05:11.542] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:05:12.055] Server  LOG     ✓ Compiled in 222ms
+[00:05:13.785] Server  LOG     ✓ Compiled in 218ms
+[00:05:22.049] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:07:24.779] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:08:10.367] Server  LOG     ✓ Compiled in 85ms
+[00:08:23.955] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:08:25.226] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:08:37.677] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:10:56.188] Server  LOG     ✓ Compiled in 226ms
+[00:13:17.587] Server  LOG     ✓ Compiled in 205ms
+[00:14:37.517] Server  WARN    ⚠ Cross origin request detected from 26.101.145.216 to /_next/* resource. In a future major version of Next.js, you will need to explicitly configure "allowedDevOrigins" in next.config to allow this.
+Read more: https://nextjs.org/docs/app/api-reference/config/next-config-js/allowedDevOrigins
+[00:14:37.705] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:14:38.803] Browser ERROR   A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+%s%s https://react.dev/link/hydration-mismatch 
+
+  ...
+    <main className="min-h-scre...">
+      <div>
+      <Navbar>
+      <Hero>
+      <div>
+      <div id="solutions">
+        <LoadableComponent>
+          <Suspense fallback={<loading>}>
+            <Solutions>
+              <section id="solutions" className="relative p...">
+                <AssetLoader urls={[...]} minDisplayTime={1000} skeleton={<SolutionsSkeleton>}>
+                  <div className="relative w...">
+                    <AnimatePresence>
+                    <motion.div initial={{opacity:0}} animate={{opacity:0}} transition={{duration:0.5}} ...>
+                      <div className="w-full h-full" style={{opacity:0}} ref={function useMotionRef.useCallback}>
+                        <div className="relative w...">
+                          <DotPattern width={30} height={30} cx={1} cy={1} cr={1.5} glow={true} className="text-white...">
+                            <svg aria-hidden="true" className="pointer-ev...">
+                              <defs>
+                                <pattern
++                                 id="_R_39clrlb_"
+-                                 id="_R_d9clrlb_"
+                                  width={30}
+                                  height={30}
+                                  patternUnits="userSpaceOnUse"
+                                  patternContentUnits="userSpaceOnUse"
+                                  x={0}
+                                  y={0}
+                                >
+                              <rect
+                                width="100%"
+                                height="100%"
+                                strokeWidth={0}
++                               fill="url(#_R_39clrlb_)"
+-                               fill="url(#_R_d9clrlb_)"
+                              >
+                          ...
+      ...
+
+[00:14:38.803] Browser ERROR   A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+%s%s https://react.dev/link/hydration-mismatch 
+
+  ...
+    <Home params={Promise} searchParams={Promise}>
+      <main className="min-h-scre...">
+        <div>
+        <Navbar>
+        <Hero>
+        <div>
+        <div>
+        <div id="methodology">
+          <LoadableComponent>
+            <Suspense fallback={<loading>}>
+              <Methodology>
+                <section id="methodology" className="bg-black p...">
+                  <AssetLoader urls={[...]} minDisplayTime={1200} skeleton={<MethodologySkeleton>}>
+                    <div className="relative w...">
+                      <AnimatePresence>
+                      <motion.div initial={{opacity:0}} animate={{opacity:0}} transition={{duration:0.5}} ...>
+                        <div className="w-full h-full" style={{opacity:0}} ref={function useMotionRef.useCallback}>
+                          <DotPattern width={32} height={32} cx={1} cy={1} cr={1} className="text-neutr...">
+                            <svg aria-hidden="true" className="pointer-ev...">
+                              <defs>
+                                <pattern
++                                 id="_R_39klrlb_"
+-                                 id="_R_d9klrlb_"
+                                  width={32}
+                                  height={32}
+                                  patternUnits="userSpaceOnUse"
+                                  patternContentUnits="userSpaceOnUse"
+                                  x={0}
+                                  y={0}
+                                >
+                              <rect
+                                width="100%"
+                                height="100%"
+                                strokeWidth={0}
++                               fill="url(#_R_39klrlb_)"
+-                               fill="url(#_R_d9klrlb_)"
+                              >
+                          ...
+        ...
+
+[00:15:08.121] Browser WARN    You are trying to animate opacity from "undefined" to "0.9". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:15:17.959] Server  WARN    ⚠ Cross origin request detected from 192.168.15.13 to /_next/* resource. In a future major version of Next.js, you will need to explicitly configure "allowedDevOrigins" in next.config to allow this.
+Read more: https://nextjs.org/docs/app/api-reference/config/next-config-js/allowedDevOrigins
+[00:15:20.430] Server  LOG     ✓ Compiled in 169ms
+[00:17:08.153] Server  LOG     ✓ Compiled in 197ms

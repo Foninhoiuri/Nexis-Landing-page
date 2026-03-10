@@ -39,7 +39,7 @@ const PROBLEMS = [
 
 export function Problems() {
     return (
-        <section id="problems" className="py-24 relative bg-background overflow-hidden">
+        <section id="problems" className="py-24 relative bg-black overflow-hidden">
             <AssetLoader
                 urls={[]}
                 minDisplayTime={1000}

@@ -4,7 +4,7 @@ import { Skeleton } from "@/components/ui/Skeleton";
 
 export function ProblemsSkeleton() {
     return (
-        <section className="py-24 relative bg-background overflow-hidden">
+        <section className="py-24 relative bg-black overflow-hidden">
             <div className="container mx-auto px-4 relative z-10">
                 <div className="max-w-2xl mx-auto mb-16 flex flex-col items-center gap-4">
                     <Skeleton className="h-12 w-3/4 rounded-lg" />

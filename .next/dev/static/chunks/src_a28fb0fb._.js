@@ -741,10 +741,10 @@ var _s = __turbopack_context__.k.signature();
 const Card = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["forwardRef"])(_c = ({ customClass, ...rest }, ref)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
         ref: ref,
         ...rest,
-        className: `absolute top-1/2 left-1/2 rounded-xl border border-2 border-white/25 bg-black [transform-style:preserve-3d] [will-change:transform] [backface-visibility:hidden] overflow-hidden ${customClass ?? ''} ${rest.className ?? ''}`.trim()
+        className: `absolute top-1/2 left-1/2 rounded-xl border border-3 border-white/5 bg-black/5 [transform-style:preserve-3d] [will-change:transform] [backface-visibility:hidden] overflow-hidden ${customClass ?? ''} ${rest.className ?? ''}`.trim()
     }, void 0, false, {
         fileName: "[project]/src/components/ui/CardSwap.tsx",
-        lineNumber: 36,
+        lineNumber: 37,
         columnNumber: 5
     }, ("TURBOPACK compile-time value", void 0)));
 _c1 = Card;
@@ -766,7 +766,7 @@ const placeNow = (el, slot, skew)=>__TURBOPACK__imported__module__$5b$project$5d
         zIndex: slot.zIndex,
         force3D: true
     });
-const CardSwap = ({ width = 500, height = 400, cardDistance = 60, verticalDistance = 70, delay = 5000, pauseOnHover = false, onCardClick, skewAmount = 6, easing = 'elastic', containerClassName = '', children })=>{
+const CardSwap = ({ width = 500, height = 400, cardDistance = 60, verticalDistance = 70, delay = 5000, pauseOnHover = false, onCardClick, skewAmount = 6, easing = 'elastic', containerClassName = '', onActiveCardChange, children })=>{
     _s();
     const config = easing === 'elastic' ? {
         ease: 'elastic.out(0.6,0.9)',
@@ -809,6 +809,10 @@ const CardSwap = ({ width = 500, height = 400, cardDistance = 60, verticalDistan
             refs.forEach({
                 "CardSwap.useEffect": (r, i)=>placeNow(r.current, makeSlot(i, cardDistance, verticalDistance, total), skewAmount)
             }["CardSwap.useEffect"]);
+            // Initial active card is index 0
+            if (onActiveCardChange) {
+                onActiveCardChange(0);
+            }
             const swap = {
                 "CardSwap.useEffect.swap": ()=>{
                     if (order.current.length < 2) return;
@@ -821,6 +825,10 @@ const CardSwap = ({ width = 500, height = 400, cardDistance = 60, verticalDistan
                         duration: config.durDrop,
                         ease: config.ease
                     });
+                    // Fire active card change early so the UI updates immediately
+                    if (onActiveCardChange) {
+                        onActiveCardChange(rest[0]);
+                    }
                     tl.addLabel('promote', `-=${config.durDrop * config.promoteOverlap}`);
                     rest.forEach({
                         "CardSwap.useEffect.swap": (idx, i)=>{
@@ -925,7 +933,7 @@ const CardSwap = ({ width = 500, height = 400, cardDistance = 60, verticalDistan
         children: rendered
     }, void 0, false, {
         fileName: "[project]/src/components/ui/CardSwap.tsx",
-        lineNumber: 214,
+        lineNumber: 226,
         columnNumber: 9
     }, ("TURBOPACK compile-time value", void 0));
 };
@@ -1706,7 +1714,9 @@ __turbopack_context__.s([
     ()=>LandingPages
 ]);
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/compiled/react/jsx-dev-runtime.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/compiled/react/index.js [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$m$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/framer-motion/dist/es/render/components/m/proxy.mjs [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$arrow$2d$right$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__ArrowRight$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/arrow-right.js [app-client] (ecmascript) <export default as ArrowRight>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$zap$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Zap$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/zap.js [app-client] (ecmascript) <export default as Zap>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$CardSwap$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/components/ui/CardSwap.tsx [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$RotatingBlurText$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/components/ui/RotatingBlurText.tsx [app-client] (ecmascript)");
@@ -1718,6 +1728,8 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$g
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$AssetLoader$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/components/ui/AssetLoader.tsx [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$Skeleton$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/components/ui/Skeleton.tsx [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$whatsapp$2d$hover$2d$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/components/ui/whatsapp-hover-button.tsx [app-client] (ecmascript)");
+;
+var _s = __turbopack_context__.k.signature();
 "use client";
 ;
 ;
@@ -1737,21 +1749,23 @@ const PAGES_DATA = [
     {
         img: "/paginas/nexis.png",
         alt: "Nexis Landing Page",
-        badge: "Landing Page Pessoal",
+        badge: "Site da Agência",
         badgeColor: "text-blue-400",
         dotColor: "bg-blue-400",
+        textGradient: "from-blue-600 to-blue-300",
         gradientDir: "to-r",
         imgReversed: false,
-        title: "Igori Urial — Portfólio & Professional Brand",
-        desc: "Página de apresentação profissional com design dark premium, animações fluídas e call-to-action otimizado para conversão de novos clientes e oportunidades.",
-        href: "https://www.igoriurialves.com.br/"
+        title: "Nexis — Agência de Automação",
+        desc: "O nosso próprio site. Um ecossistema digital desenvolvido em React e TailwindCSS com design focado em estética premium, conversão máxima e performance.",
+        href: "#"
     },
     {
         img: "/paginas/bruno.png",
         alt: "Bruno Landing Page",
         badge: "Landing Page Educacional",
-        badgeColor: "text-violet-400",
-        dotColor: "bg-violet-400",
+        badgeColor: "text-yellow-600",
+        dotColor: "bg-yellow-600",
+        textGradient: "from-yellow-600 to-yellow-300",
         gradientDir: "to-l",
         imgReversed: true,
         title: "Teacher Bruno — Captação de Alunos Premium",
@@ -1762,8 +1776,9 @@ const PAGES_DATA = [
         img: "/paginas/officemac.png",
         alt: "OfficeMac Landing Page",
         badge: "Landing Page Corporativa",
-        badgeColor: "text-emerald-400",
-        dotColor: "bg-emerald-400",
+        badgeColor: "text-red-8 00",
+        dotColor: "bg-red-800",
+        textGradient: "from-red-800 to-red-600",
         gradientDir: "to-r",
         imgReversed: false,
         title: "OfficeMac — Soluções Apple para Empresas",
@@ -1772,6 +1787,9 @@ const PAGES_DATA = [
     }
 ];
 function LandingPages() {
+    _s();
+    const [activeCardIdx, setActiveCardIdx] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(0);
+    const activeData = PAGES_DATA[activeCardIdx % PAGES_DATA.length];
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
         id: "landing-pages",
         className: "relative min-h-screen flex flex-col items-center pt-4 md:pt-2 lg:pt-3 pb-20 xl:pb-16 overflow-visible xl:overflow-hidden bg-background",
@@ -1784,12 +1802,12 @@ function LandingPages() {
                     className: "h-12 w-auto object-contain"
                 }, void 0, false, {
                     fileName: "[project]/src/components/LandingPages.tsx",
-                    lineNumber: 63,
+                    lineNumber: 69,
                     columnNumber: 17
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/src/components/LandingPages.tsx",
-                lineNumber: 62,
+                lineNumber: 68,
                 columnNumber: 13
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1807,7 +1825,7 @@ function LandingPages() {
                                         className: "h-8 w-64 rounded-full bg-white/5"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/LandingPages.tsx",
-                                        lineNumber: 79,
+                                        lineNumber: 85,
                                         columnNumber: 33
                                     }, void 0),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1817,27 +1835,27 @@ function LandingPages() {
                                                 className: "h-16 w-full max-w-xl rounded-lg bg-white/5"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/LandingPages.tsx",
-                                                lineNumber: 81,
+                                                lineNumber: 87,
                                                 columnNumber: 37
                                             }, void 0),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$Skeleton$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Skeleton"], {
                                                 className: "h-16 w-3/4 max-w-lg rounded-lg bg-white/5"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/LandingPages.tsx",
-                                                lineNumber: 82,
+                                                lineNumber: 88,
                                                 columnNumber: 37
                                             }, void 0)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/LandingPages.tsx",
-                                        lineNumber: 80,
+                                        lineNumber: 86,
                                         columnNumber: 33
                                     }, void 0),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$Skeleton$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Skeleton"], {
                                         className: "h-20 w-full max-w-md rounded-lg bg-white/5"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/LandingPages.tsx",
-                                        lineNumber: 84,
+                                        lineNumber: 90,
                                         columnNumber: 33
                                     }, void 0),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1847,26 +1865,26 @@ function LandingPages() {
                                                 className: "h-12 w-40 rounded-lg bg-white/5"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/LandingPages.tsx",
-                                                lineNumber: 86,
+                                                lineNumber: 92,
                                                 columnNumber: 37
                                             }, void 0),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$Skeleton$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Skeleton"], {
                                                 className: "h-12 w-40 rounded-lg bg-white/5"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/LandingPages.tsx",
-                                                lineNumber: 87,
+                                                lineNumber: 93,
                                                 columnNumber: 37
                                             }, void 0)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/LandingPages.tsx",
-                                        lineNumber: 85,
+                                        lineNumber: 91,
                                         columnNumber: 33
                                     }, void 0)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/LandingPages.tsx",
-                                lineNumber: 78,
+                                lineNumber: 84,
                                 columnNumber: 29
                             }, void 0),
                             children: [
@@ -1888,7 +1906,7 @@ function LandingPages() {
                                             className: "flex h-2 w-2 rounded-full bg-brand animate-pulse"
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/LandingPages.tsx",
-                                            lineNumber: 98,
+                                            lineNumber: 104,
                                             columnNumber: 29
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1896,13 +1914,13 @@ function LandingPages() {
                                             children: "Design de Alta Conversão e Performance"
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/LandingPages.tsx",
-                                            lineNumber: 99,
+                                            lineNumber: 105,
                                             columnNumber: 29
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/components/LandingPages.tsx",
-                                    lineNumber: 92,
+                                    lineNumber: 98,
                                     columnNumber: 25
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$m$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["m"].h1, {
@@ -1926,7 +1944,7 @@ function LandingPages() {
                                             className: "block sm:hidden"
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/LandingPages.tsx",
-                                            lineNumber: 109,
+                                            lineNumber: 115,
                                             columnNumber: 29
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$RotatingBlurText$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["RotatingBlurText"], {
@@ -1940,13 +1958,13 @@ function LandingPages() {
                                             className: "text-gradient-hero drop-shadow-[0_0_30px_rgba(37,99,235,0.5)] pb-1"
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/LandingPages.tsx",
-                                            lineNumber: 110,
+                                            lineNumber: 116,
                                             columnNumber: 29
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/components/LandingPages.tsx",
-                                    lineNumber: 102,
+                                    lineNumber: 108,
                                     columnNumber: 25
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$m$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["m"].p, {
@@ -1969,7 +1987,7 @@ function LandingPages() {
                                             className: "hidden md:block"
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/LandingPages.tsx",
-                                            lineNumber: 128,
+                                            lineNumber: 134,
                                             columnNumber: 88
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1977,13 +1995,13 @@ function LandingPages() {
                                             children: "Transforme visitantes em clientes com layouts premium."
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/LandingPages.tsx",
-                                            lineNumber: 129,
+                                            lineNumber: 135,
                                             columnNumber: 29
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/components/LandingPages.tsx",
-                                    lineNumber: 122,
+                                    lineNumber: 128,
                                     columnNumber: 25
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$m$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["m"].div, {
@@ -2007,7 +2025,7 @@ function LandingPages() {
                                             onClick: ()=>window.open(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$config$2f$social$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["SOCIAL"].whatsapp.url, "_blank")
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/LandingPages.tsx",
-                                            lineNumber: 139,
+                                            lineNumber: 145,
                                             columnNumber: 33
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -2020,95 +2038,124 @@ function LandingPages() {
                                                     className: "w-4 h-4 text-brand-white"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/LandingPages.tsx",
-                                                    lineNumber: 149,
+                                                    lineNumber: 155,
                                                     columnNumber: 33
                                                 }, this),
                                                 "Nossas Páginas"
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/components/LandingPages.tsx",
-                                            lineNumber: 145,
+                                            lineNumber: 151,
                                             columnNumber: 29
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/components/LandingPages.tsx",
-                                    lineNumber: 132,
+                                    lineNumber: 138,
                                     columnNumber: 25
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/components/LandingPages.tsx",
-                            lineNumber: 74,
+                            lineNumber: 80,
                             columnNumber: 21
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/src/components/LandingPages.tsx",
-                        lineNumber: 73,
+                        lineNumber: 79,
                         columnNumber: 17
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: "relative flex items-center justify-center min-h-[400px] md:min-h-[500px] lg:min-h-[600px] h-full order-2 lg:order-2 w-full pt-10 lg:pt-0 pb-0",
-                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$CardSwap$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
-                            width: 1280,
-                            height: 720,
-                            cardDistance: 100,
-                            verticalDistance: 100,
-                            delay: 3000,
-                            containerClassName: "lg:translate-x-[5%] overflow-visible lg:translate-y-[1%] translate-x-0 -translate-y-[15%] scale-[0.30] md:scale-[0.6] lg:scale-[0.8] opacity-90 mx-auto",
+                        className: "relative flex items-center justify-center min-h-[400px] md:min-h-[500px] lg:min-h-[600px] h-full order-2 lg:order-2 w-full pt-0 pb-0",
+                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                            className: "relative w-full max-w-[700px] aspect-[16/10] flex items-center justify-center transform -translate-y-[15%] md:-translate-y-[10%] lg:-translate-y-[5%] translate-x-0 lg:-translate-x-[10%] xl:-translate-x-[12%]",
                             children: [
-                                "/paginas/nexis.png",
-                                "/paginas/bruno.png",
-                                "/paginas/officemac.png",
-                                "/paginas/nexis_2.png",
-                                "/paginas/bruno_2.png",
-                                "/paginas/nexis_3.png"
-                            ].map((imgSrc, idx)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$CardSwap$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Card"], {
-                                    className: "border border-white/10 shadow-[0_0_50px_rgba(0,0,0,0.8)] overflow-hidden",
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                    className: "absolute top-1/2 left-1/2 lg:left-[40%] -translate-x-1/2 -translate-y-1/2 w-[90%] lg:w-[100%] z-10 drop-shadow-[0_20px_50px_rgba(0,0,0,0.5)]",
                                     children: [
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                            className: "absolute top-[4.5%] left-[4.5%] w-[91%] h-[64%] overflow-hidden bg-black z-0 rounded-lg",
+                                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("img", {
+                                                src: "/paginas/nexis.png",
+                                                alt: "Nexis on iMac",
+                                                className: "w-full h-full object-cover object-top opacity-90"
+                                            }, void 0, false, {
+                                                fileName: "[project]/src/components/LandingPages.tsx",
+                                                lineNumber: 169,
+                                                columnNumber: 33
+                                            }, this)
+                                        }, void 0, false, {
+                                            fileName: "[project]/src/components/LandingPages.tsx",
+                                            lineNumber: 168,
+                                            columnNumber: 29
+                                        }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("img", {
-                                            src: imgSrc,
-                                            alt: `Preview ${idx + 1}`,
-                                            className: "w-full h-full object-cover"
+                                            src: "/paginas/imac.png",
+                                            alt: "iMac Mockup",
+                                            className: "relative z-10 w-full h-auto pointer-events-none"
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/LandingPages.tsx",
-                                            lineNumber: 175,
-                                            columnNumber: 33
-                                        }, this),
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                            className: "absolute inset-0 bg-black/10 z-10 pointer-events-none"
-                                        }, void 0, false, {
-                                            fileName: "[project]/src/components/LandingPages.tsx",
-                                            lineNumber: 180,
-                                            columnNumber: 33
-                                        }, this),
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                            className: "absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t from-black via-black/80 to-transparent z-20 pointer-events-none"
-                                        }, void 0, false, {
-                                            fileName: "[project]/src/components/LandingPages.tsx",
-                                            lineNumber: 181,
-                                            columnNumber: 33
+                                            lineNumber: 171,
+                                            columnNumber: 29
                                         }, this)
                                     ]
-                                }, idx, true, {
+                                }, void 0, true, {
                                     fileName: "[project]/src/components/LandingPages.tsx",
-                                    lineNumber: 174,
-                                    columnNumber: 29
-                                }, this))
-                        }, void 0, false, {
+                                    lineNumber: 167,
+                                    columnNumber: 25
+                                }, this),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                    className: "absolute bottom-[-20%] left-[5%] lg:left-[-5%] w-[21%] lg:w-[20%] z-20 drop-shadow-[0_30px_60px_rgba(0,0,0,0.7)]",
+                                    children: [
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                            className: "absolute top-[1%] left-[5%] w-[92%] h-[95%] overflow-hidden bg-black z-0 rounded-[15%]",
+                                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("video", {
+                                                src: "/paginas/iphone video.mp4",
+                                                autoPlay: true,
+                                                loop: true,
+                                                muted: true,
+                                                playsInline: true,
+                                                className: "w-full h-full object-cover"
+                                            }, void 0, false, {
+                                                fileName: "[project]/src/components/LandingPages.tsx",
+                                                lineNumber: 177,
+                                                columnNumber: 33
+                                            }, this)
+                                        }, void 0, false, {
+                                            fileName: "[project]/src/components/LandingPages.tsx",
+                                            lineNumber: 176,
+                                            columnNumber: 29
+                                        }, this),
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("img", {
+                                            src: "/paginas/iphone.png",
+                                            alt: "iPhone Mockup",
+                                            className: "relative z-10 w-full h-auto pointer-events-none"
+                                        }, void 0, false, {
+                                            fileName: "[project]/src/components/LandingPages.tsx",
+                                            lineNumber: 186,
+                                            columnNumber: 29
+                                        }, this)
+                                    ]
+                                }, void 0, true, {
+                                    fileName: "[project]/src/components/LandingPages.tsx",
+                                    lineNumber: 175,
+                                    columnNumber: 25
+                                }, this)
+                            ]
+                        }, void 0, true, {
                             fileName: "[project]/src/components/LandingPages.tsx",
-                            lineNumber: 158,
+                            lineNumber: 164,
                             columnNumber: 21
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/src/components/LandingPages.tsx",
-                        lineNumber: 157,
+                        lineNumber: 163,
                         columnNumber: 17
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/components/LandingPages.tsx",
-                lineNumber: 71,
+                lineNumber: 77,
                 columnNumber: 13
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$gradual$2d$blur$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
@@ -2121,14 +2168,14 @@ function LandingPages() {
                 className: "pointer-events-none opacity-90"
             }, void 0, false, {
                 fileName: "[project]/src/components/LandingPages.tsx",
-                lineNumber: 191,
+                lineNumber: 195,
                 columnNumber: 13
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                 className: "absolute bottom-0 inset-x-0 h-64 bg-gradient-to-t from-black via-black/90 to-transparent z-30 pointer-events-none"
             }, void 0, false, {
                 fileName: "[project]/src/components/LandingPages.tsx",
-                lineNumber: 202,
+                lineNumber: 206,
                 columnNumber: 13
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
@@ -2144,7 +2191,7 @@ function LandingPages() {
                         className: (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$utils$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["cn"])("text-white/10 opacity-40", "[mask-image:radial-gradient(700px_circle_at_center,white,transparent)]")
                     }, void 0, false, {
                         fileName: "[project]/src/components/LandingPages.tsx",
-                        lineNumber: 206,
+                        lineNumber: 210,
                         columnNumber: 17
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2159,19 +2206,19 @@ function LandingPages() {
                                             className: "w-1.5 h-1.5 rounded-full bg-blue-300 animate-pulse shadow-[0_0_10px_rgba(147,197,253,0.8)]"
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/LandingPages.tsx",
-                                            lineNumber: 222,
+                                            lineNumber: 226,
                                             columnNumber: 29
                                         }, this),
                                         "Showcase de Projetos"
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/components/LandingPages.tsx",
-                                    lineNumber: 221,
+                                    lineNumber: 225,
                                     columnNumber: 25
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/src/components/LandingPages.tsx",
-                                lineNumber: 220,
+                                lineNumber: 224,
                                 columnNumber: 21
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
@@ -2182,7 +2229,7 @@ function LandingPages() {
                                         className: "hidden md:block"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/LandingPages.tsx",
-                                        lineNumber: 228,
+                                        lineNumber: 232,
                                         columnNumber: 38
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -2190,13 +2237,13 @@ function LandingPages() {
                                         children: "Nossas Páginas"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/LandingPages.tsx",
-                                        lineNumber: 229,
+                                        lineNumber: 233,
                                         columnNumber: 25
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/LandingPages.tsx",
-                                lineNumber: 227,
+                                lineNumber: 231,
                                 columnNumber: 21
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2204,704 +2251,385 @@ function LandingPages() {
                                 children: "Explore as soluções visuais e de conversão que desenvolvemos para nossos clientes."
                             }, void 0, false, {
                                 fileName: "[project]/src/components/LandingPages.tsx",
-                                lineNumber: 234,
+                                lineNumber: 238,
                                 columnNumber: 21
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-8",
-                                children: PAGES_DATA.map((page, idx)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                        className: (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$utils$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["cn"])("group relative h-[500px] bg-white/5 transition-all duration-500 rounded-[3rem] hover:scale-[1.02] bg-gradient-to-tr from-brand/5 via-zinc-950 to-transparent", "overflow-hidden z-20 text-left"),
-                                        children: [
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                className: (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$utils$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["cn"])("absolute inset-0 z-0 rounded-[3rem] overflow-hidden"),
-                                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                    className: "w-full h-full opacity-100 transition-opacity duration-500",
-                                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("img", {
-                                                        src: page.img,
-                                                        alt: page.alt,
-                                                        className: "w-full h-full object-cover object-top opacity-70 transition-transform duration-700 group-hover:scale-105"
-                                                    }, void 0, false, {
-                                                        fileName: "[project]/src/components/LandingPages.tsx",
-                                                        lineNumber: 251,
-                                                        columnNumber: 41
-                                                    }, this)
-                                                }, void 0, false, {
-                                                    fileName: "[project]/src/components/LandingPages.tsx",
-                                                    lineNumber: 250,
-                                                    columnNumber: 37
-                                                }, this)
-                                            }, void 0, false, {
-                                                fileName: "[project]/src/components/LandingPages.tsx",
-                                                lineNumber: 249,
-                                                columnNumber: 33
-                                            }, this),
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                className: "absolute inset-0 z-20 flex flex-col justify-end pointer-events-none px-6 pb-6",
-                                                children: [
-                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$gradual$2d$blur$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
-                                                        position: "bottom",
-                                                        height: "200px",
-                                                        strength: 4,
-                                                        className: "z-10 !bottom-0 pointer-events-none",
-                                                        opacity: 1
-                                                    }, void 0, false, {
-                                                        fileName: "[project]/src/components/LandingPages.tsx",
-                                                        lineNumber: 263,
-                                                        columnNumber: 37
-                                                    }, this),
-                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                        className: "relative z-20 text-center w-full",
-                                                        children: [
-                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                                className: `inline-flex items-center justify-center gap-1.5 text-[9px] font-semibold tracking-widest uppercase ${page.badgeColor} mb-2`,
-                                                                children: [
-                                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                                        className: `w-1 h-1 rounded-full ${page.dotColor} animate-pulse`
-                                                                    }, void 0, false, {
-                                                                        fileName: "[project]/src/components/LandingPages.tsx",
-                                                                        lineNumber: 274,
-                                                                        columnNumber: 45
-                                                                    }, this),
-                                                                    page.badge
-                                                                ]
-                                                            }, void 0, true, {
-                                                                fileName: "[project]/src/components/LandingPages.tsx",
-                                                                lineNumber: 273,
-                                                                columnNumber: 41
-                                                            }, this),
-                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
-                                                                className: "text-xl font-bold text-brand mb-2 transition-colors min-h-[3.5rem] flex items-end justify-center",
-                                                                children: page.title.split(' — ')[0]
-                                                            }, void 0, false, {
-                                                                fileName: "[project]/src/components/LandingPages.tsx",
-                                                                lineNumber: 277,
-                                                                columnNumber: 41
-                                                            }, this),
-                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                                className: "text-neutral-300 text-sm leading-relaxed text-balance min-h-[5rem] flex items-start justify-center",
-                                                                children: page.desc
-                                                            }, void 0, false, {
-                                                                fileName: "[project]/src/components/LandingPages.tsx",
-                                                                lineNumber: 280,
-                                                                columnNumber: 41
-                                                            }, this),
-                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
-                                                                href: page.href,
-                                                                target: "_blank",
-                                                                rel: "noopener noreferrer",
-                                                                className: "mt-3 pointer-events-auto text-[11px] font-medium text-brand hover:text-white transition-colors flex items-center justify-center gap-1 group/link",
-                                                                children: [
-                                                                    "Ver projeto ",
-                                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                                        className: "group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5 inline-block transition-transform",
-                                                                        children: "↗"
-                                                                    }, void 0, false, {
-                                                                        fileName: "[project]/src/components/LandingPages.tsx",
-                                                                        lineNumber: 289,
-                                                                        columnNumber: 57
-                                                                    }, this)
-                                                                ]
-                                                            }, void 0, true, {
-                                                                fileName: "[project]/src/components/LandingPages.tsx",
-                                                                lineNumber: 283,
-                                                                columnNumber: 41
-                                                            }, this)
-                                                        ]
-                                                    }, void 0, true, {
-                                                        fileName: "[project]/src/components/LandingPages.tsx",
-                                                        lineNumber: 272,
-                                                        columnNumber: 37
-                                                    }, this)
-                                                ]
-                                            }, void 0, true, {
-                                                fileName: "[project]/src/components/LandingPages.tsx",
-                                                lineNumber: 260,
-                                                columnNumber: 33
-                                            }, this)
-                                        ]
-                                    }, idx, true, {
-                                        fileName: "[project]/src/components/LandingPages.tsx",
-                                        lineNumber: 241,
-                                        columnNumber: 29
-                                    }, this))
-                            }, void 0, false, {
-                                fileName: "[project]/src/components/LandingPages.tsx",
-                                lineNumber: 239,
-                                columnNumber: 21
-                            }, this)
-                        ]
-                    }, void 0, true, {
-                        fileName: "[project]/src/components/LandingPages.tsx",
-                        lineNumber: 218,
-                        columnNumber: 17
-                    }, this)
-                ]
-            }, void 0, true, {
-                fileName: "[project]/src/components/LandingPages.tsx",
-                lineNumber: 205,
-                columnNumber: 13
-            }, this),
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
-                id: "quem-somos",
-                className: "relative w-full py-20 bg-background overflow-hidden",
-                children: [
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: "absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-blue-600/5 rounded-full blur-[100px] pointer-events-none"
-                    }, void 0, false, {
-                        fileName: "[project]/src/components/LandingPages.tsx",
-                        lineNumber: 302,
-                        columnNumber: 17
-                    }, this),
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: "container relative z-10 mx-auto px-6",
-                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                            className: "grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center",
-                            children: [
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                    className: "relative w-full aspect-square md:aspect-[4/5] rounded-[2rem] overflow-hidden border border-white/10 shadow-2xl group order-2 lg:order-1",
-                                    children: [
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                            className: "absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent z-10"
-                                        }, void 0, false, {
-                                            fileName: "[project]/src/components/LandingPages.tsx",
-                                            lineNumber: 309,
-                                            columnNumber: 29
-                                        }, this),
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("img", {
-                                            src: "/eu.png",
-                                            alt: "Igori Urial - Fundador da Nexis",
-                                            className: "w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                                        }, void 0, false, {
-                                            fileName: "[project]/src/components/LandingPages.tsx",
-                                            lineNumber: 311,
-                                            columnNumber: 29
-                                        }, this),
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                            className: "absolute bottom-8 left-8 z-20",
+                                className: "flex flex-col xl:flex-row items-center justify-between gap-12 lg:gap-20 mt-8 w-full max-w-7xl mx-auto",
+                                children: [
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                        className: "flex-1 text-left relative z-30 w-full order-2 xl:order-1 -mt-24 md:-mt-32 xl:mt-0 flex flex-col justify-center",
+                                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$m$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["m"].div, {
+                                            initial: {
+                                                opacity: 0,
+                                                x: -20
+                                            },
+                                            animate: {
+                                                opacity: 1,
+                                                x: 0
+                                            },
+                                            transition: {
+                                                duration: 0.5
+                                            },
+                                            className: "flex flex-col gap-5 items-start bg-black/40 xl:bg-transparent p-6 md:p-8 rounded-3xl backdrop-blur-md xl:backdrop-blur-none shadow-2xl xl:shadow-none",
                                             children: [
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                    className: "inline-flex items-center gap-2 text-[10px] font-semibold tracking-widest uppercase text-blue-400 mb-2",
+                                                    className: (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$utils$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["cn"])("inline-flex items-center gap-2 text-[10px] font-semibold tracking-widest uppercase mb-2", activeData?.badgeColor),
                                                     children: [
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                            className: "w-1.5 h-1.5 rounded-full bg-blue-400 animate-pulse"
+                                                            className: (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$utils$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["cn"])("w-1.5 h-1.5 rounded-full animate-pulse", activeData?.dotColor)
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/LandingPages.tsx",
-                                                            lineNumber: 318,
+                                                            lineNumber: 255,
                                                             columnNumber: 37
                                                         }, this),
-                                                        "Fundador"
+                                                        activeData?.badge
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/components/LandingPages.tsx",
-                                                    lineNumber: 317,
+                                                    lineNumber: 254,
                                                     columnNumber: 33
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
-                                                    className: "text-2xl font-bold text-white",
-                                                    children: "Igor iuri1"
-                                                }, void 0, false, {
-                                                    fileName: "[project]/src/components/LandingPages.tsx",
-                                                    lineNumber: 321,
-                                                    columnNumber: 33
-                                                }, this)
-                                            ]
-                                        }, void 0, true, {
-                                            fileName: "[project]/src/components/LandingPages.tsx",
-                                            lineNumber: 316,
-                                            columnNumber: 29
-                                        }, this)
-                                    ]
-                                }, void 0, true, {
-                                    fileName: "[project]/src/components/LandingPages.tsx",
-                                    lineNumber: 308,
-                                    columnNumber: 25
-                                }, this),
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                    className: "flex flex-col justify-center order-1 lg:order-2",
-                                    children: [
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                            className: "inline-flex items-center gap-2 text-[10px] font-semibold tracking-widest uppercase text-blue-400 mb-4",
-                                            children: [
-                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                    className: "w-1 h-1 rounded-full bg-blue-400 animate-pulse"
-                                                }, void 0, false, {
-                                                    fileName: "[project]/src/components/LandingPages.tsx",
-                                                    lineNumber: 328,
-                                                    columnNumber: 33
-                                                }, this),
-                                                "Sobre Mim"
-                                            ]
-                                        }, void 0, true, {
-                                            fileName: "[project]/src/components/LandingPages.tsx",
-                                            lineNumber: 327,
-                                            columnNumber: 29
-                                        }, this),
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
-                                            className: "text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6 tracking-tight leading-tight",
-                                            children: [
-                                                "Oi, sou o Igor.",
-                                                " ",
-                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("br", {}, void 0, false, {
-                                                    fileName: "[project]/src/components/LandingPages.tsx",
-                                                    lineNumber: 333,
-                                                    columnNumber: 33
-                                                }, this),
-                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                    className: "text-gradient-hero drop-shadow-[0_0_30px_rgba(37,99,235,0.5)]",
-                                                    children: "Design & Automação"
-                                                }, void 0, false, {
-                                                    fileName: "[project]/src/components/LandingPages.tsx",
-                                                    lineNumber: 334,
-                                                    columnNumber: 33
-                                                }, this)
-                                            ]
-                                        }, void 0, true, {
-                                            fileName: "[project]/src/components/LandingPages.tsx",
-                                            lineNumber: 331,
-                                            columnNumber: 29
-                                        }, this),
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                            className: "text-zinc-300 text-base md:text-lg leading-relaxed mb-6 font-light",
-                                            children: [
-                                                "Sou apaixonado por unir estética refinada, minimalismo e alta conversão. A ",
-                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                    className: "text-white font-medium",
-                                                    children: "Nexis"
-                                                }, void 0, false, {
-                                                    fileName: "[project]/src/components/LandingPages.tsx",
-                                                    lineNumber: 339,
-                                                    columnNumber: 108
-                                                }, this),
-                                                " nasceu desse propósito: criar projetos que não só deslumbram no primeiro olhar, mas que são verdadeiras máquinas de gerar lucro."
-                                            ]
-                                        }, void 0, true, {
-                                            fileName: "[project]/src/components/LandingPages.tsx",
-                                            lineNumber: 338,
-                                            columnNumber: 29
-                                        }, this),
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                            className: "text-zinc-400 text-sm md:text-base leading-relaxed mb-8",
-                                            children: [
-                                                "Nosso foco central está na construção de ",
-                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                    className: "text-white font-medium",
-                                                    children: "Landing Pages premium"
-                                                }, void 0, false, {
-                                                    fileName: "[project]/src/components/LandingPages.tsx",
-                                                    lineNumber: 342,
-                                                    columnNumber: 74
-                                                }, this),
-                                                ". Cuidamos de cada pixel para prender a atenção do seu cliente em segundos. E, para garantir que seu funil seja completo, conectamos o design a ",
-                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                    className: "text-white font-medium",
-                                                    children: "automações inteligentes"
-                                                }, void 0, false, {
-                                                    fileName: "[project]/src/components/LandingPages.tsx",
-                                                    lineNumber: 342,
-                                                    columnNumber: 287
-                                                }, this),
-                                                " nos bastidores — garantindo triagem de leads, atendimento rápido e controle absoluto do seu negócio digital, mesmo quando você estiver dormindo."
-                                            ]
-                                        }, void 0, true, {
-                                            fileName: "[project]/src/components/LandingPages.tsx",
-                                            lineNumber: 341,
-                                            columnNumber: 29
-                                        }, this),
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                            className: "grid grid-cols-1 sm:grid-cols-2 gap-4",
-                                            children: [
-                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                    className: "group rounded-xl border border-white/8 bg-white/3 hover:bg-white/6 hover:border-white/15 transition-all duration-300 p-5",
+                                                    className: "text-3xl lg:text-5xl font-bold text-white mb-2 leading-tight",
                                                     children: [
+                                                        activeData?.title.split(' — ')[0],
+                                                        " ",
+                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("br", {}, void 0, false, {
+                                                            fileName: "[project]/src/components/LandingPages.tsx",
+                                                            lineNumber: 260,
+                                                            columnNumber: 73
+                                                        }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                            className: "text-2xl mb-3 block",
-                                                            children: "🎨"
+                                                            className: (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$utils$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["cn"])("text-transparent bg-clip-text text-2xl lg:text-4xl font-normal mt-2 block bg-gradient-to-r", activeData?.textGradient || "from-brand to-blue-300"),
+                                                            children: activeData?.title.split(' — ')[1] || ""
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/LandingPages.tsx",
-                                                            lineNumber: 348,
-                                                            columnNumber: 37
-                                                        }, this),
-                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h4", {
-                                                            className: "text-sm font-semibold text-white mb-2",
-                                                            children: "Paixão por Design"
-                                                        }, void 0, false, {
-                                                            fileName: "[project]/src/components/LandingPages.tsx",
-                                                            lineNumber: 349,
-                                                            columnNumber: 37
-                                                        }, this),
-                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                            className: "text-xs text-zinc-500 leading-relaxed",
-                                                            children: 'Interfaces visuais "Apple-like", limpas, sofisticadas e com forte autoridade para a sua marca.'
-                                                        }, void 0, false, {
-                                                            fileName: "[project]/src/components/LandingPages.tsx",
-                                                            lineNumber: 350,
+                                                            lineNumber: 261,
                                                             columnNumber: 37
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/components/LandingPages.tsx",
-                                                    lineNumber: 347,
+                                                    lineNumber: 259,
                                                     columnNumber: 33
                                                 }, this),
-                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                    className: "group rounded-xl border border-white/8 bg-white/3 hover:bg-white/6 hover:border-white/15 transition-all duration-300 p-5",
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                                    className: "text-neutral-400 text-sm md:text-base lg:text-lg leading-relaxed mb-6 max-w-xl",
+                                                    children: activeData?.desc
+                                                }, void 0, false, {
+                                                    fileName: "[project]/src/components/LandingPages.tsx",
+                                                    lineNumber: 266,
+                                                    columnNumber: 33
+                                                }, this),
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
+                                                    href: activeData?.href,
+                                                    target: "_blank",
+                                                    rel: "noopener noreferrer",
+                                                    className: "btn-blue bg-surface border border-white/10 flex items-center gap-2 w-max justify-center h-[46px] px-6",
                                                     children: [
-                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                            className: "text-2xl mb-3 block",
-                                                            children: "🤖"
+                                                        "Visitar Projeto",
+                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$arrow$2d$right$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__ArrowRight$3e$__["ArrowRight"], {
+                                                            className: "w-4 h-4 ml-1"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/LandingPages.tsx",
-                                                            lineNumber: 355,
-                                                            columnNumber: 37
-                                                        }, this),
-                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h4", {
-                                                            className: "text-sm font-semibold text-white mb-2",
-                                                            children: "Páginas que Trabalham"
-                                                        }, void 0, false, {
-                                                            fileName: "[project]/src/components/LandingPages.tsx",
-                                                            lineNumber: 356,
-                                                            columnNumber: 37
-                                                        }, this),
-                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                            className: "text-xs text-zinc-500 leading-relaxed",
-                                                            children: "Muito além do layout, as páginas alimentam automações que operam ativamente no WhatsApp e CRMs."
-                                                        }, void 0, false, {
-                                                            fileName: "[project]/src/components/LandingPages.tsx",
-                                                            lineNumber: 357,
+                                                            lineNumber: 277,
                                                             columnNumber: 37
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/components/LandingPages.tsx",
-                                                    lineNumber: 354,
+                                                    lineNumber: 270,
                                                     columnNumber: 33
                                                 }, this)
                                             ]
-                                        }, void 0, true, {
+                                        }, activeCardIdx, true, {
                                             fileName: "[project]/src/components/LandingPages.tsx",
-                                            lineNumber: 346,
+                                            lineNumber: 247,
                                             columnNumber: 29
                                         }, this)
-                                    ]
-                                }, void 0, true, {
-                                    fileName: "[project]/src/components/LandingPages.tsx",
-                                    lineNumber: 326,
-                                    columnNumber: 25
-                                }, this)
-                            ]
-                        }, void 0, true, {
-                            fileName: "[project]/src/components/LandingPages.tsx",
-                            lineNumber: 305,
-                            columnNumber: 21
-                        }, this)
-                    }, void 0, false, {
-                        fileName: "[project]/src/components/LandingPages.tsx",
-                        lineNumber: 304,
-                        columnNumber: 17
-                    }, this)
-                ]
-            }, void 0, true, {
-                fileName: "[project]/src/components/LandingPages.tsx",
-                lineNumber: 300,
-                columnNumber: 13
-            }, this),
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
-                id: "orcamento",
-                className: "relative w-full py-20 bg-black overflow-hidden",
-                children: [
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: "absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[300px] bg-blue-600/10 rounded-full blur-[120px] pointer-events-none"
-                    }, void 0, false, {
-                        fileName: "[project]/src/components/LandingPages.tsx",
-                        lineNumber: 370,
-                        columnNumber: 17
-                    }, this),
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: "absolute bottom-0 left-1/2 -translate-x-1/2 w-[500px] h-[200px] bg-blue-800/8 rounded-full blur-[80px] pointer-events-none"
-                    }, void 0, false, {
-                        fileName: "[project]/src/components/LandingPages.tsx",
-                        lineNumber: 371,
-                        columnNumber: 17
-                    }, this),
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: "container relative z-10 mx-auto px-6",
-                        children: [
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: "max-w-2xl mx-auto text-center mb-12",
-                                children: [
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                        className: "inline-flex items-center gap-2 text-[10px] font-semibold tracking-widest uppercase text-blue-400 mb-4",
-                                        children: [
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                className: "w-1 h-1 rounded-full bg-blue-400 animate-pulse"
-                                            }, void 0, false, {
-                                                fileName: "[project]/src/components/LandingPages.tsx",
-                                                lineNumber: 376,
-                                                columnNumber: 29
-                                            }, this),
-                                            "Seu próximo projeto"
-                                        ]
-                                    }, void 0, true, {
+                                    }, void 0, false, {
                                         fileName: "[project]/src/components/LandingPages.tsx",
-                                        lineNumber: 375,
+                                        lineNumber: 246,
                                         columnNumber: 25
                                     }, this),
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
-                                        className: "text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 tracking-tight",
-                                        children: [
-                                            "Peça um",
-                                            " ",
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                className: "text-gradient-hero drop-shadow-[0_0_30px_rgba(37,99,235,0.5)]",
-                                                children: "Orçamento"
-                                            }, void 0, false, {
-                                                fileName: "[project]/src/components/LandingPages.tsx",
-                                                lineNumber: 381,
-                                                columnNumber: 29
-                                            }, this)
-                                        ]
-                                    }, void 0, true, {
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                        className: "flex-[1.2] w-full relative min-h-[400px] md:min-h-[500px] lg:min-h-[600px] flex items-center justify-center order-1 xl:order-2 perspective-[1200px] pointer-events-none xl:pointer-events-auto",
+                                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$CardSwap$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
+                                            width: 700,
+                                            height: 420,
+                                            cardDistance: 40,
+                                            verticalDistance: 40,
+                                            delay: 4000,
+                                            onActiveCardChange: setActiveCardIdx,
+                                            containerClassName: "!bottom-auto !right-auto !left-1/2 !top-1/2 !-translate-x-1/2 !-translate-y-1/2 xl:!-translate-x-[20%] xl:!-translate-y-[30%] origin-center scale-[0.6] sm:scale-[0.8] md:scale-100 lg:scale-[1.1] xl:scale-[1.2]",
+                                            children: PAGES_DATA.slice(0, 3).map((page, idx)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$CardSwap$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Card"], {
+                                                    className: "border border-white/20 shadow-[0_30px_80px_rgba(0,0,0,0.9)] overflow-hidden rounded-[2rem] pointer-events-auto",
+                                                    children: [
+                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                            className: "absolute inset-0 bg-gradient-to-tr from-brand/10 to-transparent z-10 pointer-events-none mix-blend-overlay"
+                                                        }, void 0, false, {
+                                                            fileName: "[project]/src/components/LandingPages.tsx",
+                                                            lineNumber: 295,
+                                                            columnNumber: 41
+                                                        }, this),
+                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("img", {
+                                                            src: page.img,
+                                                            alt: page.alt,
+                                                            className: "w-full h-full object-cover object-top"
+                                                        }, void 0, false, {
+                                                            fileName: "[project]/src/components/LandingPages.tsx",
+                                                            lineNumber: 296,
+                                                            columnNumber: 41
+                                                        }, this),
+                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                            className: "absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t from-black/80 via-black/50 to-transparent z-20 pointer-events-none"
+                                                        }, void 0, false, {
+                                                            fileName: "[project]/src/components/LandingPages.tsx",
+                                                            lineNumber: 301,
+                                                            columnNumber: 41
+                                                        }, this)
+                                                    ]
+                                                }, idx, true, {
+                                                    fileName: "[project]/src/components/LandingPages.tsx",
+                                                    lineNumber: 294,
+                                                    columnNumber: 37
+                                                }, this))
+                                        }, void 0, false, {
+                                            fileName: "[project]/src/components/LandingPages.tsx",
+                                            lineNumber: 284,
+                                            columnNumber: 29
+                                        }, this)
+                                    }, void 0, false, {
                                         fileName: "[project]/src/components/LandingPages.tsx",
-                                        lineNumber: 379,
-                                        columnNumber: 25
-                                    }, this),
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                        className: "text-zinc-400 text-base leading-relaxed",
-                                        children: [
-                                            "Conte um pouco sobre o seu projeto e nossa equipe entrará em contato em até ",
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                className: "text-white",
-                                                children: "24 horas"
-                                            }, void 0, false, {
-                                                fileName: "[project]/src/components/LandingPages.tsx",
-                                                lineNumber: 386,
-                                                columnNumber: 105
-                                            }, this),
-                                            "."
-                                        ]
-                                    }, void 0, true, {
-                                        fileName: "[project]/src/components/LandingPages.tsx",
-                                        lineNumber: 385,
+                                        lineNumber: 283,
                                         columnNumber: 25
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/LandingPages.tsx",
-                                lineNumber: 374,
-                                columnNumber: 21
-                            }, this),
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: "max-w-xl mx-auto rounded-2xl border border-white/10 bg-white/4 backdrop-blur-sm p-6 md:p-10",
-                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                    className: "flex flex-col gap-4",
-                                    children: [
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                            children: [
-                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                    className: "text-xs text-zinc-500 uppercase tracking-widest font-semibold mb-3",
-                                                    children: "Tipo de projeto"
-                                                }, void 0, false, {
-                                                    fileName: "[project]/src/components/LandingPages.tsx",
-                                                    lineNumber: 396,
-                                                    columnNumber: 33
-                                                }, this),
-                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                    className: "flex flex-wrap gap-2",
-                                                    children: [
-                                                        "Landing Page",
-                                                        "Site Institucional",
-                                                        "Portfólio",
-                                                        "E-commerce",
-                                                        "Outro"
-                                                    ].map((tipo)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                                                            className: "text-xs px-3 py-1.5 rounded-full border border-white/10 text-zinc-400 hover:border-blue-500/50 hover:text-white hover:bg-blue-500/10 transition-all duration-200 cursor-pointer",
-                                                            children: tipo
-                                                        }, tipo, false, {
-                                                            fileName: "[project]/src/components/LandingPages.tsx",
-                                                            lineNumber: 399,
-                                                            columnNumber: 41
-                                                        }, this))
-                                                }, void 0, false, {
-                                                    fileName: "[project]/src/components/LandingPages.tsx",
-                                                    lineNumber: 397,
-                                                    columnNumber: 33
-                                                }, this)
-                                            ]
-                                        }, void 0, true, {
-                                            fileName: "[project]/src/components/LandingPages.tsx",
-                                            lineNumber: 395,
-                                            columnNumber: 29
-                                        }, this),
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                            className: "h-px bg-white/8 my-1"
-                                        }, void 0, false, {
-                                            fileName: "[project]/src/components/LandingPages.tsx",
-                                            lineNumber: 409,
-                                            columnNumber: 29
-                                        }, this),
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                            className: "flex flex-col gap-3",
-                                            children: [
-                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                    className: "flex items-center gap-3 rounded-xl border border-white/8 bg-white/3 px-4 py-3",
-                                                    children: [
-                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                            className: "text-zinc-500 text-sm",
-                                                            children: "👤"
-                                                        }, void 0, false, {
-                                                            fileName: "[project]/src/components/LandingPages.tsx",
-                                                            lineNumber: 414,
-                                                            columnNumber: 37
-                                                        }, this),
-                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
-                                                            type: "text",
-                                                            placeholder: "Seu nome",
-                                                            className: "bg-transparent text-sm text-white placeholder-zinc-600 outline-none w-full"
-                                                        }, void 0, false, {
-                                                            fileName: "[project]/src/components/LandingPages.tsx",
-                                                            lineNumber: 415,
-                                                            columnNumber: 37
-                                                        }, this)
-                                                    ]
-                                                }, void 0, true, {
-                                                    fileName: "[project]/src/components/LandingPages.tsx",
-                                                    lineNumber: 413,
-                                                    columnNumber: 33
-                                                }, this),
-                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                    className: "flex items-center gap-3 rounded-xl border border-white/8 bg-white/3 px-4 py-3",
-                                                    children: [
-                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                            className: "text-zinc-500 text-sm",
-                                                            children: "💬"
-                                                        }, void 0, false, {
-                                                            fileName: "[project]/src/components/LandingPages.tsx",
-                                                            lineNumber: 422,
-                                                            columnNumber: 37
-                                                        }, this),
-                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
-                                                            type: "text",
-                                                            placeholder: "Seu WhatsApp ou e-mail",
-                                                            className: "bg-transparent text-sm text-white placeholder-zinc-600 outline-none w-full"
-                                                        }, void 0, false, {
-                                                            fileName: "[project]/src/components/LandingPages.tsx",
-                                                            lineNumber: 423,
-                                                            columnNumber: 37
-                                                        }, this)
-                                                    ]
-                                                }, void 0, true, {
-                                                    fileName: "[project]/src/components/LandingPages.tsx",
-                                                    lineNumber: 421,
-                                                    columnNumber: 33
-                                                }, this),
-                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                    className: "flex items-start gap-3 rounded-xl border border-white/8 bg-white/3 px-4 py-3",
-                                                    children: [
-                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                            className: "text-zinc-500 text-sm mt-0.5",
-                                                            children: "📝"
-                                                        }, void 0, false, {
-                                                            fileName: "[project]/src/components/LandingPages.tsx",
-                                                            lineNumber: 430,
-                                                            columnNumber: 37
-                                                        }, this),
-                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("textarea", {
-                                                            placeholder: "Descreva brevemente seu projeto...",
-                                                            rows: 3,
-                                                            className: "bg-transparent text-sm text-white placeholder-zinc-600 outline-none w-full resize-none"
-                                                        }, void 0, false, {
-                                                            fileName: "[project]/src/components/LandingPages.tsx",
-                                                            lineNumber: 431,
-                                                            columnNumber: 37
-                                                        }, this)
-                                                    ]
-                                                }, void 0, true, {
-                                                    fileName: "[project]/src/components/LandingPages.tsx",
-                                                    lineNumber: 429,
-                                                    columnNumber: 33
-                                                }, this)
-                                            ]
-                                        }, void 0, true, {
-                                            fileName: "[project]/src/components/LandingPages.tsx",
-                                            lineNumber: 412,
-                                            columnNumber: 29
-                                        }, this),
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
-                                            href: `https://wa.me/5519996976519?text=Olá! Gostaria de solicitar um orçamento para uma landing page.`,
-                                            target: "_blank",
-                                            rel: "noopener noreferrer",
-                                            className: "mt-2 w-full flex items-center justify-center gap-2 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-semibold text-sm py-3.5 transition-all duration-200 hover:shadow-[0_0_30px_rgba(37,99,235,0.4)]",
-                                            children: [
-                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
-                                                    className: "w-4 h-4",
-                                                    viewBox: "0 0 24 24",
-                                                    fill: "currentColor",
-                                                    children: [
-                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
-                                                            d: "M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"
-                                                        }, void 0, false, {
-                                                            fileName: "[project]/src/components/LandingPages.tsx",
-                                                            lineNumber: 447,
-                                                            columnNumber: 37
-                                                        }, this),
-                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
-                                                            d: "M12 0C5.374 0 0 5.373 0 12c0 2.117.549 4.107 1.51 5.845L.057 23.882l6.233-1.634A11.944 11.944 0 0 0 12 24c6.626 0 12-5.374 12-12S18.626 0 12 0zm0 21.818a9.817 9.817 0 0 1-5.001-1.368l-.358-.214-3.706.972.99-3.614-.234-.373A9.818 9.818 0 0 1 2.182 12C2.182 6.57 6.57 2.182 12 2.182S21.818 6.57 21.818 12 17.43 21.818 12 21.818z"
-                                                        }, void 0, false, {
-                                                            fileName: "[project]/src/components/LandingPages.tsx",
-                                                            lineNumber: 448,
-                                                            columnNumber: 37
-                                                        }, this)
-                                                    ]
-                                                }, void 0, true, {
-                                                    fileName: "[project]/src/components/LandingPages.tsx",
-                                                    lineNumber: 446,
-                                                    columnNumber: 33
-                                                }, this),
-                                                "Enviar pelo WhatsApp"
-                                            ]
-                                        }, void 0, true, {
-                                            fileName: "[project]/src/components/LandingPages.tsx",
-                                            lineNumber: 440,
-                                            columnNumber: 29
-                                        }, this),
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                            className: "text-center text-[11px] text-zinc-600",
-                                            children: "Resposta garantida em até 24h • Sem compromisso"
-                                        }, void 0, false, {
-                                            fileName: "[project]/src/components/LandingPages.tsx",
-                                            lineNumber: 453,
-                                            columnNumber: 29
-                                        }, this)
-                                    ]
-                                }, void 0, true, {
-                                    fileName: "[project]/src/components/LandingPages.tsx",
-                                    lineNumber: 392,
-                                    columnNumber: 25
-                                }, this)
-                            }, void 0, false, {
-                                fileName: "[project]/src/components/LandingPages.tsx",
-                                lineNumber: 391,
+                                lineNumber: 243,
                                 columnNumber: 21
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/LandingPages.tsx",
-                        lineNumber: 373,
+                        lineNumber: 222,
                         columnNumber: 17
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/components/LandingPages.tsx",
-                lineNumber: 368,
+                lineNumber: 209,
+                columnNumber: 13
+            }, this),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
+                id: "contato",
+                className: "relative w-full py-24 bg-black overflow-hidden flex justify-center items-center",
+                children: [
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                        className: "absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[300px] bg-blue-600/10 rounded-full blur-[120px] pointer-events-none"
+                    }, void 0, false, {
+                        fileName: "[project]/src/components/LandingPages.tsx",
+                        lineNumber: 315,
+                        columnNumber: 17
+                    }, this),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                        className: "container relative z-10 px-6 max-w-2xl mx-auto flex flex-col items-center",
+                        children: [
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                className: "inline-flex items-center gap-2 text-[10px] font-semibold tracking-widest uppercase text-blue-400 mb-4 px-3 py-1 rounded-full border border-blue-500/20 bg-blue-500/10",
+                                children: [
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                        className: "w-1.5 h-1.5 rounded-full bg-blue-400 animate-pulse"
+                                    }, void 0, false, {
+                                        fileName: "[project]/src/components/LandingPages.tsx",
+                                        lineNumber: 319,
+                                        columnNumber: 25
+                                    }, this),
+                                    "Inicie seu Projeto"
+                                ]
+                            }, void 0, true, {
+                                fileName: "[project]/src/components/LandingPages.tsx",
+                                lineNumber: 318,
+                                columnNumber: 21
+                            }, this),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
+                                className: "text-4xl md:text-5xl font-bold text-white mb-4 tracking-tight text-center",
+                                children: "Se interessou?"
+                            }, void 0, false, {
+                                fileName: "[project]/src/components/LandingPages.tsx",
+                                lineNumber: 322,
+                                columnNumber: 21
+                            }, this),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                className: "text-zinc-400 text-lg md:text-xl text-center mb-10 pb-4 border-b border-white/5 w-full",
+                                children: [
+                                    "Fale com um de nossos ",
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                        className: "text-white font-medium",
+                                        children: "atendentes agora!"
+                                    }, void 0, false, {
+                                        fileName: "[project]/src/components/LandingPages.tsx",
+                                        lineNumber: 326,
+                                        columnNumber: 47
+                                    }, this)
+                                ]
+                            }, void 0, true, {
+                                fileName: "[project]/src/components/LandingPages.tsx",
+                                lineNumber: 325,
+                                columnNumber: 21
+                            }, this),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                className: "w-full relative group",
+                                children: [
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                        className: "absolute -inset-1 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-[2rem] blur opacity-25 group-hover:opacity-40 transition duration-1000 group-hover:duration-200"
+                                    }, void 0, false, {
+                                        fileName: "[project]/src/components/LandingPages.tsx",
+                                        lineNumber: 331,
+                                        columnNumber: 25
+                                    }, this),
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                        className: "relative flex flex-col sm:flex-row items-center gap-6 p-6 md:p-8 bg-neutral-950/80 border border-white/10 rounded-[2rem] backdrop-blur-xl",
+                                        children: [
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                className: "relative w-24 h-24 md:w-32 md:h-32 shrink-0 rounded-full border-2 border-white/10 overflow-hidden shadow-2xl",
+                                                children: [
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("img", {
+                                                        src: "/pessoas/igor.png",
+                                                        alt: "Igor iuri - Atendente Online",
+                                                        className: "w-full h-full object-cover"
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/src/components/LandingPages.tsx",
+                                                        lineNumber: 335,
+                                                        columnNumber: 33
+                                                    }, this),
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                        className: "absolute bottom-1 right-1 md:bottom-2 md:right-2 w-4 h-4 rounded-full border-2 border-black bg-green-500 z-10"
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/src/components/LandingPages.tsx",
+                                                        lineNumber: 341,
+                                                        columnNumber: 33
+                                                    }, this)
+                                                ]
+                                            }, void 0, true, {
+                                                fileName: "[project]/src/components/LandingPages.tsx",
+                                                lineNumber: 334,
+                                                columnNumber: 29
+                                            }, this),
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                className: "flex flex-col items-center sm:items-start text-center sm:text-left flex-1 min-w-0",
+                                                children: [
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                        className: "bg-green-500/10 text-green-400 text-[10px] font-bold uppercase tracking-widest px-2.5 py-1 rounded-md mb-2 inline-flex items-center gap-1.5",
+                                                        children: [
+                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                                className: "w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse"
+                                                            }, void 0, false, {
+                                                                fileName: "[project]/src/components/LandingPages.tsx",
+                                                                lineNumber: 346,
+                                                                columnNumber: 37
+                                                            }, this),
+                                                            "Online agora"
+                                                        ]
+                                                    }, void 0, true, {
+                                                        fileName: "[project]/src/components/LandingPages.tsx",
+                                                        lineNumber: 345,
+                                                        columnNumber: 33
+                                                    }, this),
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
+                                                        className: "text-2xl font-bold text-white mb-1",
+                                                        children: "Igor Iuri"
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/src/components/LandingPages.tsx",
+                                                        lineNumber: 349,
+                                                        columnNumber: 33
+                                                    }, this),
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                                        className: "text-zinc-400 text-sm mb-5",
+                                                        children: "Especialista em Automação & Conversão"
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/src/components/LandingPages.tsx",
+                                                        lineNumber: 350,
+                                                        columnNumber: 33
+                                                    }, this),
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
+                                                        href: "https://wa.me/5519996976519?text=Olá! Me interessei pelas Landing Pages da Nexis e gostaria de falar com um atendente.",
+                                                        target: "_blank",
+                                                        rel: "noopener noreferrer",
+                                                        className: "w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-xl bg-brand hover:bg-blue-500 text-white font-semibold text-sm px-8 py-3.5 transition-all duration-300 hover:shadow-[0_0_30px_rgba(37,99,235,0.4)] hover:scale-105 active:scale-95",
+                                                        children: [
+                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
+                                                                className: "w-5 h-5",
+                                                                viewBox: "0 0 24 24",
+                                                                fill: "currentColor",
+                                                                children: [
+                                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
+                                                                        d: "M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"
+                                                                    }, void 0, false, {
+                                                                        fileName: "[project]/src/components/LandingPages.tsx",
+                                                                        lineNumber: 359,
+                                                                        columnNumber: 41
+                                                                    }, this),
+                                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
+                                                                        d: "M12 0C5.374 0 0 5.373 0 12c0 2.117.549 4.107 1.51 5.845L.057 23.882l6.233-1.634A11.944 11.944 0 0 0 12 24c6.626 0 12-5.374 12-12S18.626 0 12 0zm0 21.818a9.817 9.817 0 0 1-5.001-1.368l-.358-.214-3.706.972.99-3.614-.234-.373A9.818 9.818 0 0 1 2.182 12C2.182 6.57 6.57 2.182 12 2.182S21.818 6.57 21.818 12 17.43 21.818 12 21.818z"
+                                                                    }, void 0, false, {
+                                                                        fileName: "[project]/src/components/LandingPages.tsx",
+                                                                        lineNumber: 360,
+                                                                        columnNumber: 41
+                                                                    }, this)
+                                                                ]
+                                                            }, void 0, true, {
+                                                                fileName: "[project]/src/components/LandingPages.tsx",
+                                                                lineNumber: 358,
+                                                                columnNumber: 37
+                                                            }, this),
+                                                            "Falar Agora"
+                                                        ]
+                                                    }, void 0, true, {
+                                                        fileName: "[project]/src/components/LandingPages.tsx",
+                                                        lineNumber: 352,
+                                                        columnNumber: 33
+                                                    }, this)
+                                                ]
+                                            }, void 0, true, {
+                                                fileName: "[project]/src/components/LandingPages.tsx",
+                                                lineNumber: 344,
+                                                columnNumber: 29
+                                            }, this)
+                                        ]
+                                    }, void 0, true, {
+                                        fileName: "[project]/src/components/LandingPages.tsx",
+                                        lineNumber: 332,
+                                        columnNumber: 25
+                                    }, this)
+                                ]
+                            }, void 0, true, {
+                                fileName: "[project]/src/components/LandingPages.tsx",
+                                lineNumber: 330,
+                                columnNumber: 21
+                            }, this)
+                        ]
+                    }, void 0, true, {
+                        fileName: "[project]/src/components/LandingPages.tsx",
+                        lineNumber: 317,
+                        columnNumber: 17
+                    }, this)
+                ]
+            }, void 0, true, {
+                fileName: "[project]/src/components/LandingPages.tsx",
+                lineNumber: 313,
                 columnNumber: 13
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/src/components/LandingPages.tsx",
-        lineNumber: 60,
+        lineNumber: 66,
         columnNumber: 9
     }, this);
 }
+_s(LandingPages, "tG9L6tKE9OBmPr/1zczlxpHmkLE=");
 _c = LandingPages;
 var _c;
 __turbopack_context__.k.register(_c, "LandingPages");

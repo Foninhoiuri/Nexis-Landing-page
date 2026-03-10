@@ -26,6 +26,7 @@ export interface CardSwapProps {
     easing?: 'linear' | 'elastic';
     children: ReactNode;
     containerClassName?: string;
+    onActiveCardChange?: (idx: number) => void;
 }
 
 export interface CardProps extends React.HTMLAttributes<HTMLDivElement> {
@@ -36,7 +37,7 @@ export const Card = forwardRef<HTMLDivElement, CardProps>(({ customClass, ...res
     <div
         ref={ref}
         {...rest}
-        className={`absolute top-1/2 left-1/2 rounded-xl border border-2 border-white/25 bg-black [transform-style:preserve-3d] [will-change:transform] [backface-visibility:hidden] overflow-hidden ${customClass ?? ''} ${rest.className ?? ''}`.trim()}
+        className={`absolute top-1/2 left-1/2 rounded-xl border border-3 border-white/5 bg-black/5 [transform-style:preserve-3d] [will-change:transform] [backface-visibility:hidden] overflow-hidden ${customClass ?? ''} ${rest.className ?? ''}`.trim()}
     />
 ));
 Card.displayName = 'Card';
@@ -80,6 +81,7 @@ const CardSwap: React.FC<CardSwapProps> = ({
     skewAmount = 6,
     easing = 'elastic',
     containerClassName = '',
+    onActiveCardChange,
     children
 }) => {
     const config =
@@ -114,6 +116,11 @@ const CardSwap: React.FC<CardSwapProps> = ({
         const total = refs.length;
         refs.forEach((r, i) => placeNow(r.current!, makeSlot(i, cardDistance, verticalDistance, total), skewAmount));
 
+        // Initial active card is index 0
+        if (onActiveCardChange) {
+            onActiveCardChange(0);
+        }
+
         const swap = () => {
             if (order.current.length < 2) return;
 
@@ -127,6 +134,11 @@ const CardSwap: React.FC<CardSwapProps> = ({
                 duration: config.durDrop,
                 ease: config.ease
             });
+
+            // Fire active card change early so the UI updates immediately
+            if (onActiveCardChange) {
+                onActiveCardChange(rest[0]);
+            }
 
             tl.addLabel('promote', `-=${config.durDrop * config.promoteOverlap}`);
             rest.forEach((idx, i) => {

@@ -3,7 +3,7 @@ import React from "react";
 
 export default function NotFound() {
     return (
-        <div className="relative min-h-screen w-full bg-background overflow-hidden font-sans">
+        <div className="relative min-h-screen w-full bg-black overflow-hidden font-sans">
             {/* Texture Overlay (Optional, matching app style) */}
             <div className="fixed inset-0 bg-noise z-50 pointer-events-none opacity-20" />
 

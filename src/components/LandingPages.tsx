@@ -1,8 +1,8 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { m as motion } from "framer-motion";
-import { ArrowRight, Zap } from "lucide-react";
+import { m as motion, AnimatePresence } from "framer-motion";
+import { ArrowRight, Zap, Plus, Minus } from "lucide-react";
 import CardSwap, { Card } from "@/components/ui/CardSwap";
 import { RotatingBlurText } from "@/components/ui/RotatingBlurText";
 import { RainbowButton } from "@/components/ui/BlueRainbowButton";
@@ -20,21 +20,23 @@ const PAGES_DATA = [
     {
         img: "/paginas/nexis.png",
         alt: "Nexis Landing Page",
-        badge: "Landing Page Pessoal",
+        badge: "Site da Agência",
         badgeColor: "text-blue-400",
         dotColor: "bg-blue-400",
+        textGradient: "from-blue-600 to-blue-300",
         gradientDir: "to-r",
         imgReversed: false,
-        title: "Igori Urial — Portfólio & Professional Brand",
-        desc: "Página de apresentação profissional com design dark premium, animações fluídas e call-to-action otimizado para conversão de novos clientes e oportunidades.",
-        href: "https://www.igoriurialves.com.br/",
+        title: "Nexis — Agência de Automação",
+        desc: "O nosso próprio site. Um ecossistema digital desenvolvido em React e TailwindCSS com design focado em estética premium, conversão máxima e performance.",
+        href: "#",
     },
     {
         img: "/paginas/bruno.png",
         alt: "Bruno Landing Page",
         badge: "Landing Page Educacional",
-        badgeColor: "text-violet-400",
-        dotColor: "bg-violet-400",
+        badgeColor: "text-yellow-600",
+        dotColor: "bg-yellow-600",
+        textGradient: "from-yellow-600 to-yellow-300",
         gradientDir: "to-l",
         imgReversed: true,
         title: "Teacher Bruno — Captação de Alunos Premium",
@@ -45,8 +47,9 @@ const PAGES_DATA = [
         img: "/paginas/officemac.png",
         alt: "OfficeMac Landing Page",
         badge: "Landing Page Corporativa",
-        badgeColor: "text-emerald-400",
-        dotColor: "bg-emerald-400",
+        badgeColor: "text-red-8 00",
+        dotColor: "bg-red-800",
+        textGradient: "from-red-800 to-red-600",
         gradientDir: "to-r",
         imgReversed: false,
         title: "OfficeMac — Soluções Apple para Empresas",
@@ -55,9 +58,33 @@ const PAGES_DATA = [
     },
 ];
 
+// FAQ Items da página principal
+const FAQ_ITEMS = [
+    {
+        question: "Quanto tempo leva a implementação?",
+        answer: "O MVP (Produto Mínimo Viável) para sua Landing Page pode estar rodando em ate 48 horas."
+    },
+    {
+        question: "Voces criam Landing Pages para qualquer tipo de negocio?",
+        answer: "Sim. Desenvolvemos Landing Pages para os mais variados nichos de mercado."
+    },
+    {
+        question: "o pagamento é unico ou mensal?",
+        answer: "O pagamento é unico. Você paga apenas uma vez e tem acesso vitalício ao seu site."
+    },
+    {
+        question: "E se a automação parar de funcionar?",
+        answer: "Nossos contratos incluem monitoramento ativo. Se um fluxo falha, nossa equipe é notificada antes mesmo de você perceber, parando o agente na hora e resolvemos em até 24h."
+    }
+];
+
 export function LandingPages() {
+    const [activeCardIdx, setActiveCardIdx] = useState(0);
+    const [openFAQIndex, setOpenFAQIndex] = useState<number | null>(0);
+    const activeData = PAGES_DATA[activeCardIdx % PAGES_DATA.length];
+
     return (
-        <section id="landing-pages" className="relative min-h-screen flex flex-col items-center pt-4 md:pt-2 lg:pt-3 pb-20 xl:pb-16 overflow-visible xl:overflow-hidden bg-background">
+        <section id="landing-pages" className="relative min-h-screen flex flex-col items-center pt-4 md:pt-2 lg:pt-3 pb-20 xl:pb-16 overflow-visible xl:overflow-hidden bg-black">
             {/* Mobile-only Logo */}
             <div className="flex md:hidden w-full justify-center pb-4">
                 <img
@@ -154,52 +181,36 @@ export function LandingPages() {
                 </div>
 
                 {/* Coluna 2: Landing Pages Interactive Previews (Mobile: Abaixo, Desktop: Direita) */}
-                <div className="relative flex items-center justify-center min-h-[400px] md:min-h-[500px] lg:min-h-[600px] h-full order-2 lg:order-2 w-full pt-10 lg:pt-0 pb-0">
-                    <CardSwap
-                        width={1280}
-                        height={720}
-                        cardDistance={100}
-                        verticalDistance={100}
-                        delay={3000}
-                        containerClassName="lg:translate-x-[5%] overflow-visible lg:translate-y-[1%] translate-x-0 -translate-y-[15%] scale-[0.30] md:scale-[0.6] lg:scale-[0.8] opacity-90 mx-auto"
-                    >
-                        {[
-                            "/paginas/nexis.png",
-                            "/paginas/bruno.png",
-                            "/paginas/officemac.png",
-                            "/paginas/nexis_2.png",
-                            "/paginas/bruno_2.png",
-                            "/paginas/nexis_3.png",
-                        ].map((imgSrc, idx) => (
-                            <Card key={idx} className="border border-white/10 shadow-[0_0_50px_rgba(0,0,0,0.8)] overflow-hidden">
-                                <img
-                                    src={imgSrc}
-                                    alt={`Preview ${idx + 1}`}
+                <div className="relative flex items-center justify-center min-h-[400px] md:min-h-[500px] lg:min-h-[600px] h-full order-2 lg:order-2 w-full pt-0 pb-0">
+                    <div className="relative w-full max-w-[700px] aspect-[16/10] flex items-center justify-center transform -translate-y-[15%] md:-translate-y-[10%] lg:-translate-y-[5%] translate-x-0 lg:-translate-x-[10%] xl:-translate-x-[12%]">
+
+                        {/* Imac Mockup (Centro/Atrás) */}
+                        <div className="absolute top-1/2 left-1/2 lg:left-[40%] -translate-x-1/2 -translate-y-1/2 w-[90%] lg:w-[100%] z-10 drop-shadow-[0_20px_50px_rgba(0,0,0,0.5)]">
+                            <div className="absolute top-[4.5%] left-[4.5%] w-[91%] h-[64%] overflow-hidden bg-black z-0 rounded-lg">
+                                <img src="/paginas/nexis.png" alt="Nexis on iMac" className="w-full h-full object-cover object-top opacity-90" />
+                            </div>
+                            <img src="/paginas/imac.png" alt="iMac Mockup" className="relative z-10 w-full h-auto pointer-events-none" />
+                        </div>
+
+                        {/* iPhone Mockup (Frente) */}
+                        <div className="absolute bottom-[-20%] left-[5%] lg:left-[-5%] w-[21%] lg:w-[20%] z-20 drop-shadow-[0_30px_60px_rgba(0,0,0,0.7)]">
+                            <div className="absolute top-[1%] left-[5%] w-[92%] h-[95%] overflow-hidden bg-black z-0 rounded-[15%]">
+                                <video
+                                    src="/paginas/iphone video.mp4"
+                                    autoPlay
+                                    loop
+                                    muted
+                                    playsInline
                                     className="w-full h-full object-cover"
                                 />
-                                <div className="absolute inset-0 bg-black/10 z-10 pointer-events-none" />
-                                <div className="absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t from-black via-black/80 to-transparent z-20 pointer-events-none" />
-                            </Card>
-                        ))}
-                    </CardSwap>
+                            </div>
+                            <img src="/paginas/iphone.png" alt="iPhone Mockup" className="relative z-10 w-full h-auto pointer-events-none" />
+                        </div>
+                    </div>
                 </div>
             </div>
 
-            {/* --- SISTEMA DE FINALIZAÇÃO DA SESSÃO --- */}
 
-            {/* 1. Camada de Blur Atmosférico (Mais alta e suave) */}
-            <GradualBlur
-                position="bottom"
-                height="22rem"      // Altura maior para o blur começar mais cedo
-                strength={2}        // Strength 3 é o "sweet spot" para não ficar leitoso
-                divCount={12}       // Mais divisões = transição muito mais orgânica
-                curve="ease-in-out" // Curva mais suave que o ease-out
-                zIndex={20}
-                className="pointer-events-none opacity-90"
-            />
-
-            {/* 2. Camada de Blackout (Fade Sólido) */}
-            <div className="absolute bottom-0 inset-x-0 h-64 bg-gradient-to-t from-black via-black/90 to-transparent z-30 pointer-events-none" />
 
             {/* SEÇÃO NOSSAS PÁGINAS */}
             <section id="nossas-paginas" className="relative w-full py-20 bg-black flex flex-col items-center z-50 overflow-hidden">
@@ -235,228 +246,216 @@ export function LandingPages() {
                         Explore as soluções visuais e de conversão que desenvolvemos para nossos clientes.
                     </p>
 
-                    {/* ── UNIFIED GRID (ProblemCard Style) ── */}
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
-                        {PAGES_DATA.map((page, idx) => (
-                            <div
-                                key={idx}
-                                className={cn(
-                                    "group relative h-[500px] bg-white/5 transition-all duration-500 rounded-[3rem] hover:scale-[1.02] bg-gradient-to-tr from-brand/5 via-zinc-950 to-transparent",
-                                    "overflow-hidden z-20 text-left"
-                                )}
+                    {/* DYNAMIC SHOWCASE WITH CARDSWAP */}
+                    <div className="grid grid-cols-1 xl:grid-cols-[45%_55%] gap-12 xl:gap-24 mt-8 w-full max-w-[1600px] mx-auto px-6 md:px-12 items-center">
+
+                        {/* Text Content (Left Side) */}
+                        <div className="flex flex-col text-left relative z-30 w-full order-2 xl:order-1 -mt-24 md:-mt-32 xl:mt-0 justify-center">
+                            <motion.div
+                                key={activeCardIdx}
+                                initial={{ opacity: 0, x: -20 }}
+                                animate={{ opacity: 1, x: 0 }}
+                                transition={{ duration: 0.5 }}
+                                className="flex flex-col gap-5 items-start bg-black/40 xl:bg-transparent p-6 md:p-8 xl:p-0 rounded-3xl backdrop-blur-md xl:backdrop-blur-none shadow-2xl xl:shadow-none"
                             >
-                                {/* Background / Image Area */}
-                                <div className={cn("absolute inset-0 z-0 rounded-[3rem] overflow-hidden")}>
-                                    <div className="w-full h-full opacity-100 transition-opacity duration-500">
+                                <span className={cn("inline-flex items-center gap-2 text-[10px] sm:text-xs font-semibold tracking-widest uppercase mb-2", activeData?.badgeColor)}>
+                                    <span className={cn("w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full animate-pulse", activeData?.dotColor)} />
+                                    {activeData?.badge}
+                                </span>
+
+                                <h3 className="text-4xl md:text-5xl xl:text-6xl font-bold text-white mb-2 leading-tight">
+                                    {activeData?.title.split(' — ')[0]} <br />
+                                    <span className={cn("text-transparent bg-clip-text text-3xl md:text-4xl xl:text-5xl font-normal mt-2 block bg-gradient-to-r", activeData?.textGradient || "from-brand to-blue-300")}>
+                                        {activeData?.title.split(' — ')[1] || ""}
+                                    </span>
+                                </h3>
+
+                                <p className="text-neutral-400 text-base md:text-lg lg:text-xl leading-relaxed mb-6 max-w-2xl">
+                                    {activeData?.desc}
+                                </p>
+
+                                <a
+                                    href={activeData?.href}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="btn-blue bg-surface border border-white/10 flex items-center gap-2 w-max justify-center h-[52px] px-8 text-base font-semibold"
+                                >
+                                    Visitar Projeto
+                                    <ArrowRight className="w-5 h-5 ml-1" />
+                                </a>
+                            </motion.div>
+                        </div>
+
+                        {/* CardSwap (Right Side) */}
+                        <div className="w-full relative min-h-[400px] md:min-h-[500px] lg:min-h-[600px] flex items-center justify-center order-1 xl:order-2 perspective-[1200px] pointer-events-none xl:pointer-events-auto">
+                            <CardSwap
+                                width={700}
+                                height={420}
+                                cardDistance={40}
+                                verticalDistance={40}
+                                delay={4000}
+                                onActiveCardChange={setActiveCardIdx}
+                                containerClassName="!bottom-auto !right-auto !left-1/2 !top-1/2 !-translate-x-1/2 !-translate-y-1/2 xl:!-translate-y-[30%] origin-center scale-[0.6] sm:scale-[0.8] md:scale-100 lg:scale-[1.1] xl:scale-[1.15]"
+                            >
+                                {PAGES_DATA.slice(0, 3).map((page, idx) => (
+                                    <Card key={idx} className="border border-white/20 shadow-[0_30px_80px_rgba(0,0,0,0.9)] overflow-hidden rounded-[2rem] pointer-events-auto">
+                                        <div className="absolute inset-0 bg-gradient-to-tr from-brand/10 to-transparent z-10 pointer-events-none mix-blend-overlay" />
                                         <img
                                             src={page.img}
                                             alt={page.alt}
-                                            className="w-full h-full object-cover object-top opacity-70 transition-transform duration-700 group-hover:scale-105"
+                                            className="w-full h-full object-cover object-top"
                                         />
+                                        <div className="absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t from-black/80 via-black/50 to-transparent z-20 pointer-events-none" />
+                                    </Card>
+                                ))}
+                            </CardSwap>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+
+            {/* SEÇÃO FAQ + CONTATO */}
+            <section id="faq" className="py-24 bg-black relative border-t border-white/5">
+                {/* Background Glow */}
+                <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-brand/5 rounded-full blur-[120px] -translate-y-1/4 translate-x-1/4 pointer-events-none opacity-50" />
+
+                <div className="container mx-auto px-4 relative z-10">
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-start">
+
+                        {/* Coluna Esquerda: Título e Intro */}
+                        <div className="lg:sticky lg:top-24">
+                            <motion.h2
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                className="text-4xl lg:text-5xl font-bold tracking-tight mb-6 text-white text-left"
+                            >
+                                Dúvidas <br />
+                                <span className="text-neutral-500">Frequentes</span>
+                            </motion.h2>
+
+                            <motion.p
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ delay: 0.1 }}
+                                className="text-lg text-neutral-400 max-w-md text-left"
+                            >
+                                Entenda como a Nexis se integra à sua operação.
+                                Se tiver dúvidas técnicas específicas, fale com nossos engenheiros.
+                            </motion.p>
+
+                            {/* Card de Contato - Layout Otimizado para Mobile */}
+                            <div className="w-full relative group mt-10 max-w-sm sm:max-w-md mx-auto lg:mx-0">
+                                <div className="relative flex flex-col items-center gap-6 p-6 sm:px-8 bg-zinc-900/40 backdrop-blur-md border border-white/10 rounded-[2.5rem] lg:rounded-[2rem] shadow-2xl">
+
+                                    {/* Top Section: Image (Left) + Info (Right) */}
+                                    <div className="flex flex-row items-center w-full gap-5">
+
+                                        {/* Avatar area */}
+                                        <div className="relative w-20 h-20 sm:w-24 sm:h-24 md:w-32 md:h-32 shrink-0">
+                                            <div className="w-full h-full rounded-full border-2 border-white/10 overflow-hidden shadow-inner">
+                                                <img
+                                                    src="/pessoas/igor.png"
+                                                    alt="Igor iuri - Atendente Online"
+                                                    className="w-full h-full object-cover"
+                                                />
+                                            </div>
+                                            {/* Ponto Online */}
+                                            <div className="absolute bottom-0 right-1 sm:bottom-1 sm:right-1 md:bottom-2 md:right-2 w-4 h-4 rounded-full border-2 border-zinc-900 bg-green-500 z-10 shadow-[0_0_10px_rgba(34,197,94,0.6)]"></div>
+                                        </div>
+
+                                        {/* Info area */}
+                                        <div className="flex flex-col items-start text-left flex-1 min-w-0">
+                                            <div className="bg-green-500/10 text-green-400 text-[9px] sm:text-[10px] font-bold uppercase tracking-widest px-2 py-0.5 sm:px-2.5 sm:py-1 rounded-md mb-2 inline-flex items-center gap-1.5">
+                                                <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse" />
+                                                Online
+                                            </div>
+                                            <h3 className="text-xl sm:text-2xl font-bold text-white mb-0.5 sm:mb-1">Igor Iuri</h3>
+                                            <p className="text-zinc-400 text-xs sm:text-sm line-clamp-2">Especialista em Automação & Conversão</p>
+                                        </div>
                                     </div>
-                                </div>
 
-                                {/* Content Container */}
-                                <div className="absolute inset-0 z-20 flex flex-col justify-end pointer-events-none px-6 pb-6">
-
-                                    {/* Blur Effect for Text Readability */}
-                                    <GradualBlur
-                                        position="bottom"
-                                        height="200px"
-                                        strength={4}
-                                        className="z-10 !bottom-0 pointer-events-none"
-                                        opacity={1}
-                                    />
-
-                                    {/* Text Content */}
-                                    <div className="relative z-20 text-center w-full">
-                                        <span className={`inline-flex items-center justify-center gap-1.5 text-[9px] font-semibold tracking-widest uppercase ${page.badgeColor} mb-2`}>
-                                            <span className={`w-1 h-1 rounded-full ${page.dotColor} animate-pulse`} />
-                                            {page.badge}
-                                        </span>
-                                        <h3 className="text-xl font-bold text-brand mb-2 transition-colors min-h-[3.5rem] flex items-end justify-center">
-                                            {page.title.split(' — ')[0]}
-                                        </h3>
-                                        <p className="text-neutral-300 text-sm leading-relaxed text-balance min-h-[5rem] flex items-start justify-center">
-                                            {page.desc}
-                                        </p>
+                                    {/* Bottom Section: Full Width Button */}
+                                    <div className="w-full pt-2">
                                         <a
-                                            href={page.href}
+                                            href="https://wa.me/5519996976519?text=Olá! Me interessei pelas Landing Pages da Nexis e gostaria de falar com um atendente."
                                             target="_blank"
                                             rel="noopener noreferrer"
-                                            className="mt-3 pointer-events-auto text-[11px] font-medium text-brand hover:text-white transition-colors flex items-center justify-center gap-1 group/link"
+                                            className="w-full inline-flex items-center justify-center gap-2 rounded-full bg-brand hover:bg-blue-500 text-white font-semibold text-sm px-6 py-4 transition-all duration-300 hover:shadow-[0_0_30px_rgba(37,99,235,0.4)] hover:scale-[1.02] active:scale-[0.98]"
                                         >
-                                            Ver projeto <span className="group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5 inline-block transition-transform">↗</span>
+                                            <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
+                                                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" />
+                                                <path d="M12 0C5.374 0 0 5.373 0 12c0 2.117.549 4.107 1.51 5.845L.057 23.882l6.233-1.634A11.944 11.944 0 0 0 12 24c6.626 0 12-5.374 12-12S18.626 0 12 0zm0 21.818a9.817 9.817 0 0 1-5.001-1.368l-.358-.214-3.706.972.99-3.614-.234-.373A9.818 9.818 0 0 1 2.182 12C2.182 6.57 6.57 2.182 12 2.182S21.818 6.57 21.818 12 17.43 21.818 12 21.818z" />
+                                            </svg>
+                                            Falar Agora
                                         </a>
                                     </div>
                                 </div>
                             </div>
-                        ))}
-                    </div>
-                </div>
-            </section>
-
-            {/* SEÇÃO QUEM SOMOS */}
-            <section id="quem-somos" className="relative w-full py-20 bg-background overflow-hidden">
-                {/* Glow de fundo */}
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-blue-600/5 rounded-full blur-[100px] pointer-events-none" />
-
-                <div className="container relative z-10 mx-auto px-6">
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-
-                        {/* Foto do Fundador */}
-                        <div className="relative w-full aspect-square md:aspect-[4/5] rounded-[2rem] overflow-hidden border border-white/10 shadow-2xl group order-2 lg:order-1">
-                            <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent z-10" />
-                            {/* O usuário deve colocar a imagem eu.png na pasta public */}
-                            <img
-                                src="/eu.png"
-                                alt="Igori Urial - Fundador da Nexis"
-                                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                            />
-                            <div className="absolute bottom-8 left-8 z-20">
-                                <span className="inline-flex items-center gap-2 text-[10px] font-semibold tracking-widest uppercase text-blue-400 mb-2">
-                                    <span className="w-1.5 h-1.5 rounded-full bg-blue-400 animate-pulse" />
-                                    Fundador
-                                </span>
-                                <h3 className="text-2xl font-bold text-white">Igor iuri1</h3>
-                            </div>
                         </div>
 
-                        {/* Texto */}
-                        <div className="flex flex-col justify-center order-1 lg:order-2">
-                            <span className="inline-flex items-center gap-2 text-[10px] font-semibold tracking-widest uppercase text-blue-400 mb-4">
-                                <span className="w-1 h-1 rounded-full bg-blue-400 animate-pulse" />
-                                Sobre Mim
-                            </span>
-                            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6 tracking-tight leading-tight">
-                                Oi, sou o Igor.{" "}
-                                <br />
-                                <span className="text-gradient-hero drop-shadow-[0_0_30px_rgba(37,99,235,0.5)]">
-                                    Design & Automação
-                                </span>
-                            </h2>
-                            <p className="text-zinc-300 text-base md:text-lg leading-relaxed mb-6 font-light">
-                                Sou apaixonado por unir estética refinada, minimalismo e alta conversão. A <span className="text-white font-medium">Nexis</span> nasceu desse propósito: criar projetos que não só deslumbram no primeiro olhar, mas que são verdadeiras máquinas de gerar lucro.
-                            </p>
-                            <p className="text-zinc-400 text-sm md:text-base leading-relaxed mb-8">
-                                Nosso foco central está na construção de <span className="text-white font-medium">Landing Pages premium</span>. Cuidamos de cada pixel para prender a atenção do seu cliente em segundos. E, para garantir que seu funil seja completo, conectamos o design a <span className="text-white font-medium">automações inteligentes</span> nos bastidores — garantindo triagem de leads, atendimento rápido e controle absoluto do seu negócio digital, mesmo quando você estiver dormindo.
-                            </p>
-
-                            {/* Valores / Cards de pilares */}
-                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                                <div className="group rounded-xl border border-white/8 bg-white/3 hover:bg-white/6 hover:border-white/15 transition-all duration-300 p-5">
-                                    <span className="text-2xl mb-3 block">🎨</span>
-                                    <h4 className="text-sm font-semibold text-white mb-2">Paixão por Design</h4>
-                                    <p className="text-xs text-zinc-500 leading-relaxed">
-                                        Interfaces visuais "Apple-like", limpas, sofisticadas e com forte autoridade para a sua marca.
-                                    </p>
-                                </div>
-                                <div className="group rounded-xl border border-white/8 bg-white/3 hover:bg-white/6 hover:border-white/15 transition-all duration-300 p-5">
-                                    <span className="text-2xl mb-3 block">🤖</span>
-                                    <h4 className="text-sm font-semibold text-white mb-2">Páginas que Trabalham</h4>
-                                    <p className="text-xs text-zinc-500 leading-relaxed">
-                                        Muito além do layout, as páginas alimentam automações que operam ativamente no WhatsApp e CRMs.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            {/* SEÇÃO PEÇA UM ORÇAMENTO */}
-            <section id="orcamento" className="relative w-full py-20 bg-black overflow-hidden">
-                {/* Glow azul central */}
-                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[300px] bg-blue-600/10 rounded-full blur-[120px] pointer-events-none" />
-                <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[500px] h-[200px] bg-blue-800/8 rounded-full blur-[80px] pointer-events-none" />
-
-                <div className="container relative z-10 mx-auto px-6">
-                    <div className="max-w-2xl mx-auto text-center mb-12">
-                        <span className="inline-flex items-center gap-2 text-[10px] font-semibold tracking-widest uppercase text-blue-400 mb-4">
-                            <span className="w-1 h-1 rounded-full bg-blue-400 animate-pulse" />
-                            Seu próximo projeto
-                        </span>
-                        <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 tracking-tight">
-                            Peça um{" "}
-                            <span className="text-gradient-hero drop-shadow-[0_0_30px_rgba(37,99,235,0.5)]">
-                                Orçamento
-                            </span>
-                        </h2>
-                        <p className="text-zinc-400 text-base leading-relaxed">
-                            Conte um pouco sobre o seu projeto e nossa equipe entrará em contato em até <span className="text-white">24 horas</span>.
-                        </p>
-                    </div>
-
-                    {/* CTA Card */}
-                    <div className="max-w-xl mx-auto rounded-2xl border border-white/10 bg-white/4 backdrop-blur-sm p-6 md:p-10">
+                        {/* Coluna Direita: Cards / Accordion Original FAQ */}
                         <div className="flex flex-col gap-4">
-
-                            {/* Opções rápidas */}
-                            <div>
-                                <p className="text-xs text-zinc-500 uppercase tracking-widest font-semibold mb-3">Tipo de projeto</p>
-                                <div className="flex flex-wrap gap-2">
-                                    {["Landing Page", "Site Institucional", "Portfólio", "E-commerce", "Outro"].map((tipo) => (
-                                        <button
-                                            key={tipo}
-                                            className="text-xs px-3 py-1.5 rounded-full border border-white/10 text-zinc-400 hover:border-blue-500/50 hover:text-white hover:bg-blue-500/10 transition-all duration-200 cursor-pointer"
-                                        >
-                                            {tipo}
-                                        </button>
-                                    ))}
-                                </div>
-                            </div>
-
-                            <div className="h-px bg-white/8 my-1" />
-
-                            {/* Info de contato */}
-                            <div className="flex flex-col gap-3">
-                                <div className="flex items-center gap-3 rounded-xl border border-white/8 bg-white/3 px-4 py-3">
-                                    <span className="text-zinc-500 text-sm">👤</span>
-                                    <input
-                                        type="text"
-                                        placeholder="Seu nome"
-                                        className="bg-transparent text-sm text-white placeholder-zinc-600 outline-none w-full"
-                                    />
-                                </div>
-                                <div className="flex items-center gap-3 rounded-xl border border-white/8 bg-white/3 px-4 py-3">
-                                    <span className="text-zinc-500 text-sm">💬</span>
-                                    <input
-                                        type="text"
-                                        placeholder="Seu WhatsApp ou e-mail"
-                                        className="bg-transparent text-sm text-white placeholder-zinc-600 outline-none w-full"
-                                    />
-                                </div>
-                                <div className="flex items-start gap-3 rounded-xl border border-white/8 bg-white/3 px-4 py-3">
-                                    <span className="text-zinc-500 text-sm mt-0.5">📝</span>
-                                    <textarea
-                                        placeholder="Descreva brevemente seu projeto..."
-                                        rows={3}
-                                        className="bg-transparent text-sm text-white placeholder-zinc-600 outline-none w-full resize-none"
-                                    />
-                                </div>
-                            </div>
-
-                            {/* CTA Button */}
-                            <a
-                                href={`https://wa.me/5519996976519?text=Olá! Gostaria de solicitar um orçamento para uma landing page.`}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="mt-2 w-full flex items-center justify-center gap-2 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-semibold text-sm py-3.5 transition-all duration-200 hover:shadow-[0_0_30px_rgba(37,99,235,0.4)]"
-                            >
-                                <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
-                                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" />
-                                    <path d="M12 0C5.374 0 0 5.373 0 12c0 2.117.549 4.107 1.51 5.845L.057 23.882l6.233-1.634A11.944 11.944 0 0 0 12 24c6.626 0 12-5.374 12-12S18.626 0 12 0zm0 21.818a9.817 9.817 0 0 1-5.001-1.368l-.358-.214-3.706.972.99-3.614-.234-.373A9.818 9.818 0 0 1 2.182 12C2.182 6.57 6.57 2.182 12 2.182S21.818 6.57 21.818 12 17.43 21.818 12 21.818z" />
-                                </svg>
-                                Enviar pelo WhatsApp
-                            </a>
-
-                            <p className="text-center text-[11px] text-zinc-600">
-                                Resposta garantida em até 24h • Sem compromisso
-                            </p>
+                            {FAQ_ITEMS.map((item, index) => (
+                                <FAQItem
+                                    key={index}
+                                    item={item}
+                                    isOpen={openFAQIndex === index}
+                                    onClick={() => setOpenFAQIndex(openFAQIndex === index ? null : index)}
+                                />
+                            ))}
                         </div>
+
                     </div>
                 </div>
             </section>
         </section>
+    );
+}
+
+function FAQItem({ item, isOpen, onClick }: { item: typeof FAQ_ITEMS[0], isOpen: boolean, onClick: () => void }) {
+    return (
+        <motion.div
+            initial={false}
+            onClick={onClick}
+            className={cn(
+                "glass-card cursor-pointer p-6 transition-all duration-300",
+                isOpen && "border-blue-500/30 bg-blue-500/[0.08]"
+            )}
+        >
+            <div className="flex items-center justify-between gap-4">
+                <h3 className={cn(
+                    "text-lg font-semibold transition-colors leading-tight",
+                    isOpen ? "text-white" : "text-neutral-300 group-hover:text-white"
+                )}>
+                    {item.question}
+                </h3>
+                <div className={cn(
+                    "shrink-0 w-8 h-8 rounded-full flex items-center justify-center transition-colors",
+                    isOpen ? "bg-brand text-white" : "bg-white/5 text-neutral-400 group-hover:bg-white/10 group-hover:text-white"
+                )}>
+                    {isOpen ? <Minus size={18} /> : <Plus size={18} />}
+                </div>
+            </div>
+
+            <AnimatePresence>
+                {isOpen && (
+                    <motion.div
+                        initial={{ height: 0, opacity: 0, marginTop: 0 }}
+                        animate={{ height: "auto", opacity: 1, marginTop: 16 }}
+                        exit={{ height: 0, opacity: 0, marginTop: 0 }}
+                        transition={{ duration: 0.3, ease: "easeInOut" }}
+                        className="overflow-hidden"
+                    >
+                        <p className="text-neutral-400 leading-relaxed">
+                            {item.answer}
+                        </p>
+                    </motion.div>
+                )}
+            </AnimatePresence>
+        </motion.div>
     );
 }

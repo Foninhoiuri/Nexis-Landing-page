@@ -12,7 +12,7 @@ import { Skeleton } from "@/components/ui/Skeleton";
 
 export function Hero() {
     return (
-        <section id="hero" className="relative min-h-screen flex flex-col items-center pt-4 md:pt-2 lg:pt-3 pb-20 xl:pb-16 overflow-visible xl:overflow-hidden bg-background">
+        <section id="hero" className="relative min-h-screen flex flex-col items-center pt-4 md:pt-2 lg:pt-3 pb-20 xl:pb-16 overflow-visible xl:overflow-hidden bg-black">
 
             {/* Conteúdo de Texto (Esquerda) - Carrega Imediato */}
             <div className="w-full max-w-[1600px] mx-auto relative px-6 md:px-12 grid grid-cols-1 lg:grid-cols-[50%_50%] gap-20 lg:gap-20 xl:gap-60 items-center min-h-[calc(100vh-100px)]">
