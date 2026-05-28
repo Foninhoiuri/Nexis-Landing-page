@@ -364,13 +364,16 @@ function Navbar() {
                                 setActiveTab("");
                             },
                             className: "flex justify-start px-4 transition-opacity hover:cursor-pointer hover:transition-transform hover:scale-[1.1]",
+                            "aria-label": "NexisHub - Ir para o início",
                             children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("img", {
                                 src: ASSETS.icon,
                                 alt: "Nexis Logo",
-                                className: "object-contain h-[30px]"
+                                className: "object-contain h-[30px]",
+                                width: 120,
+                                height: 30
                             }, void 0, false, {
                                 fileName: "[project]/src/components/Navbar.tsx",
-                                lineNumber: 121,
+                                lineNumber: 122,
                                 columnNumber: 25
                             }, this)
                         }, void 0, false, {
@@ -383,6 +386,8 @@ function Navbar() {
                             children: LINKS.map((link)=>{
                                 const isActive = activeTab === link.label;
                                 return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                    "aria-label": `Navegar para ${link.label}`,
+                                    "aria-current": isActive ? 'page' : undefined,
                                     onClick: ()=>{
                                         if (link.href) {
                                             window.location.href = link.href;
@@ -405,13 +410,13 @@ function Navbar() {
                                     children: link.label
                                 }, link.id, false, {
                                     fileName: "[project]/src/components/Navbar.tsx",
-                                    lineNumber: 138,
+                                    lineNumber: 141,
                                     columnNumber: 33
                                 }, this);
                             })
                         }, void 0, false, {
                             fileName: "[project]/src/components/Navbar.tsx",
-                            lineNumber: 129,
+                            lineNumber: 132,
                             columnNumber: 21
                         }, this),
                         __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$config$2f$social$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["SOCIAL"].whatsapp.active && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -421,12 +426,12 @@ function Navbar() {
                                 onClick: ()=>window.open(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$config$2f$social$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["SOCIAL"].whatsapp.url, "_blank")
                             }, void 0, false, {
                                 fileName: "[project]/src/components/Navbar.tsx",
-                                lineNumber: 171,
+                                lineNumber: 176,
                                 columnNumber: 29
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/src/components/Navbar.tsx",
-                            lineNumber: 170,
+                            lineNumber: 175,
                             columnNumber: 25
                         }, this)
                     ]
@@ -448,6 +453,9 @@ function Navbar() {
                             scale: 0.9
                         },
                         onClick: ()=>setIsMobileMenuOpen(!isMobileMenuOpen),
+                        "aria-label": isMobileMenuOpen ? "Fechar menu de navegação" : "Abrir menu de navegação",
+                        "aria-expanded": isMobileMenuOpen,
+                        "aria-controls": "mobile-nav-menu",
                         className: `
                         w-14 h-14 rounded-full flex items-center justify-center
                         text-white shadow-xl transition-all duration-300 relative z-50
@@ -470,7 +478,7 @@ function Navbar() {
                                     y2: "18"
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/Navbar.tsx",
-                                    lineNumber: 197,
+                                    lineNumber: 205,
                                     columnNumber: 170
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("line", {
@@ -480,13 +488,13 @@ function Navbar() {
                                     y2: "18"
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/Navbar.tsx",
-                                    lineNumber: 197,
+                                    lineNumber: 205,
                                     columnNumber: 208
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/components/Navbar.tsx",
-                            lineNumber: 197,
+                            lineNumber: 205,
                             columnNumber: 25
                         }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
                             width: "24",
@@ -505,7 +513,7 @@ function Navbar() {
                                     y2: "12"
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/Navbar.tsx",
-                                    lineNumber: 199,
+                                    lineNumber: 207,
                                     columnNumber: 170
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("line", {
@@ -515,7 +523,7 @@ function Navbar() {
                                     y2: "6"
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/Navbar.tsx",
-                                    lineNumber: 199,
+                                    lineNumber: 207,
                                     columnNumber: 209
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("line", {
@@ -525,18 +533,18 @@ function Navbar() {
                                     y2: "18"
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/Navbar.tsx",
-                                    lineNumber: 199,
+                                    lineNumber: 207,
                                     columnNumber: 246
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/components/Navbar.tsx",
-                            lineNumber: 199,
+                            lineNumber: 207,
                             columnNumber: 25
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/src/components/Navbar.tsx",
-                        lineNumber: 184,
+                        lineNumber: 189,
                         columnNumber: 17
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$components$2f$AnimatePresence$2f$index$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["AnimatePresence"], {
@@ -579,6 +587,7 @@ function Navbar() {
                                         transition: {
                                             delay: (i + 1) * 0.03
                                         },
+                                        "aria-label": `Navegar para ${link.label}`,
                                         onClick: ()=>{
                                             if (link.href) {
                                                 window.location.href = link.href;
@@ -602,7 +611,7 @@ function Navbar() {
                                         children: link.label
                                     }, link.label, false, {
                                         fileName: "[project]/src/components/Navbar.tsx",
-                                        lineNumber: 218,
+                                        lineNumber: 226,
                                         columnNumber: 33
                                     }, this)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$m$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["m"].button, {
@@ -650,7 +659,7 @@ function Navbar() {
                                     children: "Início"
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/Navbar.tsx",
-                                    lineNumber: 248,
+                                    lineNumber: 257,
                                     columnNumber: 29
                                 }, this),
                                 __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$config$2f$social$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["SOCIAL"].whatsapp.active && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$m$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["m"].button, {
@@ -679,31 +688,31 @@ function Navbar() {
                                             className: "w-5 h-5"
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/Navbar.tsx",
-                                            lineNumber: 285,
+                                            lineNumber: 294,
                                             columnNumber: 37
                                         }, this),
                                         "Começar"
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/components/Navbar.tsx",
-                                    lineNumber: 277,
+                                    lineNumber: 286,
                                     columnNumber: 33
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/components/Navbar.tsx",
-                            lineNumber: 208,
+                            lineNumber: 216,
                             columnNumber: 25
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/src/components/Navbar.tsx",
-                        lineNumber: 204,
+                        lineNumber: 212,
                         columnNumber: 17
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/components/Navbar.tsx",
-                lineNumber: 181,
+                lineNumber: 186,
                 columnNumber: 13
             }, this)
         ]
@@ -892,6 +901,10 @@ const RenderLogo = ({ src, alt, color })=>{
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("img", {
                 src: src,
                 alt: alt,
+                width: 56,
+                height: 56,
+                loading: "lazy",
+                decoding: "async",
                 className: "w-14 h-14 object-contain relative drop-shadow-sm"
             }, void 0, false, {
                 fileName: "[project]/src/components/ui/HeroOrbitingBackground.tsx",
@@ -923,12 +936,12 @@ function HeroOrbitingBackground() {
                         color: "#d62976"
                     }, void 0, false, {
                         fileName: "[project]/src/components/ui/HeroOrbitingBackground.tsx",
-                        lineNumber: 29,
+                        lineNumber: 33,
                         columnNumber: 21
                     }, this)
                 }, void 0, false, {
                     fileName: "[project]/src/components/ui/HeroOrbitingBackground.tsx",
-                    lineNumber: 28,
+                    lineNumber: 32,
                     columnNumber: 17
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$orbiting$2d$circles$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
@@ -942,12 +955,12 @@ function HeroOrbitingBackground() {
                         color: "#25D366"
                     }, void 0, false, {
                         fileName: "[project]/src/components/ui/HeroOrbitingBackground.tsx",
-                        lineNumber: 32,
+                        lineNumber: 36,
                         columnNumber: 21
                     }, this)
                 }, void 0, false, {
                     fileName: "[project]/src/components/ui/HeroOrbitingBackground.tsx",
-                    lineNumber: 31,
+                    lineNumber: 35,
                     columnNumber: 17
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$orbiting$2d$circles$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
@@ -961,12 +974,12 @@ function HeroOrbitingBackground() {
                         color: "#ffffff"
                     }, void 0, false, {
                         fileName: "[project]/src/components/ui/HeroOrbitingBackground.tsx",
-                        lineNumber: 35,
+                        lineNumber: 39,
                         columnNumber: 21
                     }, this)
                 }, void 0, false, {
                     fileName: "[project]/src/components/ui/HeroOrbitingBackground.tsx",
-                    lineNumber: 34,
+                    lineNumber: 38,
                     columnNumber: 17
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$orbiting$2d$circles$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
@@ -980,12 +993,12 @@ function HeroOrbitingBackground() {
                         color: "#ffffffff"
                     }, void 0, false, {
                         fileName: "[project]/src/components/ui/HeroOrbitingBackground.tsx",
-                        lineNumber: 38,
+                        lineNumber: 42,
                         columnNumber: 21
                     }, this)
                 }, void 0, false, {
                     fileName: "[project]/src/components/ui/HeroOrbitingBackground.tsx",
-                    lineNumber: 37,
+                    lineNumber: 41,
                     columnNumber: 17
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$orbiting$2d$circles$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
@@ -1000,12 +1013,12 @@ function HeroOrbitingBackground() {
                         color: "#4285F4"
                     }, void 0, false, {
                         fileName: "[project]/src/components/ui/HeroOrbitingBackground.tsx",
-                        lineNumber: 43,
+                        lineNumber: 47,
                         columnNumber: 21
                     }, this)
                 }, void 0, false, {
                     fileName: "[project]/src/components/ui/HeroOrbitingBackground.tsx",
-                    lineNumber: 42,
+                    lineNumber: 46,
                     columnNumber: 17
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$orbiting$2d$circles$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
@@ -1020,12 +1033,12 @@ function HeroOrbitingBackground() {
                         color: "#0079BF"
                     }, void 0, false, {
                         fileName: "[project]/src/components/ui/HeroOrbitingBackground.tsx",
-                        lineNumber: 46,
+                        lineNumber: 50,
                         columnNumber: 21
                     }, this)
                 }, void 0, false, {
                     fileName: "[project]/src/components/ui/HeroOrbitingBackground.tsx",
-                    lineNumber: 45,
+                    lineNumber: 49,
                     columnNumber: 17
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$orbiting$2d$circles$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
@@ -1040,12 +1053,12 @@ function HeroOrbitingBackground() {
                         color: "#f4e242ff"
                     }, void 0, false, {
                         fileName: "[project]/src/components/ui/HeroOrbitingBackground.tsx",
-                        lineNumber: 49,
+                        lineNumber: 53,
                         columnNumber: 21
                     }, this)
                 }, void 0, false, {
                     fileName: "[project]/src/components/ui/HeroOrbitingBackground.tsx",
-                    lineNumber: 48,
+                    lineNumber: 52,
                     columnNumber: 17
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$orbiting$2d$circles$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
@@ -1060,12 +1073,12 @@ function HeroOrbitingBackground() {
                         color: "#FFC107"
                     }, void 0, false, {
                         fileName: "[project]/src/components/ui/HeroOrbitingBackground.tsx",
-                        lineNumber: 52,
+                        lineNumber: 56,
                         columnNumber: 21
                     }, this)
                 }, void 0, false, {
                     fileName: "[project]/src/components/ui/HeroOrbitingBackground.tsx",
-                    lineNumber: 51,
+                    lineNumber: 55,
                     columnNumber: 17
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$orbiting$2d$circles$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
@@ -1080,12 +1093,12 @@ function HeroOrbitingBackground() {
                         color: "#217346"
                     }, void 0, false, {
                         fileName: "[project]/src/components/ui/HeroOrbitingBackground.tsx",
-                        lineNumber: 55,
+                        lineNumber: 59,
                         columnNumber: 21
                     }, this)
                 }, void 0, false, {
                     fileName: "[project]/src/components/ui/HeroOrbitingBackground.tsx",
-                    lineNumber: 54,
+                    lineNumber: 58,
                     columnNumber: 17
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$orbiting$2d$circles$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
@@ -1100,12 +1113,12 @@ function HeroOrbitingBackground() {
                         color: "#96bf48"
                     }, void 0, false, {
                         fileName: "[project]/src/components/ui/HeroOrbitingBackground.tsx",
-                        lineNumber: 58,
+                        lineNumber: 62,
                         columnNumber: 21
                     }, this)
                 }, void 0, false, {
                     fileName: "[project]/src/components/ui/HeroOrbitingBackground.tsx",
-                    lineNumber: 57,
+                    lineNumber: 61,
                     columnNumber: 17
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$orbiting$2d$circles$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
@@ -1119,12 +1132,12 @@ function HeroOrbitingBackground() {
                         color: "#009ee3"
                     }, void 0, false, {
                         fileName: "[project]/src/components/ui/HeroOrbitingBackground.tsx",
-                        lineNumber: 63,
+                        lineNumber: 67,
                         columnNumber: 21
                     }, this)
                 }, void 0, false, {
                     fileName: "[project]/src/components/ui/HeroOrbitingBackground.tsx",
-                    lineNumber: 62,
+                    lineNumber: 66,
                     columnNumber: 17
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$orbiting$2d$circles$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
@@ -1138,12 +1151,12 @@ function HeroOrbitingBackground() {
                         color: "#333333"
                     }, void 0, false, {
                         fileName: "[project]/src/components/ui/HeroOrbitingBackground.tsx",
-                        lineNumber: 66,
+                        lineNumber: 70,
                         columnNumber: 21
                     }, this)
                 }, void 0, false, {
                     fileName: "[project]/src/components/ui/HeroOrbitingBackground.tsx",
-                    lineNumber: 65,
+                    lineNumber: 69,
                     columnNumber: 17
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$orbiting$2d$circles$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
@@ -1157,12 +1170,12 @@ function HeroOrbitingBackground() {
                         color: "#3ECF8E"
                     }, void 0, false, {
                         fileName: "[project]/src/components/ui/HeroOrbitingBackground.tsx",
-                        lineNumber: 69,
+                        lineNumber: 73,
                         columnNumber: 21
                     }, this)
                 }, void 0, false, {
                     fileName: "[project]/src/components/ui/HeroOrbitingBackground.tsx",
-                    lineNumber: 68,
+                    lineNumber: 72,
                     columnNumber: 17
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$orbiting$2d$circles$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
@@ -1176,12 +1189,12 @@ function HeroOrbitingBackground() {
                         color: "#1877F2"
                     }, void 0, false, {
                         fileName: "[project]/src/components/ui/HeroOrbitingBackground.tsx",
-                        lineNumber: 72,
+                        lineNumber: 76,
                         columnNumber: 21
                     }, this)
                 }, void 0, false, {
                     fileName: "[project]/src/components/ui/HeroOrbitingBackground.tsx",
-                    lineNumber: 71,
+                    lineNumber: 75,
                     columnNumber: 17
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$orbiting$2d$circles$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
@@ -1195,12 +1208,12 @@ function HeroOrbitingBackground() {
                         color: "#EA4335"
                     }, void 0, false, {
                         fileName: "[project]/src/components/ui/HeroOrbitingBackground.tsx",
-                        lineNumber: 75,
+                        lineNumber: 79,
                         columnNumber: 21
                     }, this)
                 }, void 0, false, {
                     fileName: "[project]/src/components/ui/HeroOrbitingBackground.tsx",
-                    lineNumber: 74,
+                    lineNumber: 78,
                     columnNumber: 17
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$orbiting$2d$circles$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
@@ -1214,12 +1227,12 @@ function HeroOrbitingBackground() {
                         color: "#4285F4"
                     }, void 0, false, {
                         fileName: "[project]/src/components/ui/HeroOrbitingBackground.tsx",
-                        lineNumber: 78,
+                        lineNumber: 82,
                         columnNumber: 21
                     }, this)
                 }, void 0, false, {
                     fileName: "[project]/src/components/ui/HeroOrbitingBackground.tsx",
-                    lineNumber: 77,
+                    lineNumber: 81,
                     columnNumber: 17
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$orbiting$2d$circles$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
@@ -1233,12 +1246,12 @@ function HeroOrbitingBackground() {
                         color: "#ffffff"
                     }, void 0, false, {
                         fileName: "[project]/src/components/ui/HeroOrbitingBackground.tsx",
-                        lineNumber: 81,
+                        lineNumber: 85,
                         columnNumber: 21
                     }, this)
                 }, void 0, false, {
                     fileName: "[project]/src/components/ui/HeroOrbitingBackground.tsx",
-                    lineNumber: 80,
+                    lineNumber: 84,
                     columnNumber: 17
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$orbiting$2d$circles$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
@@ -1252,12 +1265,12 @@ function HeroOrbitingBackground() {
                         color: "#635BFF"
                     }, void 0, false, {
                         fileName: "[project]/src/components/ui/HeroOrbitingBackground.tsx",
-                        lineNumber: 84,
+                        lineNumber: 88,
                         columnNumber: 21
                     }, this)
                 }, void 0, false, {
                     fileName: "[project]/src/components/ui/HeroOrbitingBackground.tsx",
-                    lineNumber: 83,
+                    lineNumber: 87,
                     columnNumber: 17
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$orbiting$2d$circles$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
@@ -1271,23 +1284,23 @@ function HeroOrbitingBackground() {
                         color: "#6264A7"
                     }, void 0, false, {
                         fileName: "[project]/src/components/ui/HeroOrbitingBackground.tsx",
-                        lineNumber: 87,
+                        lineNumber: 91,
                         columnNumber: 21
                     }, this)
                 }, void 0, false, {
                     fileName: "[project]/src/components/ui/HeroOrbitingBackground.tsx",
-                    lineNumber: 86,
+                    lineNumber: 90,
                     columnNumber: 17
                 }, this)
             ]
         }, void 0, true, {
             fileName: "[project]/src/components/ui/HeroOrbitingBackground.tsx",
-            lineNumber: 25,
+            lineNumber: 29,
             columnNumber: 13
         }, this)
     }, void 0, false, {
         fileName: "[project]/src/components/ui/HeroOrbitingBackground.tsx",
-        lineNumber: 24,
+        lineNumber: 28,
         columnNumber: 9
     }, this);
 }
@@ -1960,7 +1973,7 @@ function Hero() {
                         className: "flex flex-col items-start text-left pt-10 lg:pt-0 order-2 lg:order-1 relative z-50",
                         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$AssetLoader$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["AssetLoader"], {
                             urls: [],
-                            minDisplayTime: 800,
+                            minDisplayTime: 0,
                             skeleton: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                 className: "w-full flex flex-col items-start gap-6",
                                 children: [
@@ -2226,7 +2239,7 @@ function Hero() {
                                 "/nexis_logo.png",
                                 "/nexis_icon.png"
                             ],
-                            minDisplayTime: 1200,
+                            minDisplayTime: 300,
                             skeleton: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                 className: "relative w-full h-full flex items-center justify-center min-h-[400px] scale-75 md:scale-90 lg:scale-100 lg:translate-y-20 xl:translate-y-40 lg:-translate-x-24 xl:-translate-x-52",
                                 children: [
@@ -2287,6 +2300,10 @@ function Hero() {
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("img", {
                                                     src: "/nexis_logo.png",
                                                     alt: "Nexis",
+                                                    width: 120,
+                                                    height: 40,
+                                                    fetchPriority: "high",
+                                                    decoding: "sync",
                                                     className: "md:hidden h-16 w-auto object-contain brightness-125 drop-shadow-[0_0_25px_rgba(62,207,142,0.4)]"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/Hero.tsx",
@@ -2296,10 +2313,14 @@ function Hero() {
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("img", {
                                                     src: "/nexis_icon.png",
                                                     alt: "Nexis",
+                                                    width: 96,
+                                                    height: 96,
+                                                    fetchPriority: "high",
+                                                    decoding: "sync",
                                                     className: "hidden md:block h-24 w-24 lg:h-24 lg:w-24 object-contain brightness-125 drop-shadow-[0_0_25px_rgba(62,207,142,0.4)]"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/Hero.tsx",
-                                                    lineNumber: 139,
+                                                    lineNumber: 143,
                                                     columnNumber: 37
                                                 }, this)
                                             ]
@@ -2345,14 +2366,14 @@ function Hero() {
                 className: "pointer-events-none opacity-90"
             }, void 0, false, {
                 fileName: "[project]/src/components/Hero.tsx",
-                lineNumber: 154,
+                lineNumber: 162,
                 columnNumber: 13
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                 className: "absolute bottom-0 inset-x-0 h-64 bg-gradient-to-t from-black via-black/90 to-transparent z-30 pointer-events-none"
             }, void 0, false, {
                 fileName: "[project]/src/components/Hero.tsx",
-                lineNumber: 165,
+                lineNumber: 173,
                 columnNumber: 13
             }, this)
         ]

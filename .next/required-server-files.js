@@ -20,7 +20,7 @@ self.__SERVER_FILES_MANIFEST={
       "jsx",
       "js"
     ],
-    "poweredByHeader": true,
+    "poweredByHeader": false,
     "compress": true,
     "images": {
       "deviceSizes": [
@@ -212,6 +212,10 @@ self.__SERVER_FILES_MANIFEST={
       "turbopackInferModuleSideEffects": false,
       "optimizePackageImports": [
         "lucide-react",
+        "framer-motion",
+        "motion",
+        "@radix-ui/react-progress",
+        "@radix-ui/react-slot",
         "date-fns",
         "lodash-es",
         "ramda",

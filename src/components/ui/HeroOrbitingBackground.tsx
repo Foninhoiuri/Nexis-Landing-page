@@ -13,6 +13,10 @@ const RenderLogo = ({ src, alt, color }: { src: string; alt: string; color: stri
             <img
                 src={src}
                 alt={alt}
+                width={56}
+                height={56}
+                loading="lazy"
+                decoding="async"
                 className="w-14 h-14 object-contain relative drop-shadow-sm"
             />
         </div>

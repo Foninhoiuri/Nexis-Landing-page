@@ -19,8 +19,8 @@ export function Hero() {
                 {/* Coluna 1: Texto (Mobile: Abaixo, Desktop: Esquerda) */}
                 <div className="flex flex-col items-start text-left pt-10 lg:pt-0 order-2 lg:order-1 relative z-50">
                     <AssetLoader
-                        urls={[]} // No external assets for text, but we want the delay effect
-                        minDisplayTime={800} // Force skeleton for 0.8s for effect
+                        urls={[]} // No external assets for text content
+                        minDisplayTime={0} // Zero delay: mostra conteúdo imediatamente (melhora LCP)
                         skeleton={
                             <div className="w-full flex flex-col items-start gap-6">
                                 <Skeleton className="h-8 w-64 rounded-full bg-white/5" />
@@ -108,7 +108,7 @@ export function Hero() {
                     {/* Skeleton Personalizado para a área visual: Círculos Pulsando */}
                     <AssetLoader
                         urls={["/nexis_logo.png", "/nexis_icon.png"]}
-                        minDisplayTime={1200} // Longer delay for visual column to make it appear AFTER text
+                        minDisplayTime={300} // Pequeno delay para evitar flash de swap
                         skeleton={
                             <div className="relative w-full h-full flex items-center justify-center min-h-[400px] scale-75 md:scale-90 lg:scale-100 lg:translate-y-20 xl:translate-y-40 lg:-translate-x-24 xl:-translate-x-52">
                                 {/* Skeleton Circles */}
@@ -133,12 +133,20 @@ export function Hero() {
                                     <img
                                         src="/nexis_logo.png"
                                         alt="Nexis"
+                                        width={120}
+                                        height={40}
+                                        fetchPriority="high"
+                                        decoding="sync"
                                         className="md:hidden h-16 w-auto object-contain brightness-125 drop-shadow-[0_0_25px_rgba(62,207,142,0.4)]"
                                     />
                                     {/* Desktop Logo (Icon) */}
                                     <img
                                         src="/nexis_icon.png"
                                         alt="Nexis"
+                                        width={96}
+                                        height={96}
+                                        fetchPriority="high"
+                                        decoding="sync"
                                         className="hidden md:block h-24 w-24 lg:h-24 lg:w-24 object-contain brightness-125 drop-shadow-[0_0_25px_rgba(62,207,142,0.4)]"
                                     />
                                 </div>

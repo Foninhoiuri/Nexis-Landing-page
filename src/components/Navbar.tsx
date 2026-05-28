@@ -117,11 +117,14 @@ export function Navbar() {
                             setActiveTab("");
                         }}
                         className="flex justify-start px-4 transition-opacity hover:cursor-pointer hover:transition-transform hover:scale-[1.1]"
+                        aria-label="NexisHub - Ir para o início"
                     >
                         <img
                             src={ASSETS.icon}
                             alt="Nexis Logo"
                             className="object-contain h-[30px]"
+                            width={120}
+                            height={30}
                         />
                     </Link>
 
@@ -137,6 +140,8 @@ export function Navbar() {
                             return (
                                 <button
                                     key={link.id}
+                                    aria-label={`Navegar para ${link.label}`}
+                                    aria-current={isActive ? 'page' : undefined}
                                     onClick={() => {
                                         if (link.href) {
                                             window.location.href = link.href;
@@ -184,6 +189,9 @@ export function Navbar() {
                 <motion.button
                     whileTap={{ scale: 0.9 }}
                     onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                    aria-label={isMobileMenuOpen ? "Fechar menu de navegação" : "Abrir menu de navegação"}
+                    aria-expanded={isMobileMenuOpen}
+                    aria-controls="mobile-nav-menu"
                     className={`
                         w-14 h-14 rounded-full flex items-center justify-center
                         text-white shadow-xl transition-all duration-300 relative z-50
@@ -220,7 +228,8 @@ export function Navbar() {
                                     initial={{ opacity: 0, y: 20, scale: 0.8 }}
                                     animate={{ opacity: 1, y: 0, scale: 1 }}
                                     exit={{ opacity: 0, y: 10, scale: 0.8 }}
-                                    transition={{ delay: (i + 1) * 0.03 }} // Faster stagger
+                                    transition={{ delay: (i + 1) * 0.03 }}
+                                    aria-label={`Navegar para ${link.label}`}
                                     onClick={() => {
                                         if (link.href) {
                                             window.location.href = link.href;

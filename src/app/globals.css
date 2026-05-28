@@ -7,6 +7,10 @@
         /* Brand Primary: #2563EB -> 37, 99, 235 */
         --color-brand-primary: 37 99 235;
 
+        /* Safe Area (iOS PWA) */
+        --safe-top: env(safe-area-inset-top, 0px);
+        --safe-bottom: env(safe-area-inset-bottom, 0px);
+
         /* Brand Colors (Reflect/Linear Style) */
         --color-brand-blue: #2563EB;
         --color-brand-blue-hover: #1d4ed8;
@@ -38,6 +42,22 @@
         font-feature-settings: "rlig" 1, "calt" 1;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
+        /* iOS PWA: padding para safe-area (notch/home-bar) */
+        padding-top: var(--safe-top);
+        padding-bottom: var(--safe-bottom);
+    }
+
+    /* CLS Fix: Dimensões explícitas em imagens para evitar layout shift */
+    img {
+        max-width: 100%;
+        height: auto;
+        /* Previne CLS enquanto a imagem carrega */
+        display: block;
+    }
+
+    /* Aspect-ratio para imagens de tamanho conhecido — evita CLS */
+    img[width][height] {
+        aspect-ratio: attr(width) / attr(height);
     }
 }
 
@@ -52,12 +72,21 @@
         box-shadow: 0 10px 25px -10px rgba(0, 0, 0, 0.5);
     }
 
-    /* Hover Lift Effect */
+    /* Hover Lift Effect — translateZ(0) força GPU compositing (Lighthouse: animações compostas) */
+    .btn-blue,
+    .btn-blue-solid,
+    .btn-green,
+    .btn-green-solid {
+        will-change: transform;
+        backface-visibility: hidden;
+        transform: translateZ(0);
+    }
+
     .btn-blue:hover,
     .btn-blue-solid:hover,
     .btn-green:hover,
     .btn-green-solid:hover {
-        transform: translateY(-2px);
+        transform: translateY(-2px) translateZ(0);
     }
 
     /* --- SHARED COMPONENT UTILS --- */
@@ -70,6 +99,10 @@
         border-color: rgba(255, 255, 255, 0.05);
         /* --glass-border */
         backdrop-filter: blur(4px);
+        /* GPU compositing para evitar repaints no hover */
+        will-change: transform;
+        transform: translateZ(0);
+        backface-visibility: hidden;
     }
 
     .glass-card:hover {
@@ -96,6 +129,10 @@
         border: 1px solid rgba(37, 99, 235, 0.2);
         color: #60A5FA;
         /* blue-400 */
+        /* GPU compositing */
+        will-change: transform;
+        transform: translateZ(0);
+        backface-visibility: hidden;
     }
 
     .group:hover .icon-box {
@@ -103,7 +140,7 @@
         /* brand-blue */
         color: white;
         box-shadow: 0 0 20px rgba(37, 99, 235, 0.6);
-        transform: translateY(-2px);
+        transform: translateY(-2px) translateZ(0);
     }
 
     /* --- BTN BLUE (Outline -> Solid) --- */
